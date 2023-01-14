@@ -10,17 +10,17 @@ Seja bem-vindo! Este desafio foi projetado para avaliar a sua capacidade técnic
 - Após finalizar, submeta um pull request com um comentário informando o seu e-mail de contato e aguarde nossa avaliação.
 
 ## Proposta
-Você deverá desenvolver um projeto utilizando React no front-end e Node.js no back-end com a finalidade de que seja possível listar, visualizar, criar, editar e excluir animais de estimação de uma petshop.
+Você deverá desenvolver um projeto utilizando React no front-end e Node.js no back-end com a finalidade de que seja possível listar, visualizar, criar, editar e excluir criptomoedas da aplicação.
 
 **Observações:**
 > - Você pode utilizar qualquer banco de dados relacional disponível;
-> - Cada animal de estimação precisa ter um identificador único, nome, idade, tipo (gato ou cachorro) e raça;
-> - Além dos dados do animal, é necessário também salvar os dados pessoais, de contato e de endereço do seu respectivo dono.
+> - Cada criptomoeda precisa ter um identificador único, nome, simbolo(Exemplo: nome: Bitcoin => Simbolo: BTC) e descrição;
+> - Além dos dados da criptomoeda, é necessário também salvar os dados da empresa e/ou pessoa responsável pelo projeto da criptomoeda (nome da empresa, ano de lançamento do projeto e ponto forte do projeto).
 ## Diferenciais
 Serão considerados diferenciais:
 
 - Conhecimento sólido em Expo ou React Native;
+- Utilização de relacionamento entre tabelas no Banco de dados.
 - Boas práticas de escrita de código (código limpo, padrões de arquitetura, etc.);
-- Conhecimento em Firebase;
+- Conhecimento em docker;
 - Conhecimento em infraestruturas em nuvem;
-- Conhecimento em PHP.
