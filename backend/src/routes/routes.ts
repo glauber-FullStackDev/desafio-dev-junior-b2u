@@ -10,6 +10,7 @@ import { updateUserController } from "../controllers/user/updateUser.controller"
 //user middlewares
 import { uniqueEmailPhoneMiddleware } from "../middlewares/user/uniqueEmailPhone.middleware";
 import { bodyRequestMiddleware } from "../middlewares/user/bodyRequest.middleware";
+import { userNotFoundMiddleware } from "../middlewares/user/userNotFound.middleware";
 
 
 const router = Router()
@@ -17,9 +18,9 @@ const router = Router()
 // user routes
 router.post('/users',bodyRequestMiddleware,uniqueEmailPhoneMiddleware,createUserController);
 router.get('/users',readAllUserController);
-router.get('/users/:id',readOneUserController);
-router.delete('/users/:id',deleteUserController);
-router.patch('/users/:id',uniqueEmailPhoneMiddleware,updateUserController);
+router.get('/users/:id',userNotFoundMiddleware,readOneUserController);
+router.delete('/users/:id',userNotFoundMiddleware,deleteUserController);
+router.patch('/users/:id',userNotFoundMiddleware,uniqueEmailPhoneMiddleware,updateUserController);
 
 
 
