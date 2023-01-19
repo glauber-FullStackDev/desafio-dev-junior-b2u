@@ -89,8 +89,40 @@ const viewCar = async (req, res) => {
                 telefone: car.telefone_dono
             }
         };
-        
+
         return res.status(200).json(carData);
+
+    } catch (error) {
+        return res.status(500).json({ mensagem: "Erro interno do servidor." });
+    }
+}
+
+const updateCar = async (req, res) => {
+    const { id } = req.params;
+    const { nome, marca, ano_fabricacao, descricao, nome_dono, email_dono, telefone_dono } = req.body;
+
+    try {
+        const car = await knex('carros').where({ id }).first();
+
+        if (!car) {
+            return res.status(404).json({ mensagem: "O carro não existe." });
+        }
+
+        const updatedCar = await knex('carros').where({ id }).update({
+            nome,
+            marca,
+            ano_fabricacao,
+            descricao,
+            nome_dono,
+            email_dono,
+            telefone_dono
+        });
+
+        if (!updatedCar) {
+            return res.status(400).json({ mensagem: "O carro não foi atualizado." });
+        }
+
+        return res.status(200).json({ mensagem: "Carro atualizado com sucesso!" });
 
     } catch (error) {
         console.log(error)
@@ -101,5 +133,6 @@ const viewCar = async (req, res) => {
 module.exports = {
     registerCar,
     listCars,
-    viewCar
+    viewCar,
+    updateCar
 }
