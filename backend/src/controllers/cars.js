@@ -19,7 +19,6 @@ const registerCar = async (req, res) => {
         }
 
         const carData = {
-            id: registeredCar[0].id,
             nome: registeredCar[0].nome,
             marca: registeredCar[0].marca,
             ano_fabricacao: registeredCar[0].ano_fabricacao,
