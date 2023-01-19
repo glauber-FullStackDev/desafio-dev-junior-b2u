@@ -6,7 +6,7 @@ import { readOneUserService } from "../../services/user/readOneUser.service";
 export const readOneUserController = async (req:Request,res:Response) => {
     const id:string = req.params.id;
     try {
-        const user:IUser = await readOneUserService(id);
+        const user = await readOneUserService(id);
 
         return res.status(200).json(user);
         

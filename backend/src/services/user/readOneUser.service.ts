@@ -6,7 +6,7 @@ import prisma from "../../prisma";
 
 export const readOneUserService = async (id:string) => {
 
-    const user:IUser = await prisma.user.findFirst({
+    const user = await prisma.user.findFirst({
         where:{
             id:id
         }
