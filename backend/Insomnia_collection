@@ -1,0 +1,181 @@
+{
+    "_type": "export",
+    "__export_format": 4,
+    "__export_date": "2023-01-19T18:02:28.960Z",
+    "__export_source": "insomnia.desktop.app:v2022.7.1",
+    "resources": [
+        {
+            "_id": "req_e0996feebcd94495b5278b3003d9bdde",
+            "parentId": "wrk_b8947cafccf645b5a7bd36a6ce2a9c2c",
+            "modified": 1674150551075,
+            "created": 1674135652307,
+            "url": "http://localhost:3000/carros",
+            "name": "Cadastrar Carro",
+            "description": "",
+            "method": "POST",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n\t\"nome\": \"Pálio\",\n\t\"marca\": \"Fiat\",\n\t\"ano_fabricacao\": 2004,\n\t\"descricao\": \"Bom carro\",\n\t\"nome_dono\": \"Carlos Alberto\",\n\t\"email_dono\": \"ca@email.com\",\n\t\"telefone_dono\": \"(32)98771-4025\"\n}"
+            },
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "authentication": {},
+            "metaSortKey": -1674135652307,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "wrk_b8947cafccf645b5a7bd36a6ce2a9c2c",
+            "parentId": null,
+            "modified": 1674133781848,
+            "created": 1674133781848,
+            "name": "Desafio Bitcointoyou",
+            "description": "",
+            "scope": "collection",
+            "_type": "workspace"
+        },
+        {
+            "_id": "req_63a8ad78619449d1bc7dc66648788afd",
+            "parentId": "wrk_b8947cafccf645b5a7bd36a6ce2a9c2c",
+            "modified": 1674141532466,
+            "created": 1674141524476,
+            "url": "http://localhost:3000/carros",
+            "name": "Listar Carros",
+            "description": "",
+            "method": "GET",
+            "body": {},
+            "parameters": [],
+            "headers": [],
+            "authentication": {},
+            "metaSortKey": -1673620679197,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_3575b72f027946d38b8aa69f8d8c16d7",
+            "parentId": "wrk_b8947cafccf645b5a7bd36a6ce2a9c2c",
+            "modified": 1674142240052,
+            "created": 1674142152647,
+            "url": "http://localhost:3000/carros/2",
+            "name": "Visualizar Carro",
+            "description": "",
+            "method": "GET",
+            "body": {},
+            "parameters": [],
+            "headers": [],
+            "authentication": {},
+            "metaSortKey": -1673363192642,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_e2ea425730094844a9d4bbed940036b2",
+            "parentId": "wrk_b8947cafccf645b5a7bd36a6ce2a9c2c",
+            "modified": 1674143715878,
+            "created": 1674143631186,
+            "url": "http://localhost:3000/carros/3",
+            "name": "Editar Carro",
+            "description": "",
+            "method": "PUT",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n\t\"nome\": \"Corsa\",\n\t\"marca\": \"Chevrolet\",\n\t\"ano_fabricacao\": 1998,\n\t\"descricao\": \"Horrivel\",\n\t\"nome_dono\": \"Pedro Castro\",\n\t\"email_dono\": \"pedro@email.com\",\n\t\"telefone_dono\": \"(32)98875-6231\"\n}"
+            },
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "authentication": {},
+            "metaSortKey": -1673234449364.5,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_2afa2f5aa9a74f0da195807733beee78",
+            "parentId": "wrk_b8947cafccf645b5a7bd36a6ce2a9c2c",
+            "modified": 1674150476354,
+            "created": 1674150384772,
+            "url": "http://localhost:3000/carros/10",
+            "name": "Deletar Carro",
+            "description": "",
+            "method": "DELETE",
+            "body": {},
+            "parameters": [],
+            "headers": [],
+            "authentication": {},
+            "metaSortKey": -1673170077725.75,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "env_45f3b85b62d5ced64fc561aaa9dc6fbb1875e2bc",
+            "parentId": "wrk_b8947cafccf645b5a7bd36a6ce2a9c2c",
+            "modified": 1674133781852,
+            "created": 1674133781852,
+            "name": "Base Environment",
+            "data": {},
+            "dataPropertyOrder": null,
+            "color": null,
+            "isPrivate": false,
+            "metaSortKey": 1674133781852,
+            "_type": "environment"
+        },
+        {
+            "_id": "jar_45f3b85b62d5ced64fc561aaa9dc6fbb1875e2bc",
+            "parentId": "wrk_b8947cafccf645b5a7bd36a6ce2a9c2c",
+            "modified": 1674133781853,
+            "created": 1674133781853,
+            "name": "Default Jar",
+            "cookies": [],
+            "_type": "cookie_jar"
+        },
+        {
+            "_id": "spc_01125e32181443fe8df7ac356c209767",
+            "parentId": "wrk_b8947cafccf645b5a7bd36a6ce2a9c2c",
+            "modified": 1674133781849,
+            "created": 1674133781849,
+            "fileName": "Desafio Bitcointoyou",
+            "contents": "",
+            "contentType": "yaml",
+            "_type": "api_spec"
+        }
+    ]
+}
