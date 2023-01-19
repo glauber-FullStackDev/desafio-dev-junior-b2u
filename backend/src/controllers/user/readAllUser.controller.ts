@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { IUserCreatedOrUpdated } from "../../interfaces/IUser";
+import { IUser } from "../../interfaces/IUser";
 import { readAllUserService } from "../../services/user/readAllUser.service";
 
 
@@ -7,7 +7,7 @@ export const readAllUserController = async (req:Request,res:Response) => {
 
     try {
 
-        const users:IUserCreatedOrUpdated[] = await readAllUserService();
+        const users:IUser[] = await readAllUserService();
 
         return res.status(200).json(users)
         

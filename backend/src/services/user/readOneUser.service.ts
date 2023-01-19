@@ -1,3 +1,4 @@
+import { IUser } from "../../interfaces/IUser";
 import prisma from "../../prisma";
 
 
@@ -5,7 +6,7 @@ import prisma from "../../prisma";
 
 export const readOneUserService = async (id:string) => {
 
-    const user = await prisma.user.findFirst({
+    const user:IUser = await prisma.user.findFirst({
         where:{
             id:id
         }

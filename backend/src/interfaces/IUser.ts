@@ -1,7 +1,14 @@
-export interface IUserCreatedOrUpdated{
+export interface IUser{
     name:string,
     email:string,
-    tel:string
+    tel:string,
+    id?:string
+}
+/* export interface IUserUpdated{
+    name: string,
+    email:string,
+    tel: string,
+    id: string
 }
 
 export interface IUserReturned{
@@ -9,7 +16,7 @@ export interface IUserReturned{
     name:string,
     email:string,
     tel:string,
-}
+} */
 
 
 
