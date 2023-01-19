@@ -12,6 +12,6 @@ export class AppServer extends Server {
     }
 
     public start(port: number) {
-        this.app.listen(port, () => console.log('Servidor Criado'))
+        this.app.listen(port, () => console.log('Servidor criado'))
     }
 }
