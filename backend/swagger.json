@@ -51,7 +51,6 @@
                                     "$ref": "#/components/schemas/Carro"
                                 },
                                 "example": {
-                                    "id": 11,
                                     "nome": "Pálio",
                                     "marca": "Fiat",
                                     "ano_fabricacao": 2004,
