@@ -9,13 +9,13 @@ import { updateUserController } from "../controllers/user/updateUser.controller"
 
 //user middlewares
 import { uniqueEmailPhoneMiddleware } from "../middlewares/user/uniqueEmailPhone.middleware";
-
+import { bodyRequestMiddleware } from "../middlewares/user/bodyRequest.middleware";
 
 
 const router = Router()
 
 // user routes
-router.post('/users',uniqueEmailPhoneMiddleware,createUserController);
+router.post('/users',bodyRequestMiddleware,uniqueEmailPhoneMiddleware,createUserController);
 router.get('/users',readAllUserController);
 router.get('/users/:id',readOneUserController);
 router.delete('/users/:id',deleteUserController);
