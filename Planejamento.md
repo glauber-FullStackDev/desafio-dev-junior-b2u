@@ -1,7 +1,7 @@
 ## Passo a Passo
 
-- [] Definição de interface
 - [] Levantamento de requisitos
+- [] Definição de interface
 - [] Definição de tecnologias
 - [] Planejamento de execução
 - [] Definição de prioridades
