@@ -1,0 +1,17 @@
+.navbar {
+    background-color: rgb(155, 24, 24);
+    font-weight: 500;
+}
+
+body{
+    background-color: rgb(240, 235, 235);
+}
+
+.card-header {
+    background-color: rgb(167, 42, 42);
+    color: #fff;
+}
+
+.button {
+    background-color: #FA073A;
+}
