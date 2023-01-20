@@ -9,11 +9,10 @@ export const createCarService = async ({
   name,
   brand,
   price,
+  year,
   description,
   owner,
 }: ICarCreate): Promise<Car> => {
-
-
   const carRepository = AppDataSource.getRepository(Car);
   const ownerRepository = AppDataSource.getRepository(Owner);
 
@@ -41,6 +40,7 @@ export const createCarService = async ({
       name,
       brand,
       price,
+      year,
       description,
       owner: newOwner,
     });
@@ -53,6 +53,7 @@ export const createCarService = async ({
     name,
     brand,
     price,
+    year,
     description,
     owner: findedOwner,
   });

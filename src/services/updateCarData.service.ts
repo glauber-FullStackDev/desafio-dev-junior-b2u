@@ -6,7 +6,7 @@ import Car from "../entities/cars.entity";
 import Owner from "../entities/owner.entity";
 
 export const updateCarDataService = async (
-  { name, brand, description, price, owner }: ICarUpdate,
+  { name, brand, description, price, year, owner }: ICarUpdate,
   carId: string
 ) => {
   const verifyIdFormat = validate(carId);
@@ -48,6 +48,7 @@ export const updateCarDataService = async (
       brand: brand ? brand : findedCar.brand,
       description: description ? description : findedCar.description,
       price: price ? price : findedCar.price,
+      year: year? year:findedCar.year
     })
     .where("id = :id", { id: carId })
     .execute();

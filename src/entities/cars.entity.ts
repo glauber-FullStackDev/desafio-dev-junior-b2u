@@ -22,6 +22,9 @@ class Car {
   @Column({ type: "float" })
   price: number;
 
+  @Column()
+  year: number;
+
   @Column({ type: "text", width: 250 })
   description?: string;
 

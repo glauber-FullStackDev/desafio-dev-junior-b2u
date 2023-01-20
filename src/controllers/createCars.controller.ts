@@ -4,12 +4,13 @@ import { ICarCreate, ICarResponse } from "../interfaces/car.interface";
 import { createCarService } from "../services/createCar.service";
 
 export const createProductController = async (req: Request, res: Response) => {
-  const { name, brand, price, description, owner }: ICarCreate = req.body;
+  const { name, brand, price, year, description, owner }: ICarCreate = req.body;
 
   const newCar = await createCarService({
     name,
     brand,
     price,
+    year,
     description,
     owner,
   });

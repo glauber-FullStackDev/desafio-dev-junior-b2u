@@ -4,6 +4,7 @@ interface ICarCreate {
   name: string;
   brand: string;
   price: number;
+  year: number;
   description?: string;
   owner: IOwnerCreate;
 }
@@ -16,6 +17,7 @@ interface ICarUpdate {
   name?: string;
   brand?: string;
   price?: number;
+  year?: number;
   description?: string;
   owner?: IOwnerUpdate;
 }
