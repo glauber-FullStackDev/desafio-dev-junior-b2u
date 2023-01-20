@@ -21,9 +21,6 @@ const Home = () => {
   const { totalCard, totalPages, count, page, pagination } =
     usePagination(vehicles)
 
-    const lala = () => {
-
-    }
 
   console.log(vehicleDetails)
   return (
@@ -33,28 +30,32 @@ const Home = () => {
         close={() => setModalDetail(!modalDetails)}
         vehicleDetails={vehicleDetails}
       />
-      <Header
-        button={() => goToCreate(navigate)}
-      />
-      {vehicles.map(()=>{
+      <Header button={() => goToCreate(navigate)}/>
+
+      <S.AllCards>
+      {vehicles?.map((item,index)=>{
+        const from = count - totalCard;
+        if (index >= from && index < count) {
         return(
-          <CardVehicles
-        vehicles={vehicles}
+        <CardVehicles
+        vehicle={item}
         count={count}
         totalCard={totalCard}
-        buttonDetails={()=>setVehicleDetails()}
+        buttonDetails={()=>{
+          setVehicleDetails(item)
+          setModalDetail(!modalDetails)
+        }}
       />
-
-        )
+        )}
       })}
-      
+      </S.AllCards>
+
       <ButtonSlide
         button={() => pagination()}
         totalPage={totalPages}
         page={page}
       />
-      <Footer
-      />
+      <Footer/>
     </S.Container>
   )
 }
