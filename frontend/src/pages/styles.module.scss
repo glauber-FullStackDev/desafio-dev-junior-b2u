@@ -1,0 +1,74 @@
+.homeContainer {
+  background-color: var(--gray-50);
+  color: var(--black);
+  height: 100vh;
+  width: 100vw;
+}
+
+.loginBlock {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  padding-top: 9rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.useTitle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  font-weight: bold;
+  text-align:justify;
+  background-color: var(--gray-50);
+  color: var(--black);
+}
+
+.useTitle span:nth-child(1) {
+  color: var(--purple-200);
+}
+
+.useTitle span:nth-child(2) {
+  display: flex;
+  align-items: center;
+  color: #3d393d;
+}
+
+
+.authOptions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.authOptions span{
+  width: 1px;
+  height: 40px;
+  border: 1px solid black;
+}
+
+.login {
+  margin-right: 12px;
+  border: none;
+  background-color: var(--gray-50);
+  color: var(--black);
+}
+
+.login:hover {
+  border-bottom: 2px solid var(--purple-200);
+}
+
+.signup {
+  margin-left: 12px;
+  margin-right: 12px;
+  border: none;
+  background-color: var(--gray-50);
+  color: var(--black);
+}
+
+.signup:hover {
+  border-bottom: 2px solid var(--purple-200);
+}

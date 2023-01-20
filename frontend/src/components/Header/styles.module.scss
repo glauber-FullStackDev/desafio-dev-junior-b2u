@@ -1,0 +1,184 @@
+.headerContainer {
+  background-color: var(--gray-50);
+  font-family: 'Lexend', sans-serif;
+  color: var(--gray-200);
+  height: 5.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+
+  position: fixed;
+  top: 0;
+  z-index: 99;
+  padding: 2rem 4rem;
+  border-bottom: 1px solid var(--gray-100);
+}
+
+.headTitle {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  font-size: 26px;
+  font-weight: bold;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+}
+
+.menu ul li {
+  list-style: none;
+  display: inline-block;
+}
+
+.menu ul li a {
+  text-decoration: none;
+  color: #3d393d;
+  padding: 0 15px;
+}
+
+.menu ul li a:hover{
+  color: var(--pink);
+}
+
+.navCart {
+  position: relative;
+  cursor: pointer;
+}
+
+.actions {
+  display: flex;
+}
+
+.bit {
+  display: none;
+}
+
+.anotherPages button{
+  margin-right: 20px;
+  font-family: 'Poppins', sans-serif;
+  padding: 7px 25px;
+  border: 1px solid var(--blue-400);
+  border-radius: 5px;
+  background-color: var(--blue-400);
+  color: white;
+}
+
+.anotherPages button:hover{
+  background-color: var(--gray-50);
+  color: var(--blue-400);
+}
+
+
+.actions button{
+  outline: 0;
+}
+
+.menuhamb {
+  display: none;
+}
+
+.logout button{
+  padding: 8px 25px;
+  border: 1px solid #ff3838;
+  outline: none;
+  color: #ff3838;
+  border-radius: 8px;
+  background-color: var(--gray-50);
+  font-family: 'Poppins', sans-serif;
+}
+
+.logout button:hover{
+  color: white;
+  background-color: #ff3838;
+}
+
+
+@media (max-width: 650px) {
+  .headerContainer {
+    display: block;
+    padding: 0rem 1rem;
+  }
+
+  .landing {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .anotherPages {
+    display: none;
+  }
+
+  .logout {
+    display: none;
+  }
+
+	.menuhamb,
+  .menu .close {
+		display: flex;
+    align-items: center;
+	}
+
+  .close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+  }
+
+  .menuhamb img {
+    height: 30px;
+    width: 30px;
+  }
+
+  .headTitle {
+    display: none;
+  }
+
+  .bit {
+    display: block;
+  }
+
+  .menu ul {
+    position: fixed;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 100vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    background: white;
+    z-index: 99;
+    opacity: 0.96;
+    transition: 0.5s linear;
+  }
+
+  
+.menu ul li a {
+  text-decoration: none;
+  color: #3d393d;
+  padding: 0 15px;
+  font-size: 19px;
+  font-weight: 500;
+}
+
+  .menu ul.toggle {
+    top: 0;
+  }
+
+  .headTitle {
+    font-size: 1.56rem;
+  }
+}
+
+

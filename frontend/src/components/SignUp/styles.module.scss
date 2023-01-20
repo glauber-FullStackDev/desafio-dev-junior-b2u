@@ -1,0 +1,142 @@
+.loginContainer {
+  font-family: 'Lexend', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--gray-50);
+}
+
+.signUp {
+  margin-top: 3px;
+  font-family: 'Lexend';
+}
+
+.signUp span {
+  color: var(--purple-200);
+  cursor: pointer;
+}
+
+.signUp span:hover {
+  color: var(--black);
+}
+
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #3d393d;
+  border-radius: 4px;
+  background-color: var(--gray-50);
+  color: var(--black);
+  padding-top: 25px;
+}
+
+.form label{
+  font-size: 1.1rem;
+  margin-bottom: 7px;
+}
+
+.form label:nth-child(1){
+  margin-right: 200px;
+
+}
+
+.form label:nth-child(3){
+  margin-right: 237px;
+  margin-top: 16px;
+}
+
+.form button {
+  width: 18.5rem;
+  height: 2.8rem;
+  font-size: 17px;
+  font-weight: 600;
+  margin-top: 30px;
+  padding: 9px;
+  border-radius: 9px;
+  border: none;
+  color: white;
+  background-image: linear-gradient(to right, var(--purple), var(--purple-200));
+}
+
+.form input {
+  width: 18.125rem;
+  height: 2.4rem;
+  border: 1px solid var(--black);
+  border-radius: 4px;
+  padding: 13px;
+  outline: none;
+  color: #3d393d;
+ 
+}
+
+
+.inputEmail {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.inputPass {
+  display: block;
+}
+
+.useTitle {
+  display: flex;
+  align-items: center;
+
+  font-size: 30px;
+  font-weight: bold;
+  text-align:justify;
+}
+
+.useTitle span:nth-child(1) {
+  color: var(--purple-200);
+}
+
+.useTitle span:nth-child(2) {
+  display: flex;
+  align-items: center;
+  color: #3d393d;
+}
+
+@media (max-width: 500px) {
+  .useTitle {  
+    font-size: 36px;
+  }
+
+  .useTitle span{
+    font-size: 37px;
+  }
+
+  .form label {
+    font-size: 1.4rem;
+  }
+
+  .form input {
+    width: 21.125rem;
+    height: 3.125rem;
+    font-size: 19px;
+    padding: 17px 13px;
+  }
+
+  .useTitle span:nth-child(1) {
+    color: var(--pink);
+    margin-bottom: 0;
+  }
+
+  .form button {
+    width: 21.125rem;
+    height: 3.125rem;
+    font-size: 17px;
+    font-weight: 600;
+  }
+
+  .form label:nth-child(7){
+    margin-right: 128px;
+    margin-top: 16px;
+  }
+}
+
+
