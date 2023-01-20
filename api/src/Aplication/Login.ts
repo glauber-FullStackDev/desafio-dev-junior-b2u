@@ -52,10 +52,10 @@ export class Login {
     throw new CustomError('Usuário não cadastrado.', 404)
   }
 
-  public async execute (req: Request, res: Response): Promise<void> {
+  public async execute (req: Request, res: Response): Promise<Response> {
     const { email, password } = req.body
     await this.validate(email, password)
     const token = await this.checkNameAndPassword(email, password)
-    res.status(200).json({ token })
+    return res.status(200).json({ token })
   }
 }
