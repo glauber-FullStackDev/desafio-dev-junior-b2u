@@ -15,7 +15,10 @@ const conexao = () => {
 };
 
 conexao();
+
 const port = setup.server.port;
 
 const server = new AppServer();
 server.start(port);
+
+server.app.get('/api/v1/inicio', (_, res) => res.status(200).send('<h2>Hello!</h2>'));
