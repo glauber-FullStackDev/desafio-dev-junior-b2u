@@ -13,6 +13,10 @@ export const carCreateSchema: SchemaOf<ICarCreate> = yup.object().shape({
     .number()
     .required("<price> is a required field")
     .min(0, "Must be positive"),
+  year: yup
+    .number()
+    .required("<year> is a required field")
+    .min(0, "Must be positive"),
   description: yup
     .string()
     .max(150, "<description> must have up to 150 characters"),
