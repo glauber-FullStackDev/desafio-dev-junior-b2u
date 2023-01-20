@@ -19,7 +19,7 @@ model User {
 
 model Car {
   id String @id @default(uuid())
-  dono User @relation(fields:[donoId],references: [id])
+  dono User @relation(fields:[donoId],references: [id],onDelete: Cascade)
   donoId String
   name String @db.VarChar(256)
   marca String @db.VarChar(100)

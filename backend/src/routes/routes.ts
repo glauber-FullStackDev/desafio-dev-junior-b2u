@@ -20,6 +20,10 @@ import { readOneCarController } from "../controllers/car/readOneCar.controller";
 import { deleteCarController } from "../controllers/car/deleteCar.controller";
 import { updateCarController } from "../controllers/car/updateCar.controller";
 
+// car middlewares
+import { carNotFoundMiddleware } from "../middlewares/car/carNotFound.middleware";
+import { ownerCarNotFoundMiddleware } from "../middlewares/car/ownerCarNotFound.middleware";
+import { bodyRequestCarMiddleware } from "../middlewares/car/bodyRequestCar.middleware";
 
 const router = Router()
 
@@ -32,11 +36,11 @@ router.patch('/users/:id',userNotFoundMiddleware,uniqueEmailPhoneMiddleware,upda
 
 
 // car routes
-router.post('/cars',createCarController);
+router.post('/cars',bodyRequestCarMiddleware,ownerCarNotFoundMiddleware,createCarController);
 router.get('/cars',readAllCarController);
-router.get('/cars/:id',readOneCarController);
-router.delete('/cars/:id',deleteCarController);
-router.patch('/cars/:id',updateCarController);
+router.get('/cars/:id',carNotFoundMiddleware,readOneCarController);
+router.delete('/cars/:id',carNotFoundMiddleware,deleteCarController);
+router.patch('/cars/:id',carNotFoundMiddleware,ownerCarNotFoundMiddleware,updateCarController);
 
 
 
