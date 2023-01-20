@@ -10,9 +10,11 @@ const Home = () => {
   return (
     <S.Container>
       <Header/>
-      <S.AllCards>
-        <CardVehicles vehicles={vehicles}/>
-      </S.AllCards>
+        <CardVehicles 
+        vehicles={vehicles}
+        count={8}
+        totalCard={8}
+        />
       <Footer/>
     </S.Container>
   )
