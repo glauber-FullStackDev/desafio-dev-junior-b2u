@@ -17,6 +17,7 @@ import { userNotFoundMiddleware } from "../middlewares/user/userNotFound.middlew
 import { createCarController } from "../controllers/car/createCar.controller";
 import { readAllCarController } from "../controllers/car/readAllCar.controller";
 import { readOneCarController } from "../controllers/car/readOneCar.controller";
+import { deleteCarController } from "../controllers/car/deleteCar.controller";
 
 
 const router = Router()
@@ -33,6 +34,7 @@ router.patch('/users/:id',userNotFoundMiddleware,uniqueEmailPhoneMiddleware,upda
 router.post('/cars',createCarController);
 router.get('/cars',readAllCarController);
 router.get('/cars/:id',readOneCarController);
+router.delete('/cars/:id',deleteCarController);
 
 
 
