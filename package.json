@@ -4,6 +4,7 @@
   "description": "![Bitcointoyou](https://bitcointoyou.com/_next/static/media/logoAzul.c6609791.png)",
   "main": "server.js",
   "scripts": {
+    "dev": "nodemon --watch src src/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,7 +19,11 @@
   },
   "homepage": "https://github.com/josielsouza/desafio-dev-junior-b2u#readme",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.18.2",
     "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
   }
 }
