@@ -1,0 +1,12 @@
+POST http://localhost:3000/cars
+Content-Type: application/json
+
+{
+"donoId":"afed964c-d3ff-495f-b867-0eaf3fa6f1a8",
+"name":"Prisma",
+"marca":"Chevrolet",
+"ano_fabri":"2019",
+"descricao":"Eficiente, oferece uma experiência bem melhor de condução do que a dos concorrentes com câmbio automatizado."
+
+}
+

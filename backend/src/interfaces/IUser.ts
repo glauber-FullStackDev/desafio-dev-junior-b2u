@@ -4,6 +4,10 @@ export interface IUser{
     tel:string,
     id?:string
 }
+
+
+
+
 /* export interface IUserUpdated{
     name: string,
     email:string,

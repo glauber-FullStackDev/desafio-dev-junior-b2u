@@ -13,5 +13,17 @@ model User {
   name String @db.VarChar(256)
   email String @unique @db.VarChar(256)
   tel String @unique @db.VarChar(100)
+  carros Car[]
   
+}
+
+model Car {
+  id String @id @default(uuid())
+  dono User @relation(fields:[donoId],references: [id])
+  donoId String
+  name String @db.VarChar(256)
+  marca String @db.VarChar(100)
+  ano_fabri  String @db.VarChar(4)
+  descricao String @db.VarChar(500)
+
 }

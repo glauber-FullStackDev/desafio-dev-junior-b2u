@@ -13,6 +13,10 @@ import { bodyRequestMiddleware } from "../middlewares/user/bodyRequest.middlewar
 import { userNotFoundMiddleware } from "../middlewares/user/userNotFound.middleware";
 
 
+//car controllers 
+import { createCarController } from "../controllers/car/createCar.controller";
+
+
 const router = Router()
 
 // user routes
@@ -23,6 +27,8 @@ router.delete('/users/:id',userNotFoundMiddleware,deleteUserController);
 router.patch('/users/:id',userNotFoundMiddleware,uniqueEmailPhoneMiddleware,updateUserController);
 
 
+// car routes
+router.post('/cars',createCarController);
 
 
 
