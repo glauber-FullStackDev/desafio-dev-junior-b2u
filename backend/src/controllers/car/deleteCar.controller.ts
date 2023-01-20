@@ -3,9 +3,9 @@ import { deleteCarService } from "../../services/car/deleteCar.service";
 
 
 
-export const deleteCarController = async (req:Request,res:Response) => {
+export const deleteCarController = async (req:Request,res:Response):Promise<any> => {
     
-    const id = req.params.id
+    const id:string = req.params.id
 
     try {
         await deleteCarService(id);

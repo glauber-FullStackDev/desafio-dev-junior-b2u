@@ -1,11 +1,12 @@
+import { User } from "../../types/user";
 import prisma from "../../prisma";
 
 
 
 
-export const readOneUserService = async (id:string) => {
+export const readOneUserService = async (id:string):Promise<User> => {
 
-    const user = await prisma.user.findFirst({
+    const user:User = await prisma.user.findFirst({
         where:{
             id:id
         },

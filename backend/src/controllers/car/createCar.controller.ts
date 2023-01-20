@@ -1,12 +1,12 @@
 import { Request, Response } from "express";
-import { ICar } from "../../interfaces/ICar";
+import { ICar, ICarCreated } from "../../interfaces/ICar";
 import { createCarService } from "../../services/car/createCar.service";
 
-export const createCarController = async(req:Request,res:Response) => {
-    const {donoId,name,marca,ano_fabri,descricao}:ICar = req.body;
+export const createCarController = async(req:Request,res:Response):Promise<any> => {
+    const {donoId,name,marca,ano_fabri,descricao}:ICarCreated = req.body;
 
     try {
-        const newCar = await createCarService({donoId,name,marca,ano_fabri,descricao});
+        const newCar:ICar = await createCarService({donoId,name,marca,ano_fabri,descricao});
         
         return res.status(201).json(newCar);
         

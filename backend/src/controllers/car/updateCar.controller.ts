@@ -1,14 +1,15 @@
 import { Request, Response } from "express";
+import { ICar } from "../../interfaces/ICar";
 import { updateCarService } from "../../services/car/updateCar.service";
 
 
 
-export const updateCarController = async (req:Request,res:Response) => {
+export const updateCarController = async (req:Request,res:Response):Promise<any> => {
     
-    const id = req.params.id
-    const {donoId,name,marca,ano_fabri,descricao} = req.body
+    const id:string = req.params.id
+    const {donoId,name,marca,ano_fabri,descricao}:ICar = req.body
     try {
-        const car = await updateCarService({donoId,name,marca,ano_fabri,descricao,id});
+        const car:ICar = await updateCarService({donoId,name,marca,ano_fabri,descricao,id});
         return res.status(200).json(car);
         
     } catch (err) {

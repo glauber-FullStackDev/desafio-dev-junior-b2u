@@ -1,12 +1,12 @@
 import { Request, Response } from "express";
-import { IUser } from "../../interfaces/IUser";
 import { readOneUserService } from "../../services/user/readOneUser.service";
+import { User } from "../../types/user";
 
 
-export const readOneUserController = async (req:Request,res:Response) => {
+export const readOneUserController = async (req:Request,res:Response):Promise<any> => {
     const id:string = req.params.id;
     try {
-        const user = await readOneUserService(id);
+        const user:User = await readOneUserService(id);
 
         return res.status(200).json(user);
         

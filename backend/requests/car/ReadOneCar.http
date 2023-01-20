@@ -1,2 +1,2 @@
-GET http://localhost:3000/cars/c60370cc-b456-41ae-bbb0-d81d2e505bdd
+GET http://localhost:3000/cars/c880b346-e81f-4ba9-8df6-441cb9ba7940
 Content-Type: application/json

@@ -1,11 +1,17 @@
-import { ICar } from "../../interfaces/ICar";
+import { ICar, ICarCreated } from "../../interfaces/ICar";
 import prisma from "../../prisma";
 
 
 
-export const createCarService = async ({donoId,name,marca,ano_fabri,descricao}:ICar) => {
+export const createCarService = async (
+    {
+        donoId,
+        name,
+        marca,
+        ano_fabri,
+        descricao}:ICarCreated):Promise<ICar> => {
 
-    const newCar = await prisma.car.create({
+    const newCar:ICar = await prisma.car.create({
         data:{
             donoId,
             name,

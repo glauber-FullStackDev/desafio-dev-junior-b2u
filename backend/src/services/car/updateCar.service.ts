@@ -8,10 +8,10 @@ export const updateCarService = async ({
     ano_fabri,
     descricao,
     id
-    }:ICar) =>{
+    }:ICar):Promise<ICar> =>{
 
 
-    const car = await prisma.car.update({
+    const car:ICar = await prisma.car.update({
         where:{
             id
         },

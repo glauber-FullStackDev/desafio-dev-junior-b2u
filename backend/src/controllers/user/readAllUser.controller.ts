@@ -3,7 +3,7 @@ import { IUser } from "../../interfaces/IUser";
 import { readAllUserService } from "../../services/user/readAllUser.service";
 
 
-export const readAllUserController = async (req:Request,res:Response) => {
+export const readAllUserController = async (req:Request,res:Response):Promise<any> => {
 
     try {
 

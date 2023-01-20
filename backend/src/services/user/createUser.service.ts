@@ -8,7 +8,7 @@ export const createUserService = async ({
     tel,
 }:IUser):Promise<IUser> => {
 
-    const newUser = await prisma.user.create({
+    const newUser:IUser = await prisma.user.create({
         data:{
             name,
             email,

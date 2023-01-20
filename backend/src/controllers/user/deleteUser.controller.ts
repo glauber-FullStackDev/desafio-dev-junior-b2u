@@ -2,7 +2,7 @@ import { Request, Response } from "express";
 import { deleteUserService } from "../../services/user/deleteUser.service";
 
 
-export const deleteUserController = async(req:Request,res:Response) => {
+export const deleteUserController = async(req:Request,res:Response):Promise<any> => {
 
     const id:string = req.params.id
     try {

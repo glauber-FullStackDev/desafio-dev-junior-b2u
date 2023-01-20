@@ -1,26 +1,12 @@
+import { ICar } from "./ICar"
 export interface IUser{
     name:string,
     email:string,
     tel:string,
-    id?:string
+    id?:string,
+    carros?:ICar[]
 }
 
-
-
-
-/* export interface IUserUpdated{
-    name: string,
-    email:string,
-    tel: string,
-    id: string
-}
-
-export interface IUserReturned{
-    id:string
-    name:string,
-    email:string,
-    tel:string,
-} */
 
 
 

@@ -1,9 +1,10 @@
+import { ICar } from "../../interfaces/ICar";
 import prisma from "../../prisma";
 
 
-export const readAllCarService = async () => {
+export const readAllCarService = async ():Promise<ICar[]> => {
     
-    const cars = await prisma.car.findMany({
+    const cars:ICar[] = await prisma.car.findMany({
         include:{
             dono:{
                 select:{

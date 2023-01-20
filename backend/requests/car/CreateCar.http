@@ -2,6 +2,7 @@ POST http://localhost:3000/cars
 Content-Type: application/json
 
 {
+"donoId":"2cd4499c-036b-46b4-86f3-a070ac6dc452",
 "name":"Prisma",
 "marca":"Chevrolet",
 "ano_fabri":"2019",

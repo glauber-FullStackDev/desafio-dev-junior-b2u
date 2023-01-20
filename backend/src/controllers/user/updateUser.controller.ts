@@ -3,9 +3,9 @@ import { IUser} from "../../interfaces/IUser";
 import { updateUserService } from "../../services/user/updateUser.service";
 
 
-export const updateUserController = async (req:Request,res:Response) => {
-    const {name,email,tel} = req.body;
-    const id = req.params.id
+export const updateUserController = async (req:Request,res:Response):Promise<any> => {
+    const {name,email,tel}:IUser = req.body;
+    const id:string = req.params.id
 
     try {
         const userUpdated:IUser = await updateUserService({name,email,tel,id});

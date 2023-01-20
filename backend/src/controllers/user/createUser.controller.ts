@@ -5,7 +5,7 @@ import { createUserService } from "../../services/user/createUser.service";
 
 
 
-export const createUserController = async (req:Request,res:Response) => {
+export const createUserController = async (req:Request,res:Response):Promise<any> => {
 
     const {name,email,tel}:IUser = req.body
     try{

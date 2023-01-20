@@ -2,8 +2,8 @@ POST http://localhost:3000/users
 Content-Type: application/json
 
 {
-    "name":"Usuário",
-    "email":"usuarssdsios32@mail.com",
-    "tel":"923ssss2-2033"
+    "name":"Usuárxio",
+    "email":"usuarsssdsios32@mail.com",
+    "tel":"923sssss2-2033"
 
 }

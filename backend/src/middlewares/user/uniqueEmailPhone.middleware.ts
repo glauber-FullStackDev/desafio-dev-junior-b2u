@@ -16,12 +16,12 @@ export const uniqueEmailPhoneMiddleware = async(req:Request,res:Response,next:Ne
         }
     });
 
-    if(emailExist){
+    if(email && emailExist){
         return res.status(400).json({
             message:"Email já existente"
         });
     };
-    if(telExist){
+    if(tel && telExist){
         return res.status(400).json({
             message:'Telefone já existente'
         })
