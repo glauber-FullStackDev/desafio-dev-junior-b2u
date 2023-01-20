@@ -1,6 +1,5 @@
-![Bitcointoyou](https://bitcointoyou.com/_next/static/media/logoAzul.c6609791.png)
-
 # Desafio - Desenvolvedor Fullstack - David Bassouto
+## Utilização da API
 
 David Bassouto
 
@@ -91,3 +90,5 @@ _Rota de editar um veículo por ID_
 > - Tanto o carro quanto o proprietário tem um identificador único
 > - Proprietário e veículos possuem relacionamento de um para vários, ou seja, um mesmo usuário pode ter varias veículos
 >   mas um veículo pertence a apenas um usuário.
+
+![Bitcointoyou](https://bitcointoyou.com/_next/static/media/logoAzul.c6609791.png)
