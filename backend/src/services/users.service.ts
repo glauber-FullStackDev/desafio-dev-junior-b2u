@@ -4,7 +4,14 @@ import PrismaClient from "../database/client";
 import { User } from "../core/entities/user.entity";
 
 export class UsersService {
-  constructor(private readonly prismaClient: typeof PrismaClient) {}
+  constructor(private readonly prismaClient: typeof PrismaClient) {
+    this.create = this.create.bind(this);
+    this.findAll = this.findAll.bind(this);
+    this.findOne = this.findOne.bind(this);
+    this.findOneByEmail = this.findOneByEmail.bind(this);
+    this.update = this.update.bind(this);
+    this.remove = this.remove.bind(this);
+  }
 
   async create(createUserDto: CreateUserDto): Promise<User> {
     return await this.prismaClient.user.create({
