@@ -29,7 +29,7 @@ export const Card = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
-
+  gap: 5px;
   background: #e6e6e6;
   border-radius: 3px;
   word-break: break-all;
@@ -46,7 +46,9 @@ export const Card = styled.div`
 `;
 
 export const Content = styled.div`
-
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
 `
 
 export const Details = styled.button`

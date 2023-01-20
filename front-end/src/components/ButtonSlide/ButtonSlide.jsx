@@ -2,15 +2,16 @@ import { MdKeyboardArrowRight } from "react-icons/md"
 import * as S from "./Styled"
 
 const ButtonSlide = (props) => {
+  const {page,totalPage,button} = props
   return (
     <S.Container>
-            <S.Next onClick={props.button}><MdKeyboardArrowRight size={"30px"} /></S.Next>
+            <S.Next onClick={button}><MdKeyboardArrowRight size={"30px"} /></S.Next>
             <S.Cont>
-                <p>{props.page}</p>
+                <p>{String(page)}</p>
                 <p>de</p>
-                <p>{props.totalPage}</p>
+                <p>{String(totalPage)}</p>
             </S.Cont>
-            <S.Next onClick={props.button}><MdKeyboardArrowRight size={"30px"} /></S.Next>
+            <S.Next onClick={button}><MdKeyboardArrowRight size={"30px"} /></S.Next>
         </S.Container>
   )
 }
