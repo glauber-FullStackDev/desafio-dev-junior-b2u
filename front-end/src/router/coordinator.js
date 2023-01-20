@@ -1,3 +1,8 @@
 export const goToHome = (navigate) => {
-    navigate("/home")
+    navigate("/")
+}
+
+export const goToCreate = (navigate) => {
+    navigate("/create")
+
 }

@@ -4,17 +4,24 @@ import Footer from '../../components/Footer/Footer'
 import Header from '../../components/Header/Header'
 import CardVehicles from '../../components/CardVehicles/CardVehicles'
 import ButtonSlide from '../../components/ButtonSlide/ButtonSlide'
-import { GetVehicles } from '../../services/VehiclesServices'
 import usePagination from '../../hook/usePagination'
+import { useNavigate } from 'react-router-dom'
+import { goToCreate } from '../../router/coordinator'
+import useVehicle from '../../hook/useVehicle'
+import { useEffect } from 'react'
 
 const Home = () => {
-  const vehicles = GetVehicles("/vehicles")
-
-  const {totalCard,totalPages,count,page,pagination} = usePagination(vehicles)
+  const {getVehicles,vehicles} = useVehicle()
+  useEffect(()=> getVehicles("/vehicles"),[])
+  const navigate = useNavigate()
+  const {totalCard,totalPages,count,page,pagination} = 
+  usePagination(vehicles)
   
   return (
     <S.Container>
-      <Header/>
+      <Header
+        button={()=>goToCreate(navigate)}
+      />
         <CardVehicles 
         vehicles={vehicles}
         count={count}
@@ -25,7 +32,9 @@ const Home = () => {
         totalPage={totalPages}
         page={page}
         />
-      <Footer/>
+      <Footer
+      
+      />
     </S.Container>
   )
 }

@@ -29,10 +29,10 @@ export const Card = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
-  
+
   background: #e6e6e6;
-  text-align: center;
   border-radius: 3px;
+  word-break: break-all;
   width: 116px;
   height: 170px;
   padding: 10px;
@@ -45,17 +45,21 @@ export const Card = styled.div`
   }
 `;
 
-export const Information = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+export const Content = styled.div`
 
-  gap: 7px;
-  border-radius: 5px;
-  border: 2.4px solid #d5d5de;
-  background: #ebebf0;
-  word-break: break-word;
-  padding-top: 5px;
+`
+
+export const Details = styled.button`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 0px;
   width: 100%;
-  height: 210px;
+  gap: 8px;
+  background-color: #0f52ba;
+  border-radius: 0 0 8px 8px;
+  color: white;
+  border: none;
+  height: 32px;
 `;
