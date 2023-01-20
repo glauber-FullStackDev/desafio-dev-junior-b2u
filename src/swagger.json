@@ -1,0 +1,160 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Auto Sales Ad Handling API",
+    "description": "This api aims to sell cars",
+    "version": "1.0.0",
+    "contact": {
+      "email": "josielsouza.dj@gmail.com"
+    }
+  },
+  "server": [
+    {
+      "url": "http://localhost:3333",
+      "description": "Create a new car"
+    }
+  ],
+  "paths": {
+    "/createCar": {
+      "post": {
+        "summary": "Create a new car",
+        "description": "Create a new car",
+        "tags": ["Car"],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schema/Car"
+              },
+              "examples": {
+                "car": {
+                  "value": {
+                    "name_car": "Fiat Uno",
+                    "brand": "Fiat",
+                    "year_of_manufacture": "2015",
+                    "description": "Carro de passeio",
+                    "name": "Maria Arruda do Santos",
+                    "email": "maria@gmail.com",
+                    "phone": "(11) 9 5555-5555 "
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "response": {
+        "201": {
+          "description": "Created successfully",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "$ref": "#/components/schema/Car"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/fetchAll": {
+      "get": {
+        "summary": "search all cars",
+        "description": "search all cars",
+        "tags": ["Car"]
+      }
+    },
+    "/changeCar/{:id_car}": {
+      "put": {
+        "description": "change cars",
+        "summary": "change cars",
+        "tags": ["Car"],
+        "paramenters": [
+          {
+            "name": "id",
+            "in": "path"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schema/Car"
+              },
+              "examples": {
+                "car": {
+                  "value": {
+                    "name_car": "Palio",
+                    "brand": "Fiat",
+                    "year_of_manufacture": "2015",
+                    "description": "Carro de passeio",
+                    "name": "Maria Arruda do Santos",
+                    "email": "maria@gmail.com",
+                    "phone": "(11) 9 5555-5555 "
+                  }
+                }
+              }
+            }
+          }
+        },
+        "response": {
+          "201": {
+            "description": "Change successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schema/Car"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/deleteCar/{:id_car}": {
+      "delete": {
+        "description": "delete cars",
+        "summary": "delete cars",
+        "tags": ["Car"],
+        "paramenters": [
+          {
+            "id_car": "id",
+            "in": "path"
+          }
+        ]
+      }
+    }
+  },
+
+  "components": {
+    "schema": {
+      "Car": {
+        "type": "object",
+        "properties": {
+          "name_car": {
+            "type": "string"
+          },
+          "brand": {
+            "type": "string"
+          },
+          "year_of_manufacture": {
+            "type": "Date"
+          },
+          "description": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "phone": {
+            "type": "number"
+          }
+        }
+      }
+    }
+  }
+}
