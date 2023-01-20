@@ -15,7 +15,15 @@ export const createUserService = async ({
             tel
         },
         include:{
-            carros:true
+            carros:{
+                select:{
+                    id:true,
+                    name:true,
+                    marca:true,
+                    ano_fabri:true,
+                    descricao:true
+                }
+            }
         }
     });
 

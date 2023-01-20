@@ -20,6 +20,15 @@ export const updateCarService = async ({
             name,
             marca,
             ano_fabri,descricao
+        },
+        include:{
+            dono:{
+                select:{
+                    name:true,
+                    email:true,
+                    tel:true
+                }
+            }
         }
     })
     

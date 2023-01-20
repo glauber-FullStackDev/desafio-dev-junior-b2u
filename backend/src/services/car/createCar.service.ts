@@ -12,6 +12,15 @@ export const createCarService = async ({donoId,name,marca,ano_fabri,descricao}:I
             marca,
             ano_fabri,
             descricao
+        },
+        include:{
+            dono:{
+                select:{
+                    name:true,
+                    email:true,
+                    tel:true
+                }
+            }
         }
     })
 

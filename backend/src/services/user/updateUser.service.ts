@@ -14,7 +14,15 @@ export const updateUserService = async ({name,email,tel,id}:IUser):Promise<IUser
             tel
         },
         include:{
-            carros:true
+            carros:{
+                select:{
+                    id:true,
+                    name:true,
+                    marca:true,
+                    ano_fabri:true,
+                    descricao:true
+                }
+            }
         }
     });
 

@@ -10,7 +10,15 @@ export const readOneUserService = async (id:string) => {
             id:id
         },
         include:{
-            carros:true
+            carros:{
+                select:{
+                    id:true,
+                    name:true,
+                    marca:true,
+                    ano_fabri:true,
+                    descricao:true
+                }
+            }
         }
     });
 
