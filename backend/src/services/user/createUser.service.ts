@@ -13,6 +13,9 @@ export const createUserService = async ({
             name,
             email,
             tel
+        },
+        include:{
+            carros:true
         }
     });
 

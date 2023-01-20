@@ -1,4 +1,3 @@
-import { IUser } from "../../interfaces/IUser";
 import prisma from "../../prisma";
 
 
@@ -9,6 +8,9 @@ export const readOneUserService = async (id:string) => {
     const user = await prisma.user.findFirst({
         where:{
             id:id
+        },
+        include:{
+            carros:true
         }
     });
 

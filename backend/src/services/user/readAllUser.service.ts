@@ -5,7 +5,11 @@ import prisma from "../../prisma";
 
 export const readAllUserService = async ():Promise<IUser[]> => {
 
-    const users:IUser[] = await prisma.user.findMany()
+    const users:IUser[] = await prisma.user.findMany({
+        include:{
+            carros:true
+        }
+    })
     
     return users;
 

@@ -12,6 +12,9 @@ export const updateUserService = async ({name,email,tel,id}:IUser):Promise<IUser
             name,
             email,
             tel
+        },
+        include:{
+            carros:true
         }
     });
 
