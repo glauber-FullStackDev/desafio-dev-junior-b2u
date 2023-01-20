@@ -29,6 +29,8 @@ Projeto feito para a candidatura para a vaga de Desenvolvedor Fullstack Júnior 
 - [Joi](https://joi.dev/api/?v=17.7.0)
 - [Dotenv](https://www.npmjs.com/package/dotenv)
 - [Nodemon](https://github.com/remy/nodemon#nodemon)
+- [Jest](https://jestjs.io/)
+- [Supertest](https://www.npmjs.com/package/supertest)
 - [Swagger](https://swagger.io/docs/)
 
 ### Banco de Dados
