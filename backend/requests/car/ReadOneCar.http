@@ -1,0 +1,2 @@
+GET http://localhost:3000/cars/ea0fafd4-ad50-4010-936f-73359b710480
+Content-Type: application/json
