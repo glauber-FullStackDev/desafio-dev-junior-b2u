@@ -1,0 +1,24 @@
+.home strong{
+position: relative;
+
+color:#d6006e;
+font-size: 96px;
+line-height: 139px;
+}
+
+.home h1{
+    
+position: relative;
+color:#02ca63;
+line-height: 139px;
+font-size: 96px;
+}
+
+.home{
+height: 720px;
+width: 100%;
+border-radius: 0px;
+background: #1D1D1D;
+margin-top: -65px;
+
+}

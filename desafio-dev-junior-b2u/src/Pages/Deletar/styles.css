@@ -1,0 +1,44 @@
+.delete-area{
+height: 720px;
+width: 100%;
+border-radius: 0px;
+background: #1D1D1D;
+display: flex;
+justify-content: center;
+flex-direction: column;
+align-items: center;
+}
+
+.delete-area h1{
+color: #D6006E;
+
+
+}
+
+.delete-area input{
+height: 97px;
+width: 1273px;
+left: 87px;
+top: 424px;
+border-radius: 8px;
+outline: none;
+padding: 0px 8px;
+font-size: 22px;
+}
+.content-button{
+display: flex;
+justify-content: center;
+margin-top: 35px;
+}
+
+.btn-confirmar{
+height: 97px;
+width: 542px;
+left: 739px;
+top: 981px;
+border-radius: 15px;
+font-size: 32px;
+cursor: pointer;
+background-color: #02ca63;
+color:white;
+}

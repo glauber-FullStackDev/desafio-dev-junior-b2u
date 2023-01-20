@@ -1,0 +1,47 @@
+.header{
+height: 119px;
+width: 100%;
+border-radius: 0px;
+background-color: #F1F1F1;
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+.header img{
+height: 101px;
+width: 132px;
+left: 80px;
+top: 9px;
+border-radius: 0px;
+}
+
+.header a{
+height: 44px;
+width: 126px;
+margin-left: 32px;
+cursor:pointer;
+text-decoration: none;
+color:#1e1e20;
+font-size: 30px;
+}
+.header button{
+height: 54px;
+width: 160px;
+border-radius: 39.5px;
+border: 2px solid #1D1D1D;
+color: #1E1E20;
+cursor:pointer;
+}
+.btn-button a{
+height: 28.819303512573242px;
+width: 116px;
+
+    
+font-size:26px;
+display: flex;
+justify-content: center;
+align-items: center;
+text-align: center;
+margin-left: 18px;
+}
+

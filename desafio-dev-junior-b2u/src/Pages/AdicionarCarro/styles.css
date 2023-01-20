@@ -1,0 +1,93 @@
+.content-area{
+height: 1174px;
+width: 100%;
+border-radius: 0px;
+background: #1D1D1D;
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+.inputs-marca input{
+height: 97px;
+width: 542px;
+left: 157px;
+top: 470px;
+border-radius: 15px;
+background: #38383880;
+padding: 0 12px;
+color:white;
+margin-top: 10px;
+font-size: 20px;
+display: flex;
+flex-direction: column;
+}
+
+.inputs-data input{
+height: 97px;
+width: 542px;
+left: 157px;
+top: 470px;
+border-radius: 15px;
+background: #38383880;
+padding: 0 12px;
+color:white;
+margin-top: 10px;
+font-size: 20px;
+}
+.inputs-nome input{
+height: 97px;
+width: 542px;
+left: 157px;
+top: 470px;
+border-radius: 15px;
+background: #38383880;
+padding: 0 12px;
+color:white;
+margin-top: 10px;
+font-size: 20px; 
+}
+.inputs-desc input{
+height: 97px;
+width: 1124px;
+border-radius: 15px;
+background: #38383880;
+display: flex;
+flex-direction: column;
+padding: 0 12px;
+margin-top: 10px;
+color:white;
+font-size: 20px;
+      
+}
+.content-area label{
+height: 52px;
+width: 94px;
+font-size:36px ;
+color:#d6006e;
+}
+
+.content-area button{
+height: 97px;
+width: 542px;
+cursor: pointer;
+border-radius: 15px;
+background: #02CA63;
+margin-top: 20px;
+font-size: 35px;
+color:#1d1d1d;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.content-area h1{
+height: 116px;
+width: 533px;
+color: #D6006E;
+display: flex;
+justify-content: center;
+font-size: 70px;
+line-height: 116px;
+}
+
