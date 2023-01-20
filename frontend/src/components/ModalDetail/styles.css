@@ -1,0 +1,21 @@
+.modal-detail {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    background-color: rgba(128, 128, 128, 0.5);
+}
+
+.modal-detail img {
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+}

@@ -3,6 +3,7 @@ import './styles.css';
 import api from '../../services/api';
 import { useState, useEffect } from 'react';
 import { notifyError, notifySucess } from '../../utils/notifications';
+import ModalDetail from '../../components/ModalDetail';
 
 function Home() {
   const defaultForm = {
@@ -17,6 +18,8 @@ function Home() {
 
   const [cars, setCars] = useState([]);
   const [form, setForm] = useState({ ...defaultForm });
+  const [open, setOpen] = useState(false);
+  const [car, setCar] = useState({});
 
   useEffect(() => {
     async function handleListCars() {
@@ -59,7 +62,7 @@ function Home() {
       const { data } = await api.get(`/carros`);
 
       setCars([...data]);
-      setForm({...defaultForm});
+      setForm({ ...defaultForm });
 
     } catch (error) {
       notifyError(error.response.data.mensagem);
@@ -67,8 +70,23 @@ function Home() {
   }
 
   function handleChanceForm({ target }) {
-    setForm({...form, [target.name]: target.value});
+    setForm({ ...form, [target.name]: target.value });
   }
+
+  async function handleDetailCar(carId) {
+    try {
+        const response = await api.get(`/carros/${carId}`);
+
+        if (response.status > 204) {
+            return notifyError(response.data.mensagem);
+        }
+
+        setCar({ ...response.data });
+
+    } catch (error) {
+        notifyError(error.response.data.mensagem);
+    }
+}
 
   async function handleDeleteCar(carId) {
     try {
@@ -95,9 +113,9 @@ function Home() {
       <Header />
       <div className="content-home">
         <form
-         className='container-form'
-         onSubmit={handleSubmit}
-         >
+          className='container-form'
+          onSubmit={handleSubmit}
+        >
           <h3>Cadastre um carro</h3>
           <div className='container-inputs'>
             <div className='inputs'>
@@ -169,7 +187,14 @@ function Home() {
         <h1>Lista de anuncios de carros</h1>
         <div className="container-cards">
           {cars.map((car) => (
-            <div className="content-card" key={car.id}>
+            <div
+              className="content-card"
+              key={car.id}
+              onClick={() => {
+                setOpen(true)
+                handleDetailCar(car.id)
+              }}
+            >
               <h2>{car.nome}</h2>
               <strong>{`Marca: ${car.marca}`}</strong>
               <strong>{`Ano de Fabricação: ${car.ano_fabricacao}`}</strong>
@@ -191,6 +216,12 @@ function Home() {
           ))}
         </div>
       </div>
+      <ModalDetail
+        open={open}
+        setOpen={setOpen}
+        cars={cars}
+        car={car}
+      />
     </div>
   );
 }

@@ -87,6 +87,7 @@
     padding: 20px;
     border-radius: 10px;
     cursor: pointer;
+    position: relative;
 }
 
 .content-card:hover {
