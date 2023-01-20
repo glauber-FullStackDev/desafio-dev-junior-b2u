@@ -1,24 +1,89 @@
 ![Bitcointoyou](https://bitcointoyou.com/_next/static/media/logoAzul.c6609791.png)
 
 # Desafio - Desenvolvedor Fullstack - Júnior
-Seja bem-vindo! Este desafio foi projetado para avaliar a sua capacidade técnica como candidato ao cargo proposto.
+
+David Bassouto
+
+[Repositório front-end](https://github.com/DavidBassouto/teste-bitcointoyou-front-davidbassouto)
 
 ## Instruções
-- Faça um fork deste repositório;
-- O conjunto mínimo de tecnologias a serem utilizadas são: alguma das tecnologias front-end e back-end informadas na proposta desse desafio;
-- Crie um passo a passo de como rodar a sua aplicação;
-- Após finalizar, submeta um pull request com um comentário informando o seu e-mail de contato e aguarde nossa avaliação.
 
-## Proposta
-Você deverá desenvolver um projeto utilizando React no front-end e Node.js no back-end com a finalidade de que seja possível listar, visualizar, criar, editar e excluir carros de uma aplicação de anuncios de venda de automóveis.
+- Clonar este repositório
+- Instalar as bibliotecas (yarn add / npm install)
+- Rodar as Migrations (yarn typeorm migration:run -d src/data-source)
+- Conectar servidor ao database com o comando _yarn dev_
+- Acessar a página do [Front-end](https://teste-bitcointoyou-front-davidbassouto.vercel.app/)
+
+## Guia Front-End
+
+- botao _+_ insere novo produto no banco de dados
+- produto adicionado é listado à esquerda
+- cliando no produto listado, mais informações sobre o produto sao carregadas à direita
+- após carregar mais informaçoes sobre um produto, é possivel editá-lo ou removê-lo
+- para editar: clicar no botao Editar
+- para remover: clicar no ícone de lixeira
+- para buscar um produto, digitar texto pretendido no campo "Buscar produtos"
+
+## Guia Back-End
+
+_Rota de Criação de veículo_
+
+- POST: /cars
+  > {
+  > "name":"Palio",
+  > "brand":"Chevrolet",
+  > "price":17500,
+  > "year":2003,
+  > "description":"Carro econômico, confortavel e de manutanção em conta",
+  > "owner":{
+  > "name":"david",
+  > "email": "davidbassoutodev@gmail.com",
+  > "cellphone": "31991970713"
+  > }
+  > }
+  > Retorno Esperado:
+  > "message": "Car created with success",
+  > "car": {
+  > "name": "Palio",
+  > "brand": "Chevrolet",
+  > "price": 17500,
+  > "year":2003,
+  > "description": "Carro econômico, confortavel e de manutanção em conta",
+  > "owner": {
+  > "id": "6d7c264e-fd76-464a-b2c6-f216d1dd9966",
+  > "name": "david",
+  > "email": "davidbassoutodev@gmail.com",
+  > "cellphone": "31991970713"
+  > },
+  > "id": "9d0c1424-c531-4f7b-935e-1e3bf04eba4b",
+  > "created_at": "2023-01-20T15:15:11.130Z",
+  > "updated_at": "2023-01-20T15:15:11.130Z"
+  > }
+  > }
+
+_Rota de Listagem de todos os veículo_
+
+- GET: /cars
+
+_Rota de Listagem de veículo por ID_
+
+- GET: /cars/:carID
+
+_Rota de Listagem de todos os veículos de um mesmo Proprietário_
+
+- GET: /cars/owner/ownerID
+
+_Rota de deletar um veículo por ID_
+
+- DELETE: /cars/:carID
+
+_Rota de editar um veículo por ID_
+
+- PATCH: /cars/:carID
 
 **Observações:**
-> - Você pode persistir os dados em memoria;
-> - Cada carro precisa ter um identificador único, nome, marca, ano de fabricação e descrição;
-> - Além dos dados do carro, é necessário também salvar os dados do dono do carro(nome, email e telefone de contato).
-## Diferenciais
-Serão considerados diferenciais:
 
-- Conhecimento sólido em Expo ou React Native;
-- Boas práticas de escrita de código (código limpo, padrões de arquitetura, etc.);
-- Conhecimento em infraestruturas em nuvem;
+> - Carros com dados persistidos os dados em memoria;
+> - Tanto o carro quanto o proprietário tem um identificador único
+> - Proprietário e veículos possuem relacionamento de um para vários, ou seja, um mesmo usuário pode ter varias veículos
+>   mas um veículo pertence a apenas um usuário.
