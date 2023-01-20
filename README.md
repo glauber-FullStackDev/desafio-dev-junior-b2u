@@ -1,6 +1,6 @@
 ![Bitcointoyou](https://bitcointoyou.com/_next/static/media/logoAzul.c6609791.png)
 
-# Desafio - Desenvolvedor Fullstack - Júnior
+# Desafio - Desenvolvedor Fullstack - David Bassouto
 
 David Bassouto
 
@@ -8,15 +8,16 @@ David Bassouto
 
 ## Instruções
 
-- Clonar este repositório
+- Clonar este repositório (back-end)
 - Instalar as bibliotecas (yarn add / npm install)
+- Configurar arquivo .env , tendo como modelo o arquivo _.env.exemple_
 - Rodar as Migrations (yarn typeorm migration:run -d src/data-source)
 - Conectar servidor ao database com o comando _yarn dev_
-- Acessar a página do [Front-end](https://teste-bitcointoyou-front-davidbassouto.vercel.app/)
+- Acessar a [aplicação Front-end](https://teste-bitcointoyou-front-davidbassouto.vercel.app/), hospedada no **Vercel**
 
 ## Guia Front-End
 
-- botao _+_ insere novo produto no banco de dados
+- botao **+** insere novo produto no banco de dados
 - produto adicionado é listado à esquerda
 - cliando no produto listado, mais informações sobre o produto sao carregadas à direita
 - após carregar mais informaçoes sobre um produto, é possivel editá-lo ou removê-lo
@@ -41,7 +42,10 @@ _Rota de Criação de veículo_
   > "cellphone": "31991970713"
   > }
   > }
-  > Retorno Esperado:
+
+
+  Retorno Esperado:
+
   > "message": "Car created with success",
   > "car": {
   > "name": "Palio",
@@ -83,7 +87,7 @@ _Rota de editar um veículo por ID_
 
 **Observações:**
 
-> - Carros com dados persistidos os dados em memoria;
+> - Carros com dados persistidos em memoria, utilizando TypeORM e Postegres;
 > - Tanto o carro quanto o proprietário tem um identificador único
 > - Proprietário e veículos possuem relacionamento de um para vários, ou seja, um mesmo usuário pode ter varias veículos
 >   mas um veículo pertence a apenas um usuário.
