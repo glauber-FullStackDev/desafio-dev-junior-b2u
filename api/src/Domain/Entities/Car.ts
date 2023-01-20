@@ -1,29 +1,31 @@
 import { ObjectId } from 'mongodb'
-import { IUser } from './User'
 
 export interface ICar {
   id?: string
   _id?: ObjectId
   name: string
+  imageUrl?: string
   brand: string
   fabricationDate: string
   description: string
-  owner: IUser
+  ownerId: string
 }
 
 export class Car {
   name: string
+  imageUrl?: string
   brand: string
   fabricationDate: string
   description: string
-  owner: IUser
+  ownerId: string
 
   constructor (car: ICar) {
-    const { name, brand, fabricationDate, description, owner } = car
+    const { name, brand, imageUrl, fabricationDate, description, ownerId } = car
     this.name = name
     this.brand = brand
+    this.imageUrl = imageUrl
     this.fabricationDate = fabricationDate
     this.description = description
-    this.owner = owner
+    this.ownerId = ownerId
   }
 }
