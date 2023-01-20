@@ -22,3 +22,4 @@ FRONTEND:
 NPM INSTALL
 
 
+email: jeffersonneto1991@gmail.com
