@@ -8,7 +8,7 @@ export const createCarController = async(req:Request,res:Response) => {
     try {
         const newCar = await createCarService({donoId,name,marca,ano_fabri,descricao});
         
-        return res.status(200).json(newCar);
+        return res.status(201).json(newCar);
         
     } catch (err) {
         if(err instanceof Error){
