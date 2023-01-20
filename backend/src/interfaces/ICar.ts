@@ -3,5 +3,6 @@ export interface ICar{
     name:string,
     marca:string,
     ano_fabri:string,
-    descricao:string
+    descricao:string,
+    id?:string
 }

@@ -1,0 +1,6 @@
+PATCH http://localhost:3000/cars/c60370cc-b456-41ae-bbb0-d81d2e505bdd
+Content-Type: application/json
+
+{
+    "name":"Prisma"
+}

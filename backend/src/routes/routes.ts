@@ -18,6 +18,7 @@ import { createCarController } from "../controllers/car/createCar.controller";
 import { readAllCarController } from "../controllers/car/readAllCar.controller";
 import { readOneCarController } from "../controllers/car/readOneCar.controller";
 import { deleteCarController } from "../controllers/car/deleteCar.controller";
+import { updateCarController } from "../controllers/car/updateCar.controller";
 
 
 const router = Router()
@@ -35,6 +36,8 @@ router.post('/cars',createCarController);
 router.get('/cars',readAllCarController);
 router.get('/cars/:id',readOneCarController);
 router.delete('/cars/:id',deleteCarController);
+router.patch('/cars/:id',updateCarController);
+
 
 
 

@@ -8,7 +8,7 @@ export const deleteCarController = async (req:Request,res:Response) => {
     const id = req.params.id
 
     try {
-        const car = await deleteCarService(id);
+        await deleteCarService(id);
         return res.status(204).json({});
         
     } catch (err) {
