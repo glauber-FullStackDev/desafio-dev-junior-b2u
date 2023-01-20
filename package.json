@@ -1,0 +1,24 @@
+{
+  "name": "desafio-dev-junior-b2u",
+  "version": "1.0.0",
+  "description": "![Bitcointoyou](https://bitcointoyou.com/_next/static/media/logoAzul.c6609791.png)",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/josielsouza/desafio-dev-junior-b2u.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/josielsouza/desafio-dev-junior-b2u/issues"
+  },
+  "homepage": "https://github.com/josielsouza/desafio-dev-junior-b2u#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "uuid": "^9.0.0"
+  }
+}
