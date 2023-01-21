@@ -1,0 +1,17 @@
+.baseForm {
+  border: 1px solid black;
+  height: 600px;
+  width: 400px;
+  display: flex;
+}
+
+.baseForm form {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: space-between;
+  text-align: left;
+  padding: 20px;
+}
