@@ -1,12 +1,17 @@
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import TextField from "@mui/material/TextField";
-import { Container, ContainerForm } from "./styles";
+import Button from "@mui/material/Button";
+import { ButtonClose, Container, ContainerForm, Wrapper } from "./styles";
 
-const Form = () => {
+const Form = ({ handleClose }: { handleClose: () => void }) => {
   return (
     <Container>
       <ContainerForm>
+        <Wrapper>
+          <ButtonClose onClick={handleClose}>Close</ButtonClose>
+        </Wrapper>
+
         <Typography variant="h6" gutterBottom>
           Shipping address
         </Typography>
@@ -97,6 +102,7 @@ const Form = () => {
             />
           </Grid>
         </Grid>
+
       </ContainerForm>
     </Container>
   );
