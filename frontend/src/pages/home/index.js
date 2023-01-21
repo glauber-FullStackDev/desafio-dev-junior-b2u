@@ -4,6 +4,7 @@ import api from '../../services/api';
 import { useState, useEffect } from 'react';
 import { notifyError, notifySucess } from '../../utils/notifications';
 import ModalDetail from '../../components/ModalDetail';
+import ModalEdit from '../../components/ModalEdit';
 
 function Home() {
   const defaultForm = {
@@ -20,6 +21,8 @@ function Home() {
   const [form, setForm] = useState({ ...defaultForm });
   const [open, setOpen] = useState(false);
   const [car, setCar] = useState({});
+  const [openEdit, setOpenEdit] = useState(false);
+  const [currentID, setCurrentID] = useState(0);
 
   useEffect(() => {
     async function handleListCars() {
@@ -75,18 +78,18 @@ function Home() {
 
   async function handleDetailCar(carId) {
     try {
-        const response = await api.get(`/carros/${carId}`);
+      const response = await api.get(`/carros/${carId}`);
 
-        if (response.status > 204) {
-            return notifyError(response.data.mensagem);
-        }
+      if (response.status > 204) {
+        return notifyError(response.data.mensagem);
+      }
 
-        setCar({ ...response.data });
+      setCar({ ...response.data });
 
     } catch (error) {
-        notifyError(error.response.data.mensagem);
+      notifyError(error.response.data.mensagem);
     }
-}
+  }
 
   async function handleDeleteCar(carId) {
     try {
@@ -100,13 +103,14 @@ function Home() {
 
       const { data } = await api.get(`/carros`);
 
+      setOpen(false);
+
       setCars([...data]);
 
     } catch (error) {
       notifyError(error.response.data.mensagem);
     }
   }
-
 
   return (
     <div className="container">
@@ -116,7 +120,7 @@ function Home() {
           className='container-form'
           onSubmit={handleSubmit}
         >
-          <h3>Cadastre um carro</h3>
+          <h3 className='form-title'>Cadastre um carro</h3>
           <div className='container-inputs'>
             <div className='inputs'>
               <label htmlFor='nome'>Modelo</label>
@@ -185,6 +189,7 @@ function Home() {
           <button>Cadastrar</button>
         </form>
         <h1>Lista de anuncios de carros</h1>
+        <h3 className='second-title'>Clique no card de qualquer anúncio para ver os detalhes do proprietário</h3>
         <div className="container-cards">
           {cars.map((car) => (
             <div
@@ -202,6 +207,10 @@ function Home() {
               <div className="container-buttons">
                 <button
                   className="btn-edit"
+                  onClick={() => {
+                    setOpenEdit(true)
+                    setCurrentID(car.id)
+                  }}
                 >
                   Editar
                 </button>
@@ -221,6 +230,18 @@ function Home() {
         setOpen={setOpen}
         cars={cars}
         car={car}
+      />
+      <ModalEdit
+        openEdit={openEdit}
+        setOpenEdit={setOpenEdit}
+        setOpen={setOpen}
+        car={car}
+        setCars={setCars}
+        form={form}
+        setForm={setForm}
+        handleChanceForm={handleChanceForm}
+        currentID={currentID}
+        defaultForm={defaultForm}
       />
     </div>
   );
