@@ -16,7 +16,7 @@ export const Wrapper = styled.div`
 export const ButtonClose = styled.button`
   border: none;
   padding: 0.8em;
-  border-radius: 10px;
+  border-radius: 5px;
   cursor: pointer;
   transition: all ease 0.2s;
 

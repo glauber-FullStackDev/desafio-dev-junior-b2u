@@ -12,6 +12,6 @@ app.route("/").get((req: Request, res: Response) => {
   res.status(200).send({ title: "car sale" });
 });
 
-app.use(express.json(), routeCar, routeBrands, routeUsers, cors());
+app.use(express.json(), cors(), routeCar, routeBrands, routeUsers);
 
 app.listen(PORT, () => console.log("Server is running on PORT 4003"));

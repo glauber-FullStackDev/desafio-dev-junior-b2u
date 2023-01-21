@@ -6,4 +6,9 @@ export const ContainerCard = styled(Card)`
   margin: 1em;
 `;
 export const Title = styled.h2``;
+
 export const Description = styled.p``;
+
+export const Wrapper = styled.div`
+  padding-top: 2em;
+`;
