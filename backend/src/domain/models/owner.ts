@@ -1,6 +1,6 @@
 export interface OwnerModel {
   id: string
-  name: string
+  owner_name: string
   email: string
   telephone: string
   created_at: Date

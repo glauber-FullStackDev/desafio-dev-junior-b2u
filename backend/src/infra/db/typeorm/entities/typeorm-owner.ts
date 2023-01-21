@@ -10,7 +10,7 @@ export class TypeOrmOwner implements OwnerModel {
   id: string
 
   @Column()
-  name: string
+  owner_name: string
 
   @Column()
   email: string

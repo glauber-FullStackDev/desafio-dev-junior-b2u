@@ -1,4 +1,4 @@
-export interface UpdateCarRawData {
+export type UpdateCarRawData = {
   name?: string
   brand?: string
   manufactureYear?: number
