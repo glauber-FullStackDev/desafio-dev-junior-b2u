@@ -20,7 +20,7 @@ Olá, seja bem-vindo a minha solução do desafio proposto
 
 ## Rotas de Donos
 
-:id = id do carro
+:id = id do dono
 > - http://localhost:3001/owners/list - retorna todos os donos
 > - http://localhost:3001/owners/details/:id - retorna os detalhes do dono
 > - http://localhost:3001/owners/create - retorna a lista de donos atualizada com o dono que foi cadastrado
