@@ -8,7 +8,7 @@ import Swal from "sweetalert2";
 
 const useVehicle = () => {
   const navigate = useNavigate();
-  const { setVehicles, setVehiclesDetails, setErrorMessage } =
+  const { setVehicles, setVehiclesDetails, setErrorMessage,setLoader } =
     useContext(VehicleContext);
 
   const Toast = Swal.mixin({
@@ -28,6 +28,7 @@ const useVehicle = () => {
       .get(`${BASE_URL}/vehicles`)
       .then((res) => {
         setVehicles(res.data.response);
+        setLoader(true)
         setVehiclesDetails();
       })
       .catch((error) => setVehicles(error.response.data.message));

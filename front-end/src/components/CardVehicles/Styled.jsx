@@ -1,7 +1,5 @@
 import styled, { keyframes } from "styled-components";
 
-
-
 const slideCard = keyframes`
     to {
         opacity: 1;
@@ -23,9 +21,11 @@ export const Card = styled.div`
   opacity: 0;
   transform: translateX(-100px);
   animation: ${slideCard} 0.9s forwards;
+  font-size: 0.8em;
   @media screen and (min-device-width: 800px) {
     width: 170px;
     height: 210px;
+    font-size: 1em;
   }
 `;
 

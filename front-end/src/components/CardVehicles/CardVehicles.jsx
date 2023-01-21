@@ -3,8 +3,8 @@ import { IoMdAdd } from "react-icons/io";
 
 const CardVehicles = (props) => {
   const { vehicle, buttonDetails } = props;
-  let description = vehicle.description.substr(0, 55);
-  description = description.length < 55 ? description : description + "...";
+  let description = vehicle.description.substr(0, 30);
+  description = description.length < 30 ? description : description + "...";
 
   return (
     <S.Card key={vehicle.id}>

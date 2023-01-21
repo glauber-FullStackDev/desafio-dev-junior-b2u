@@ -6,7 +6,7 @@ export const Container = styled.header`
   justify-content: space-between;
   width: 100vw;
   height: 14vh;
-  background: #0f52ba;
+  background: #004AAD;
 `;
 export const Logo = styled.button`
   background: transparent;
@@ -16,9 +16,12 @@ export const Logo = styled.button`
   gap: 4px;
   color: white;
   margin-left: 50px;
+  height: 14vh;
 `;
-export const TitleLogo = styled.h1`
-  font-size: 40px;
+
+export const Img = styled.img`
+  width: 100%;
+  height: 100%;
 `;
 
 export const AddVehicle = styled.button`
@@ -27,7 +30,7 @@ export const AddVehicle = styled.button`
   gap: 5px;
   font-weight: 600;
   border: none;
-  color: #0f52ba;
+  color: #004AAD;
   padding: 10px;
   border-radius: 5px;
   margin-right: 30px;

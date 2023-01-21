@@ -3,6 +3,7 @@ import {AiFillCar} from 'react-icons/ai'
 import {TbArrowBackUp} from 'react-icons/tb'
 import { useLocation, useNavigate } from "react-router-dom"
 import {goToHome} from '../../router/coordinator'
+import logo from "../../assets/logo.png"
 
 const Header = (props) => {
   const location = useLocation()
@@ -10,8 +11,7 @@ const Header = (props) => {
   return (
     <S.Container>
       <S.Logo  onClick={()=>goToHome(navigate)}>
-        <S.TitleLogo>Revenda</S.TitleLogo>
-        <p>de veiculos</p>
+      <S.Img src={logo} alt="" />
       </S.Logo>
 
       {location.pathname === "/" ?

@@ -9,6 +9,10 @@ export const Container = styled.section`
   position: absolute;
   z-index: 1;
   background-color: #181818db;
+  @media screen and (max-device-width: 500px) {
+    width: 100%;
+    height: 100%;
+    }
 `;
 export const Hr = styled.hr`
   width: 300px;
@@ -28,6 +32,9 @@ export const Content = styled.div`
   border-radius: 8px;
   width: 500px;
   height: 500px;
+  @media screen and (max-device-width: 500px) {
+    width: 95vw;
+    }
 `;
 export const Close = styled.button`
   background-color: black;

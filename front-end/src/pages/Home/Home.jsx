@@ -5,6 +5,7 @@ import Header from '../../components/Header/Header'
 import CardVehicles from '../../components/CardVehicles/CardVehicles'
 import ButtonSlide from '../../components/ButtonSlide/ButtonSlide'
 import Details from '../../components/ModalDetails/Details'
+import DefaultPage from '../DefaultPage/DefaultPage'
 import usePagination from '../../hook/usePagination'
 import useVehicle from '../../hook/useVehicle'
 import { useNavigate } from 'react-router-dom'
@@ -16,7 +17,7 @@ const Home = () => {
   const navigate = useNavigate()
   const [modalDetails, setModalDetail] = useState(false)
 
-  const { vehicles, setVehiclesDetails, vehiclesDetails } =
+  const { vehicles, setVehiclesDetails, vehiclesDetails,loader } =
     useContext(VehicleContext)
   const { getVehicles, deleteVehicle } = useVehicle()
     useEffect(() => getVehicles(), [])
@@ -24,7 +25,8 @@ const Home = () => {
     usePagination(vehicles)
 
   return (
-    <S.Container>
+    <>{!loader ? <DefaultPage/> :
+    <S.Container> 
       <Details
         modal={modalDetails}
         close={() => {
@@ -65,6 +67,7 @@ const Home = () => {
       />
       <Footer />
     </S.Container>
+  } </> 
   )
 }
 
