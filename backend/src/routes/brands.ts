@@ -1,8 +1,8 @@
 import { Router } from "express";
 import allBrandsController from "../controllers/brands/allBrands";
 
-const routerBrand = Router();
+const routeBrands = Router();
 
-routerBrand.get("/brands", allBrandsController);
+routeBrands.get("/brands", allBrandsController);
 
-export { routerBrand };
+export { routeBrands };

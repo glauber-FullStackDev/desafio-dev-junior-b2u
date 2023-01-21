@@ -10,17 +10,25 @@ const updateCarController = async (req: Request, res: Response) => {
         id: req.params.id,
       },
       data: {
-        name: req.body.name,
+        model: req.body.model,
         year: req.body.year,
         description: req.body.description,
         brands: {
           update: {
+            brand: req.body.brand,
+          },
+        },
+        users: {
+          update: {
             name: req.body.name,
+            email: req.body.email,
+            phone: req.body.phone,
           },
         },
       },
       include: {
         brands: true,
+        users: true,
       },
     });
     return res.status(201).json({ message: "Car successfully updated!!" });

@@ -8,12 +8,12 @@ const allBrandsController = async (req: Request, res: Response) => {
     const carData = await prisma.carBrand.findMany({
       select: {
         id: true,
-        name: true,
+        brand: true,
       },
     });
     return res.status(201).json(carData);
   } catch (error) {
-    return res.status(400).json({ message: "Error Fetching cars" });
+    return res.status(400).json({ message: "Error Fetching car brands" });
   }
 };
 

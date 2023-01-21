@@ -7,17 +7,25 @@ const createCarController = async (req: Request, res: Response) => {
   try {
     await prisma.cars.create({
       data: {
-        name: req.body.name,
+        model: req.body.model,
         year: req.body.year,
         description: req.body.description,
         brands: {
           create: {
+            brand: req.body.brand,
+          },
+        },
+        users: {
+          create: {
             name: req.body.name,
+            email: req.body.email,
+            phone: req.body.phone,
           },
         },
       },
       include: {
         brands: true,
+        users: true,
       },
     });
 

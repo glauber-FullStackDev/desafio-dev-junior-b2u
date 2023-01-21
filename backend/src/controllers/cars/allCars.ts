@@ -6,12 +6,9 @@ const prisma = new PrismaClient();
 const allCarsController = async (req: Request, res: Response) => {
   try {
     const carData = await prisma.cars.findMany({
-      select: {
-        id: true,
-        name: true,
-        year: true,
-        description: true,
+      include: {
         brands: true,
+        users: true,
       },
     });
     return res.status(201).json(carData);
