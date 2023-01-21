@@ -7,6 +7,11 @@ export const ContainerCard = styled(Card)`
 `;
 export const Title = styled.h2``;
 
+export const SubTitle = styled.h4`
+  font-weight: 500;
+  color: #A1A1A1;
+`;
+
 export const Description = styled.p``;
 
 export const Wrapper = styled.div`
