@@ -13,18 +13,8 @@ const updateCarController = async (req: Request, res: Response) => {
         model: req.body.model,
         year: req.body.year,
         description: req.body.description,
-        brands: {
-          update: {
-            brand: req.body.brand,
-          },
-        },
-        users: {
-          update: {
-            name: req.body.name,
-            email: req.body.email,
-            phone: req.body.phone,
-          },
-        },
+        brandId: req.body.brandId,
+        userId: req.body.userId,
       },
       include: {
         brands: true,
