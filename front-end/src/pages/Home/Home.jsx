@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import * as S from './Styled'
 import Footer from '../../components/Footer/Footer'
 import Header from '../../components/Header/Header'
@@ -6,21 +6,20 @@ import CardVehicles from '../../components/CardVehicles/CardVehicles'
 import ButtonSlide from '../../components/ButtonSlide/ButtonSlide'
 import Details from '../../components/ModalDetails/Details'
 import usePagination from '../../hook/usePagination'
+import useVehicle from '../../hook/useVehicle'
 import { useNavigate } from 'react-router-dom'
 import { goToCreate } from '../../router/coordinator'
-import useVehicle from '../../hook/useVehicle'
-import { useEffect, useState } from 'react'
 import { VehicleContext } from '../../context/vehicleContext'
 
 
 const Home = () => {
   const navigate = useNavigate()
-  const { vehicles, setVehiclesDetails, vehiclesDetails } = useContext(VehicleContext)
   const [modalDetails, setModalDetail] = useState(false)
 
+  const { vehicles, setVehiclesDetails, vehiclesDetails } =
+    useContext(VehicleContext)
   const { getVehicles, deleteVehicle } = useVehicle()
-  useEffect(() => getVehicles(), [])
-
+    useEffect(() => getVehicles(), [])
   const { totalCard, totalPages, count, page, pagination } =
     usePagination(vehicles)
 
@@ -34,9 +33,8 @@ const Home = () => {
         }}
         vehicleDetails={vehiclesDetails}
         deleteVehicle={() => {
-          deleteVehicle(`/vehicles/delete/${vehiclesDetails?.id}`)
+          deleteVehicle(vehiclesDetails?.id)
           setModalDetail(!modalDetails)
-          setVehiclesDetails()
         }}
         update={() => goToCreate(navigate)} />
 

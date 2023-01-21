@@ -21,6 +21,7 @@ export const Content = styled.div`
   flex-direction: column;
   justify-content: center;
   position: relative;
+  word-break: break-all;
   gap: 20px;
   padding: 30px;
   background-color: white;

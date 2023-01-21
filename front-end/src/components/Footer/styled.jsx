@@ -8,6 +8,6 @@ export const Container = styled.footer`
     bottom: 0px;
     width: 100vw;
     height:5vh;
-    background:#EEEEEE;
+    background: #e6e6e6;
     
 `

@@ -1,13 +1,15 @@
 import * as S from "./styled"
 import {AiFillCar} from 'react-icons/ai'
 import {TbArrowBackUp} from 'react-icons/tb'
-import { useLocation } from "react-router-dom"
+import { useLocation, useNavigate } from "react-router-dom"
+import {goToHome} from '../../router/coordinator'
 
 const Header = (props) => {
   const location = useLocation()
+  const navigate = useNavigate()
   return (
     <S.Container>
-      <S.Logo>
+      <S.Logo  onClick={()=>goToHome(navigate)}>
         <S.TitleLogo>Revenda</S.TitleLogo>
         <p>de veiculos</p>
       </S.Logo>

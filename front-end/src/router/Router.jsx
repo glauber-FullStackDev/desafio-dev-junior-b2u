@@ -8,7 +8,6 @@ const Router = () => {
         <Routes>
             <Route index element={<Home/>}/>
             <Route path="/create" element={<CreateVehicle/>}/>
-            <Route path="/create/:id" element={<CreateVehicle/>}/>
         </Routes>
     </BrowserRouter>
   )

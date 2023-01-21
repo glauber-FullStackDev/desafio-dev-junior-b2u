@@ -1,17 +1,18 @@
 import * as S from './Styled'
-import { useNavigate, useParams } from 'react-router-dom'
+import { VehicleContext } from '../../context/vehicleContext'
+import { useNavigate } from 'react-router-dom'
 import { goToHome } from '../../router/coordinator'
 import useForm from '../../hook/useForm'
 import useVehicle from '../../hook/useVehicle'
 import Header from "../../components/Header/Header"
 import Footer from "../../components/Footer/Footer"
 import { useContext } from 'react'
-import { VehicleContext } from '../../context/vehicleContext'
+
 
 const CreateVehicle = () => {
-  const {vehiclesDetails} = useContext(VehicleContext)
+  const { vehiclesDetails, errorMessage } = useContext(VehicleContext)
   const navigate = useNavigate()
-  const { changeVehicle, errorMessage,updateVehicle} = useVehicle()
+  const { createVehicle, updateVehicle } = useVehicle()
 
   const input = {
     carName: '',
@@ -22,25 +23,24 @@ const CreateVehicle = () => {
     telephone: '',
     email: ''
   }
-  const { form, clean, onChange } = 
-  useForm(!vehiclesDetails? input : vehiclesDetails)
+  const { form, clean, onChange } =
+    useForm(!vehiclesDetails ? input : vehiclesDetails)
 
-  console.log(vehiclesDetails)
   const submit = (event) => {
     event.preventDefault()
-    if(!vehiclesDetails){
-      changeVehicle(`/vehicles/create`, form, clean)
-    }else{
-      updateVehicle(`/vehicles/update`, form, clean)
-    }   
+    if (!vehiclesDetails) {
+      createVehicle(form, clean)
+    } else {
+      updateVehicle(form, clean)
+    }
   }
 
   return (
     <S.Container>
       <Header button={() => goToHome(navigate)} />
       <S.Form onSubmit={submit}>
-        <h2>{!vehiclesDetails?"Criar novo veiculo":"Alterar Dados"}</h2>
-        <S.Hr/>
+        <h2>{!vehiclesDetails ? "Criar novo veiculo" : "Alterar Dados"}</h2>
+        <S.Hr />
         {!errorMessage ? '' : <S.Err>{errorMessage}</S.Err>}
         <S.Label htmlFor="carName">
           Modelo
@@ -54,7 +54,6 @@ const CreateVehicle = () => {
             onChange={onChange}
             value={form.carName}
             required
-
           />
         </S.Label>
 
@@ -148,7 +147,7 @@ const CreateVehicle = () => {
         </S.Label>
 
         <S.NeVehicle>
-        {!vehiclesDetails?"Adicionar Veiculo":"Alterar"}
+          {!vehiclesDetails ? "Adicionar Veiculo" : "Alterar"}
         </S.NeVehicle>
       </S.Form>
       <Footer />

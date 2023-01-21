@@ -48,4 +48,9 @@ export const Details = styled.button`
   color: white;
   border: none;
   height: 32px;
+
+  :hover,
+  :active {
+    background-color: #1d6fe9;
+  }
 `;
