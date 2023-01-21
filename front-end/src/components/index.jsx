@@ -15,7 +15,7 @@ export function Registration({ item, handleEditButtonClick, itemDelete, modifySt
               <Text>Telefone: <Span>{itens.telephone}</Span></Text>
               </ContainerText>
               <ContainerText>
-                <Label>Infomaçoes do carro</Label>
+                <Label>INFORMAÇÕES DO CARRO</Label>
                 <hr />
               <Text>Modelo do carro: <Span>{itens.car}</Span></Text>
               <Text>Marca: <Span>{itens.brand}</Span></Text>
