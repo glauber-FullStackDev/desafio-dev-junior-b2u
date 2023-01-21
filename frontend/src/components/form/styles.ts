@@ -33,3 +33,12 @@ export const ContainerForm = styled.form`
   background-color: #ffffff;
   border-radius: 10px;
 `;
+
+export const WrapperClose = styled(Wrapper)`
+  justify-content: center;
+  margin-top: 2em;
+
+  > button {
+    width: 100%;
+  }
+`;

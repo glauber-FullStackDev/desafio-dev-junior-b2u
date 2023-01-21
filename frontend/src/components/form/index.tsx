@@ -2,7 +2,7 @@ import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
-import { ButtonClose, Container, ContainerForm, Wrapper } from "./styles";
+import { ButtonClose, Container, ContainerForm, Wrapper, WrapperClose } from "./styles";
 
 const Form = ({ handleClose }: { handleClose: () => void }) => {
   return (
@@ -102,7 +102,9 @@ const Form = ({ handleClose }: { handleClose: () => void }) => {
             />
           </Grid>
         </Grid>
-
+        <WrapperClose>
+          <ButtonClose onClick={handleClose}>Register</ButtonClose>
+        </WrapperClose>
       </ContainerForm>
     </Container>
   );
