@@ -1,13 +1,12 @@
-import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import Button from "@mui/material/Button";
 
-import { Title, Description } from "./styles";
+import { ContainerCard, Title, Description } from "./styles";
 
 const CardCar = () => {
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <ContainerCard>
       <CardContent>
         <Title>Lizard</Title>
         <Description>
@@ -19,7 +18,7 @@ const CardCar = () => {
         <Button size="small">EDIT</Button>
         <Button size="small">DELETE</Button>
       </CardActions>
-    </Card>
+    </ContainerCard>
   );
 };
 

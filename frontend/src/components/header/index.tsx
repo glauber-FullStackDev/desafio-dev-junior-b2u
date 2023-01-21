@@ -13,6 +13,7 @@ const Header = () => {
         <span />
       </Hamburger>
       <Menu isOpen={isOpen}>
+        <MenuLink href="/cars">Cars</MenuLink>
         <MenuLink href="/users">Users</MenuLink>
         <MenuLink href="/ramdom-dog">Brands</MenuLink>
         <ButtonLogout>Logout</ButtonLogout>
