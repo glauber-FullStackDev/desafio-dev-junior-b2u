@@ -70,25 +70,26 @@ export async function SignIn(req, res) {
 
 export async function Logout(req, res) {
     const token = req.headers.authorization?.replace("Bearer ", "");
+    console.log(token)
 
     try {
 
         const {rows: session} = await authRepository.FindToken(token)
 
         if(session.length === 0) {
-            return res.status(httpStatus.UNAUTHORIZED).send("Sessão não encontrada");
+            return res.status(401).send("Sessão não encontrada");
         }
 
         if (!token) {
-            return res.status(httpStatus.UNAUTHORIZED).send("Sem Token de acesso.");
+            return res.status(401).send("Sem Token de acesso.");
           }
 
         await authRepository.Finish(session[0].token);
         
-        res.status(httpStatus.OK);
+        res.sendStatus(200);
     }
     catch (error) {
-        res.sendStatus(httpStatus.INTERNAL_SERVER_ERROR)
+        res.sendStatus(500)
         console.log(error)
     }
 }

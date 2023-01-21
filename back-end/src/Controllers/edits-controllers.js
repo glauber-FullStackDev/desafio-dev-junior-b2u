@@ -6,7 +6,7 @@ export async function editPicture(req, res) {
   const token = req.headers.authorization?.replace("Bearer ", "");
   const { rows: session } = await authRepository.FindToken(token);
   const { id } = req.params;
-  const { picture } = req.query;
+  const { picture } = req.body;
 
   try {
     if (session.length === 0) {
@@ -40,7 +40,7 @@ export async function editName(req, res) {
   const token = req.headers.authorization?.replace("Bearer ", "");
   const { rows: session } = await authRepository.FindToken(token);
   const { id } = req.params;
-  const { name } = req.query;
+  const { name } = req.body;
 
   try {
     if (session.length === 0) {
@@ -74,7 +74,7 @@ export async function editPrice(req, res) {
   const token = req.headers.authorization?.replace("Bearer ", "");
   const { rows: session } = await authRepository.FindToken(token);
   const { id } = req.params;
-  const { price } = req.query;
+  const { price } = req.body;
 
   try {
     if (session.length === 0) {
@@ -108,7 +108,7 @@ export async function editMark(req, res) {
   const token = req.headers.authorization?.replace("Bearer ", "");
   const { rows: session } = await authRepository.FindToken(token);
   const { id } = req.params;
-  const { mark } = req.query;
+  const { mark } = req.body;
 
   try {
     if (session.length === 0) {
@@ -142,7 +142,7 @@ export async function editYear(req, res) {
   const token = req.headers.authorization?.replace("Bearer ", "");
   const { rows: session } = await authRepository.FindToken(token);
   const { id } = req.params;
-  const { year } = req.query;
+  const { year } = req.body;
 
   try {
     if (session.length === 0) {
@@ -176,7 +176,7 @@ export async function editDescription(req, res) {
   const token = req.headers.authorization?.replace("Bearer ", "");
   const { rows: session } = await authRepository.FindToken(token);
   const { id } = req.params;
-  const { description } = req.query;
+  const { description } = req.body;
 
   try {
     if (session.length === 0) {
