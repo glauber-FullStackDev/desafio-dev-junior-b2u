@@ -7,7 +7,7 @@ const Dashboard = () => {
   return (
     <div className='mt-4'>
         <DashboardTitle text={'Carros'} />
-        <DashboardOrder/>
+        <DashboardOrder opcoes={['Recentemente Adicionados','Mais novos']}/>
         <div className='flex justify-center'>
         <DashboardShowcase/>
 
