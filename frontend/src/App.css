@@ -1,0 +1,14 @@
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: 'Poppins', Arial;;
+}
+
+body{
+  background-color: #E5E5E5;
+}
+
+.container{
+  margin-left: 20%;
+}
