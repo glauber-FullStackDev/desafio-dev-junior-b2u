@@ -1,0 +1,233 @@
+.background{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.background > main{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.search{
+    border: 1px solid;
+    width: 50%;
+    height: 10vh;
+    background-color: #222;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card{
+    background-color: #222;
+    margin: 5px;
+    width: 300px;
+    height: 350px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.image{
+    margin-top: 10px;
+    margin-bottom: -40px;
+    width: 250px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+.info{
+    width: 250px;
+    height: 230px;
+    border: 1px solid white;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+.info > p{
+    margin-top: 10px;
+    margin-bottom: auto;
+    font-size: 13px;
+    color: white;
+    margin-left: 8px;;
+}
+
+.info span{
+    color: #ffbb33;
+}
+
+.botoes{
+    padding: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.botoes button:hover{
+    color: #222;
+}
+
+.botoes > button {
+    width: 75px;
+    height: 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+}
+
+.btn_remove{
+    background-color: rgb(255, 66, 66);
+}
+
+.btn_edit{
+    background-color: rgba(0, 217, 255, 0.834);
+}
+
+.dono{
+    width: 250px;
+    border-top: 1px solid white;
+    margin-top: 5px;
+}
+
+.dono > p{
+    margin-top: 10px;
+    margin-bottom: auto;
+    font-size: 12px;
+    color: white;
+    margin-left: 8px;
+}
+
+.dono span{
+    color: #ffbb33;
+}
+
+.contato{
+    margin-left: 10px;
+}
+.background > main > form{
+    width: 100%;
+}
+
+body {
+    background-color: whitesmoke;
+}
+
+.box{
+    display: flex;
+    height: 50vh;
+    align-items: baseline;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.cardEdit{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: #223;
+    color: white;
+    width: 250px;
+    border-radius: 20px;
+}
+
+.cardEdit > label > input {
+    border: none;
+    padding: 5px;
+    margin-bottom: 10px;
+    background-color: rgb(55, 55, 81);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    color: silver;
+    width: 100%;
+}
+
+label{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    justify-content: space-between;
+    font-size: 14px;
+    margin-left: 23px;
+}
+
+section > button {
+    border: none;
+    width: 80px;
+    height: 25px;
+    margin-top: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+}
+
+section > button:hover{
+    color: black;
+}
+
+.cardEdit > section {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+}
+
+@media(max-width: 600px) {
+    .card{
+        width: 200px;
+        height: 250px;
+        margin-left: 22%;
+        margin-bottom: 20px;
+    }
+
+    .image{
+        margin-top: 10px;
+        width: 170px;
+        height: 70px;
+    }
+    
+    .info{
+        width: 170px;
+        height: 190px;
+    }
+    
+    .info > p{
+        margin-top: 10px;
+        margin-bottom: auto;
+        font-size: 10px;
+    }
+
+    .botoes > button {
+        width: 45px;
+        height: 15px;
+        border-radius: 5px;
+        font-size: 8px;
+    }
+
+    .dono > p{
+        margin-top: 8px;
+        margin-bottom: 4px;
+        font-size: 9px;
+        width: 170px;
+    }
+
+    .box{
+        justify-content: center;
+        margin-top: 60px;
+    }
+
+    .search{
+        width: 90%;
+        height: 10vh;
+    }
+    
+    .background > main{
+        display: flex;
+        justify-content: left;
+        margin-left: 13px;
+    }
+}

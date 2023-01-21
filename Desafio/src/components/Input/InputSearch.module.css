@@ -1,0 +1,38 @@
+.input{
+    display: flex;
+    color: white;
+    margin-right: 25px;
+}
+
+.input > select{
+    margin: 10px;
+    border: none;
+    border-radius: 4px;
+}
+
+.input > select > option{
+    color: #ffbb33;
+    background-color: #223;
+    font-family: 'Josefin Sans', sans-serif;
+    text-align: center;
+}
+
+.input > input{
+    height: 25px;
+    margin-top: 6px;
+    text-align: start;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+}
+
+@media(max-width: 600px){
+    .input > input{
+        font-size: 13px;
+        width: 150px;
+    }
+
+    .input > select > option{
+        font-size: 10px;
+    }
+}
