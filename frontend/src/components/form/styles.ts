@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Select, { SelectChangeEvent } from '@mui/material/Select';
 
 export const Container = styled.section`
   display: flex;
@@ -32,6 +33,10 @@ export const ContainerForm = styled.form`
   padding: 3em;
   background-color: #ffffff;
   border-radius: 10px;
+`;
+
+export const SelectField = styled(Select)`
+  width: 100%;
 `;
 
 export const WrapperClose = styled(Wrapper)`
