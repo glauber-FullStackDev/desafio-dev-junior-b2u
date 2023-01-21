@@ -15,6 +15,7 @@ import {
 } from "./styles";
 
 const Form = ({ handleClose }: { handleClose: () => void }) => {
+  
   return (
     <Container>
       <ContainerForm>
