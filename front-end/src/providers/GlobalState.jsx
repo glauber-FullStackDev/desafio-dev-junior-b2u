@@ -2,7 +2,16 @@ import React, {useState } from 'react'
 import {VehicleContext} from '../context/vehicleContext'
 
 export const GlobalState = (props) => {
-    const[vehicles,setVehicles]  = useState()
+    const vehicle = {
+        vehicleState:{
+            vehicles:[],
+            details:'',
+            error:''
+        },
+        setVehicleState: () => {},
+    }
+
+    // const[vehicles,setVehicles]  = useState()
     const[vehiclesDetails,setVehiclesDetails]  = useState()
     return (
         <div>
