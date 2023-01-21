@@ -1,24 +1,58 @@
 ![Bitcointoyou](https://bitcointoyou.com/_next/static/media/logoAzul.c6609791.png)
 
-# Desafio - Desenvolvedor Fullstack - Júnior
-Seja bem-vindo! Este desafio foi projetado para avaliar a sua capacidade técnica como candidato ao cargo proposto.
+## 🛠️Setup Locally
 
-## Instruções
-- Faça um fork deste repositório;
-- O conjunto mínimo de tecnologias a serem utilizadas são: alguma das tecnologias front-end e back-end informadas na proposta desse desafio;
-- Crie um passo a passo de como rodar a sua aplicação;
-- Após finalizar, submeta um pull request com um comentário informando o seu e-mail de contato e aguarde nossa avaliação.
+> :information_source: You don't need to use the exact CLI commands that will be shown in the following steps. They are only suggestions, once it's the author's preference.
 
-## Proposta
-Você deverá desenvolver um projeto utilizando React no front-end e Node.js no back-end com a finalidade de que seja possível listar, visualizar, criar, editar e excluir carros de uma aplicação de anuncios de venda de automóveis.
+1. Clone the project (using `gh` CLI)
 
-**Observações:**
-> - Você pode persistir os dados em memoria;
-> - Cada carro precisa ter um identificador único, nome, marca, ano de fabricação e descrição;
-> - Além dos dados do carro, é necessário também salvar os dados do dono do carro(nome, email e telefone de contato).
-## Diferenciais
-Serão considerados diferenciais:
+```
+gh repo clone esau-morais/turbo-b2u
+```
 
-- Conhecimento sólido em Expo ou React Native;
-- Boas práticas de escrita de código (código limpo, padrões de arquitetura, etc.);
-- Conhecimento em infraestruturas em nuvem;
+2. Install the dependencies (using `pnpm`)
+
+> :information_source: For convention, `pn` is the alias for `pnpm`
+
+```
+pn install
+```
+
+3. Preparing the database
+
+To make sure that everything works, change the `.env.example` file name to `.env`. Once you've done that, run:
+
+```
+pn prisma db push
+```
+
+After that, Prisma recommends creating an instance to the client by running the command as it shows down below:
+```
+pn prisma generate
+```
+
+4. Run client-side and server-side simultaneously 
+
+```
+pn dev
+```
+
+5. Extra: Testing
+
+Test scripts were not stored at the `package.json`, so it is necessary to run based on the testing library and directly on each directory 
+
+1. `web` 
+
+```
+cd apps/web && pn vitest
+```
+
+2. `server`
+
+```
+cd apps/server pn jest
+```
+
+## LICENSE
+
+For more information, please check the `LICENSE` file at the root of the project

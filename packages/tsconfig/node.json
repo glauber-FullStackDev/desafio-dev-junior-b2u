@@ -1,0 +1,14 @@
+{
+  "extends": "./base.json",
+  "display": "Node.js",
+  "compilerOptions": {
+    "target": "es2016",
+    "noEmit": false,
+    "module": "commonjs",
+    "sourceMap": true
+  },
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
+}
