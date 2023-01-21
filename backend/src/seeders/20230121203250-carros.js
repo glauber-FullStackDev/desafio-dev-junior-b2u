@@ -8,9 +8,7 @@ module.exports = {
         nome: 'Fusca',
         marca: 'Volksvagen',
         ano_fabricacao: '2010',
-        descricao: `Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-          sed do eiusmod tempor incididunt ut labore et
-          dolore magna aliqua.`,
+        descricao: `Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore etdolore magna aliqua.`,
         dono_id: 2,
       },
       {
@@ -18,9 +16,7 @@ module.exports = {
         nome: 'Argo',
         marca: 'Fiat',
         ano_fabricacao: '2020',
-        descricao: `Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-          sed do eiusmod tempor incididunt ut labore et
-          dolore magna aliqua.`,
+        descricao: `Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore etdolore magna aliqua.`,
         dono_id: 1,
       },
       {
@@ -28,9 +24,7 @@ module.exports = {
         nome: 'Voyage',
         marca: 'Volksvagen',
         ano_fabricacao: '2021',
-        descricao: `Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-          sed do eiusmod tempor incididunt ut labore et
-          dolore magna aliqua.`,
+        descricao: `Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore etdolore magna aliqua.`,
         dono_id: 4,
       },
       {
@@ -38,9 +32,7 @@ module.exports = {
         nome: 'Compass',
         marca: 'Jeep',
         ano_fabricacao: '1996',
-        descricao: `Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-          sed do eiusmod tempor incididunt ut labore et
-          dolore magna aliqua.`,
+        descricao: `Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore etdolore magna aliqua.`,
         dono_id: 2,
       },
     ], {});
