@@ -1,6 +1,12 @@
 import * as crypto from 'crypto';
 
 export class CryptoService {
+
+  constructor() {
+    this.hash = this.hash.bind(this);    
+    this.verify = this.verify.bind(this);    
+  }
+
   async hash(password: string): Promise<string> {
     return new Promise<string>((resolve, reject) => {
       const salt = crypto.randomBytes(8).toString('hex');

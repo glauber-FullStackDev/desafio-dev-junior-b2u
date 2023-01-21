@@ -1,10 +1,10 @@
-import { VehiclesService } from "../services/vehicles.service";
+import { VehiclesRepository } from "../repositories/vehicles.repository";
 import { CreateVehicleDto } from "../core/dtos/create-vehicle.dto";
 import { UpdateVehicleDto } from "../core/dtos/update-vehicle.dto";
 import { Request, Response } from "express";
 
 export class VehiclesController {
-  constructor(private readonly vehicleService: VehiclesService) {
+  constructor(private readonly vehicleRepository: VehiclesRepository) {
     this.create = this.create.bind(this);
     this.findAll = this.findAll.bind(this);
     this.findOne = this.findOne.bind(this);
@@ -14,26 +14,28 @@ export class VehiclesController {
   }
 
   async create(req: Request<CreateVehicleDto>, res: Response) {
-    return res.json(await this.vehicleService.create(req.body));
+    return res.json(await this.vehicleRepository.create(req.body));
   }
 
   async findAll(req: Request, res: Response) {
-    return res.json(await this.vehicleService.findAll());
+    return res.json(await this.vehicleRepository.findAll());
   }
 
   async findOne(req: Request<CreateVehicleDto>, res: Response) {
-    return res.json(await this.vehicleService.findOne(req.body.id));
+    return res.json(await this.vehicleRepository.findOne(req.body));
   }
 
   async findOneByPlate(req: Request<CreateVehicleDto>, res: Response) {
-    return res.json(await this.vehicleService.findOneByPlate(req.body.plate));
+    return res.json(
+      await this.vehicleRepository.findOneByPlate(req.body)
+    );
   }
 
   async update(req: Request<UpdateVehicleDto>, res: Response) {
-    return res.json(await this.vehicleService.update(req.body.id!, req.body));
+    return res.json(await this.vehicleRepository.update(req.body));
   }
 
   async remove(req: Request, res: Response) {
-    return res.json(this.vehicleService.remove(req.body.id!));
+    return res.json(this.vehicleRepository.remove(req.body));
   }
 }

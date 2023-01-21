@@ -5,6 +5,7 @@ import vehiclesRouter from "./routes/vehicles.routes";
 import { options } from "./tools/swagger-definitions";
 import swaggerUi from "swagger-ui-express";
 import swaggerJsdoc from "swagger-jsdoc";
+import cors from "cors";
 
 dotenv.config();
 
@@ -12,6 +13,11 @@ const app: Express = express();
 const port = process.env.PORT;
 
 app.use(express.json());
+
+const corsOptions = {
+  origin: "*"
+}
+app.use(cors(corsOptions));
 
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerJsdoc(options)));
 

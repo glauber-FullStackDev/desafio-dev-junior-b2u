@@ -25,6 +25,7 @@ model Vehicle {
   plate       String   @unique
   name        String
   brand       String
+  price       Float
   year        Int
   description String
   User        User?    @relation(fields: [userId], references: [id])

@@ -5,7 +5,8 @@ CREATE TABLE "User" (
     "updatedAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "name" TEXT NOT NULL,
     "email" TEXT NOT NULL,
-    "password" TEXT NOT NULL
+    "password" TEXT NOT NULL,
+    "phone" TEXT NOT NULL
 );
 
 -- CreateTable
@@ -16,8 +17,9 @@ CREATE TABLE "Vehicle" (
     "plate" TEXT NOT NULL,
     "name" TEXT NOT NULL,
     "brand" TEXT NOT NULL,
+    "price" DECIMAL NOT NULL,
     "year" INTEGER NOT NULL,
-    "phone" TEXT NOT NULL,
+    "description" TEXT NOT NULL,
     "userId" TEXT,
     CONSTRAINT "Vehicle_userId_fkey" FOREIGN KEY ("userId") REFERENCES "User" ("id") ON DELETE SET NULL ON UPDATE CASCADE
 );

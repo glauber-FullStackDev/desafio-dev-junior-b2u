@@ -1,34 +1,45 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import React from "react";
+import { Route, Routes, BrowserRouter } from "react-router-dom";
 
-function App() {
-  const [count, setCount] = useState(0)
+import IndexPage from "./pages/IndexPage";
+import LoginPage from "./pages/LoginPage";
+import SignupPage from "./pages/SignupPage";
+import CustomerGuardedRoute from "./components/common/CustomerGuardedRoute";
 
+const CustomersPage = React.lazy(() => import('./pages/CustomersPage'));
+const ForgotPage = React.lazy(() => import('./pages/ForgotPage'));
+const ForgotResponsePage = React.lazy(() => import('./pages/ForgotResponsePage'));
+
+const App = () => {
+  
   return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </div>
-  )
-}
+    <div className="page">
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<IndexPage/>} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/signup" element={<SignupPage />} />
+          <Route path="/forgot" element={<ForgotPage />} />
+          <Route path="/forgot-response" element={<ForgotResponsePage />} />
+          <Route
+            path="/customer"
+            element={
+              <CustomerGuardedRoute>
+                <CustomersPage></CustomersPage>
+              </CustomerGuardedRoute>
+            }
+          />
+          <Route path="*" element={<LoginPage />} />
+        </Routes>
+      </BrowserRouter>
+      {/* <BrowserRouter>
+        <Routes>
 
-export default App
+          <Route path="/" element={<IndexPage />} />
+        </Routes>
+      </BrowserRouter> */}
+    </div>
+  );
+};
+
+export default App;
