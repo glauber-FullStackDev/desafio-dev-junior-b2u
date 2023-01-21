@@ -1,0 +1,4 @@
+node_modules
+.git
+requests.rest
+query.sql
