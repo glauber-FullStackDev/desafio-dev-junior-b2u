@@ -10,7 +10,7 @@ Olá, seja bem-vindo a minha solução do desafio proposto
 - Após instalar os pacotes necessários na pasta backend insira ainda no terminal "npm run dev"
 - Na pasta frontend insira o comando "npm start"
 
-## Rotas de Carro
+## Rotas de Carros
 :id = id do carro
 > - http://localhost:3001/cars/list - retorna todos os carros
 > - http://localhost:3001/cars/details/:id - retorna os detalhes do carro e do dono do carro
