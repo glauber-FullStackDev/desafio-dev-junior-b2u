@@ -35,6 +35,5 @@ userRouter.get("/users/:email", usersController.findOneByEmail);
 userRouter.get("/users", usersController.findAll);
 userRouter.delete("/users", usersController.remove);
 
-userRouter.use((req: Request, res: Response, next: NextFunction) => res.status(404).json({status: "Error", message: "Page not found"}))
 
 export default userRouter;

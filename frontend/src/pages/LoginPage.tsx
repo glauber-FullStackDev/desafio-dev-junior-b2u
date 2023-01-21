@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { login, getRole, isAuthenticated } from "../components/common/auth";
+import { login, isAuthenticated } from "../components/common/auth";
 
 const LoginPage = () => {
   const [email, setEmail] = useState("");
@@ -12,7 +12,7 @@ const LoginPage = () => {
     console.log(token);
     if (isAuthenticated()) {
       const item = sessionStorage.getItem("session-token");
-      if(item && getRole(item) === "CUSTOMER"){
+      if(item){
         window.location.replace("/customer");
         return;
 
@@ -37,12 +37,13 @@ const LoginPage = () => {
     setAuthenticated(true);
     if (isAuthenticated()) {
       const item = sessionStorage.getItem("session-token");
-      if(item && getRole(item) === "CUSTOMER"){
+      if(item ){
         window.location.replace("/customer");
         return;
 
       }
     }
+    // && getRole(item) === "CUSTOMER"
   }
 
   return (

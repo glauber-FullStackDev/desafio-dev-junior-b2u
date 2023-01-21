@@ -1,5 +1,4 @@
 import Config from '../../../config';
-import {parseJwt} from './tools'
 
 async function login(email: string, password: string) {
   const request = new Request(`${Config.backend}/login`, {
@@ -9,6 +8,26 @@ async function login(email: string, password: string) {
       'Content-type': 'application/json',
     },
     body: JSON.stringify({ email, password })
+  });
+
+  try {
+    const response = await fetch(request);
+    const result = await response.json();
+    if(result["token"])
+      window.sessionStorage.setItem("session-token", result["token"])
+    console.log(result);
+  } catch (error) {
+  }
+}
+
+async function signup(email: string, password: string, name: string){
+  const request = new Request(`${Config.backend}/signup`, {
+    method: 'POST',
+    mode: 'cors',
+    headers: {
+      'Content-type': 'application/json',
+    },
+    body: JSON.stringify({ email, password, name })
   });
 
   try {
@@ -32,12 +51,13 @@ function isAuthenticated(): boolean {
   return false;
 }
 
-function getRole(token: string): string | undefined {
-  if(!null){
-    const payload = parseJwt(token);
-    return payload['role'];
-  }
+// function getRole(token: string): string | undefined {
+//   if(!null){
+//     const payload = parseJwt(token);
+//     if(payload["role"])
+//       return payload["role"];
+//   }
 
-}
+// }
 
-export { login, logout, isAuthenticated, getRole };
+export { login, logout, isAuthenticated };

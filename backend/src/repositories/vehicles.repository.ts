@@ -4,6 +4,7 @@ import PrismaClient from "../services/prisma.service";
 import { Vehicle } from "../core/entities/vehicle.entity";
 import { DataResponse, Status } from "../core/entities/responses.entity";
 import { ReadVehicleDto } from "../core/dtos/read-vehicle.dto";
+import { User } from "../core/entities/user.entity";
 
 export class VehiclesRepository {
   constructor(private readonly prismaClient: typeof PrismaClient) {
@@ -27,6 +28,7 @@ export class VehiclesRepository {
         ),
       };
     } catch (error) {
+
       return {
         status: Status.Error,
         message: "Error creating vehicle",
@@ -40,13 +42,26 @@ export class VehiclesRepository {
       return {
         status: Status.Ok,
         message: "Vehicles",
-        data: await <Promise<Vehicle[]>>this.prismaClient.vehicle.findMany(),
+        data: await <Promise<Vehicle[]>>this.prismaClient.vehicle.findMany({
+          orderBy: {
+            createdAt: "desc"
+          },
+          include: {
+            User: {
+              select: {
+                email: true, 
+                fullname: true,
+                phone: true
+              }
+            }
+          }
+        }),
       };
     } catch (error) {
       return {
         status: Status.Error,
         message: "Cannot retrieve vehicles",
-        data: "",
+        // data: "",
       };
     }
   }
@@ -68,7 +83,7 @@ export class VehiclesRepository {
       return {
         status: Status.Error,
         message: "Cannot retrieve vehicle",
-        data: "",
+        // data: "",
       };
     }
   }
@@ -88,7 +103,7 @@ export class VehiclesRepository {
       return {
         status: Status.Error,
         message: "Cannot retrieve vehicle",
-        data: "",
+        // data: "",
       };
     }
   }
@@ -109,7 +124,7 @@ export class VehiclesRepository {
       return {
         status: Status.Error,
         message: "Cannot update vehicle",
-        data: ""
+        // data: ""
       }
     }
   }
@@ -129,7 +144,7 @@ export class VehiclesRepository {
       return {
         status: Status.Error,
         message: "Cannot remove vehicle",
-        data: ""
+        // data: ""
       }
     }
   }

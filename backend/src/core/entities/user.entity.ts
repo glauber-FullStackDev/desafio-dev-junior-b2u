@@ -4,7 +4,7 @@ import { BaseEntity, BaseInterface } from "./base.entity";
 interface User extends BaseInterface{
   email: string;
   password: string;
-  name: string;
+  fullname: string;
   phone: string;
 }
 

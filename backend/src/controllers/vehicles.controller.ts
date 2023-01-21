@@ -22,12 +22,12 @@ export class VehiclesController {
   }
 
   async findOne(req: Request<CreateVehicleDto>, res: Response) {
-    return res.json(await this.vehicleRepository.findOne(req.body));
+    return res.json(await this.vehicleRepository.findOne(req.params));
   }
 
   async findOneByPlate(req: Request<CreateVehicleDto>, res: Response) {
     return res.json(
-      await this.vehicleRepository.findOneByPlate(req.body)
+      await this.vehicleRepository.findOneByPlate(req.params)
     );
   }
 

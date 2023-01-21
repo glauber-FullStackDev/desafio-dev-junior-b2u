@@ -27,6 +27,7 @@ export class UsersRepository {
         )),
       };
     } catch (error) {
+   
       return {
         status: Status.Error,
         message: "Error creating user"
@@ -52,13 +53,26 @@ export class UsersRepository {
 
   async findOne(
     id: string
-  ): Promise<DataResponse<User | string>> {
+  ): Promise<DataResponse<Partial<User> | string>> {
     try {
       return {
         status: Status.Ok,
         message: "User found",
-        data: await (<Promise<User>>
-          this.prismaClient.user.findUniqueOrThrow({ where: { id } })
+        data: await (<Promise<Partial<User>>>
+          this.prismaClient.user.findUniqueOrThrow(
+            { 
+              where: { id },
+              select: {
+                id: true,
+                createdAt: true,
+                updatedAt: true,
+                fullname: true,
+                email: true,
+                phone: true,
+                Vehicles: true
+              }
+            }
+          )
         ),
       };
     } catch (error) {

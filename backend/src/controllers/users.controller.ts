@@ -7,6 +7,7 @@ import { DataResponse, Status } from "../core/entities/responses.entity";
 import { User } from "../core/entities/user.entity";
 import { AuthService } from "../services/auth.service"
 
+
 export class UsersController {
   constructor(
     private readonly userRepository: UsersRepository,
@@ -28,7 +29,7 @@ export class UsersController {
     if(req.body.email && req.body.password){
       const result: DataResponse<User> | undefined = await this.authService.login(req.body.email, req.body.password);
       if(result){
-        console.log(result);
+        // console.log(result);
         return res.json(result);
       }
     }

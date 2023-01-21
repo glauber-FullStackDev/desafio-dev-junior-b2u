@@ -13,28 +13,7 @@ const SignupPage = () => {
 
   function handleSignup(e: React.SyntheticEvent){
     e.preventDefault();
-    const request = new Request(`${Config.backend}/signup`, {
-      method: 'POST',
-      mode: "cors",
-      headers: {
-        'Content-type': 'application/json'
-      },
-      body: JSON.stringify(
-        {
-          email,
-          password
-        }
-      )
-    });
-    console.log(request);
     
-    fetch(request).then((response) => {
-      response.json().then((responseJson) => {
-        sessionStorage.setItem("session-token", responseJson);
-        window.location.replace('/login')
-      });
-    })
-    .catch(error => console.log(error));
   }
 
   function handlePassword(e: React.ChangeEvent<HTMLInputElement>) {

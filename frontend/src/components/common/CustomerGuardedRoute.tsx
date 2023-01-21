@@ -1,11 +1,11 @@
 import React from "react";
 import { Navigate } from "react-router-dom";
-import { isAuthenticated, getRole } from './auth'
+import { isAuthenticated } from './auth'
 
 
 function CustomerGuardedRoute( props: any ) {
   
-    if (isAuthenticated() && getRole(window.sessionStorage.getItem('session-token')) === 'CUSTOMER') {
+    if (isAuthenticated()) {
       return props.children;
     }
     return <Navigate to="/login" />;

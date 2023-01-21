@@ -11,7 +11,7 @@ model User {
   id        String    @id @default(uuid())
   createdAt DateTime  @default(now())
   updatedAt DateTime  @default(now())
-  name      String
+  fullname  String
   email     String    @unique
   password  String
   phone     String
