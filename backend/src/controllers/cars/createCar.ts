@@ -1,5 +1,5 @@
-import { PrismaClient } from "@prisma/client";
 import { Request, Response } from "express";
+import { PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();
 
@@ -10,6 +10,14 @@ const createCarController = async (req: Request, res: Response) => {
         name: req.body.name,
         year: req.body.year,
         description: req.body.description,
+        brands: {
+          create: {
+            name: req.body.name,
+          },
+        },
+      },
+      include: {
+        brands: true,
       },
     });
 

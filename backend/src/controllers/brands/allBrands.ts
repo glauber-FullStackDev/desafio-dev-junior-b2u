@@ -3,15 +3,12 @@ import { PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();
 
-const allCarsController = async (req: Request, res: Response) => {
+const allBrandsController = async (req: Request, res: Response) => {
   try {
-    const carData = await prisma.cars.findMany({
+    const carData = await prisma.carBrand.findMany({
       select: {
         id: true,
         name: true,
-        year: true,
-        description: true,
-        brands: true,
       },
     });
     return res.status(201).json(carData);
@@ -20,4 +17,4 @@ const allCarsController = async (req: Request, res: Response) => {
   }
 };
 
-export default allCarsController;
+export default allBrandsController;

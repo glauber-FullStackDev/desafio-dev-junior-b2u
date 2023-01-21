@@ -11,25 +11,22 @@ datasource db {
 }
 
 model Cars {
-  id          String @id @default(auto()) @map("_id") @db.ObjectId
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
   name        String
   year        String
   description String
-
-  @@map("car")
+  brands      CarBrand @relation(fields: [brandId], references: [id])
+  brandId     String   @db.ObjectId
 }
 
 model CarBrand {
   id   String @id @default(auto()) @map("_id") @db.ObjectId
   name String
-
-  @@map("brand")
+  cars Cars[]
 }
 
 model Users {
   id    String @id @default(auto()) @map("_id") @db.ObjectId
   name  String
   phone String
-
-  @@map("user")
 }
