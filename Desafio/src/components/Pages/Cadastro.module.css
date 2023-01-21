@@ -1,0 +1,101 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.error {
+    border: 1px solid red;
+}
+
+.image{
+    background-image: url(../../assets/car.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.box{
+    height: 50%;
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+    border-radius: 20px;
+}
+
+.box > form{
+    display: flex;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+    border-radius: 20px;
+}
+
+.car{
+    width: 50%;
+    height: 100%;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+}
+
+.owner{
+    width: 50%;
+    height: 100%;
+    background: white;
+    border-left: 1px solid rgb(227, 224, 224);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+
+}
+
+.owner > button {
+    height: 30px;
+    width: 100px;
+    margin-top: 10px;
+    border: none;
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.owner > button:hover {
+    color: #ffcc33;
+}
+
+@media(max-width: 600px) {
+    .box > form{
+        width: 320px;
+        height: 300px;
+    }
+
+    .car > h1{
+        margin-right: 23px;
+    }
+
+    .owner > h1 {
+        font-size: 23px;
+        width: 100%;
+    }
+
+    .owner > button {
+        width: 90px;
+        height: 25px;  
+        border-radius: 5px;
+    }
+
+}

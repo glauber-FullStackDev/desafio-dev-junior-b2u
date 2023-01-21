@@ -1,0 +1,16 @@
+.input{
+    border: none;
+    padding: 10px;
+    border-bottom: 1px solid grey;
+    border-radius: 7px;
+    background: rgba(128, 128, 128, 0.2);
+    margin-bottom: 10px;
+}
+
+@media(max-width: 600px) {
+    .input{
+        padding: 7px;
+        width: 80%;
+        font-size: 12px;
+    }
+}

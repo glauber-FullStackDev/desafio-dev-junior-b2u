@@ -1,0 +1,46 @@
+.image{
+    background-image: url(../../assets/carros/audi_about.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+    height: 40ch;
+}
+
+.information{
+    background-color: #222;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 80ch;
+}
+
+.information > P{
+    color: white;
+    text-align: justify;
+    width: 700px;
+}
+
+.information > h1 {
+    color: white;
+    margin-top: 30px;
+    margin-right: 30px;
+}
+
+span{
+    color: #ffbb22;
+}
+
+@media(max-width: 688px) {
+    .information > p{
+        width: 600px;
+    }
+}
+
+@media(max-width: 600px){
+    .information > p{
+        width: 300px;
+        font-size: 13px;
+        color: rgb(224, 221, 221);
+    }
+}

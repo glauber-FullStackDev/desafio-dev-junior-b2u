@@ -1,24 +1,136 @@
-![Bitcointoyou](https://bitcointoyou.com/_next/static/media/logoAzul.c6609791.png)
+<h1>📢 Desafio - Desenvolvedor Fullstack - Júnior 📢</h1>
 
-# Desafio - Desenvolvedor Fullstack - Júnior
-Seja bem-vindo! Este desafio foi projetado para avaliar a sua capacidade técnica como candidato ao cargo proposto.
+## ⚡ Features ⚡
 
-## Instruções
-- Faça um fork deste repositório;
-- O conjunto mínimo de tecnologias a serem utilizadas são: alguma das tecnologias front-end e back-end informadas na proposta desse desafio;
-- Crie um passo a passo de como rodar a sua aplicação;
-- Após finalizar, submeta um pull request com um comentário informando o seu e-mail de contato e aguarde nossa avaliação.
+- [x] Login Page 
+- [x] Autenticação com username/senha
+- [x] Listar, visualizar, criar, editar, excluir e buscar
+- [x] Conexão com banco de dados NOSQL (MongoDB - AWS/SP)
+- [x] Responsividade
 
-## Proposta
-Você deverá desenvolver um projeto utilizando React no front-end e Node.js no back-end com a finalidade de que seja possível listar, visualizar, criar, editar e excluir carros de uma aplicação de anuncios de venda de automóveis.
+<br/>
 
-**Observações:**
-> - Você pode persistir os dados em memoria;
-> - Cada carro precisa ter um identificador único, nome, marca, ano de fabricação e descrição;
-> - Além dos dados do carro, é necessário também salvar os dados do dono do carro(nome, email e telefone de contato).
-## Diferenciais
-Serão considerados diferenciais:
+## 🤔 Como iniciar o sistema?
+<p>💡 Aqui está as instruções de como iniciar o projeto</p>
 
-- Conhecimento sólido em Expo ou React Native;
-- Boas práticas de escrita de código (código limpo, padrões de arquitetura, etc.);
-- Conhecimento em infraestruturas em nuvem;
+<br/>
+
+```bash
+# Clonando o repositório
+$ git clone <https://github.com/EmersonNog/desafio-dev-junior-b2u>
+
+# Entrando na pasta raiz do projeto
+$ cd desafio-dev-junior-b2u
+$ cd Desafio
+
+# Instalando as dependências do arquivo package.json
+$ yarn install
+```
+<br/>
+
+### 🎲 Rodando o Back-end na porta:3000
+```bash
+$ yarn dev
+```
+
+### 🎲 Rodando o Front-end na porta:3001
+```bash
+$ yarn start
+# irá aparecer essas mensagens:
+$ ? Something is already running on port 3000.
+$ Would you like to run the app on another port instead? » (Y/n)
+# Pressione o "y"
+$ y
+```
+
+---
+</br>
+
+# 🕵🏻 Aplicação
+
+## 🔒 Login de acesso
+
+```
+Username: bitcoin
+Password: bitcoin
+```
+
+## 🏡 Home Page
+```
+A página principal da aplicação, mostra uma introdução ao objetivo geral.
+```
+
+## 📋 Tela de Cadastro de anúncios
+```
+Nessa área pode-se cadastrar os dados pedidos no desafio, dados relacionados ao carro e ao dono.
+```
+
+## 📰 Tela de catálogo com os anúncios
+```
+Aqui será listado todos os anúncios podendo editar, remover e também adicionei uma função de fazer buscas.
+```
+
+## 📜 Tela de About
+```
+Página onde faço uma conclusão do projeto.
+```
+
+---
+</br>
+
+## 👨‍💻 Tecnologias utilizadas
+<br/>
+
+🛠️ As seguintes ferramentas foram usadas na construção do projeto:
+
+- [ReactJS](https://pt-br.reactjs.org/)
+- [NodeJS](https://nodejs.org/en/)
+- [Axios](https://axios-http.com/ptbr/docs/intro)
+- [Express](https://expressjs.com/pt-br/)
+- [MongoDB](https://www.mongodb.com/)
+- [Mongoose](https://mongoosejs.com/)
+- [Nodemon](https://nodemon.io/)
+- [HTML](https://developer.mozilla.org/pt-BR/docs/Web/HTML)
+- [CSS](https://developer.mozilla.org/pt-BR/docs/Web/CSS)
+
+---
+
+<br/>
+<br/>
+
+## 🏛️ Arquitetura do Projeto
+
+<br/>
+
+```markdown
+src/
+  ├── assets/
+  │     └── carros/
+  │
+  ├── components/
+  │     ├── Catalogo/
+  │     │    
+  │     ├── Input/
+  │     │
+  │     ├── Layouts/
+  │     │
+  │     ├── Pages/
+  │     │    
+  │     └── Services/
+  │
+  ├── server/
+  │     ├── config/
+  │     │
+  │     ├── controllers/
+  │     │
+  │     ├── models/
+  │     │
+  │     ├── routes.js
+  │     │
+  │     └── server.js
+  │     
+  ├── App.js
+  └── index.js
+```
+
+Made by Emerson N. Santos 👨🏼‍💻 - [LinkedIn](https://www.linkedin.com/in/noggueira)
