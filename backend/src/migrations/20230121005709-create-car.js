@@ -13,6 +13,10 @@ module.exports = {
         allowNull: false,
         type: Sequelize.STRING
       },
+      imagem: {
+        allowNull: false,
+        type: Sequelize.BLOB,
+      },
       marca: {
         allowNull: false,
         type: Sequelize.STRING

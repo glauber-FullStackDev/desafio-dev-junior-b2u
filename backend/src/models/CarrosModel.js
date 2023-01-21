@@ -5,8 +5,8 @@ module.exports = (sequelize, DataTypes) => {
     marca: DataTypes.STRING,
     anoFabricacao: DataTypes.STRING,
     descricao: DataTypes.STRING,
+    imagem: DataTypes.BLOB,
     donoId: { type: DataTypes.INTEGER, foreignKey: true },
-
   },
     {
       timestamps: false,
