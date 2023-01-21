@@ -19,7 +19,7 @@ module.exports = {
       },
       anoFabricacao: {
         allowNull: false,
-        type: Sequelize.DATE,
+        type: Sequelize.STRING,
         field: 'ano_fabricacao',
       },
       descricao: {
