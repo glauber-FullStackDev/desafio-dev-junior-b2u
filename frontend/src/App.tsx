@@ -4,7 +4,8 @@ import { Route, Routes, BrowserRouter } from "react-router-dom";
 import IndexPage from "./pages/IndexPage";
 import LoginPage from "./pages/LoginPage";
 import SignupPage from "./pages/SignupPage";
-import CustomerGuardedRoute from "./components/common/CustomerGuardedRoute";
+import CustomerGuardedRoute from "./guards/CustomerGuardedRoute";
+import AddVehiclePage from "./pages/AddVehiclePage";
 
 const CustomersPage = React.lazy(() => import('./pages/CustomersPage'));
 const ForgotPage = React.lazy(() => import('./pages/ForgotPage'));
@@ -21,6 +22,7 @@ const App = () => {
           <Route path="/signup" element={<SignupPage />} />
           <Route path="/forgot" element={<ForgotPage />} />
           <Route path="/forgot-response" element={<ForgotResponsePage />} />
+          <Route path="/add" element={<AddVehiclePage />} />
           <Route
             path="/customer"
             element={

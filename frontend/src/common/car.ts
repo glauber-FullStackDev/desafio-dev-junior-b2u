@@ -1,3 +1,5 @@
+import User from "./user";
+
 interface Car {
   id?: string;
   name?: string;
@@ -9,5 +11,6 @@ interface Car {
   phone?: string;
   email?: string;
   cardId?: string;
+  User?: User;
 }
 export default Car;

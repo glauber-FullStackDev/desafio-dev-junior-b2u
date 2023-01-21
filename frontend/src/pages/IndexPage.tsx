@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
-import { getIndexData } from "../components/common/pageData";
+import { getIndexData } from "../common/pageData";
 import Card from "../components/Card";
-import Car from "../components/common/car";
+import Car from "../common/car";
+import User from "../common/user";
 
 const IndexPage = () => {
   const navigate = (inc: number) => {
@@ -42,9 +43,9 @@ const IndexPage = () => {
               price={car.price}
               year={car.year}
               description={car.description}
-              owner={car.User.fullname}
-              phone={car.User.phone}
-              email={car.User.email}
+              owner={car.User!.fullname}
+              phone={car.User!.phone}
+              email={car.User!.email}
               cardId={index.toString()}
               key={index}
             />

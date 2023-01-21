@@ -1,4 +1,4 @@
-import Config from '../../../config';
+import Config from '../../config';
 
 async function login(email: string, password: string) {
   const request = new Request(`${Config.backend}/login`, {

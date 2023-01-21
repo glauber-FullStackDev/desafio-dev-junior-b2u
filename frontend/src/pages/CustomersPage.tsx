@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { logout } from "../components/common/auth";
+import { logout } from "../common/auth";
 
 const CustomersPage = () => {
   const handleLogout = () => {
