@@ -1,0 +1,24 @@
+.title{
+    margin-top: 2%;
+}
+.FormAddCar{
+    display: flex;
+}
+.FormAddCar-item{
+    display: flex;
+    flex-direction: column;
+    margin-right: 1%;
+}
+
+.btn{
+    border: none;
+    color: #0B63F8;
+    margin-top: 1%;
+    background: none;
+    cursor: pointer;
+    font-size: xx-large;
+}
+
+#owner{
+    max-width: 167px;
+}

@@ -1,0 +1,34 @@
+.card-container{
+    margin-top: 1%;
+    margin-left: -5%;
+    display: flex;
+    flex-wrap: wrap;
+    width: 83%;
+}
+
+.card{
+    display: flex;
+    width: 30%;
+    flex-direction: column;
+    align-items: center;
+    background: #fff;
+    border: 1px solid #7d7878;
+}
+
+.card span{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 15ch;
+}
+
+
+.icons{
+    display: flex;
+    width: inherit;
+    justify-content: space-around;
+}
+
+.icons span{
+    cursor: pointer;
+}
