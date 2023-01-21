@@ -1,0 +1,102 @@
+[
+    {
+      "id": "de2176bf-de19-41e4-97ab-782f2c40a934",
+      "carName": "Logan Zen 1.0",
+      "brand": "Renault",
+      "yearOfManufacture": 2020,
+      "description": "Ar condicionado e câmbio manual de 5 marchas",
+      "name": "Marcos",
+      "telephone": "53 999653214",
+      "email": "Marcos@gmail.com"
+    },
+    {
+      "id": "de2176bf-de19-41e4-97ab-782f2c40a935",
+      "carName": "Voyage 1.0",
+      "brand": "Volkswagen",
+      "yearOfManufacture": 2017,
+      "description": "rodas aro 14 , cor preto 20mil km",
+      "name": "Joana",
+      "telephone": "48 998632549",
+      "email": "Joana@gmail.com"
+    },
+    {
+      "id": "de2176bf-de19-41e4-97ab-782f2c40a936",
+      "carName": "Cronos 1.3",
+      "brand": "Fiat",
+      "yearOfManufacture": 2021,
+      "description": "com motor 1.3 flex de 109 cv e câmbio manual de 5 marchas, é uma das opções mais econômicas, segundo o Inmetro.",
+      "name": "Pedro",
+      "telephone": "47 999656598",
+      "email": "Pedro@gmail.com"
+    },
+    {
+      "id": "de2176bf-de19-41e4-97ab-782f2c40a937",
+      "carName": "HB20 Sense",
+      "brand": "Hyundai",
+      "yearOfManufacture": 2022,
+      "description": "Com motor 1.0 flex aspirado de três cilindros de 80 cv e câmbio manual de 5 marchas",
+      "name": "Samanta",
+      "telephone": "96 991366989",
+      "email": "Samanta@gmail.com"
+    },
+    {
+      "id": "de2176bf-de19-41e4-97ab-782f2c40a938",
+      "carName": "Argo 1.0",
+      "brand": "Fiat",
+      "yearOfManufacture": 2022,
+      "description": "Equipada com motor 1.0 flex de 77 cv, câmbio manual de 5 marchas",
+      "name": "Ronaldo",
+      "telephone": "68 992366542",
+      "email": "Ronaldo@gmail.com"
+    },
+    {
+      "id": "de2176bf-de19-41e4-97ab-782f2c40a939",
+      "carName": "Mobi Easy",
+      "brand": "Fiat",
+      "yearOfManufacture": 2018,
+      "description": "Fiat Mobi ainda é o carro mais barato do Brasil e um dos mais econômicos",
+      "name": "Alex",
+      "telephone": "51 966232541",
+      "email": "Alex@gmail.com"
+    },
+    {
+      "id": "de2176bf-de19-41e4-97ab-782f2c40a940",
+      "carName": "HB20S Platinum",
+      "brand": "Hyundai",
+      "yearOfManufacture": 2020,
+      "description": "É equipado com propulsor 1.0 turbo flex de 120 cv e câmbio manual de 6 marchas",
+      "name": "Maria",
+      "telephone": "50 366521445",
+      "email": "Maria@gmail.com"
+    },
+    {
+      "id": "de2176bf-de19-41e4-97ab-782f2c40a941",
+      "carName": "Onix 1.0",
+      "brand": "Chevrolet",
+      "yearOfManufacture": 2021,
+      "description": "Consumo energético",
+      "name": "Joaquin",
+      "telephone": "40 999352563",
+      "email": "Joaquin@gmail.com"
+    },
+    {
+      "id": "de2176bf-de19-41e4-97ab-782f2c40a942",
+      "carName": "Kwid Life",
+      "brand": "Renault",
+      "yearOfManufacture": 2017,
+      "description": "Consumo cidade | estrada (etanol)",
+      "name": "Ana",
+      "telephone": "51 995632115",
+      "email": "Ana@gmail.com"
+    },
+    {
+      "id": "de2176bf-de19-41e4-97ab-782f2c40advd2",
+      "carName": "Gol",
+      "brand": "Volkswagen",
+      "yearOfManufacture": 2017,
+      "description": "Carro com 100mil km em muito com estado",
+      "name": "Ana",
+      "telephone": "51 995632115",
+      "email": "Ana@gmail.com"
+    }
+  ]
