@@ -31,7 +31,6 @@ const Header = () => {
         <FaUser color='#616161'/>
         <h2 className='text-gray-six'>Usuários</h2>
         </div>
-        
     </div>
     </>
   )
