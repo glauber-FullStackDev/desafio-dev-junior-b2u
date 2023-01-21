@@ -22,7 +22,7 @@ const Header = () => {
         <Button text={'Adicionar carro'} className='bg-primary-dark cursor-pointer'/>
         </div>
     </div>
-    <div className=' p-2 flex sm:hidden justify-center gap-x-12'>
+    <div className=' p-2 flex sm:hidden justify-center gap-x-12 mt-4'>
         <div className='flex items-center gap-x-2'>
         <FaCar color='#0817FF'/>
         <h2 className='text-primary-dark'>Carros</h2>
