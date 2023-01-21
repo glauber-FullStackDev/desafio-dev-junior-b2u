@@ -1,9 +1,13 @@
+import { useEffect, useState } from "react";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import TextField from "@mui/material/TextField";
 
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
+
+import getAllBrands from "../../services/brands/get-all-brands";
+import { toast } from "react-toastify";
 
 import {
   ButtonClose,
@@ -15,7 +19,20 @@ import {
 } from "./styles";
 
 const Form = ({ handleClose }: { handleClose: () => void }) => {
-  
+  const [brands, setBrands] = useState([]);
+
+  const getBrands = async () => {
+    const response = await getAllBrands();
+    if (response.erro) {
+      toast.error(response.error);
+    }
+    setBrands(response);
+  };
+
+  useEffect(() => {
+    getBrands();
+  }, []);
+
   return (
     <Container>
       <ContainerForm>
@@ -48,9 +65,9 @@ const Form = ({ handleClose }: { handleClose: () => void }) => {
           <Grid item xs={12} sm={6}>
             <InputLabel>Brands</InputLabel>
             <SelectField>
-              <MenuItem value={10}>Ten</MenuItem>
-              <MenuItem value={20}>Twenty</MenuItem>
-              <MenuItem value={30}>Thirty</MenuItem>
+              {brands.map((brandCar) => (
+                <MenuItem value={brandCar.id}>{brandCar.brand}</MenuItem>
+              ))}
             </SelectField>
           </Grid>
           <Grid item xs={12} sm={6}>

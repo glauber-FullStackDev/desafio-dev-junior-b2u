@@ -1,7 +1,6 @@
 import apiBrands from "./api";
 
-
-const getAllCars = async () => {
+const getAllBrands = async () => {
   return await apiBrands
     .get("/brands")
     .then((response) => response.data)
@@ -10,4 +9,4 @@ const getAllCars = async () => {
     });
 };
 
-export default getAllCars;
+export default getAllBrands;
