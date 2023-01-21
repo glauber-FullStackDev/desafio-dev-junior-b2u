@@ -3,16 +3,17 @@ import CardContent from "@mui/material/CardContent";
 import Button from "@mui/material/Button";
 
 import { ContainerCard, Title, Description, Wrapper } from "./styles";
+import { ICars } from "../../interface/ICars";
 
-const CardCar = ({ id, index, model, year, description, brand }) => {
+const CardCar = ({ carId, index, carmModel, carYear, carDescription, carBrands }: ICars) => {
   return (
     <ContainerCard key={index}>
       <CardContent>
-        <Title>{model}</Title>
-        <Description>{brand}</Description>
+        <Title>{carmModel}</Title>
+        <Description>{carBrands}</Description>
         <Wrapper>
-          <Description>{description}</Description>
-          <Description>Year: {year}</Description>
+          <Description>{carDescription}</Description>
+          <Description>Year: {carYear}</Description>
         </Wrapper>
       </CardContent>
       <CardActions>
