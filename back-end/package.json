@@ -1,0 +1,12 @@
+{
+  "name": "desafio-dev-junior-b2u",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:pvpmartins/desafio-dev-junior-b2u.git",
+  "author": "Paulo <pvpmartins@hotmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2"
+  }
+}
