@@ -1,4 +1,3 @@
-import allCarsRepository from "../../repositories/cars/all-cars-repository";
 import createCarsRepository from "../../repositories/cars/create-car-repository";
 
 const createCarsService = async (params: any) => {

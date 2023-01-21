@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import createCarsService from "../../services/cars/create-cars-service";
+import createCarsService from "../../services/cars/create-car-service";
 
 const createCarController = async (req: Request, res: Response) => {
   const response = await createCarsService(req.body);
