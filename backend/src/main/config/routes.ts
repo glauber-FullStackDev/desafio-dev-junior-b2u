@@ -8,7 +8,7 @@ import path from 'path'
 
 export default (app: Express): void => {
   const router = Router()
-  app.use(router)
+  app.use('/api/v1/', router)
   /*
     The fs.readdirSync() method is used to synchronously
     read the contents of a given directory.

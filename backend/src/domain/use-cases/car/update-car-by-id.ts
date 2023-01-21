@@ -5,6 +5,6 @@ export type UpdateCarRawData = {
   description?: string
 }
 
-export interface UpdateCar {
+export interface UpdateCarById {
   updateById: (id: string, raw: UpdateCarRawData) => Promise<void>
 }

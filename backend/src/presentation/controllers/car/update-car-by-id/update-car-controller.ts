@@ -1,13 +1,13 @@
-import { DeleteCarById } from '../../../../domain/use-cases/car/delete-car-by-id'
+import { UpdateCarById } from '../../../../domain/use-cases/car/update-car-by-id'
 import { noContent, serverError } from '../../../helpers/http/http-helper'
 import { Controller } from '../../../protocols/controller'
 import { HttpRequest, HttpResponse } from '../../../protocols/http'
 
-export class DeleteCarByIdController implements Controller {
-  private readonly deleteCar: DeleteCarById
+export class UpdateCarByIdController implements Controller {
+  private readonly updateCar: UpdateCarById
 
-  constructor (deleteCar: DeleteCarById) {
-    this.deleteCar = deleteCar
+  constructor (updateCar: UpdateCarById) {
+    this.updateCar = updateCar
   }
 
   async handle (httpRequest: HttpRequest): Promise<HttpResponse> {
@@ -16,7 +16,9 @@ export class DeleteCarByIdController implements Controller {
         id
       } = httpRequest.params
 
-      await this.deleteCar.deleteById(id)
+      const updateData = httpRequest.body
+
+      await this.updateCar.updateById(id, updateData)
 
       return noContent()
     } catch (err) {
