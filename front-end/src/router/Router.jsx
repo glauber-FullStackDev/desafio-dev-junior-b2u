@@ -1,13 +1,14 @@
 import {Route,Routes,BrowserRouter} from "react-router-dom"
 import Home from "../pages/Home/Home"
-import CreateCar from "../pages/CreateCar/CreateCar"
+import CreateVehicle from "../pages/CreateVehicle/CreateVehicle"
 
 const Router = () => {
   return (
     <BrowserRouter>
         <Routes>
             <Route index element={<Home/>}/>
-            <Route path="/create" element={<CreateCar/>}/>
+            <Route path="/create" element={<CreateVehicle/>}/>
+            <Route path="/create/:id" element={<CreateVehicle/>}/>
         </Routes>
     </BrowserRouter>
   )

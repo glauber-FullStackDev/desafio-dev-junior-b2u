@@ -1,15 +1,19 @@
-import React from 'react'
 import * as S from './Styled'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import { goToHome } from '../../router/coordinator'
 import useForm from '../../hook/useForm'
 import useVehicle from '../../hook/useVehicle'
 import Header from "../../components/Header/Header"
 import Footer from "../../components/Footer/Footer"
-const CreateCar = () => {
+import { useContext } from 'react'
+import { VehicleContext } from '../../context/vehicleContext'
+
+const CreateVehicle = () => {
+  const {vehiclesDetails} = useContext(VehicleContext)
   const navigate = useNavigate()
-  const { changeVehicle, errorMessage } = useVehicle()
-  const { form, clean, onChange } = useForm({
+  const { changeVehicle, errorMessage,updateVehicle} = useVehicle()
+
+  const input = {
     carName: '',
     brand: '',
     yearOfManufacture: '',
@@ -17,18 +21,25 @@ const CreateCar = () => {
     name: '',
     telephone: '',
     email: ''
-  })
+  }
+  const { form, clean, onChange } = 
+  useForm(!vehiclesDetails? input : vehiclesDetails)
 
+  console.log(vehiclesDetails)
   const submit = (event) => {
     event.preventDefault()
-    changeVehicle("/vehicles/create", form, clean)
+    if(!vehiclesDetails){
+      changeVehicle(`/vehicles/create`, form, clean)
+    }else{
+      updateVehicle(`/vehicles/update`, form, clean)
+    }   
   }
 
   return (
     <S.Container>
       <Header button={() => goToHome(navigate)} />
       <S.Form onSubmit={submit}>
-        <h2>Criar novo veiculo</h2>
+        <h2>{!vehiclesDetails?"Criar novo veiculo":"Alterar Dados"}</h2>
         <S.Hr/>
         {!errorMessage ? '' : <S.Err>{errorMessage}</S.Err>}
         <S.Label htmlFor="carName">
@@ -136,11 +147,13 @@ const CreateCar = () => {
           />
         </S.Label>
 
-        <S.NeVehicle>Adicionar Veiculo</S.NeVehicle>
+        <S.NeVehicle>
+        {!vehiclesDetails?"Adicionar Veiculo":"Alterar"}
+        </S.NeVehicle>
       </S.Form>
       <Footer />
     </S.Container>
   )
 }
 
-export default CreateCar
+export default CreateVehicle
