@@ -79,12 +79,22 @@ function Home() {
   async function handleDetailCar(carId) {
     try {
       const response = await api.get(`/carros/${carId}`);
-
+      
       if (response.status > 204) {
         return notifyError(response.data.mensagem);
       }
 
-      setCar({ ...response.data });
+      const currentCar = {
+        nome: response.data.nome,
+        marca: response.data.marca,
+        ano_fabricacao: response.data.ano_fabricacao,
+        descricao: response.data.descricao,
+        nome_dono: response.data.dono.nome,
+        email_dono: response.data.dono.email,
+        telefone_dono: response.data.dono.telefone
+      }
+
+      setCar({ ...currentCar });
 
     } catch (error) {
       notifyError(error.response.data.mensagem);

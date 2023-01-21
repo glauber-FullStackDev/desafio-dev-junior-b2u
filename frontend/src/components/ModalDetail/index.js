@@ -19,9 +19,9 @@ function ModalDetail({ open, setOpen, car }) {
                         <strong>{car.marca}</strong>
                         <strong>{car.ano_fabricacao}</strong>
                         <span>{car.descricao}</span>
-                        <span>{`Nome do dono: ${car.dono.nome}`}</span>
-                        <span>{`E-mail de contato: ${car.dono.email}`}</span>
-                        <span>{`Telefone de contato: ${car.dono.telefone}`}</span>
+                        <span>{`Nome do dono: ${car.nome_dono}`}</span>
+                        <span>{`E-mail de contato: ${car.email_dono}`}</span>
+                        <span>{`Telefone de contato: ${car.telefone_dono}`}</span>
                     </div>
                 </div>
             }
