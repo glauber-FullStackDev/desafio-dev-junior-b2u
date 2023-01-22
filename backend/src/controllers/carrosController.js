@@ -16,7 +16,6 @@ const getCars = async (_req, res, _next) => {
 
 const postCar = async (req, res, _next) => {
   const createCar = await carsService.postCar(req.body);
-  if (createCar === BAD_REQUEST) return res.status(BAD_REQUEST).json({ message: 'Esse carro já existe' })
   if (createCar === OK) return res.status(OK).json({ message: 'Carro criado com sucesso!' })
 }
 

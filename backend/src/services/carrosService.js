@@ -15,15 +15,6 @@ const getCars = async () => {
 }
 
 const postCar = async (data) => {
-  const validation = await carros.findOne({
-    where:
-    {
-      nome: data.nome,
-      marca: data.marca,
-      anoFabricacao: data.anoFabricacao,
-    }
-  });
-  if (validation) return statusCode.BAD_REQUEST;
   await carros.create(data)
   return statusCode.OK;
 };
