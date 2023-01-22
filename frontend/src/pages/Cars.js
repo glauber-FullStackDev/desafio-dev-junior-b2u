@@ -22,13 +22,15 @@ function Cars() {
   return (
     <>
       {allCarsFetched ? allCarsFetched.map((car) => (
-        <Link to={`/cars/${car.id}`}>
+        <Link
+          to={`/cars/${car.id}`}
+          key={car.id}
+        >
           <CarsCard
-            key={car.id}
-            name={car.name}
-            model={car.model}
-            image={car.image}
-            owner={car.owner}
+            nome={car.nome}
+            marca={car.marca}
+            anoFabricacao={car.anoFabricacao}
+            dono={car.dono}
           />
         </Link>
       )) : <Loading />}

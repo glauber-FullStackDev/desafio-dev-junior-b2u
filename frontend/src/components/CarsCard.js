@@ -1,22 +1,28 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import noImage from '../image/no-image.png';
 
-function CarsCard({ name, carImage, model, owner }) {
+function CarsCard({ nome, anoFabricacao, marca, dono }) {
   return (
     <div>
-      <p>{name}</p>
-      <img src={carImage} alt={`${name}`} />
-      <p>{model}</p>
-      <p>{owner.name}</p>
+      <img
+        src={noImage}
+        alt={`${nome}`} 
+        style={{ width: '100px' }}
+      />
+      <p>{nome}</p>
+      <p>{anoFabricacao}</p>
+      <p>{marca}</p>
+      <p>{dono.name}</p>
     </div>
   )
 }
 
 CarsCard.propTypes = {
-  name: PropTypes.string.isRequired,
-  image: PropTypes.string.isRequired,
-  model: PropTypes.string.isRequired,
-  owner: PropTypes.shape(PropTypes.string.isRequired).isRequired,
+  nome: PropTypes.string.isRequired,
+  marca: PropTypes.string.isRequired,
+  anoFabricacao: PropTypes.string.isRequired,
+  dono: PropTypes.shape(PropTypes.string.isRequired).isRequired,
 }
 
 export default CarsCard
