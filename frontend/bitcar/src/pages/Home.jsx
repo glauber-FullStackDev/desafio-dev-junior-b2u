@@ -8,7 +8,7 @@ import { useEffect } from 'react'
 
 const Home = () => {
   useEffect(()=>{
-    api.get('/users/')
+    api.get('/cars')
     .then(res=>{
       console.log(res)
     })
