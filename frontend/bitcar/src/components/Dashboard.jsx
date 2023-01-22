@@ -3,13 +3,14 @@ import DashboardOrder from './DashboardOrder'
 import DashboardShowcase from './DashboardShowcase'
 import DashboardTitle from './DashboardTitle'
 
-const Dashboard = () => {
+const Dashboard = ({dashboardTitle,dashboardOrder,dashboardCard}) => {
+  
   return (
     <div className='mt-4'>
-        <DashboardTitle text={'Usuários'} />
-        <DashboardOrder opcoes={['Todos os usuários','Clientes Fiéis']}/>
+        <DashboardTitle text={dashboardTitle} />
+        <DashboardOrder opcoes={dashboardOrder}/>
         <div>
-        <DashboardShowcase/>
+        <DashboardShowcase Card={dashboardCard}/>
 
         </div>
 

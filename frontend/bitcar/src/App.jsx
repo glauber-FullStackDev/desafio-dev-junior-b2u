@@ -1,14 +1,13 @@
 import Header from "./components/Header"
 import Dashboard from "./components/Dashboard"
 import Footer from "./components/Footer"
+import Rotas from "./Routes"
 
 function App() {
 
   return (
     <div className="">
-        <Header/>
-        <Dashboard/>
-        <Footer/>
+        <Rotas/>
     </div>
   )
 }

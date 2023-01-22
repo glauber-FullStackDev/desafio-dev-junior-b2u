@@ -4,11 +4,15 @@ import App from './App'
 import './index.css'
 import { ModalProvider } from './contexts/ModalContext'
 
+import { BrowserRouter } from 'react-router-dom';
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <ModalProvider>
-    <App />
-    </ModalProvider>
+    <BrowserRouter>
+    
+      <ModalProvider>
+      <App />
+      </ModalProvider>
+    </BrowserRouter>
     
   </React.StrictMode>,
 )
