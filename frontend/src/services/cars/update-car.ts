@@ -1,4 +1,5 @@
 import apiCars from "./api";
+import { Types } from "mongoose";
 
 export interface ICars {
   model: string;
@@ -8,14 +9,13 @@ export interface ICars {
   userId: string;
 }
 
-const createCarService = async (cars: ICars) => {
-  console.log(cars);
+const updateCarService = async (id: Types.ObjectId, cars: ICars) => {
   return await apiCars
-    .post("/cars", cars)
+    .put(`/cars/${id}`, cars)
     .then((response) => response.data)
     .catch(() => {
       error: true;
     });
 };
 
-export default createCarService;
+export default updateCarService;
