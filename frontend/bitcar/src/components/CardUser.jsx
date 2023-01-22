@@ -3,9 +3,10 @@ import {FaCar,FaEllipsisH, FaUser,FaMailBulk,FaPhone} from 'react-icons/fa'
 import { useContext } from 'react'
 import { ModalContext } from '../contexts/ModalContext'
 import ModalEditDeleteUserItem from './ModalEditDeleteUserItem'
-const CardUser = () => {
-   const {modalEditDeleteUser,setModalEditDeleteUser} = useContext(ModalContext)
+import ModalCarsItem from './ModalCarsItem'
 
+const CardUser = () => {
+   const {modalEditDeleteUser,setModalEditDeleteUser,modalCars,setModalCars} = useContext(ModalContext)
   return (
     <div className='bg-gray-three w-80 p-4 h-fit flex flex-col gap-y-4 text-white border rounded'>
         <div className='flex justify-between'>
@@ -29,10 +30,10 @@ const CardUser = () => {
             <span className='text-gray-eight text-[10px]'>3</span>
             </div>
   
-            <h2 className='text-[14px] text-gray-eight underline underline-offset-4 decoration-gray-eight cursor-pointer'>Ver carros</h2>
+            <h2 className='text-[14px] text-gray-eight underline underline-offset-4 decoration-gray-eight cursor-pointer' onClick={()=>setModalCars(true)}>Ver carros</h2>
         </div>
         <ModalEditDeleteUserItem modal={modalEditDeleteUser} setModal={setModalEditDeleteUser}/>
-
+        <ModalCarsItem modal={modalCars} setModal={setModalCars}/>
     </div>
   )
 }
