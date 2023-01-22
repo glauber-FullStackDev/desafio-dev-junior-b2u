@@ -6,7 +6,7 @@ import { createUserService } from "../../services/user/createUser.service";
 
 
 export const createUserController = async (req:Request,res:Response):Promise<any> => {
-
+    res.header("Access-Control-Allow-Origin", "*");
     const {name,email,tel}:IUser = req.body
     try{
         const user:IUser = await createUserService({name,email,tel});

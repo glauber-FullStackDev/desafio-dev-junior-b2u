@@ -5,6 +5,7 @@ import { updateUserService } from "../../services/user/updateUser.service";
 
 export const updateUserController = async (req:Request,res:Response):Promise<any> => {
     const {name,email,tel}:IUser = req.body;
+    res.header("Access-Control-Allow-Origin", "*");
     const id:string = req.params.id
 
     try {

@@ -4,7 +4,7 @@ import { deleteCarService } from "../../services/car/deleteCar.service";
 
 
 export const deleteCarController = async (req:Request,res:Response):Promise<any> => {
-    
+    res.header("Access-Control-Allow-Origin", "*");
     const id:string = req.params.id
 
     try {

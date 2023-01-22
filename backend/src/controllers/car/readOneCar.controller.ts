@@ -4,7 +4,7 @@ import { Car } from "../../types/car";
 
 
 export const readOneCarController = async (req:Request,res:Response) => {
-    
+    res.header("Access-Control-Allow-Origin", "*");
     const id:string = req.params.id
 
     try {

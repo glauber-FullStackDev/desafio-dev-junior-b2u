@@ -3,7 +3,7 @@ import { deleteUserService } from "../../services/user/deleteUser.service";
 
 
 export const deleteUserController = async(req:Request,res:Response):Promise<any> => {
-
+    res.header("Access-Control-Allow-Origin", "*");
     const id:string = req.params.id
     try {
         await deleteUserService(id);

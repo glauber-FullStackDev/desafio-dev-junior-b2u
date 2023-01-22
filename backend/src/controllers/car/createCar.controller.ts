@@ -4,7 +4,7 @@ import { createCarService } from "../../services/car/createCar.service";
 
 export const createCarController = async(req:Request,res:Response):Promise<any> => {
     const {donoId,name,marca,ano_fabri,descricao}:ICarCreated = req.body;
-
+    res.header("Access-Control-Allow-Origin", "*");
     try {
         const newCar:ICar = await createCarService({donoId,name,marca,ano_fabri,descricao});
         

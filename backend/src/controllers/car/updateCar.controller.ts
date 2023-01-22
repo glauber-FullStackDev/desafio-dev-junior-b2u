@@ -5,7 +5,7 @@ import { updateCarService } from "../../services/car/updateCar.service";
 
 
 export const updateCarController = async (req:Request,res:Response):Promise<any> => {
-    
+    res.header("Access-Control-Allow-Origin", "*");
     const id:string = req.params.id
     const {donoId,name,marca,ano_fabri,descricao}:ICar = req.body
     try {

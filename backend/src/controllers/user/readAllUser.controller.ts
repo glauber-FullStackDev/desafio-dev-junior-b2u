@@ -6,6 +6,7 @@ import { readAllUserService } from "../../services/user/readAllUser.service";
 export const readAllUserController = async (req:Request,res:Response):Promise<any> => {
 
     try {
+        res.header("Access-Control-Allow-Origin", "*");
 
         const users:IUser[] = await readAllUserService();
 

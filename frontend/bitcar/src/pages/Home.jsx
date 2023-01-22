@@ -2,8 +2,18 @@ import Header from '../components/Header'
 import Dashboard from '../components/Dashboard'
 import Footer from '../components/Footer'
 import CardCar from '../components/CardCar'
+import api from '../services/api'
+import { useEffect } from 'react'
+
 
 const Home = () => {
+  useEffect(()=>{
+    api.get('/users/')
+    .then(res=>{
+      console.log(res)
+    })
+  },[]);
+
   return (
     <div>
         <Header/>
