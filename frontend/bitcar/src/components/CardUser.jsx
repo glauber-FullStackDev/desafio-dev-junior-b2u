@@ -2,9 +2,9 @@ import React from 'react'
 import {FaCar,FaEllipsisH, FaUser,FaMailBulk,FaPhone} from 'react-icons/fa'
 import { useContext } from 'react'
 import { ModalContext } from '../contexts/ModalContext'
-import ModalEditDeleteItem from './ModalEditDeleteItem'
+import ModalEditDeleteUserItem from './ModalEditDeleteUserItem'
 const CardUser = () => {
-    const {modalEditDelete,setModalEditDelete} = useContext(ModalContext)
+   const {modalEditDeleteUser,setModalEditDeleteUser} = useContext(ModalContext)
 
   return (
     <div className='bg-gray-three w-80 p-4 h-fit flex flex-col gap-y-4 text-white border rounded'>
@@ -13,7 +13,7 @@ const CardUser = () => {
             <FaUser color='#fff'/>
             <h2 className='text-white text-[20px]'>Satoshi Nakamoto</h2>
         </div>
-            <FaEllipsisH color='#A8A8A8' className='cursor-pointer' onClick={()=>setModalEditDelete(!modalEditDelete)}/>
+            <FaEllipsisH color='#A8A8A8' className='cursor-pointer' onClick={()=>{setModalEditDeleteUser(true)}} />
         </div>
         <div className='flex items-center gap-x-2'>
             <FaMailBulk color='#7A7A7A '/>
@@ -31,7 +31,7 @@ const CardUser = () => {
   
             <h2 className='text-[14px] text-gray-eight underline underline-offset-4 decoration-gray-eight cursor-pointer'>Ver carros</h2>
         </div>
-        <ModalEditDeleteItem modal={modalEditDelete} setModal={setModalEditDelete}/>
+        <ModalEditDeleteUserItem modal={modalEditDeleteUser} setModal={setModalEditDeleteUser}/>
 
     </div>
   )
