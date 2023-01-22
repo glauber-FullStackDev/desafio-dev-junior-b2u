@@ -2,7 +2,7 @@
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('Carros', {
+    await queryInterface.createTable('carros', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -14,7 +14,7 @@ module.exports = {
         type: Sequelize.STRING
       },
       imagem: {
-        allowNull: false,
+        allowNull: true,
         type: Sequelize.BLOB,
       },
       marca: {
@@ -37,7 +37,7 @@ module.exports = {
         allowNull: false,
         field: 'dono_id',
         references: {
-          model: 'Donos',
+          model: 'donos',
           key: 'id',
         }
       }
@@ -45,6 +45,6 @@ module.exports = {
   },
 
   down: async (queryInterface, _Sequelize) => {
-    await queryInterface.dropTable('Carros');
+    await queryInterface.dropTable('carros');
   }
 };

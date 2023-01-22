@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-  const Dono = sequelize.define('Dono', {
+  const donos = sequelize.define('donos', {
     id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
     nome: DataTypes.STRING,
     telefone: DataTypes.STRING,
@@ -7,14 +7,14 @@ module.exports = (sequelize, DataTypes) => {
   },
     {
       timestamps: false,
-      tableName: 'Donos',
+      tableName: 'donos',
       underscored: true,
     });
 
-  Dono.associate = (models) => {
-    Dono.hasMany(models.Carro,
+    donos.associate = (models) => {
+      donos.hasMany(models.carros,
       { foreignKey: 'donoId', as: 'carros' });
   };
 
-  return Dono;
+  return donos;
 };

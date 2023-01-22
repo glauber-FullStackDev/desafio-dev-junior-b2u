@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-  const Carro = sequelize.define('Carro', {
+  const carros = sequelize.define('carros', {
     id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
     nome: DataTypes.STRING,
     marca: DataTypes.STRING,
@@ -10,9 +10,13 @@ module.exports = (sequelize, DataTypes) => {
   },
     {
       timestamps: false,
-      tableName: 'Carros',
+      tableName: 'carros',
       underscored: true,
     });
 
-  return Carro;
+    carros.associate = (models) => {
+      carros.belongsTo(models.donos);
+  };
+
+  return carros;
 };
