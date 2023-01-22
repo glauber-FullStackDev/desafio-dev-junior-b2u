@@ -1,0 +1,101 @@
+.login {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.title {
+  width: 50%;
+}
+
+.title h1 {
+  font-size: 50px;
+  margin-left: 100px;
+}
+
+.title h2 {
+  font-family: BarlowBold;
+  font-size: 30px;
+  color: white;
+  margin-left: 100px;
+}
+
+.form-login {
+  display: flex;
+  font-family: Barlow;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.792);
+}
+
+.form-login h2 {
+  font-family: BarlowBold;
+  font-size: 30px;
+  margin-bottom: 70px;
+}
+
+.form-login input {
+  width: 350px;
+  padding: 15px;
+  font-size: 20px;
+  margin-bottom: 30px;
+  border: none;
+  border-radius: 20px;
+  padding-left: 30px;
+}
+
+.form-login input:focus {
+  outline: none;
+}
+
+#password {
+  margin-bottom: 10px;
+}
+
+.input-password {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.min-pass {
+  color: black;
+}
+
+.form-login button {
+  padding: 15px;
+  margin-top: 30px;
+  width: 400px;
+  border-radius: 20px;
+  font-size: 20px;
+  background-color: #45946B;
+  border: none;
+  color: white;
+  transition: 300ms;
+}
+
+.form-login button:hover {
+  cursor: pointer;
+  background-color: #367353;
+}
+
+.form-login p {
+  font-size: 18px;
+}
+
+.register-login {
+  color: blue;
+  text-decoration: underline;
+}
+
+.register-login:hover {
+  cursor: pointer;
+  color: #45946B;
+}
+
+.error {
+  color: red;
+}

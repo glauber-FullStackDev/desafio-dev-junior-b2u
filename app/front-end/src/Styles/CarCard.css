@@ -1,0 +1,111 @@
+.car-card {
+  color: white;
+  list-style: none;
+  width: 250px;
+}
+
+.car-card img {
+  border-radius: 10px;
+  height: 150px;
+}
+
+.car-card p {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-family: BarlowBold;
+  font-size: 18px;
+}
+
+.car-name {
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+
+.year-color {
+  font-family: Barlow;
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.452);
+}
+
+.price-date {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.car-price {
+  font-family: BarlowBold;
+  margin-top: 2px;
+  margin-bottom: 10px;
+}
+
+.date {
+  font-family: Barlow;
+  font-size: 13px;
+  margin-top: 2px;
+  margin-bottom: 10px;
+  color: rgba(255, 255, 255, 0.452);
+}
+
+.btn-see-more {
+  width: 100%;
+  border-radius: 10px;
+  height: 35px;
+  font-family: BarlowBold;
+  font-size: 18px;
+  border: none;
+  background-color: #45946B;
+  color: white;
+  transition: 200ms;
+}
+
+.btn-see-more:hover {
+  cursor: pointer;
+  background-color: #367353;
+}
+
+.container-car-list {
+  display: grid;
+  gap: 30px;
+  grid-template-areas:
+    "li li li li li"
+    "li li li li li"
+    ;
+}
+
+.container-card-buttons {
+  display: flex;
+  justify-content: space-around;
+}
+
+.card-buttons {
+  width: 48%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  border: none;
+  padding: 5px;
+  background-color: #45946B;
+  transition: 200ms;
+}
+
+.card-buttons:nth-child(2) {
+  background-color: rgb(255, 74, 74);
+}
+
+.card-buttons:nth-child(2):hover {
+  background-color: rgb(255, 50, 50);
+}
+
+.card-buttons:hover {
+  cursor: pointer;
+  background-color: #367353;
+}
+
+.card-buttons img {
+  background: none;
+  width: 25px;
+  height: 25px;
+}

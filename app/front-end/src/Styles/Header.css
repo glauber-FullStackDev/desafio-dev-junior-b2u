@@ -1,0 +1,62 @@
+header {
+  width: 80%;
+  height: 110px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+h1 {
+  color: white;
+  font-family: Miedinger;
+  font-size: 22px;
+}
+
+nav {
+  width: 30%;
+  font-family: Barlow;
+  font-size: 16px;
+  font-weight: 100;
+  text-transform: uppercase;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+}
+
+a {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.733);
+}
+
+.selected {
+  padding-bottom: 5px;
+  color: #45946B;
+  border: solid 2px rgba(255, 255, 255, 0.25);
+  border-width: 0 0 2px 0;
+}
+
+.login-btn {
+  display: flex;
+  align-items: center;
+  font-family: Barlow;
+  font-size: 20px;
+  text-decoration: underline;
+  background: none;
+  border: none;
+  color: white;
+  transition: 300ms;
+}
+
+.login-btn:hover {
+  cursor: pointer;
+  color: #45946B;
+}
+
+.login-btn img {
+  margin-top: 3px;
+  margin-left: 3px;
+}
