@@ -77,14 +77,14 @@ class UserController {
             if(!user) {
                 const error: Error = {
                     code: 'BAD_REQUEST',
-                    message: 'Autenticação inválida!',
+                    message: 'Autenticação inválida!!',
                     status: 422
                 }
 
                 return res.status(+error.status).json({ error })
             }
 
-            const checkPassword = await compareSync(password, user.password)
+            const checkPassword = compareSync(password, user.password)
 
             if(!checkPassword) {
                 const error: Error = {

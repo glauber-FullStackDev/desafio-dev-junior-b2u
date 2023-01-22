@@ -37,11 +37,11 @@ export const UpdateCar = () => {
 
     return (
         <div>
-            {success && <Message msg={success} type='success' />} 
             
             {carForId ? (
                 <div className="infosCar">
                     <FormCreateUpdate handleSubmit={handleSubmit} car={carForId} />
+                    {success && <Message msg={success} type='success' />} 
                     {error && <Message msg={error.message} type='error' />} 
                 </div>
             ) : (

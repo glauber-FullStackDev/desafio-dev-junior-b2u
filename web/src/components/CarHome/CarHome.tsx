@@ -6,6 +6,8 @@ import { Car } from "../../interfaces/Car"
 import { Eye } from 'phosphor-react'
 // react
 import { Link } from 'react-router-dom'
+import { useContext } from 'react'
+import { AuthContext } from '../../context/auth/AuthContext'
 
 const imgsSaves = 'http://localhost:3000/uploads'
 
@@ -14,6 +16,7 @@ type Props = {
 }
 
 export const CarHome = ({ car }: Props) => {
+  const { user } = useContext(AuthContext)!
   const { name, brand, User: ownerCar } = car
 
   return (
@@ -33,7 +36,12 @@ export const CarHome = ({ car }: Props) => {
           )}
         </div>
         <div className={styles.datasOwner}>
-          <p>Dono: <span>{ownerCar?.name}</span></p>
+          {(user && user.email === ownerCar?.email) ? (
+            <p>Dono: <span>{ownerCar?.name}(você)</span></p>
+
+          ) : (
+            <p>Dono: <span>{ownerCar?.name}</span></p>
+          )}
         </div>
       </div>
 

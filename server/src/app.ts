@@ -12,7 +12,7 @@ class AppController {
     constructor() {
         this.app = express()
         this.app.use(cors())
-        this.getImages()
+        this.getImages() 
         this.middlewares()
         this.routes()
     }

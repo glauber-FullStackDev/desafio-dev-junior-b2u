@@ -28,6 +28,8 @@ model Car {
   description      String
   image            String
 
+  created_at DateTime @default(now())
+
   userId String
   User   User?  @relation(fields: [userId], references: [id])
 

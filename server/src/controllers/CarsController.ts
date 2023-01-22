@@ -24,6 +24,9 @@ class CarsController {
                     }
                 }
             },
+            orderBy: {
+                created_at: 'desc'
+            },
             skip: skip ? +skip : 0, 
             take: take ? +take : 10
         })
@@ -62,6 +65,9 @@ class CarsController {
             where: {
                 userId
             },
+            orderBy: {
+                created_at: 'desc'
+            }
         })
 
         if(!userCars){
