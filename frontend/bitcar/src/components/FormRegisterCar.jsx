@@ -3,17 +3,24 @@ import {useForm} from 'react-hook-form'
 import * as yup from 'yup'
 import {yupResolver} from '@hookform/resolvers/yup'
 import api from '../services/api'
-import { useContext } from 'react'
+import { useContext,useEffect } from 'react'
 import {ApiContext} from '../contexts/ApiContext'
+import { toast } from 'react-toastify'
 
 const FormRegisterCar = () => {
-  const {users} = useContext(ApiContext);
+
+  const {users,setUsers,setCars} = useContext(ApiContext);
+  useEffect(()=>{
+      api.get('/users')
+      .then(res=>setUsers(res.data))
+  },[users])
 
   const schema = yup.object({
     name:yup.string().required(),
     ano_fabri:yup.string().required(),
     marca:yup.string().required(),
     descricao:yup.string().required(),
+    user:yup.string().required(),
   }).required()
 
   const { register, handleSubmit, formState:{ errors } } = useForm({
@@ -21,9 +28,26 @@ const FormRegisterCar = () => {
   });
 
   const onSubmitFunction = (data) => {
-    console.log(data)
+    
+    const userId = users.filter(user => {
+     return user.name == data.user
+    })[0].id
+    const dataSent = {
+      name:data.name,
+      marca:data.marca,
+      ano_fabri:data.ano_fabri,
+      descricao:data.descricao,
+      donoId:userId
+    }
+    console.log(dataSent);
+
+    api.post('/cars',dataSent)
+    .then(res=>{
+      return toast.success('Carro criado com sucesso')
+    })
+    .catch(err =>toast.error('Erro na criação do carro'));
+   
   }
-  console.log(errors);
 
   return (
     <>
@@ -44,12 +68,12 @@ const FormRegisterCar = () => {
                     <p className='text-sm text-[#8F1F1F]'>{errors.descricao ? 'A descrição é obrigatória' : ''}</p>
                     <label className='font-medium'>Dono</label>
                     <select {...register('user')} className='w-1/2 p-2 border outline-none rounded overflow-y-scroll bg-gray-eleven text-[14px] focus:border-primary-dark'>
+                        
                         {
                           users.map(user => <option key={user.id} className='text-gray-two'>
-                          {user.name}
+                            {user.name}
                       </option>)
                         }
-                        <option>teste </option>
 
                     </select>
                     <div className='mt-4 justify-center sm:justify-start items-center flex'>

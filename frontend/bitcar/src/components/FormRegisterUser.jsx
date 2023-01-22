@@ -22,7 +22,6 @@ const FormRegisterUser = () => {
     .then(res=>toast.success('Usuário adicionado'))
     .catch(err=>toast.error('Email/Telefone já existentes'))
   }
-  console.log(errors)
   return (
     <>
         
