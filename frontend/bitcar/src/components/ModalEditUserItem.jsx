@@ -1,8 +1,23 @@
-import React from 'react'
-import Button from './Button'
 
+import Button from './Button'
+import { ItemContext } from '../contexts/ItemContext'
+import { useContext } from 'react'
+import { useEffect } from 'react';
+import api from '../services/api'
+import {useForm} from 'react-hook-form'
 const ModalEditUserItem = ({modal,setModal}) => {
     
+  const {userId} = useContext(ItemContext);
+  const { register, handleSubmit } = useForm();
+
+  const onSubmitFunction = (data) => {
+    setModal(false);
+    api.patch('/users/' + userId,data)
+    .then(res=>res)
+    .catch(err=>console.log(err))
+  }
+
+
   return (
     <>
       {modal ? (
@@ -24,15 +39,18 @@ const ModalEditUserItem = ({modal,setModal}) => {
                   <h2 className='text-center mt-4 font-semibold text-2xl text-gray-three'>
                     Editar Usuário
                   </h2>
-                  <form className='flex flex-col gap-y-2 '>
+                  <form className='flex flex-col gap-y-2' onSubmit={handleSubmit(onSubmitFunction)}>
                       <label className='font-medium text-gray-three'>Nome</label>
-                      <input type='text' placeholder='Prisma' className='bg-gray-eleven p-2 outline-none border rounded focus:border-primary-dark mb-2 text-gray-two'/>
+                      <input  {...register('name')} type='text' placeholder='Satoshi Nakamoto' className='bg-gray-eleven p-2 outline-none border rounded focus:border-primary-dark mb-2 text-gray-two'/>
                     <label className='font-medium text-gray-three'>Email</label>
-                    <input type='text' placeholder='2018' className='bg-gray-eleven p-2 outline-none border rounded focus:border-primary-dark mb-2  text-gray-two'/>
+                    <input {...register('email')} type='text' placeholder='satoshi@bitcoin.com' className='bg-gray-eleven p-2 outline-none border rounded focus:border-primary-dark mb-2  text-gray-two'/>
                     <label className='font-medium text-gray-three'>Telefone</label>
-                    <input type='text' placeholder='Chevrolet' className='bg-gray-eleven p-2 outline-none border rounded focus:border-primary-dark mb-2  text-gray-two'/>
+                    <input {...register('tel')} type='text' placeholder='(91) 31415-9227' className='bg-gray-eleven p-2 outline-none border rounded focus:border-primary-dark mb-2  text-gray-two'/>
                     <div className='mt-4 justify-center items-center flex'>
+                    <button type='submit'>      
                     <Button text={'Editar usuário'} />
+                    </button>
+
                     </div>
                     
 
