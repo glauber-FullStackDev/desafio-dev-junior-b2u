@@ -1,19 +1,16 @@
-import { useState } from "react";
-import { carInfo } from "./mock/cars";
 import Context from "./context/Context";
 import "./App.css";
-import VechicleList from "./components/VechicleCard/VehicleList";
-import CreateForm from "./components/CreateForm/CreateForm";
-import EditForm from "./components/EditForm/EditForm";
 import RoutesComp from "./routes";
+import useCRUD from "./hooks/useCrud";
+import Navbar from "./components/Navbar/Navbar";
 
 function App() {
-  const [data, setData] = useState(carInfo);
+  const CRUD = useCRUD({ endpoint: "vehicles" });
 
   return (
     <div className="App">
-      <header></header>
-      <Context.Provider value={data}>
+      <Navbar />
+      <Context.Provider value={CRUD}>
         <RoutesComp />
       </Context.Provider>
     </div>

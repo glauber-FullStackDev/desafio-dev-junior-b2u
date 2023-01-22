@@ -8,30 +8,30 @@ let mock: CreateVehicleDto[] = [
     name: 'Astra',
     brand: 'Chevrolet',
     manufacturingYear: '2006',
+    price: 'R$ 19.500,00',
     description: 'Preto',
-    owner: {
-      name: 'Ricardo',
-      email: 'ric@gmail.com',
-      phone: '22998222222',
-    },
+    ownerName: 'Ricardo',
+    email: 'ric@gmail.com',
+    phone: '2299822222',
   },
+
   {
     id: 2,
     name: 'teste',
     brand: 'teste',
     manufacturingYear: '2006',
+    price: 'R$ 19.500,00',
     description: 'teste',
-    owner: {
-      name: 'testge',
-      email: 'teste@gmail.com',
-      phone: '22198222222',
-    },
+    ownerName: 'Ricardo',
+    email: 'ric@gmail.com',
+    phone: '2299822222',
   },
 ];
 
 @Injectable()
 export class VehiclesService {
   create(createVehicleDto: CreateVehicleDto) {
+    createVehicleDto.id = Math.max(...mock.map((o) => o.id)) + 1;
     return mock.push(createVehicleDto);
   }
 
@@ -47,22 +47,21 @@ export class VehiclesService {
   update(id: number, updateVehicleDto: UpdateVehicleDto) {
     const vehicleIndex = mock.findIndex((p) => p.id === id);
     const copyMock = { ...mock[vehicleIndex] };
-    console.log(copyMock);
 
     const upVehiKeys = Object.keys(updateVehicleDto);
     const mockKeys = Object.keys(mock[vehicleIndex]);
 
     if (upVehiKeys.every((item) => mockKeys.includes(item))) {
-      mock[vehicleIndex] = { ...mock[vehicleIndex], ...updateVehicleDto };
-
-      if (copyMock.id !== mock[vehicleIndex].id) {
-        return 'You can not change id number';
+      if (updateVehicleDto.id && copyMock.id !== updateVehicleDto.id) {
+        throw new BadRequestException('You can not change id number');
       }
+
+      mock[vehicleIndex] = { ...mock[vehicleIndex], ...updateVehicleDto };
 
       return 'Update com sucesso';
     }
 
-    return BadRequestException;
+    throw new BadRequestException('Check the body keys');
   }
 
   remove(id: number) {

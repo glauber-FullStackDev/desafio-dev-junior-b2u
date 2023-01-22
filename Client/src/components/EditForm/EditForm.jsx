@@ -1,25 +1,48 @@
-import React from "react";
+import React, { useState } from "react";
+import useCRUD from "../../hooks/useCrud";
 import BaseForm from "../BaseForm/BaseForm";
 import schema from "./schema";
+import { useParams } from "react-router-dom";
+import { useEffect } from "react";
+import { useContext } from "react";
+import Context from "../../context/Context";
 
 const initialValues = {
   name: "",
   brand: "",
   manufacturingYear: "",
+  price: "",
   description: "",
 };
 
 const EditForm = () => {
   //Get id from url params
-  // let { id } = useParams();
-  // const data = useContext(Context);
-  // const owner = data.find((item) => item.id === id);
-  // const initialValues = {owner};
+  let { id } = useParams();
+  const { findById, update } = useContext(Context);
 
-  console.log(initialValues);
+  const [owner, setOwner] = useState(initialValues);
+
+  useEffect(() => {
+    const getOwner = async () => {
+      setOwner(await findById(id));
+    };
+
+    getOwner();
+  }, []);
+
+  const handleSubmit = (values) => {
+    update(id, values);
+    //return redirect page
+  };
+
   return (
     <div>
-      <BaseForm initialValues={initialValues} schema={schema}>
+      <BaseForm
+        initialValues={owner}
+        schema={schema}
+        handleSubmit={handleSubmit}
+        isCreate={false}
+      >
         Atualizar veículo
       </BaseForm>
     </div>

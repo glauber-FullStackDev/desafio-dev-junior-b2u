@@ -5,6 +5,7 @@ export const carInfo = [
     brand: "Chevrolet",
     manufacturingYear: "2006",
     description: "Preto",
+    price: "R$ 19500,00",
     owner: {
       name: 'Ricardo',
       email: 'ric@gmail.com',
@@ -17,6 +18,7 @@ export const carInfo = [
     brand: "teste",
     manufacturingYear: "2006",
     description: "teste",
+    price: "R$ 19500,00",
     owner: {
       name: 'testge',
       email: 'teste@gmail.com',
