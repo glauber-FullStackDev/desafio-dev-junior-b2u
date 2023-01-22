@@ -6,6 +6,9 @@ const getCars = async () => {
     include: [{
       model: donos,
       required: true,
+      attributes: {
+        exclude: ['id', 'email', 'telefone'],
+      }
     }],
     attributes: {
       exclude: ['donoId'],
@@ -16,7 +19,12 @@ const getCars = async () => {
 
 const postCar = async (data) => {
   await carros.create(data)
-  return statusCode.OK;
+  return statusCode.CREATED;
 };
 
-module.exports = { getCars, postCar }
+const editCar = async (data) => {
+  await carros.update(data, { where: { id: data.id } })
+  return statusCode.OK;
+}
+
+module.exports = { getCars, postCar, editCar }

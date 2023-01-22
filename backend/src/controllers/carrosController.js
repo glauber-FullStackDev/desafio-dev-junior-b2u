@@ -16,7 +16,14 @@ const getCars = async (_req, res, _next) => {
 
 const postCar = async (req, res, _next) => {
   const createCar = await carsService.postCar(req.body);
-  if (createCar === OK) return res.status(OK).json({ message: 'Carro criado com sucesso!' })
+  if (createCar === CREATED) return res.status(CREATED).json({ message: 'Carro criado com sucesso!' })
+  throw new Error('Não foi possível criar o carro.')
 }
 
-module.exports = { getCars, postCar }
+const editCar = async (req, res, _next) => {
+  const updateCar = await carsService.editCar(req.body);
+  if (updateCar === OK) return res.status(OK).json({ message: 'Carro alterado com sucesso!' })
+  throw new Error('Não foi possível editar o carro.')
+}
+
+module.exports = { getCars, postCar, editCar }

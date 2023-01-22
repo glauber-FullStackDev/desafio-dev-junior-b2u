@@ -5,5 +5,6 @@ const route = express.Router();
 
 route.get('/', carsController.getCars)
 route.post('/', carsController.postCar)
+route.put('/', carsController.editCar)
 
 module.exports = route;
