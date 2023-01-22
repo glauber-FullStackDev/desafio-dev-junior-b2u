@@ -1,6 +1,7 @@
 import React from 'react'
 import { FaCar } from 'react-icons/fa'
 import {HiPlusCircle} from 'react-icons/hi'
+import { Link } from 'react-router-dom'
 
 const ModalCarsItem = ({modal,setModal}) => {
     
@@ -43,7 +44,10 @@ const ModalCarsItem = ({modal,setModal}) => {
                   </button>
                   <h2 className='font-medium text-xl '>Carros</h2>
                   <div className='flex items-center gap-x-2 mt-2'>
-                    <HiPlusCircle color='#0817FF'  onClick={()=>setModal(false)}/>
+                    <Link to='/register'>
+                    <HiPlusCircle color='#0817FF'/>
+                    </Link>
+
                     <h2 className='text-gray-five'>Adicionar novo carro</h2>
                   </div>
                 </div>

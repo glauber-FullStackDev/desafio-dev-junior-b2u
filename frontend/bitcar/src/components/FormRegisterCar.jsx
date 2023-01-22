@@ -5,7 +5,7 @@ const FormRegisterCar = () => {
   return (
     <>
         
-        <form className='flex flex-col gap-y-2 bg-white p-4 items-center sm:items-start'>
+        <form className='flex flex-col gap-y-2 mt-16 bg-white p-4 items-center sm:items-start'>
         <h2 className='mb-8 text-2xl text-center sm:text-left sm:text-3xl font-bold '>Criar carro</h2>
                       <label className='font-medium text-gray-three text-left'>Nome</label>
                       <input type='text' placeholder='Prisma' className='bg-gray-eleven w-1/2 p-2 outline-none border rounded focus:border-primary-dark mb-2 placeholder-gray-six text-gray-two text-[14px]'/>

@@ -1,6 +1,6 @@
 import React from 'react'
 import { FaPlusCircle,FaCar, FaUser, FaMailBulk, FaPhone } from 'react-icons/fa'
-
+import { Link } from 'react-router-dom'
 const ModalUserItem = ({modal,setModal,user}) => {
     
   return (
@@ -35,7 +35,10 @@ const ModalUserItem = ({modal,setModal,user}) => {
                   </div>
                   <div className='flex justify-between flex-row items-center mb-4 mt-4'>
                     <h2 className='text-gray-one'>Carros do usuário</h2> 
-                    <FaPlusCircle color='#0817FF' onClick={()=>setModal(false)}/>
+                    <Link to='/register'>
+                    <FaPlusCircle color='#0817FF'/>
+                    </Link>
+                    
                   </div>          
                 </div>
                 <div className='flex gap-x-4 w-56 overflow-x-scroll'>
