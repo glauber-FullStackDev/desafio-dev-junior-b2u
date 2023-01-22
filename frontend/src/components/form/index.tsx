@@ -18,18 +18,21 @@ import {
   WrapperClose,
   SelectField,
 } from "./styles";
+import { IUser } from "../../interface/IUsers";
 
 const initialState = {
   model: "",
   year: "",
   description: "",
+  brandId: "",
+  userId: "",
 };
 
 const Form = ({ handleClose }: { handleClose: () => void }) => {
   const [client, setClient] = useState(initialState);
 
   const [brands, setBrands] = useState([]);
-  const [users, setUsers] = useState([]);
+  const [users, setUsers] = useState<IUser[]>([]);
 
   const getUsers = async () => {
     const response = await getAllUsers();
@@ -100,16 +103,32 @@ const Form = ({ handleClose }: { handleClose: () => void }) => {
           <Grid item xs={12} sm={6}>
             <InputLabel>Brands</InputLabel>
             <SelectField>
-              {brands.map((brandCar) => (
-                <MenuItem value={brandCar.id}>{brandCar.brand}</MenuItem>
+              {brands.map((brandCar, index) => (
+                <MenuItem
+                  key={index}
+                  value={brandCar.id}
+                  onChange={(event) =>
+                    setClient({ ...client, brandId: event.target.value })
+                  }
+                >
+                  {brandCar.brand}
+                </MenuItem>
               ))}
             </SelectField>
           </Grid>
           <Grid item xs={12} sm={6}>
             <InputLabel>User</InputLabel>
             <SelectField>
-              {users.map((user) => (
-                <MenuItem value={user.id}>{user.name}</MenuItem>
+              {users.map((user, index) => (
+                <MenuItem
+                  key={index}
+                  value={user.id}
+                  onChange={(event) =>
+                    setClient({ ...client, userId: event.target.value })
+                  }
+                >
+                  {user.name}
+                </MenuItem>
               ))}
             </SelectField>
           </Grid>
