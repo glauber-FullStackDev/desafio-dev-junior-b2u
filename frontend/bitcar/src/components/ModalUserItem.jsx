@@ -62,7 +62,7 @@ const ModalUserItem = ({modal,setModal}) => {
                   {user.carros ? user.carros.map(car=>(
 
                    
-                        <div className='bg-gray-three rounded p-2'>
+                        <div className='bg-gray-three rounded p-2' key={car.id}>
                           <div className='flex items-center gap-x-2'>
                               <FaCar/>
                               <h2>{car.name}</h2>
