@@ -1,0 +1,49 @@
+version: '3.9'
+
+services:
+  database:
+    image: postgres:alpine
+    container_name: car-sale-ads-db
+    restart: always
+    environment:
+      - POSTGRES_USER=${DATABASE_USER}
+      - POSTGRES_PASSWORD=${DATABASE_PASSWORD}
+      - POSTGRES_DB=${DATABASE_DB}
+    ports:
+      - ${DATABASE_PORT}:5432
+    expose:
+      - ${DATABASE_PORT}
+    volumes:
+      - postgres:/data/postgres
+  # api:
+  #   build: .
+  #   restart: always
+  #   environment:
+  #     - PORT=${PORT}
+  #     - DATABASE_HOST=database
+  #     - DATABASE_PORT=${DATABASE_PORT}
+  #     - DATABASE_USER=${DATABASE_USER}
+  #     - DATABASE_PASSWORD=${DATABASE_PASSWORD}
+  #     - DATABASE=${DATABASE}
+  #     - DATABASE_SCHEMA=${DATABASE_SCHEMA}
+  #     - REDIS_HOST=redis-cache
+  #     - REDIS_PORT=${REDIS_PORT}
+  #     - REDIS_PASSWORD=${REDIS_PASSWORD}
+  #     - REDIS_TTL=${REDIS_TTL}
+  #     - JWT_EXPIRWS_TIME=${JWT_EXPIRWS_TIME}
+  #     - JWT_SECRET=${JWT_SECRET}
+  #   ports:
+  #     - ${PORT}:8080
+  #   expose:
+  #     - ${PORT}
+  #   volumes:
+  #     - api:/usr/app
+  #   links:
+  #     - database
+  #   depends_on:
+  #     - database
+volumes:
+  postgres:
+    driver: local
+  api:
+    driver: local
