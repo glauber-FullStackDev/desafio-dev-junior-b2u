@@ -5,6 +5,10 @@ export const ContainerCard = styled(Card)`
   width: 345px;
   min-width: 235px;
   margin: 1em;
+
+  @media screen and (max-width: 768px) {
+    width: 245px;
+  }
 `;
 export const Title = styled.h2``;
 

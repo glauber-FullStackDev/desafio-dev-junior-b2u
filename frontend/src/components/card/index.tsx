@@ -11,7 +11,7 @@ import { ContainerCard, Title, Description, Wrapper, SubTitle } from "./styles";
 import { ICars } from "../../interface/ICars";
 
 const style = {
-  position: "absolute" as "absolute",
+  position: "absolute",
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",

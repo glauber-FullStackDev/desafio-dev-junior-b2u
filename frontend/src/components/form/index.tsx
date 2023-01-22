@@ -33,8 +33,14 @@ const initialState = {
   userId: "",
 };
 
-const Form = ({ handleClose, car }: { handleClose: () => void; car?: TOnlyCar }) => {
-  const [announcement, setAnnouncement] = useState(initialState);
+const Form = ({
+  handleClose,
+  car,
+}: {
+  handleClose: () => void;
+  car?: TOnlyCar;
+}) => {
+  const [announcement, setAnnouncement] = useState(car || initialState);
   const [brands, setBrands] = useState<IBrands[]>([]);
   const [users, setUsers] = useState<IUsers[]>([]);
 
@@ -160,7 +166,10 @@ const Form = ({ handleClose, car }: { handleClose: () => void; car?: TOnlyCar })
             <SelectField
               value={announcement.userId}
               onChange={(event) =>
-                setAnnouncement({ ...announcement, userId: event.target.value as string})
+                setAnnouncement({
+                  ...announcement,
+                  userId: event.target.value as string,
+                })
               }
             >
               {users.map((user) => (

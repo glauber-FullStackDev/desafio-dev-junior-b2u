@@ -1,10 +1,16 @@
 import styled from "styled-components";
-import Select, { SelectChangeEvent } from '@mui/material/Select';
+import Select from "@mui/material/Select";
 
 export const Container = styled.section`
+  width: 1100px;
+
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media screen and (max-width: 768px) {
+    width: 800px;
+  }
 `;
 
 export const Wrapper = styled.div`

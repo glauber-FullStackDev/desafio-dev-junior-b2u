@@ -36,16 +36,16 @@ const CardList = () => {
     <Container>
       {cars.map((car, index) => (
         <CardCar
-        key={index}
-        id={car.id}
-        model={car.model}
-        year={car.year}
-        description={car.description}
-        brandId={car.brands.id}
-        brands={car.brands}
-        userId={car.users.id}
-        users={car.users}
-        deleteCar={deleteCar}
+          key={index}
+          id={car.id}
+          model={car.model}
+          year={car.year}
+          description={car.description}
+          brandId={car.brands.id}
+          brands={car.brands}
+          userId={car.users.id}
+          users={car.users}
+          deleteCar={deleteCar}
         />
       ))}
     </Container>
