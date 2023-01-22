@@ -14,6 +14,6 @@ model User {
   id        String   @id
   name      String
   email     String   @unique
-  phone     String   @map("phoneNumber")
+  phone     String
   createdAt DateTime
 }
