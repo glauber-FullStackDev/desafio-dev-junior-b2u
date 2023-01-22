@@ -11,8 +11,8 @@ export const GlobalStyle = createGlobalStyle`
  }
 
  body {
-    background-color: ${(props) => props.theme['red-500']};
-    color: ${(props) => props.theme['gray-300']};
+    background-color: ${(props) => props.theme['red-700']};
+    color: ${(props) => props.theme['gray-100']};
     -webkit-fontsmoothing: antialiased;
     font-family: "Roboto", sans-serif;
  }

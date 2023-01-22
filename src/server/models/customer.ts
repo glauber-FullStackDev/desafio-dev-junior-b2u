@@ -2,7 +2,7 @@ export interface Customer {
     id_car?: string,
     name_car?: string,
     brand?: string,
-    year_of_manufacture?: Date,
+    year_of_manufacture?: number,
     description?: string,
     name?: string,
     email?: string,
