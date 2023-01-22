@@ -1,27 +1,19 @@
-import React from 'react'
+import React,{useContext,useEffect,useState} from 'react'
 import { FaCar } from 'react-icons/fa'
 import {HiPlusCircle} from 'react-icons/hi'
 import { Link } from 'react-router-dom'
+import api from '../services/api'
+import { ItemContext } from '../contexts/ItemContext'
 
 const ModalCarsItem = ({modal,setModal}) => {
-    
-     const cars =[
-        {
-            name:'Prisma',
-            marca:'Crevrolet',
-            ano_fabri:'2018'
-        },
-        {
-            name:'Prisma',
-            marca:'Crevrolet',
-            ano_fabri:'2018'
-        },
-        {
-            name:'Prisma',
-            marca:'Crevrolet',
-            ano_fabri:'2018'
-        }
-    ]
+  const {userId} = useContext(ItemContext);
+  const [cars,setCars] = useState([])
+  useEffect(()=>{
+    api.get('/users/' + userId)
+    .then(res=>setCars(res.data.carros))
+  },[userId])
+
+
 
   return (
     <>

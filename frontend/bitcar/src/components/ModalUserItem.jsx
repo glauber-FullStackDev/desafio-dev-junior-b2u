@@ -1,8 +1,18 @@
 import React from 'react'
+import { useState } from 'react'
 import { FaPlusCircle,FaCar, FaUser, FaMailBulk, FaPhone } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
-const ModalUserItem = ({modal,setModal,user}) => {
-    
+import api from '../services/api'
+const ModalUserItem = ({modal,setModal,userId}) => {
+    const [user,setUser] = useState({
+      name:'',
+      tel:'',
+      email:'',
+      carros:[]
+    })
+    api.get('/users/' + userId)
+    .then(res=>setUser(res.data))
+
   return (
     <>
       {modal ? (
@@ -42,7 +52,7 @@ const ModalUserItem = ({modal,setModal,user}) => {
                   </div>          
                 </div>
                 <div className='flex gap-x-4 w-56 overflow-x-scroll'>
-                  {user.cars.map(car=>(
+                  {user.carros.map(car=>(
 
                    
                         <div className='bg-gray-three rounded p-2' key={Math.random()}>

@@ -3,16 +3,11 @@ import Dashboard from '../components/Dashboard'
 import Footer from '../components/Footer'
 import CardCar from '../components/CardCar'
 import api from '../services/api'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 
 
 const Home = () => {
-  useEffect(()=>{
-    api.get('/cars')
-    .then(res=>{
-      console.log(res)
-    })
-  },[]);
+  
 
   return (
     <div>
