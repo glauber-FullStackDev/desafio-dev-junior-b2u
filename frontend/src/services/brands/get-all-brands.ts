@@ -1,7 +1,7 @@
-import apiBrands from "./api";
+import api from "../api";
 
 const getAllBrands = async () => {
-  return await apiBrands
+  return await api
     .get("/brands")
     .then((response) => response.data)
     .catch(() => {

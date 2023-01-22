@@ -1,7 +1,7 @@
-import apiCars from "./api";
+import api from "../api";
 
 const getAllUsers = async () => {
-  return await apiCars
+  return await api
     .get("/users")
     .then((response) => response.data)
     .catch(() => {

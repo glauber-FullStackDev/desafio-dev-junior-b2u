@@ -1,16 +1,8 @@
-import apiCars from "./api";
+import {TOnlyCar} from "../../interface/ICars";
+import api from "../api";
 
-export interface ICars {
-  id: string;
-  model: string;
-  year: string;
-  description: string;
-  brandId: string;
-  userId: string;
-}
-
-const updateCarService = async (id: string, cars: ICars) => {
-  return await apiCars
+const updateCarService = async (id: string, cars: TOnlyCar) => {
+  return await api
     .put(`/cars/${id}`, cars)
     .then((response) => response.data)
     .catch(() => {

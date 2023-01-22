@@ -1,16 +1,9 @@
-import apiCars from "./api";
+import api from "../api";
+import {TOnlyCar} from "../../interface/ICars";
 
-export interface ICars {
-  model: string;
-  year: string;
-  description: string;
-  brandId: string;
-  userId: string;
-}
-
-const createCarService = async (cars: ICars) => {
+const createCarService = async (cars: TOnlyCar) => {
   console.log(cars);
-  return await apiCars
+  return await api
     .post("/cars", cars)
     .then((response) => response.data)
     .catch(() => {

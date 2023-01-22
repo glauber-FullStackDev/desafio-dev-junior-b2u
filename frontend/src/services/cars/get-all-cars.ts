@@ -1,7 +1,7 @@
-import apiCars from "./api";
+import api from "../api";
 
 const getAllCars = async () => {
-  return await apiCars
+  return await api
     .get("/cars")
     .then((response) => response.data)
     .catch(() => {
