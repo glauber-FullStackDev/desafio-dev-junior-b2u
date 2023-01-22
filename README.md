@@ -1,6 +1,6 @@
 # Bem vindo ao Projeto Bit Motors
 
-Este projeto é uma aplicação de anuncio de venda de carros desenvolvida com o objetivo de cumprir um desafio técnico da [Bitcointoyou](https://bitcointoyou.com/_next/static/media/logoAzul.c6609791.png). 
+Este projeto é uma aplicação de anúncio de venda de carros desenvolvida com o objetivo de cumprir um desafio técnico da [Bitcointoyou](https://bitcointoyou.com/_next/static/media/logoAzul.c6609791.png). 
 
 ## Funcionalidades
 - Cadastro de usuários fácil e seguro.
