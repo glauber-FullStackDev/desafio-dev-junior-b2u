@@ -27,6 +27,3 @@ Este projeto é uma aplicação de anúncio de venda de carros desenvolvida com 
 4. Inicie o servidor: `npm start`
 5. Acesse a aplicação em `http://localhost:3000`
 
-## Contribuição
-
-Este projeto está aberto a contribuições de todos os interessados. Se você deseja contribuir com o código, correção de bugs ou sugestões de funcionalidades, sinta-se à vontade para criar pull requests ou relatar issues.
