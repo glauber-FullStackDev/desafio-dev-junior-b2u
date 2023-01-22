@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Types } from "mongoose";
 
 import { toast } from "react-toastify";
 import Grid from "@mui/material/Grid";
@@ -19,6 +20,7 @@ import {
   SelectField,
 } from "./styles";
 import { IUser } from "../../interface/IUsers";
+import createCarService from "../../services/cars/create-car";
 
 const initialState = {
   model: "",
@@ -33,6 +35,16 @@ const Form = ({ handleClose }: { handleClose: () => void }) => {
 
   const [brands, setBrands] = useState([]);
   const [users, setUsers] = useState<IUser[]>([]);
+
+  const createCar = async () => {
+    const response = await createCarService(client);
+
+    if (response.error) {
+      toast.error(response.error);
+      return;
+    }
+    toast.success(response.message);
+  };
 
   const getUsers = async () => {
     const response = await getAllUsers();
@@ -56,7 +68,7 @@ const Form = ({ handleClose }: { handleClose: () => void }) => {
 
   return (
     <Container>
-      <ContainerForm>
+      <ContainerForm onSubmit={createCar}>
         <Wrapper>
           <ButtonClose onClick={handleClose}>Close</ButtonClose>
         </Wrapper>
@@ -102,15 +114,14 @@ const Form = ({ handleClose }: { handleClose: () => void }) => {
           </Grid>
           <Grid item xs={12} sm={6}>
             <InputLabel>Brands</InputLabel>
-            <SelectField>
-              {brands.map((brandCar, index) => (
-                <MenuItem
-                  key={index}
-                  value={brandCar.id}
-                  onChange={(event) =>
-                    setClient({ ...client, brandId: event.target.value })
-                  }
-                >
+            <SelectField
+              value={client.brandId}
+              onChange={(event) =>
+                setClient({ ...client, brandId: event.target.value })
+              }
+            >
+              {brands.map((brandCar) => (
+                <MenuItem key={brandCar.id} value={brandCar.id}>
                   {brandCar.brand}
                 </MenuItem>
               ))}
@@ -118,15 +129,14 @@ const Form = ({ handleClose }: { handleClose: () => void }) => {
           </Grid>
           <Grid item xs={12} sm={6}>
             <InputLabel>User</InputLabel>
-            <SelectField>
-              {users.map((user, index) => (
-                <MenuItem
-                  key={index}
-                  value={user.id}
-                  onChange={(event) =>
-                    setClient({ ...client, userId: event.target.value })
-                  }
-                >
+            <SelectField
+              value={client.userId}
+              onChange={(event) =>
+                setClient({ ...client, userId: event.target.value })
+              }
+            >
+              {users.map((user) => (
+                <MenuItem key={user.id} value={user.id}>
                   {user.name}
                 </MenuItem>
               ))}
@@ -135,7 +145,7 @@ const Form = ({ handleClose }: { handleClose: () => void }) => {
         </Grid>
 
         <WrapperClose>
-          <ButtonClose>Register</ButtonClose>
+          <ButtonClose type="submit">Register</ButtonClose>
         </WrapperClose>
       </ContainerForm>
     </Container>

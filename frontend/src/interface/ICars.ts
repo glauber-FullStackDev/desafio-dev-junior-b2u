@@ -1,12 +1,11 @@
 import { Types } from "mongoose";
 
 export interface ICarsApi {
-  index: number;
-  id: Types.ObjectId;
+  index?: number;
+  id?: Types.ObjectId;
   model: string;
   year: string;
   description: string;
-  brands: any;
 }
 
 export interface ICars {
