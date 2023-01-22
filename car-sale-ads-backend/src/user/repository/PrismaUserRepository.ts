@@ -1,13 +1,13 @@
-import { PrismaClient } from 'src/database/prisma.service';
+import { PrismaService } from 'src/database/prisma.service';
 import { EntityPersistenceError } from 'src/shared/errors/databaseerros/PersisteEntityError';
 import { User } from '../domain/User';
 import { UserRepository } from '../domain/repository/UserRepository';
 
 export class PrismaUserRepository implements UserRepository {
-  constructor(private readonly pirsmaClient: PrismaClient) {}
+  constructor(private readonly prismaClient: PrismaService) {}
 
   async existsByEmail(email: string): Promise<boolean> {
-    const usersCount = await this.pirsmaClient.user.count({ where: { email } });
+    const usersCount = await this.prismaClient.user.count({ where: { email } });
     return usersCount > 0;
   }
 
@@ -21,7 +21,7 @@ export class PrismaUserRepository implements UserRepository {
   }
 
   private userToModel(user: User) {
-    return this.pirsmaClient.user.create({
+    return this.prismaClient.user.create({
       data: {
         id: user.id,
         name: user.name,
