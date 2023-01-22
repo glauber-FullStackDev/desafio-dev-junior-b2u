@@ -1,6 +1,6 @@
+import 'dotenv/config'
 import 'express-async-errors'
 import express from 'express'
-import 'dotenv/config'
 import cors from 'cors'
 import { loginRouter } from './routers/loginRouter'
 import errorHandler from './helpers/errorHandler'
