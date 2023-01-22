@@ -18,15 +18,13 @@ module.exports = {
         ten:'#C7C7C7',
         eleven:'#E0E0E0',
         twelve:'#F5F5F5',
-
       },
       primary:{
         dark:'#0817FF',
         light:'#4186CB',
         medium:'#003B79'
-
-
-      }
+      },
+      white:'#fff'
     },
     extend: {},
   },
