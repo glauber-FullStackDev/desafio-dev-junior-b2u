@@ -1,5 +1,5 @@
 import React from "react";
-import Car from "../common/car";
+import Car from "../common/vehicle";
 import { currencyFormat } from "../common/tools";
 import "./Card.scss";
 

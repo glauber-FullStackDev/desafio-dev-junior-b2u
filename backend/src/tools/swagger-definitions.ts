@@ -22,4 +22,4 @@ const options = {
   apis: ["./src/routes/*.ts"],
 };
 
-export { options };
+// export { options };

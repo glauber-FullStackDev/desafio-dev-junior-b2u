@@ -1,6 +1,6 @@
 import User from "./user";
 
-interface Car {
+interface Vehicle {
   id?: string;
   name?: string;
   brand?: string;
@@ -13,4 +13,4 @@ interface Car {
   cardId?: string;
   User?: User;
 }
-export default Car;
+export default Vehicle;

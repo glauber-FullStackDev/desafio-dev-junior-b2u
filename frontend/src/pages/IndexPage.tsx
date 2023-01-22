@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { getIndexData } from "../common/pageData";
 import Card from "../components/Card";
-import Car from "../common/car";
 import User from "../common/user";
+import Vehicle from "../common/vehicle";
 
 const IndexPage = () => {
   const navigate = (inc: number) => {
@@ -19,16 +19,32 @@ const IndexPage = () => {
   const [dateTime, setDateTime] = useState(today);
   const [rows, setRows] = useState(10);
   const [page, setPage] = useState(1);
-  const [cars, setCars] = useState([]);
+  const [vehicles, setVehicles] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
       const data = await (await getIndexData(1, 1)).json();
-      setCars(data.data);
-      console.log(data.data);
+      setVehicles(data.data);
     };
     fetchData();
   }, []);
+
+  let vehiclesList;
+
+  vehiclesList = vehicles.map((vehicle: Vehicle, index) => (
+    <Card
+      name={vehicle.name}
+      brand={vehicle.brand}
+      price={vehicle.price}
+      year={vehicle.year}
+      description={vehicle.description}
+      owner={vehicle.User!.fullname}
+      phone={vehicle.User!.phone}
+      email={vehicle.User!.email}
+      cardId={index.toString()}
+      key={index}
+    />
+  ))
 
   return (
     <div className="container">
@@ -36,20 +52,7 @@ const IndexPage = () => {
         <h1>Veículos</h1>
         <h2>Anúncios</h2>
         <div>
-          {cars.map((car: Car, index) => (
-            <Card
-              name={car.name}
-              brand={car.brand}
-              price={car.price}
-              year={car.year}
-              description={car.description}
-              owner={car.User!.fullname}
-              phone={car.User!.phone}
-              email={car.User!.email}
-              cardId={index.toString()}
-              key={index}
-            />
-          ))}
+            { vehiclesList }
         </div>
         <div className="align">
           <label>Data</label>

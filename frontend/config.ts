@@ -1,6 +1,6 @@
 const Config = {
-    // backend: process.env.REACT_APP_BACKEND_HOST,
-    backend: "http://localhost:3000",
+    backend: import.meta.env.BACKEND_HOST || "http://localhost:3000",
+    secret: import.meta.env.SECRET || "1324354657687980",
 }
 
 export default Config;
