@@ -10,7 +10,7 @@ function App() {
   return (
     <div className="App">
       <Navbar />
-      <Context.Provider value={CRUD}>
+      <Context.Provider value={CRUD} >
         <RoutesComp />
       </Context.Provider>
     </div>

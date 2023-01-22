@@ -1,0 +1,16 @@
+.filterDiv {
+  width: 40vw;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  margin: 20px auto;
+}
+
+.filterDiv label {
+  width: fit-content;
+  margin: 0 20px;
+}
+
+.filterDiv input {
+  width: 50%;
+}
