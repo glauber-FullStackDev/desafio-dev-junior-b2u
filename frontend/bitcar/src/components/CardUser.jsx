@@ -13,7 +13,7 @@ const CardUser = () => {
             <FaUser color='#fff'/>
             <h2 className='text-white text-[20px]'>Satoshi Nakamoto</h2>
         </div>
-            <FaEllipsisH color='#A8A8A8' className='cursor-pointer' data-bs-toggle="modal" data-bs-target="#exampleModal" onClick={()=>setModalEditDelete(!modalEditDelete)}/>
+            <FaEllipsisH color='#A8A8A8' className='cursor-pointer' onClick={()=>setModalEditDelete(!modalEditDelete)}/>
         </div>
         <div className='flex items-center gap-x-2'>
             <FaMailBulk color='#7A7A7A '/>

@@ -1,0 +1,67 @@
+import React from 'react'
+import { FaPlusCircle,FaCar, FaUser, FaMailBulk, FaPhone } from 'react-icons/fa'
+
+const ModalUserItem = ({modal,setModal,user}) => {
+    
+  return (
+    <>
+      {modal ? (
+        <>
+          <div className="flex justify-center items-center overflow-x-hidden overflow-y-auto fixed inset-0 z-50">
+            <div className="relative w-auto my-6 mx-auto max-w-3xl ">
+              <div className="border-0 rounded-lg shadow-lg relative p-4 flex flex-col w-full bg-gray-twelve ">
+                <div className="flex flex-col p-5 gap-y-2">
+                  <button
+                    className="bg-transparent border-0 text-black float-right"
+                    onClick={() => setModal(false)}
+                  >
+                    <div className="flex justify-end w-52">
+                    <h2 className="text-gray-two opacity-7 h-6 w-6 text-xl bg-gray-400 py-0 rounded-full">
+                      x
+                    </h2>
+                    </div>
+                  </button>
+                  <div className='flex gap-x-2 mb-2 items-center mt-4'>
+                    <FaUser color='#A8A8A8'/>
+                    <h2 className='text-gray-one font-medium'>{user.name}</h2>
+                  </div>
+                  <div className='flex gap-x-2 mb-2 items-center'>
+                    <FaMailBulk color='#A8A8A8'/>
+                    <h2 className='text-gray-one font-medium'>{user.email}</h2>
+                  </div>
+                  <div className='flex gap-x-2 mb-2 items-center'>
+                    <FaPhone color='#A8A8A8'/>
+                    <h2 className='text-gray-one font-medium'>{user.tel}</h2>
+                  </div>
+                  <div className='flex justify-between flex-row items-center mb-4 mt-4'>
+                    <h2 className='text-gray-one'>Carros do usuário</h2> 
+                    <FaPlusCircle color='#0817FF' onClick={()=>setModal(false)}/>
+                  </div>          
+                </div>
+                <div className='flex gap-x-4 w-56 overflow-x-scroll'>
+                  {user.cars.map(car=>(
+
+                   
+                        <div className='bg-gray-three rounded p-2'>
+                          <div className='flex items-center gap-x-2'>
+                              <FaCar/>
+                              <h2>{car.name}</h2>
+                          </div>
+                          <div className='flex justify-between gap-x-2'>
+                            <h2>{car.marca}</h2>
+                            <h2>{car.ano_fabri}</h2>
+                          </div>
+                          </div>
+                  ))}
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </>
+      ) : null}
+    </>
+  )
+}
+
+export default ModalUserItem

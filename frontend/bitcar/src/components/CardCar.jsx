@@ -1,10 +1,35 @@
 import React from 'react'
 import {FaCar,FaEllipsisH, FaUser} from 'react-icons/fa'
-import { useState } from 'react'
+import ModalEditDeleteItem from './ModalEditDeleteItem'
+import { useContext } from 'react'
+import { ModalContext } from '../contexts/ModalContext'
+import ModalUserItem from './ModalUserItem'
 
 const CardCar = () => {
+    const {modalEditDelete,setModalEditDelete,modalUser,setModalUser} = useContext(ModalContext);
+    const user = {
+        name:'Satoshi Nakamoto',
+        email:'satoshi@bitcoin.com',
+        tel:'(91)31415-9227',
+        cars:[
+            {
+                name:'Prisma',
+                marca:'Crevrolet',
+                ano_fabri:'2018'
+            },
+            {
+                name:'Prisma',
+                marca:'Crevrolet',
+                ano_fabri:'2018'
+            },
+            {
+                name:'Prisma',
+                marca:'Crevrolet',
+                ano_fabri:'2018'
+            }
+        ]
+    }
 
-    const [menuActive,setMenuActive] = useState(false)
   return (
     <div className='bg-gray-three w-80 p-4 flex flex-col gap-y-4 text-white border rounded'>
         <div className='flex justify-between'>
@@ -16,7 +41,7 @@ const CardCar = () => {
             <h2 className='text-white'>Prisma</h2>
         </div>
             <div className='static'>
-            <FaEllipsisH color='#A8A8A8' className='cursor-pointer' onClick={()=>setMenuActive(!menuActive)}/>
+            <FaEllipsisH color='#A8A8A8' className='cursor-pointer' onClick={()=>setModalEditDelete(!modalEditDelete)}/>
             </div>
             
         </div>
@@ -33,9 +58,10 @@ const CardCar = () => {
         </div>
         <div className='flex items-center gap-x-4'>
             <FaUser color='#8f8f8f'/>
-            <h2 className='text-[14px] text-gray-eight underline underline-offset-4 decoration-gray-eight cursor-pointer'>Satoshi Nakamoto</h2>
+            <h2 className='text-[14px] text-gray-eight underline underline-offset-4 decoration-gray-eight cursor-pointer' onClick={()=>setModalUser(!modalUser)}>Satoshi Nakamoto</h2>
         </div>
-
+        <ModalEditDeleteItem modal={modalEditDelete} setModal={setModalEditDelete}/>
+        <ModalUserItem modal={modalUser} setModal={setModalUser} user={user}/>
         
 
     </div>

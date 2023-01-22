@@ -13,9 +13,13 @@ const ModalEditDeleteItem = ({modal,setModal}) => {
                     className="bg-transparent border-0 text-black float-right"
                     onClick={() => setModal(false)}
                   >
-                    <span className="text-gray-two opacity-7 h-6 w-6 text-xl block bg-gray-400 py-0 rounded-full">
+                    <div className="flex justify-end w-52">
+                    <h2 className="text-gray-two opacity-7 h-6 w-6 text-xl bg-gray-400 py-0 rounded-full">
                       x
-                    </span>
+                    </h2>
+
+                    </div>
+                    
                   </button>
                 </div>
                
