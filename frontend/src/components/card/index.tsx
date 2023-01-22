@@ -18,26 +18,31 @@ const style = {
 };
 
 const CardCar = ({
-  carId,
-  index,
-  carmModel,
-  carYear,
-  carDescription,
-  carBrands,
+  id,
+  model,
+  year,
+  description,
+  brandId,
+  brands,
+  userId,
+  users,
   deleteCar,
-}: ICars) => {
+}: ICars & { deleteCar: (id: string) => void }) => {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
   return (
-    <ContainerCard key={index}>
+    <ContainerCard>
       <CardContent>
-        <Title>{carmModel}</Title>
-        <SubTitle>{carBrands}</SubTitle>
+        <Title>{model}</Title>
+        <SubTitle>{brands.brand}</SubTitle>
         <Wrapper>
-          <Description>{carDescription}</Description>
-          <Description>Year {carYear}</Description>
+          <Description>{description}</Description>
+          <Description>Year {year}</Description>
+          <Description>Dono: {users.name}</Description>
+          <Description>email: {users.email}</Description>
+          <Description>telefone: {users.phone}</Description>
         </Wrapper>
       </CardContent>
       <CardActions>
@@ -46,10 +51,13 @@ const CardCar = ({
         </Button>
         <Modal open={open} onClose={handleClose}>
           <Box sx={style}>
-            <Form handleClose={handleClose} car={{ carId }} children="Update"/>
+            <Form
+              handleClose={handleClose}
+              car={{ id, model, year, description, brandId, userId }}
+            />
           </Box>
         </Modal>
-        <Button size="small" onClick={() => deleteCar(carId)}>
+        <Button size="small" onClick={() => deleteCar(id)}>
           DELETE
         </Button>
       </CardActions>

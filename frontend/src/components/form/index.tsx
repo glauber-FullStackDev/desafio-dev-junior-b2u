@@ -63,6 +63,7 @@ const Form = ({ handleClose, car }: { handleClose: () => void; car?: TOnlyCar })
   const handleSaveSubmit = () => {
     if (announcement.id !== "") {
       updateCar();
+      return;
     }
     createCar();
   };
@@ -143,7 +144,7 @@ const Form = ({ handleClose, car }: { handleClose: () => void; car?: TOnlyCar })
               onChange={(event) =>
                 setAnnouncement({
                   ...announcement,
-                  brandId: event.target.value,
+                  brandId: event.target.value as string,
                 })
               }
             >
@@ -159,7 +160,7 @@ const Form = ({ handleClose, car }: { handleClose: () => void; car?: TOnlyCar })
             <SelectField
               value={announcement.userId}
               onChange={(event) =>
-                setAnnouncement({ ...announcement, userId: event.target.value })
+                setAnnouncement({ ...announcement, userId: event.target.value as string})
               }
             >
               {users.map((user) => (
@@ -172,7 +173,7 @@ const Form = ({ handleClose, car }: { handleClose: () => void; car?: TOnlyCar })
         </Grid>
 
         <WrapperClose>
-          <ButtonClose type="submit">{children}</ButtonClose>
+          <ButtonClose type="submit">Register</ButtonClose>
         </WrapperClose>
       </ContainerForm>
     </Container>
