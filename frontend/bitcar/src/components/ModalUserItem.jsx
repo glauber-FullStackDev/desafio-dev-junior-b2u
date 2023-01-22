@@ -42,7 +42,7 @@ const ModalUserItem = ({modal,setModal,user}) => {
                   {user.cars.map(car=>(
 
                    
-                        <div className='bg-gray-three rounded p-2'>
+                        <div className='bg-gray-three rounded p-2' key={Math.random()}>
                           <div className='flex items-center gap-x-2'>
                               <FaCar/>
                               <h2>{car.name}</h2>

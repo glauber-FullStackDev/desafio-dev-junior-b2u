@@ -3,7 +3,10 @@ import LogoImg from '../assets/logo.svg'
 import {HiPlusCircle} from 'react-icons/hi'
 import {FaCar,FaUser} from 'react-icons/fa'
 import Button from './Button'
+
+
 const Header = () => {
+
   return (
     <>
     <div className='bg-gray-twelve p-4 flex justify-between items-center'>

@@ -1,6 +1,11 @@
+import { useContext } from "react"
+import {ModalContext} from '../contexts/ModalContext'
+import ModalEditCarItem from "./ModalEditCarItem";
 
 
 const ModalEditDeleteItem = ({modal,setModal}) => {
+  const {modalEditCar,setModalEditCar} = useContext(ModalContext);
+
   return (
     <>
       {modal ? (
@@ -35,7 +40,7 @@ const ModalEditDeleteItem = ({modal,setModal}) => {
                   <button
                     className="text-[#859000] bg-[#FFEC42] font-bold px-6 py-2 text-sm mr-1 mb-1"
                     type="button"
-                    onClick={() => setModal(false)}
+                    onClick={() =>{ setModal(false);setModalEditCar(true)}}
                   >
                     Editar
                   </button>
@@ -45,6 +50,7 @@ const ModalEditDeleteItem = ({modal,setModal}) => {
           </div>
         </>
       ) : null}
+      <ModalEditCarItem modal={modalEditCar} setModal={setModalEditCar}/>
     </>
   )
 }
