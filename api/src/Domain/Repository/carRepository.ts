@@ -15,6 +15,7 @@ export interface IUpdateResponse {
 export interface ICarRepository {
   create: (Client: Car) => Promise<void>
   readById: (id: string) => Promise<Car>
+  findByOwnerId: (id: string) => Promise<Car[]>
   getAll: () => Promise<Car[]>
   update: (id: string, body: unknown) => Promise<IUpdateResponse>
   delete: (id: string) => Promise<IDeleteResponse>

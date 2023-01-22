@@ -14,8 +14,20 @@ export class UpdateCar {
 
   public async execute (req: Request, res: Response): Promise<void> {
     const { id } = req.params
+    const { name, brand, imageUrl, fabricationDate, description } = JSON.parse(req.body.data)
     this.validateId(id)
-    const response = await this.carRepository.update(id, req.body)
+    const imageFileName = req.file?.filename
+    const image = imageFileName ? `http://localhost:5002/images/${imageFileName || ''}` : imageUrl
+
+    console.log(imageFileName)
+    console.log(imageUrl)
+    const response = await this.carRepository.update(id, {
+      name,
+      brand,
+      imageUrl: image,
+      fabricationDate,
+      description
+    })
     if (response.modifiedCount === 0) throw new CustomError('Carro não encontrado!', 409)
 
     res.status(200).json({ message: 'Sucesso!' })

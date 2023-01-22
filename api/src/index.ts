@@ -1,5 +1,5 @@
 import 'express-async-errors'
-import express, { Request, Response } from 'express'
+import express from 'express'
 import 'dotenv/config'
 import cors from 'cors'
 import { loginRouter } from './routers/loginRouter'
@@ -8,7 +8,6 @@ import { carRouter } from './routers/carRouter'
 import { userRouter } from './routers/userRouter'
 import { storage } from './helpers/multerConfig'
 import multer from 'multer'
-import { authToken } from './middlewares/authMiddleware'
 
 const port = process.env.PORT
 
@@ -20,14 +19,11 @@ app.use(express.json())
 app.use(cors())
 
 app.use('/login', loginRouter)
+app.use('/images', express.static('images'))
 
-app.use(authToken)
+app.use(upload.single('imageFile'))
 app.use('/user', userRouter)
 app.use('/car', carRouter)
-app.use('/images', express.static('upload'))
-app.post('/uploadImage', upload.single('image'), (req: Request, res: Response) => {
-  return res.status(200).json(req.file?.filename)
-})
 
 app.use(errorHandler)
 

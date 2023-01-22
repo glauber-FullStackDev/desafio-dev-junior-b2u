@@ -12,7 +12,10 @@ export interface IUpdateResponse {
 }
 export interface IUserRepository {
   create: (user: User) => Promise<void>
-  readByEmail: (email: string) => Promise<User>
+  readByEmail: (email: string) => Promise<User | Error>
+  findById: (id: string) => Promise<User | Error>
+  checkIfExists: (email: string) => Promise<boolean>
+  checkIfExistsById: (email: string) => Promise<boolean>
   getAll: () => Promise<User[]>
   update: (id: string, body: unknown) => Promise<IUpdateResponse>
   delete: (id: string) => Promise<IDeleteResponse>

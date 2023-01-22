@@ -13,6 +13,6 @@ const findUsers = new FindAllUsers(repository)
 const deleteUser = new DeleteUser(repository)
 
 userRouter.post('/create', createUser.execute.bind(createUser))
+userRouter.get('/findAll', findUsers.execute.bind(findUsers))
 userRouter.delete('/:id', deleteUser.execute.bind(deleteUser))
 userRouter.patch('/:id', findUsers.execute.bind(findUsers))
-userRouter.get('/findAll', findUsers.execute.bind(findUsers))

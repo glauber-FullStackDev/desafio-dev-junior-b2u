@@ -1,4 +1,4 @@
-import { IUser } from '../Domain/Entities/User'
+import { IUser, User } from '../Domain/Entities/User'
 import { IUserRepository } from '../Domain/Repository/userRepository'
 import 'dotenv/config'
 import { sign } from 'jsonwebtoken'
@@ -13,8 +13,8 @@ export class Login {
   constructor (readonly userRepository: IUserRepository) {
   }
 
-  private async getUserByName (name: string): Promise<IUser> {
-    const user = await this.userRepository.readByEmail(name)
+  private async getUserByEmail (email: string): Promise<IUser | Error> {
+    const user = await this.userRepository.readByEmail(email)
     return user
   }
 
@@ -31,7 +31,6 @@ export class Login {
       password: Joi.string().min(8).required()
     })
     const { error, value } = schema.validate({ email, password })
-    console.log(error)
     if (error) throw new CustomError(error.message, 400)
     return value
   }
@@ -40,14 +39,15 @@ export class Login {
     return bcrypt.compareSync(password, encryptedPassword)
   };
 
-  private async checkNameAndPassword (email: string, password: string): Promise<string | Error> {
-    const user = await this.getUserByName(email)
+  private async checkNameAndPassword (email: string, password: string): Promise<Object | Error> {
+    const user = await this.getUserByEmail(email) as User
     const { email: userEmail, password: encryptedPassword } = user
+
     if (
       userEmail === email &&
       this.decryptPassword(password, encryptedPassword)
     ) {
-      return await this.createToken(user)
+      return { token: await this.createToken(user), ...user }
     }
     throw new CustomError('Usuário não cadastrado.', 404)
   }
@@ -55,7 +55,7 @@ export class Login {
   public async execute (req: Request, res: Response): Promise<Response> {
     const { email, password } = req.body
     await this.validate(email, password)
-    const token = await this.checkNameAndPassword(email, password)
-    return res.status(200).json({ token })
+    const response = await this.checkNameAndPassword(email, password)
+    return res.status(200).json({ ...response })
   }
 }

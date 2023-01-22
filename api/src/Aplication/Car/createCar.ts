@@ -31,9 +31,10 @@ export class CreateCar {
   }
 
   async execute (req: Request, res: Response): Promise<void> {
-    const { name, imageUrl, brand, fabricationDate, description, ownerId } = req.body
+    const { name, brand, fabricationDate, description, ownerId } = JSON.parse(req.body.data)
+    const imageFileName = req.file?.filename
+    const imageUrl = `http://localhost:5002/images/${imageFileName || ''}`
     await this.validate(name, imageUrl, brand, fabricationDate, description, ownerId)
-
     const client = new Car({
       name,
       brand,

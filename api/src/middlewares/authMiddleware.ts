@@ -11,22 +11,20 @@ interface jwtPayload {
   iat: number
 }
 
-export const authToken = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
+export const authMiddleware = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
   let token = ''
 
   if (req.headers.authorization) {
     token = req.headers.authorization.split(' ')[1]
   }
 
-  console.log(token)
   try {
     const { data } = verify(token, secret as string) as jwtPayload
-    console.log(data, token)
     req.body.userDate = data
     next()
   } catch (error) {
     if (error) {
-      throw new CustomError('Token invalido', 401)
+      throw new CustomError('Token invalido', 409)
     }
   }
 }

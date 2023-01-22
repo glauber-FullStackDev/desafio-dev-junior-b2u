@@ -26,6 +26,7 @@ export class CarRepository implements ICarRepository {
   public async readById (id: string): Promise<ICar> {
     const db = this.mongoClient.db(this.dbName)
     const result = await db.collection('Cars').findOne({ _id: new ObjectId(id) })
+    if (!result) throw new CustomError('Carro não encontrado!', 404)
     return result
   }
 
@@ -33,6 +34,16 @@ export class CarRepository implements ICarRepository {
     const db = this.mongoClient.db(this.dbName)
     const result: ICar[] = []
     await db.collection('Cars').find().forEach((doc: ICar) => {
+      const { _id, name, brand, imageUrl, fabricationDate, ownerId, description } = doc
+      result.push({ id: _id?.toHexString(), name, brand, imageUrl, fabricationDate, ownerId, description })
+    })
+    return result
+  }
+
+  public async findByOwnerId (id: string): Promise<ICar[]> {
+    const db = this.mongoClient.db(this.dbName)
+    const result: ICar[] = []
+    await db.collection('Cars').find({ ownerId: id }).forEach((doc: ICar) => {
       const { _id, name, brand, imageUrl, fabricationDate, ownerId, description } = doc
       result.push({ id: _id?.toHexString(), name, brand, imageUrl, fabricationDate, ownerId, description })
     })
