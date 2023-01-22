@@ -1,0 +1,23 @@
+@font-face {
+  font-family: Barlow;
+  src: url('./Fonts/Barlow-Regular.ttf');
+}
+
+@font-face {
+  font-family: BarlowBold;
+  src: url('./Fonts/Barlow-SemiBold.ttf');
+}
+
+@font-face {
+  font-family: Miedinger;
+  src: url('./Fonts/Miedinger\ W01\ Bold.otf');
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  background: linear-gradient(to bottom right, #585858, #111111);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}

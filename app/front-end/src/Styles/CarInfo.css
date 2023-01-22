@@ -1,0 +1,185 @@
+.container-car-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container-img-car-info {
+  display: flex;
+  width: 80%;
+  justify-content: space-around;
+}
+
+.container-img-car-info img {
+  width: 850px;
+  border-radius: 15px;
+}
+
+.car-info h2 {
+  font-family: BarlowBold;
+  color: white;
+  font-size: 40px;
+}
+
+.color-year-date {
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  font-family: Barlow;
+  font-size: 22px;
+}
+
+.car-info h3 {
+  color: white;
+  font-family: BarlowBold;
+  font-size: 35px;
+}
+
+.car-info-button {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.car-info-button button {
+  margin-bottom: 30px;
+  padding: 15px;
+  font-size: 25px;
+  border-radius: 10px;
+  border: none;
+  background-color: #45946B;
+  color: white;
+  font-family: BarlowBold;
+  transition: 200ms;
+}
+
+.car-info-button button:hover {
+  cursor: pointer;
+  background-color: #367353;
+}
+
+.saller {
+  color: white;
+  font-family: Barlow;
+  font-size: 20px;
+}
+
+.know-more {
+  margin-top: 160px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.know-more img {
+  margin-bottom: 10px;
+}
+
+.know-more h2 {
+  color: white;
+  font-family: BarlowBold;
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+.description {
+  display: flex;
+  width: 100%;
+  background-color: white;
+  flex-direction: column;
+  align-items: center;
+}
+
+.description h2 {
+  margin: 0;
+  text-align: center;
+  font-family: BarlowBold;
+  font-size: 30px;
+  margin-top: 60px;
+}
+
+.description p {
+  margin: 0;
+  margin-top: 50px;
+  font-size: 25px;
+  font-family: Barlow;
+  width: 50%;
+}
+
+.salesman-info {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.salesman-info h2 {
+  margin: 0;
+  text-align: center;
+  font-family: BarlowBold;
+  font-size: 30px;
+  margin-top: 60px;
+}
+
+.email-number {
+  margin-top: 40px;
+  display: flex;
+  margin-bottom: 100px;
+  width: 60%;
+  justify-content: space-between;
+}
+
+.email-number span {
+  font-family: Barlow;
+  font-size: 25px;
+  display: flex;
+  align-items: center;
+}
+
+.email-number span img {
+  margin-right: 10px;
+}
+
+@media screen and (max-width: 1380px) {
+  .img-car {
+    max-width: 550px;
+    max-height: 350px;
+  }
+
+  .car-info h2 {
+    font-size: 30px;
+  }
+
+  .color-year-date {
+    font-size: 16px;
+  }
+
+  .car-info h3 {
+    font-size: 25px;
+  }
+
+  .saller {
+    font-size: 15px;
+  }
+
+  .car-info-button button {
+    font-size: 20px;
+    padding: 10px;
+  }
+
+  .know-more {
+    margin-top: 110px;
+  }
+
+  .know-more h2 {
+    font-size: 25px;
+  }
+
+  .know-more img {
+    margin-bottom: 10px;
+  }
+
+  .container-description-contact {
+    width: 100%;
+  }
+}

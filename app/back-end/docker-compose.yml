@@ -1,0 +1,32 @@
+version: "3"
+
+services:
+  node:
+    image: node:16.14
+    container_name: car_shop
+    build: ./
+    tty: true
+    stdin_open: true
+    command: bash
+    working_dir: /app
+    volumes:
+      - ./:/app
+    depends_on:
+      - mongodb
+    ports:
+      - 3003:3003
+    environment:
+      - MONGO_URI=mongodb://mongodb:27017/CarShop
+
+  mongodb:
+    image: mongo:5.0.7
+    container_name: car_shop_db
+    volumes:
+      - ./:/app
+    restart: always
+    ports:
+      - 27017:27017
+
+networks:
+  default:
+    name: car_shop_net

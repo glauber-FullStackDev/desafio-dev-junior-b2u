@@ -1,0 +1,141 @@
+.sell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container-img-inputs {
+  display: flex;
+  width: 60%;
+  justify-content: center;
+}
+
+.picture_img {
+  width: 400px;
+  height: 200px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.078);
+  background-image: url('../Images/camera.png');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.archive {
+  background-color: rgba(255, 255, 255, 0.089);
+  padding-left: 10px;
+  width: 385px;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  border: solid 2px rgba(255, 255, 255, 0.259);
+}
+
+.archive img {
+  margin-right: 10px;
+  outline: none;
+}
+
+.archive input {
+  background: none;
+  width: 100%;
+  border: none;
+  font-size: 18px;
+  border-radius: 10px;
+  padding: 10px;
+  color: white;
+}
+
+.archive input:focus {
+  outline: none;
+}
+
+.inputs-infos {
+  display: flex;
+  flex-direction: column;
+  margin-left: 100px;
+}
+
+.inputs-infos input {
+  padding-left: 15px;
+  padding-bottom: 5px;
+  color: white;
+  font-size: 17px;
+  border-width: 0 0 2px 0;
+  margin-bottom: 20px;
+  background: none;
+}
+
+.inputs-infos input:focus {
+  outline: none;
+}
+
+.inputs-infos span {
+  color: red;
+  font-family: Barlow;
+  font-size: 16px;
+}
+
+*::-webkit-scrollbar {
+  background: rgb(82, 82, 82);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: black;
+  border-radius: 10px;
+}
+
+textarea {
+  text-decoration: none;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 15px;
+  padding-bottom: 5px;
+  color: white;
+  font-size: 15px;
+  border-width: 2px 2px 2px 2px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  background: none;
+  margin-top: 50px;
+  width: 500px;
+}
+
+textarea:focus {
+  outline: none;
+}
+
+.send-car {
+  margin-top: 50px;
+  padding: 15px;
+  font-family: BarlowBold;
+  font-size: 20px;
+  border-radius: 15px;
+  border: none;
+  background-color: #45946B;
+  color: white;
+  cursor: pointer;
+  transition: 300ms;
+}
+
+.send-car:hover {
+  background-color: #367353;
+}
+
+
+@media screen and (max-width: 1380px) {
+  .container-img-inputs {
+    transform: scale(0.8);
+  }
+
+  .send-car {
+    margin-top: 10px;
+  }
+
+  textarea {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}

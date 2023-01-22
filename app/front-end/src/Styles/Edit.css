@@ -1,0 +1,22 @@
+.edit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cancel-edit {
+  padding: 15px;
+  font-family: BarlowBold;
+  font-size: 20px;
+  border-radius: 15px;
+  border: none;
+  background-color: rgb(255, 74, 74);
+  color: white;
+  cursor: pointer;
+  transition: 300ms;
+  margin-left: 10px;
+}
+
+.cancel-edit:hover {
+  background-color: rgb(255, 50, 50);
+}
