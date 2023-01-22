@@ -24,6 +24,7 @@ const CardCar = ({
   carYear,
   carDescription,
   carBrands,
+  deleteCar,
 }: ICars) => {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
@@ -45,10 +46,12 @@ const CardCar = ({
         </Button>
         <Modal open={open} onClose={handleClose}>
           <Box sx={style}>
-            <Form handleClose={handleClose} />
+            <Form handleClose={handleClose} car={{ carId }} />
           </Box>
         </Modal>
-        <Button size="small">DELETE</Button>
+        <Button size="small" onClick={() => deleteCar(carId)}>
+          DELETE
+        </Button>
       </CardActions>
     </ContainerCard>
   );

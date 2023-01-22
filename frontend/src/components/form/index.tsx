@@ -21,6 +21,7 @@ import {
 } from "./styles";
 import { IUser } from "../../interface/IUsers";
 import createCarService from "../../services/cars/create-car";
+import updateCarService from "../../services/cars/update-car";
 
 const initialState = {
   model: "",
@@ -30,7 +31,7 @@ const initialState = {
   userId: "",
 };
 
-const Form = ({ handleClose }: { handleClose: () => void }) => {
+const Form = ({ handleClose, carId }: { handleClose: () => void }) => {
   const [client, setClient] = useState(initialState);
 
   const [brands, setBrands] = useState([]);
@@ -44,6 +45,25 @@ const Form = ({ handleClose }: { handleClose: () => void }) => {
       return;
     }
     toast.success(response.message);
+  };
+
+  const updateCar = async () => {
+    if (carId) {
+      const response = await updateCarService(carId, client);
+
+      if (response.error) {
+        toast.error(response.error);
+        return;
+      }
+      toast.success(response.message);
+    }
+  };
+
+  const handleSaveSubmit = () => {
+    if (carId) {
+      updateCar();
+    }
+    createCar();
   };
 
   const getUsers = async () => {
@@ -68,7 +88,7 @@ const Form = ({ handleClose }: { handleClose: () => void }) => {
 
   return (
     <Container>
-      <ContainerForm onSubmit={createCar}>
+      <ContainerForm onSubmit={handleSaveSubmit}>
         <Wrapper>
           <ButtonClose onClick={handleClose}>Close</ButtonClose>
         </Wrapper>
