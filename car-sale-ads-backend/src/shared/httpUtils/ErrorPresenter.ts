@@ -14,6 +14,20 @@ export class BadRequestHttpErrorPresenter {
   error: string;
 }
 
+export class ConflictHttpErrorPresenter {
+  @ApiProperty({ example: 409 })
+  statusCode: number;
+
+  @ApiProperty({
+    isArray: true,
+    example: ['entity already exists'],
+  })
+  message: string[];
+
+  @ApiProperty({ example: 'Conflict' })
+  error: string;
+}
+
 export class ServerErrorHttpErrorPresenter {
   @ApiProperty({ example: 500 })
   statusCode: number;
