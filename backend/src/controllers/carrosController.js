@@ -29,8 +29,15 @@ const editCar = async (req, res, _next) => {
 const getCarById = async (req, res, _next) => {
   const { id } = req.params;
   const carById = await carsService.getCarById(id)
-  if ( carById === NOT_FOUND) return res.status(NOT_FOUND).json({ message: 'Não há um carro com esse id!' })
+  if (carById === NOT_FOUND) return res.status(NOT_FOUND).json({ message: 'Não há um carro com esse id!' })
   return res.status(OK).json(carById);
 }
 
-module.exports = { getCars, postCar, editCar, getCarById }
+const deleteCar = async (req, res, _next) => {
+  const { id } = req.params;
+  const deletedCar = await carsService.deleteCar(id);
+  if (deletedCar === OK) return res.status(OK).json({ message: 'Carro deletado com sucesso!' });
+  throw new Error('Não foi possível deletar o carro!');
+}
+
+module.exports = { getCars, postCar, editCar, getCarById, deleteCar }

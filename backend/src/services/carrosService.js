@@ -42,4 +42,9 @@ const getCarById = async (id) => {
   return car;
 }
 
-module.exports = { getCars, postCar, editCar, getCarById }
+const deleteCar = async (id) => {
+  await carros.destroy({ where: { id } })
+  return statusCode.OK;
+};
+
+module.exports = { getCars, postCar, editCar, getCarById, deleteCar }
