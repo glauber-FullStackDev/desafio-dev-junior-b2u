@@ -3,21 +3,19 @@ import Button from './Button'
 import {ItemContext} from '../contexts/ItemContext'
 import { useContext,useState } from 'react'
 import api from '../services/api'
-import { useForm } from "react-hook-form";
+import {useForm} from 'react-hook-form'
 
 const ModalEditCarItem = ({modal,setModal}) => {
   const {carId} = useContext(ItemContext);
+  const { register, handleSubmit } = useForm();
 
-    
-  const editCar = (e) => {
-    e.preventDefault();
+  const onSubmitFunction = (data) => {
     setModal(false);
-    api.patch('/cars/' + carId,{
-      name:'sera'
-    })
+    api.patch('/cars/' + carId,data)
     .then(res=>console.log(res))
     .catch(err=>console.log(err))
   }
+
 
   return (
     <>
@@ -40,19 +38,24 @@ const ModalEditCarItem = ({modal,setModal}) => {
                   <h2 className='text-center mt-4 font-semibold text-2xl text-gray-three'>
                     Editar Carro
                   </h2>
-                  <form className='flex flex-col gap-y-2 text-gray-two' >
+                  <form className='flex flex-col gap-y-2 text-gray-two'
+                    onSubmit={handleSubmit(onSubmitFunction)}
+                  >
                       <label className='font-medium text-gray-three'>Nome</label>
-                      <input type='text' placeholder='Prisma' className='bg-gray-eleven p-2 outline-none border rounded focus:border-primary-dark mb-2'
+                      <input {...register('name')} type='text' placeholder='Prisma' className='bg-gray-eleven p-2 outline-none border rounded focus:border-primary-dark mb-2'
 
                       />
                     <label className='font-medium text-gray-three'>Ano Fabricação</label>
-                    <input type='text' placeholder='2018' className='bg-gray-eleven p-2 outline-none border rounded focus:border-primary-dark mb-2'/>
+                    <input type='text' placeholder='2018' {...register('ano_fabri')}  className='bg-gray-eleven p-2 outline-none border rounded focus:border-primary-dark mb-2'/>
                     <label className='font-medium text-gray-three'>Marca</label>
-                    <input type='text' placeholder='Chevrolet' className='bg-gray-eleven p-2 outline-none border rounded focus:border-primary-dark mb-2'/>
+                    <input type='text' {...register('marca')}  placeholder='Chevrolet' className='bg-gray-eleven p-2 outline-none border rounded focus:border-primary-dark mb-2'/>
                     <label className='text-gray-three font-medium'>Descrição</label>
-                    <textarea className='resize-none border focus:border-primary-dark outline-none rounded p-2 h-20'></textarea>
+                    <textarea {...register('descricao')}  className='resize-none border focus:border-primary-dark outline-none rounded p-2 h-20'></textarea>
                     <div className='mt-4 justify-center items-center flex'>
-                    <Button text={'Editar carro'} />
+                      <button type='submit'>
+                      <Button text={'Editar carro'} />
+                      </button>
+
                     </div>
                     
 

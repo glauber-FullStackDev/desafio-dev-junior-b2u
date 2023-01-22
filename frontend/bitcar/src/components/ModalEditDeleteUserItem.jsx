@@ -1,10 +1,20 @@
 import { useContext } from "react"
 import {ModalContext} from '../contexts/ModalContext'
 import ModalEditUserItem from "./ModalEditUserItem";
+import{ ItemContext }from '../contexts/ItemContext'
+import api from '../services/api'
 
 
 const ModalEditDeleteUserItem = ({modal,setModal}) => {
   const {modalEditUser,setModalEditUser} = useContext(ModalContext);
+  const {userId} = useContext(ItemContext)
+  const deleteUser = () => {
+    setModal(false)
+    api.delete('/users/' + userId)
+    .then(res=>console.log(res))
+    .catch(err=>console.log(err))
+  }
+
 
   return (
     <>
@@ -32,7 +42,7 @@ const ModalEditDeleteUserItem = ({modal,setModal}) => {
                   <button
                     className="text-[#A60606] bg-[#FF3535] font-bold px-6 py-2 text-sm mr-1 mb-1"
                     type="button"
-                    onClick={() => setModal(false)}
+                    onClick={() => {setModal(false);deleteUser()}}
                   >
                     Deletar
   

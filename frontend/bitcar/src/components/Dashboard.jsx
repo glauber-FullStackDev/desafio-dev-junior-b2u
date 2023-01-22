@@ -4,12 +4,22 @@ import CardUser from './CardUser'
 import DashboardOrder from './DashboardOrder'
 import DashboardTitle from './DashboardTitle'
 import { ApiContext } from '../contexts/ApiContext'
-
+import { useEffect } from 'react'
+import api from '../services/api'
 
 const Dashboard = ({dashboardTitle,dashboardOrder}) => {
 
   
-  const {users,cars} = useContext(ApiContext);
+  const {users,cars,setUsers,setCars} = useContext(ApiContext);
+  useEffect(()=>{
+      api.get('/users')
+      .then(res=>setUsers(res.data))
+  },[users])
+  useEffect(()=>{
+    api.get('/cars')
+    .then(res=>setCars(res.data))
+},[users])
+
   return (
     <div className='mt-4'>
         <DashboardTitle text={dashboardTitle} />
