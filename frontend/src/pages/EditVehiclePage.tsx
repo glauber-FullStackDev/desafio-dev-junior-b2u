@@ -54,7 +54,7 @@ const AddVehiclePage = () => {
       <section className="content-page">
         <h1>Adicione um anúncio</h1>
         <p>Insira os dados do seu veículo abaixo.</p>
-        <form action="/vehicle" method="post" className="">
+        <form action="/vehicle" method="put" className="">
           <div className="form-group">
             <label htmlFor="name" className="form-label">
               Veículo

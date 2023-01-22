@@ -2,7 +2,7 @@ import { Navigate } from "react-router-dom";
 import { isAuthenticated } from '../common/auth'
 
 
-function CustomerGuardedRoute( props: any ) {
+function GuardedRoute( props: any ) {
   
     if (isAuthenticated()) {
       return props.children;
@@ -10,4 +10,4 @@ function CustomerGuardedRoute( props: any ) {
     return <Navigate to="/login" />;
 }
 
-export default CustomerGuardedRoute
+export default GuardedRoute

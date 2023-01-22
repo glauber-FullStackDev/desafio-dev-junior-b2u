@@ -15,6 +15,7 @@ async function login(email: string, password: string) {
     const result = await response.json();
     if(result["token"])
       window.sessionStorage.setItem("session-token", result["token"])
+      window.sessionStorage.setItem("user-data", JSON.stringify(result["data"]))
     console.log(result);
   } catch (error) {
   }
@@ -35,6 +36,7 @@ async function signup(email: string, password: string, name: string){
     const result = await response.json();
     if(result["token"])
       window.sessionStorage.setItem("session-token", result["token"])
+      window.sessionStorage.setItem("user-data", JSON.stringify(result["data"]))
     console.log(result);
   } catch (error) {
   }
@@ -42,6 +44,7 @@ async function signup(email: string, password: string, name: string){
 
 function logout() {
   window.sessionStorage.removeItem("session-token");
+  window.sessionStorage.removeItem("user-data");
 }
 
 function isAuthenticated(): boolean {

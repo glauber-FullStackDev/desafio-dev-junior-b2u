@@ -1,6 +1,6 @@
 import React from 'react'
 
-function SearchVehicles() {
+const Footer = () => {
   return (
     <div>
       
@@ -8,4 +8,4 @@ function SearchVehicles() {
   )
 }
 
-export default SearchVehicles
+export default Footer
