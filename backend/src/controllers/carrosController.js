@@ -26,4 +26,11 @@ const editCar = async (req, res, _next) => {
   throw new Error('Não foi possível editar o carro.')
 }
 
-module.exports = { getCars, postCar, editCar }
+const getCarById = async (req, res, _next) => {
+  const { id } = req.params;
+  const carById = await carsService.getCarById(id)
+  if ( carById === NOT_FOUND) return res.status(NOT_FOUND).json({ message: 'Não há um carro com esse id!' })
+  return res.status(OK).json(carById);
+}
+
+module.exports = { getCars, postCar, editCar, getCarById }

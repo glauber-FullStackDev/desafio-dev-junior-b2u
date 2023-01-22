@@ -6,5 +6,6 @@ const route = express.Router();
 route.get('/', carsController.getCars)
 route.post('/', carsController.postCar)
 route.put('/', carsController.editCar)
+route.get('/:id', carsController.getCarById);
 
 module.exports = route;

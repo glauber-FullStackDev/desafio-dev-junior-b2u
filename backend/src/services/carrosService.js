@@ -27,4 +27,19 @@ const editCar = async (data) => {
   return statusCode.OK;
 }
 
-module.exports = { getCars, postCar, editCar }
+const getCarById = async (id) => {
+  const car = await carros.findByPk(id, {
+    include: [{
+      model: donos,
+      required: true,
+      attributes: { exclude: ['id'] }
+    }],
+    attributes: {
+      exclude: ['donoId'],
+    },
+  });
+  if (!car) return statusCode.NOT_FOUND;
+  return car;
+}
+
+module.exports = { getCars, postCar, editCar, getCarById }
