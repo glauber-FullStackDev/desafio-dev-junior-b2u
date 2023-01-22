@@ -1,0 +1,38 @@
+.car {
+    width: 80%;
+    height: 80vh;
+    margin: auto;
+}
+.carImage {
+    width: 100%;
+    margin-bottom: 1.5em;
+    height: 60%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.carImage img {
+    max-width: 100%;
+    max-height: 100%;
+    background-color: rgba(0, 0, 0, .3);
+}
+.datasCar {
+    margin-bottom: 1em;
+}
+.datasCar p span, .ownerCar p span {
+    font-weight: bold;
+}
+.datasCar p, .ownerCar p {
+    margin-bottom: .2em;
+    margin-left: 1.3em;
+}
+.datasCar h2, .ownerCar h2 {
+    margin-bottom: .5em;
+}
+
+.noContent {
+    font-size: 1.4em;
+    text-align: center;
+    margin-top: 1em;
+}

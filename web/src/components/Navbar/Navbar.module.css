@@ -1,0 +1,10 @@
+.navbar .listNav {
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+.active{
+    border-bottom: 2px solid #fff;
+}
