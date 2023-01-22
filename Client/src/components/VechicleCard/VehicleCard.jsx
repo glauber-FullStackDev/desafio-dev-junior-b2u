@@ -33,7 +33,7 @@ const VehicleCard = ({ item, onRemove }) => {
     <div className={styles.cardContainer}>
       <div className={styles.imgContainer}>
         <img
-          src="https://www.autoo.com.br/fotos/2016/1/1280_960/chevrolet_astra-sedan_2011_1_1412016_492_1280_960.jpg"
+          src={item.url}
           alt="alt descricao"
         ></img>
       </div>

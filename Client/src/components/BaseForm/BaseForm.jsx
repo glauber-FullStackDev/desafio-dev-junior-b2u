@@ -75,6 +75,12 @@ const BaseForm = ({
                   as="textarea"
                   placeholder="Características do veículo"
                 />
+                <MyTextInput
+                  label="Url da imagem"
+                  name="url"
+                  as="text"
+                  placeholder="Url da imagem"
+                />
               </div>
 
               {isCreate && (

@@ -8,4 +8,5 @@ export class CreateVehicleDto {
   ownerName: string;
   email: string;
   phone: string;
+  url: string;
 }
