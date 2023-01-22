@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { Types } from "mongoose";
 
 import { toast } from "react-toastify";
 import Grid from "@mui/material/Grid";
@@ -19,11 +18,14 @@ import {
   WrapperClose,
   SelectField,
 } from "./styles";
-import { IUser } from "../../interface/IUsers";
 import createCarService from "../../services/cars/create-car";
 import updateCarService from "../../services/cars/update-car";
+import { TOnlyCar } from "../../interface/ICars";
+import { IUsers } from "../../interface/IUsers";
+import { IBrands } from "../../interface/IBrands";
 
 const initialState = {
+  id: "",
   model: "",
   year: "",
   description: "",
@@ -31,14 +33,13 @@ const initialState = {
   userId: "",
 };
 
-const Form = ({ handleClose, carId }: { handleClose: () => void }) => {
-  const [client, setClient] = useState(initialState);
-
-  const [brands, setBrands] = useState([]);
-  const [users, setUsers] = useState<IUser[]>([]);
+const Form = ({ handleClose, car }: { handleClose: () => void; car?: TOnlyCar }) => {
+  const [announcement, setAnnouncement] = useState(initialState);
+  const [brands, setBrands] = useState<IBrands[]>([]);
+  const [users, setUsers] = useState<IUsers[]>([]);
 
   const createCar = async () => {
-    const response = await createCarService(client);
+    const response = await createCarService(announcement);
 
     if (response.error) {
       toast.error(response.error);
@@ -48,10 +49,10 @@ const Form = ({ handleClose, carId }: { handleClose: () => void }) => {
   };
 
   const updateCar = async () => {
-    if (carId) {
-      const response = await updateCarService(carId, client);
+    if (announcement.id !== "") {
+      const response = await updateCarService(announcement.id, announcement);
 
-      if (response.error) {
+      if (response) {
         toast.error(response.error);
         return;
       }
@@ -60,7 +61,7 @@ const Form = ({ handleClose, carId }: { handleClose: () => void }) => {
   };
 
   const handleSaveSubmit = () => {
-    if (carId) {
+    if (announcement.id !== "") {
       updateCar();
     }
     createCar();
@@ -102,9 +103,9 @@ const Form = ({ handleClose, carId }: { handleClose: () => void }) => {
               label="Car model"
               fullWidth
               variant="standard"
-              value={client.model}
+              value={announcement.model}
               onChange={(event) =>
-                setClient({ ...client, model: event.target.value })
+                setAnnouncement({ ...announcement, model: event.target.value })
               }
             />
           </Grid>
@@ -114,9 +115,9 @@ const Form = ({ handleClose, carId }: { handleClose: () => void }) => {
               label="Car year"
               fullWidth
               variant="standard"
-              value={client.year}
+              value={announcement.year}
               onChange={(event) =>
-                setClient({ ...client, year: event.target.value })
+                setAnnouncement({ ...announcement, year: event.target.value })
               }
             />
           </Grid>
@@ -126,18 +127,24 @@ const Form = ({ handleClose, carId }: { handleClose: () => void }) => {
               label="Description"
               fullWidth
               variant="standard"
-              value={client.description}
+              value={announcement.description}
               onChange={(event) =>
-                setClient({ ...client, description: event.target.value })
+                setAnnouncement({
+                  ...announcement,
+                  description: event.target.value,
+                })
               }
             />
           </Grid>
           <Grid item xs={12} sm={6}>
             <InputLabel>Brands</InputLabel>
             <SelectField
-              value={client.brandId}
+              value={announcement.brandId}
               onChange={(event) =>
-                setClient({ ...client, brandId: event.target.value })
+                setAnnouncement({
+                  ...announcement,
+                  brandId: event.target.value,
+                })
               }
             >
               {brands.map((brandCar) => (
@@ -150,9 +157,9 @@ const Form = ({ handleClose, carId }: { handleClose: () => void }) => {
           <Grid item xs={12} sm={6}>
             <InputLabel>User</InputLabel>
             <SelectField
-              value={client.userId}
+              value={announcement.userId}
               onChange={(event) =>
-                setClient({ ...client, userId: event.target.value })
+                setAnnouncement({ ...announcement, userId: event.target.value })
               }
             >
               {users.map((user) => (
@@ -165,7 +172,7 @@ const Form = ({ handleClose, carId }: { handleClose: () => void }) => {
         </Grid>
 
         <WrapperClose>
-          <ButtonClose type="submit">Register</ButtonClose>
+          <ButtonClose type="submit">{children}</ButtonClose>
         </WrapperClose>
       </ContainerForm>
     </Container>

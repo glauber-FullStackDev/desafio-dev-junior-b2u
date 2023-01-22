@@ -1,18 +1,15 @@
-import { Types } from "mongoose";
+import {IBrands} from "./IBrands";
+import { IUsers } from "./IUsers";
 
-export interface ICarsApi {
-  index?: number;
-  id?: Types.ObjectId;
+export interface ICars {
+  id: string;
   model: string;
   year: string;
   description: string;
+  brandId: string;
+  userId: string;
+  brands: IBrands;
+  users: IUsers
 }
 
-export interface ICars {
-  index: number;
-  carId: Types.ObjectId;
-  carmModel: string;
-  carYear: string;
-  carDescription: string;
-  carBrands: string;
-}
+export type TOnlyCar = Omit<ICars, 'brands' | 'users'>

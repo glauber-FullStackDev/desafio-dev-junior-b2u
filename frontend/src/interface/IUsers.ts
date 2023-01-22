@@ -1,6 +1,6 @@
-import { Types } from "mongoose";
-
-export interface IUser {
-  value: { id: Types.ObjectId };
+export interface IUsers {
+  id: string;
   name: string;
+  email: string;
+  phone: string;
 }

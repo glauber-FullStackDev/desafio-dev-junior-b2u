@@ -27,7 +27,7 @@ const AppBar = () => {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
-          <Form handleClose={handleClose} />
+          <Form handleClose={handleClose} children="Register"/>
         </Box>
       </Modal>
     </Container>

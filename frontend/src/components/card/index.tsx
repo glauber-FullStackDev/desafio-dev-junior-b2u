@@ -46,7 +46,7 @@ const CardCar = ({
         </Button>
         <Modal open={open} onClose={handleClose}>
           <Box sx={style}>
-            <Form handleClose={handleClose} car={{ carId }} />
+            <Form handleClose={handleClose} car={{ carId }} children="Update"/>
           </Box>
         </Modal>
         <Button size="small" onClick={() => deleteCar(carId)}>

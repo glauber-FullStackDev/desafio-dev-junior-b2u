@@ -1,7 +1,7 @@
 import apiCars from "./api";
-import { Types } from "mongoose";
 
 export interface ICars {
+  id: string;
   model: string;
   year: string;
   description: string;
@@ -9,7 +9,7 @@ export interface ICars {
   userId: string;
 }
 
-const updateCarService = async (id: Types.ObjectId, cars: ICars) => {
+const updateCarService = async (id: string, cars: ICars) => {
   return await apiCars
     .put(`/cars/${id}`, cars)
     .then((response) => response.data)
