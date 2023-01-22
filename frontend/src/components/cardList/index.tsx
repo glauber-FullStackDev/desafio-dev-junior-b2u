@@ -1,14 +1,13 @@
-import { Types } from "mongoose";
 import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
-import { ICarsApi } from "../../interface/ICars";
+import { ICars } from "../../interface/ICars";
 import deleteCarService from "../../services/cars/delete-car";
 import getAllCars from "../../services/cars/get-all-cars";
 import CardCar from "../card";
 import { Container } from "./styles";
 
 const CardList = () => {
-  const [cars, setCars] = useState<ICarsApi[]>([]);
+  const [cars, setCars] = useState<ICars[]>([]);
 
   const getCars = async () => {
     const response = await getAllCars();
@@ -18,7 +17,7 @@ const CardList = () => {
     setCars(response);
   };
 
-  const deleteCar = async (id: Types.ObjectId) => {
+  const deleteCar = async (id: string) => {
     const response = await deleteCarService(id);
 
     if (response.error) {
@@ -37,13 +36,16 @@ const CardList = () => {
     <Container>
       {cars.map((car, index) => (
         <CardCar
-          index={index}
-          carId={car.id}
-          carmModel={car.model}
-          carYear={car.year}
-          carDescription={car.description}
-          carBrands={car.brands.brand}
-          deleteCar={deleteCar}
+        key={index}
+        id={car.id}
+        model={car.model}
+        year={car.year}
+        description={car.description}
+        brandId={car.brands.id}
+        brands={car.brands}
+        userId={car.users.id}
+        users={car.users}
+        deleteCar={deleteCar}
         />
       ))}
     </Container>
