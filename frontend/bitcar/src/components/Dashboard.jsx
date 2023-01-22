@@ -29,6 +29,7 @@ const Dashboard = ({dashboardTitle,dashboardOrder}) => {
         : 
         cars.map(car=> (
           <CardCar key={car.id}
+          id={car.id}
           name={car.name}
           marca={car.marca}
           ano_fabri={car.ano_fabri}

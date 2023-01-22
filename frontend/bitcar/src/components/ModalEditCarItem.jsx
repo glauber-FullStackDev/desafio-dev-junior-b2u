@@ -1,8 +1,24 @@
-import React from 'react'
+
 import Button from './Button'
+import {ItemContext} from '../contexts/ItemContext'
+import { useContext,useState } from 'react'
+import api from '../services/api'
+import { useForm } from "react-hook-form";
 
 const ModalEditCarItem = ({modal,setModal}) => {
+  const {carId} = useContext(ItemContext);
+
     
+  const editCar = (e) => {
+    e.preventDefault();
+    setModal(false);
+    api.patch('/cars/' + carId,{
+      name:'sera'
+    })
+    .then(res=>console.log(res))
+    .catch(err=>console.log(err))
+  }
+
   return (
     <>
       {modal ? (
@@ -24,9 +40,11 @@ const ModalEditCarItem = ({modal,setModal}) => {
                   <h2 className='text-center mt-4 font-semibold text-2xl text-gray-three'>
                     Editar Carro
                   </h2>
-                  <form className='flex flex-col gap-y-2'>
+                  <form className='flex flex-col gap-y-2 text-gray-two' >
                       <label className='font-medium text-gray-three'>Nome</label>
-                      <input type='text' placeholder='Prisma' className='bg-gray-eleven p-2 outline-none border rounded focus:border-primary-dark mb-2'/>
+                      <input type='text' placeholder='Prisma' className='bg-gray-eleven p-2 outline-none border rounded focus:border-primary-dark mb-2'
+
+                      />
                     <label className='font-medium text-gray-three'>Ano Fabricação</label>
                     <input type='text' placeholder='2018' className='bg-gray-eleven p-2 outline-none border rounded focus:border-primary-dark mb-2'/>
                     <label className='font-medium text-gray-three'>Marca</label>

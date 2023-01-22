@@ -7,7 +7,7 @@ import { ItemContext } from '../contexts/ItemContext'
 
 const ModalCarsItem = ({modal,setModal}) => {
   const {userId} = useContext(ItemContext);
-  const [cars,setCars] = useState([])
+  const [cars,setCars] = useState([]);
   useEffect(()=>{
     api.get('/users/' + userId)
     .then(res=>setCars(res.data.carros))
@@ -44,15 +44,15 @@ const ModalCarsItem = ({modal,setModal}) => {
                   </div>
                 </div>
                 <div className='flex flex-col h-20 overflow-y-scroll '>
-                  {cars.map(car=>(
-                    <div className='flex flex-row bg-gray-three text-gray-twelve items-center justify-between p-4'>
+                  { cars ? cars.map(car=>(
+                    <div key={car.id} className='flex flex-row bg-gray-three text-gray-twelve items-center justify-between p-4'>
                       <FaCar/>
                       <h2>{car.name}</h2>
                       <h2>{car.marca}</h2>
                       <h2>{car.ano_fabri}</h2>
                       
                       </div>
-                  ))}
+                  )) : <></>}
                 </div>
                 
               </div>

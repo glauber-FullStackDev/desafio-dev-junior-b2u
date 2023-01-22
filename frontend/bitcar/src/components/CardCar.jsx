@@ -4,10 +4,11 @@ import ModalEditDeleteItem from './ModalEditDeleteItem'
 import { useContext } from 'react'
 import { ModalContext } from '../contexts/ModalContext'
 import ModalUserItem from './ModalUserItem'
+import { ItemContext } from '../contexts/ItemContext'
 
-const CardCar = ({name,marca,ano_fabri,descricao,userId,user}) => {
+const CardCar = ({name,marca,ano_fabri,descricao,userId,user,id}) => {
     const {modalEditDelete,setModalEditDelete,modalUser,setModalUser} = useContext(ModalContext);
-    console.log(userId)
+    const {setCarId,setUserId} = useContext(ItemContext)
   return (
     <div className='bg-gray-three w-80 p-4 flex flex-col gap-y-4 text-white border rounded'>
         <div className='flex justify-between'>
@@ -19,7 +20,7 @@ const CardCar = ({name,marca,ano_fabri,descricao,userId,user}) => {
             <h2 className='text-white'>{name}</h2>
         </div>
             <div className='static'>
-            <FaEllipsisH color='#A8A8A8' className='cursor-pointer' onClick={()=>setModalEditDelete(!modalEditDelete)}/>
+            <FaEllipsisH color='#A8A8A8' className='cursor-pointer' onClick={()=>{setModalEditDelete(true);setCarId(id)}}/>
             </div>
             
         </div>
@@ -34,10 +35,10 @@ const CardCar = ({name,marca,ano_fabri,descricao,userId,user}) => {
         </div>
         <div className='flex items-center gap-x-4'>
             <FaUser color='#8f8f8f'/>
-            <h2 className='text-[14px] text-gray-eight underline underline-offset-4 decoration-gray-eight cursor-pointer' onClick={()=>setModalUser(!modalUser)}>{user.name}</h2>
+            <h2 className='text-[14px] text-gray-eight underline underline-offset-4 decoration-gray-eight cursor-pointer' onClick={()=>{{setModalUser(true);setUserId(userId)}}}>{user.name}</h2>
         </div>
         <ModalEditDeleteItem modal={modalEditDelete} setModal={setModalEditDelete}/>
-        <ModalUserItem modal={modalUser} setModal={setModalUser} userId={userId}/>
+        <ModalUserItem modal={modalUser} setModal={setModalUser}/>
         
 
     </div>

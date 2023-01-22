@@ -1,10 +1,22 @@
 import { useContext } from "react"
 import {ModalContext} from '../contexts/ModalContext'
 import ModalEditCarItem from "./ModalEditCarItem";
+import {ItemContext} from '../contexts/ItemContext'
+import api from "../services/api";
+
 
 
 const ModalEditDeleteItem = ({modal,setModal}) => {
   const {modalEditCar,setModalEditCar} = useContext(ModalContext);
+  const {carId} = useContext(ItemContext)
+  const deleteCar = () => {
+    setModal(false)
+    api.delete('/cars/' + carId)
+    .then(res=>console.log(res))
+    .catch(err=>console.log(err))
+  }
+
+
 
   return (
     <>
@@ -32,7 +44,7 @@ const ModalEditDeleteItem = ({modal,setModal}) => {
                   <button
                     className="text-[#A60606] bg-[#FF3535] font-bold px-6 py-2 text-sm mr-1 mb-1"
                     type="button"
-                    onClick={() => setModal(false)}
+                    onClick={() => deleteCar()}
                   >
                     Deletar
   
