@@ -8,7 +8,7 @@ const updateBrandService = async (id: string, params: any) => {
       body: "Brand successfully updated!",
     };
   } catch (error) {
-    return { statusCode: 400, body: "Error updating car" };
+    return { statusCode: 400, body: "Error updating brand" };
   }
 };
 

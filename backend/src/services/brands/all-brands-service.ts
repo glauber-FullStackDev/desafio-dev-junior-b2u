@@ -8,7 +8,7 @@ const allBrandsServices = async () => {
       body: carData,
     };
   } catch (error) {
-    return { statusCode: 400, body: "Error Fetching car brands" };
+    return { statusCode: 400, body: "Error Fetching brands" };
   }
 };
 

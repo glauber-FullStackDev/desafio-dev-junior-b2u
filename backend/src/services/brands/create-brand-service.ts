@@ -8,7 +8,7 @@ const createBrandService = async (params: any) => {
       body: "Brand Registration successfully Completed!",
     };
   } catch (error) {
-    return { statusCode: 400, body: "Error Fetching car brands" };
+    return { statusCode: 400, body: "Error Fetching brand" };
   }
 };
 
