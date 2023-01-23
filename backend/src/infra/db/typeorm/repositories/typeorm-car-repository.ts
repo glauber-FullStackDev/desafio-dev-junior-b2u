@@ -25,10 +25,14 @@ export class TypeOrmCarRepository implements AddCarRepository, LoadCarsRepositor
   }
 
   async loadAll (): Promise<CarModel[]> {
-    const car = await AppDataSource.getInstance()
-      .getRepository(TypeOrmCar)
-      .find()
-    const domainCar = Mapper.toDomainEntities(car)
+    const cars = await AppDataSource.getInstance()
+    .getRepository(TypeOrmCar)
+    .createQueryBuilder('car')
+    .leftJoinAndSelect('car.owner', 'owner')
+    .getMany()
+
+    const domainCar = Mapper.toDomainEntities(cars)
+
     return domainCar
   }
 

@@ -4,7 +4,7 @@ import {
   PrimaryGeneratedColumn
 } from 'typeorm'
 
-@Entity('account')
+@Entity('owner')
 export class TypeOrmOwner implements OwnerModel {
   @PrimaryGeneratedColumn('uuid')
   id: string

@@ -8,7 +8,7 @@ import {
 } from 'typeorm'
 import { TypeOrmOwner } from './typeorm-owner'
 
-@Entity('account')
+@Entity('car')
 export class TypeOrmCar implements CarModel {
   @PrimaryGeneratedColumn('uuid')
   id: string

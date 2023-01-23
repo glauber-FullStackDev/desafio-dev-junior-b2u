@@ -1,7 +1,4 @@
-.createCarContainer {
-}
-
-.createCar {
+.editCar {
   margin: 170px 140px;
   color: var(--black);
 }
@@ -70,16 +67,15 @@
   margin: 70px 10px;
 }
 
-
 @media (max-width: 500px) {
-  .createCar {
+  .editCar {
     margin: 100px 0px;
     display: flex;
     flex-direction: column;
     align-items: center;
   }
 
-  .createCar h2 {
+  .editCar h2 {
     align-self:auto;
   }
 
@@ -103,4 +99,3 @@
   }
   
 }
-

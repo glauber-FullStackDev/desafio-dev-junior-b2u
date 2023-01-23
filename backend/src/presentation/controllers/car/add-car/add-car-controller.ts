@@ -1,8 +1,7 @@
 import { AddOwner } from 'domain/use-cases/owner/add-owner'
 import { AddCar } from '../../../../domain/use-cases/car/add-car'
 import { noContent } from '../../../../presentation/helpers/http/http-helper'
-import { EmailInUseError } from '../../../errors/email-in-use-error'
-import { badRequest, forbidden, serverError } from '../../../helpers/http/http-helper'
+import { badRequest, serverError } from '../../../helpers/http/http-helper'
 import { Controller } from '../../../protocols/controller'
 import { HttpRequest, HttpResponse } from '../../../protocols/http'
 import { Validation } from '../../../protocols/validation'
@@ -40,10 +39,6 @@ export class AddCarController implements Controller {
         email,
         telephone
       })
-
-      if (!owner) {
-        return forbidden(new EmailInUseError())
-      }
 
       await this.addCar.add({
         name,

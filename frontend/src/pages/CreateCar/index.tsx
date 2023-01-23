@@ -1,17 +1,47 @@
+import { Car } from '@/components/CarList'
 import Header from '@/components/Header'
+import { CircularProgress } from '@mui/material'
+import { useState } from 'react'
+import { useForm } from 'react-hook-form'
+import { toast } from 'react-toastify'
+import { api } from 'services/api'
 import styles from './styles.module.scss'
 
 export default function CreateCar() {
+  const { register, handleSubmit, reset } = useForm()
+  const [isLoaded, setIsLoaded] = useState(false)
+
+  async function handleCreateCar(data:any) {
+    setIsLoaded(!isLoaded)
+    try {
+      const res = await api.post('car', data)
+
+      setIsLoaded(!!isLoaded)
+      if(res.status === 204) {
+        toast.success('Carro registrado com sucesso!')
+        reset()
+      } else if (res.status===500){
+        toast.error('Erro no servidor!')
+      }
+    }catch(err) {
+      toast.error(`${err}`);
+      
+      setIsLoaded(!!isLoaded)
+    }
+  }
+
   return (
     <div className={styles.createCarContainer}>
       <Header/>
 
       <div className={styles.createCar}>
-        <h2 className={styles.createCarTitle}> Cadastrar carros</h2>
+        
 
-        <form action="" className={styles.form}>
+        <form className={styles.form} onSubmit={handleSubmit(handleCreateCar)}>
+          <h2 className={styles.createCarTitle}> Cadastrar carros</h2>
           <label htmlFor="name">Nome</label>
           <input 
+            {...register('name')}
             id="name" 
             type="text" 
             autoComplete="name" 
@@ -20,6 +50,7 @@ export default function CreateCar() {
           />
           <label htmlFor="brand">Marca</label>
           <input 
+            {...register('brand')}
             id="brand" 
             type="text" 
             autoComplete="email" 
@@ -28,7 +59,8 @@ export default function CreateCar() {
           />
           <label htmlFor="year">Ano</label>
           <input 
-            id="year" 
+            {...register('manufactureYear')}
+            id="manufactureYear" 
             type="text" 
             autoComplete="year" 
             required 
@@ -36,6 +68,7 @@ export default function CreateCar() {
           />
           <label htmlFor="decription">Descrição</label>
           <textarea 
+            {...register('description')}
             id="description" 
             autoComplete="descripton"
             maxLength={300}
@@ -46,8 +79,9 @@ export default function CreateCar() {
           <h2> Dados do proprietário </h2>
 
           <label htmlFor="ownerName">Nome</label>
-          <input 
-            id="oname" 
+          <input
+            {...register('owner_name')}
+            id="owner_name" 
             type="text"
             autoComplete="ownername" 
             required 
@@ -55,7 +89,8 @@ export default function CreateCar() {
           />
 
           <label htmlFor="email">Email</label>
-          <input 
+          <input
+           {...register('email')}
             id="email" 
             type="email" 
             autoComplete="email" 
@@ -64,14 +99,17 @@ export default function CreateCar() {
           />
 
           <label htmlFor="name">Telefone</label>
-          <input 
+          <input
+            {...register('telephone')}
             id="telephone" 
             type="text" 
             autoComplete="telephone" 
             required 
             className={styles.inputTel}
           />
-          <button type="submit">Cadastrar</button>
+          {
+          !isLoaded ? <button type="submit">Cadastrar</button> : <div className={styles.progress}><CircularProgress color='primary'/></div>
+          }
         </form>
       </div>
     </div>

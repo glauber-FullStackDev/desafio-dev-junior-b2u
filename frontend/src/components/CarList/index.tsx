@@ -1,14 +1,30 @@
+import { GetServerSideProps } from 'next'
+import { api } from '../../../services/api'
 import styles from './styles.module.scss'
-export default function CarList() {
 
-  const cart = [{
-    id: '340tuwrogjgapwsfsfgsdfg',
-    name: 'Palio',
-    brand: 'Fiat',
-    manufactureYear: 2013,
-    description: 'Carro com 10 anos de uso e 230000km rodados e nao tem nenhum risoc e batido',
-    owner: 'Gabriel'
-  }]
+export type Owner = {
+	id: string
+	owner_name: string
+	email: string
+	telephone: string
+	created_at: Date
+}
+
+export type Car = {
+  id: string
+	name: string
+	brand: string
+	manufactureYear: number
+	description: string
+	owner: Owner
+	created_at: Date
+}
+
+export type CarListProps = {
+  cars: Array<Car>
+}
+
+export default function CarList({ cars }: CarListProps) {
 
   return (
     <div className={styles.carListContainer}>
@@ -26,7 +42,7 @@ export default function CarList() {
             
             <tbody className={styles.tbody}>
   
-            {cart.map((car, index) => {
+            {cars?.map((car, index) => {
               return (
                 <tr key={car.id}>
                   <td className={styles.name}> 
@@ -47,7 +63,7 @@ export default function CarList() {
                   </td>
                   <td className={styles.owner}>
                     <span>Dono</span>
-                    <div>{car.owner}</div>
+                    <div>{car.owner.owner_name}</div>
                   </td>
                 </tr>
               )
