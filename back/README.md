@@ -6,8 +6,9 @@
 -  clone o repositório do git
 
 ```bash
+$ git clone git clone https://github.com/1uri-silva/desafio-dev-junior-b2u.git
 
-$ cd projeto
+$ cd desafio-dev-junior-b2u/back
 
 $ npm i
 
