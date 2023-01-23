@@ -27,8 +27,15 @@
   width: 20px;
 }
 
+.imgContainer {
+  height: 100%;
+}
+
 .imgContainer img {
+  float: left;
   width: 200px;
+  height: 150px;
+  object-fit: cover;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
 }
@@ -51,7 +58,7 @@
   padding: 10px;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 .carInfoContainer span {
@@ -63,7 +70,6 @@
   padding-bottom: 50px;
 }
 
-
 @media only screen and (max-width: 1250px) {
   .cardContainer {
     flex-direction: column;
@@ -74,7 +80,7 @@
   .imgContainer {
     width: 100%;
   }
-  .imgContainer img{
+  .imgContainer img {
     width: 100%;
   }
 
@@ -100,19 +106,18 @@
 }
 
 @media only screen and (max-width: 500px) {
-
   .buttonsDiv {
     width: 100%;
     flex-wrap: wrap;
     justify-content: center;
   }
-  .buttonsDiv .editButton, .buttonsDiv .deleteButton{
+  .buttonsDiv .editButton,
+  .buttonsDiv .deleteButton {
     width: 5px;
     margin-bottom: 3px;
   }
 
-  .buttonsDiv img{
+  .buttonsDiv img {
     width: 15px;
   }
 }
-

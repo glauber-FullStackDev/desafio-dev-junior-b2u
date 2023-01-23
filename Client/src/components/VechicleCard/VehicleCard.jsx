@@ -34,7 +34,7 @@ const VehicleCard = ({ item, onRemove }) => {
       <div className={styles.imgContainer}>
         <img
           src={item.url}
-          alt="alt descricao"
+          alt="Vehicle image"
         ></img>
       </div>
       <div className={styles.carInfoContainer}>
@@ -49,13 +49,13 @@ const VehicleCard = ({ item, onRemove }) => {
         <button onClick={handleEdit} className={styles.editButton}>
           <img
             src="https://cdn-icons-png.flaticon.com/512/1159/1159633.png"
-            alt=""
+            alt="Pencil icon for edition"
           />
         </button>
         <button onClick={handleDelete} className={styles.deleteButton}>
           <img
             src="https://cdn-icons-png.flaticon.com/512/7491/7491835.png"
-            alt=""
+            alt="Trash icon for delete"
           />
         </button>
       </div>
