@@ -1,9 +1,11 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import GlobalStyles from './styles/GlobalStyles';
 import Menu from './components/Menu';
-import Cadastro from './pages/cadastro';
-import Home from './pages/home';
+import CadastroCarro from './pages/CadastroCarro';
+import ListaCarros from './pages/ListaCarros';
 import Rodape from './components/Rodape';
+import Home from './pages/Home';
+
 
 
 const App = () => {
@@ -13,7 +15,8 @@ const App = () => {
       <Menu/>
       <Routes>
         <Route index element={<Home/>}/>
-        <Route path='/cadastro' element={<Cadastro/>}/>        
+        <Route path='/carros' element={<ListaCarros/>}/>
+        <Route path='/cadastro' element={<CadastroCarro/>}/>        
       </Routes>
       <Rodape/>
     </BrowserRouter>

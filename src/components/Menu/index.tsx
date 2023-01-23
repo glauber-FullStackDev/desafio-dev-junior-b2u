@@ -1,4 +1,4 @@
-import { Cabecalho, Caixa, CarIcon, Logo, LogoWhat, Navbar, Titulo as TituloLogo } from "./styles"
+import { Cabecalho, Caixa, CarIcon, ItemLink, Logo, LogoExit, LogoPerfil, Navbar, Titulo as TituloLogo } from "./styles"
 
 const Menu = () => {
     return(
@@ -8,13 +8,15 @@ const Menu = () => {
                 <TituloLogo>ShopCar</TituloLogo>
             </Logo>
             <Navbar>
-                <li>Home</li>
-                <li>Carros</li>
-                <li>Anuncie aqui!</li>
+                <ItemLink to='/'>Home</ItemLink>
+                <ItemLink to='/carros'>Carros</ItemLink>
+                <ItemLink to='cadastro'>Anuncie aqui!</ItemLink>
             </Navbar>
             <Caixa>
-                <LogoWhat/>
-                <p>Chama no Zap</p>
+                <LogoPerfil/>
+                <p>Meu perfil</p>
+                <LogoExit/>
+                <p>Sair</p>
             </Caixa>
 
         </Cabecalho>

@@ -9,13 +9,7 @@ export class CarrosController {
     public async listaCarros(_: Request, res: Response) {
         try {
             const listaDeCarros = await Carros.find();
-            res.status(200).json({
-                status: 'sucess',
-                results: listaDeCarros.length,
-                data: {
-                    listaDeCarros
-                }
-            })
+            res.status(200).json(listaDeCarros)
         } catch (error) {
             res.status(400).json({
                 status: 'fail',
@@ -29,12 +23,7 @@ export class CarrosController {
         const id = req.params.id;
         try {
             const carro = await Carros.findById(id);
-            res.status(200).json({
-                status: 'sucess',
-                data: {
-                    carro
-                }
-            })
+            res.status(200).json(carro)
         } catch (error) {
             res.status(400).json({
                 status: 'fail',
@@ -49,12 +38,7 @@ export class CarrosController {
         const dados = req.body;
         try {
             const carro = await Carros.create(dados);
-            res.status(201).json({
-                status: 'sucess',
-                data: {
-                    carro
-                }
-            });
+            res.status(201).json(carro);
         } catch (error) {
             res.status(401).json({
                 status: 'fail',
@@ -70,12 +54,7 @@ export class CarrosController {
 
         try {
             const carroAtualizado = await Carros.findByIdAndUpdate(id, dados);
-            res.status(200).json({
-                status: 'sucess',
-                data: {
-                    carroAtualizado
-                }
-            });
+            res.status(200).json(carroAtualizado);
         } catch (error) {
             res.status(400).json({
                 status: 'fail',

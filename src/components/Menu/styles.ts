@@ -1,18 +1,21 @@
 import styled from "styled-components"
 import { Car } from "@styled-icons/boxicons-regular/Car"
-import { Whatsapp } from '@styled-icons/boxicons-logos/Whatsapp'
+import { User } from "@styled-icons/boxicons-regular/User"
+import { Exit } from '@styled-icons/boxicons-regular/Exit'
+import { NavLink } from "react-router-dom";
 
 export const Cabecalho = styled.header`
     display: flex;   
     align-items: center;
     justify-content: space-between;
-    padding: 20px 20px;
+    padding: 16px 20px;
     border-bottom: 2px solid #434343;
 
 `;
 
 export const Titulo = styled.h1`
     font-size: 20px;
+    font-weight: bold;
     color: #010101;
 `;
 
@@ -37,16 +40,32 @@ export const Navbar = styled.nav`
         margin-right: 8px;
         list-style: none;
         font-size: 16px;
+        color: #003D76;
         cursor: pointer;
 
         &:hover {
-            color: #003d76;;
+            color: #434343;;
         }
     }
     
 `;
 
-export const LogoWhat = styled(Whatsapp)`
+
+export const ItemLink = styled(NavLink)`
+
+    text-align: center;
+    margin-right: 8px;
+    list-style: none;
+    font-size: 16px;
+    color: #003D76;
+    cursor: pointer;
+    text-decoration: none;
+    &:hover {
+        color: #434343;;
+    }
+`
+
+export const LogoPerfil = styled(User)`
     width: 24px;
     height: 24px;
     color: #003d76;
@@ -54,16 +73,26 @@ export const LogoWhat = styled(Whatsapp)`
 
 `;
 
+export const LogoExit = styled(Exit)`
+    width: 24px;
+    height: 24px;
+    color: #003d76;
+    margin-left: 4px;
+
+
+`;
+
 export const Caixa = styled.div`
     
-
+    width: 120px;
     display: flex;
     align-items: center;
 
-    width: 16%;
+    
 
     >p {
-        font-size: 24px;
+        font-size: 8px;
+        color: #003D76;
     }
 
 `;

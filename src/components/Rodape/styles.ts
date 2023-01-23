@@ -4,7 +4,7 @@ import { Facebook, Instagram, Whatsapp, Twitter } from '@styled-icons/boxicons-l
 
 
 export const Container = styled.footer`
-    justify-content: space-between;
+    justify-content: space-between ;
     display:  flex;
     align-items: center;
 
