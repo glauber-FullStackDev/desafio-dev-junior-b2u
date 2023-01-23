@@ -1,7 +1,7 @@
 const { statusCode } = require('../utils/statusCode');
 const donosService = require('../services/donosService');
 
-const { OK } = statusCode;
+const { OK, CREATED } = statusCode;
 
 const getOwners = async (_req, res, _next) => {
   const donos = await donosService.getOwners();
@@ -9,4 +9,10 @@ const getOwners = async (_req, res, _next) => {
   return res.status(OK).json(donos);
 };
 
-module.exports = { getOwners }
+const postOwners = async (req, res, _next) => {
+  const dono = await donosService.postOwners(req.body);
+  if (dono === CREATED) return res.status(CREATED).json({ message: 'Dono cadastrado com sucesso!'});
+  throw new Error('Ocorreu um erro inesperado');
+}
+
+module.exports = { getOwners, postOwners }
