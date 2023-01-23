@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from 'react'
+import { useHistory } from 'react-router-dom';
 import CarsCard from '../components/CarsCard';
 import getFetch from '../utils/getFetch';
 
 function Cars() {
   const [showError, setShowError] = useState('');
   const [allCarsFetched, setAllCarsFetched] = useState([]);
+
+  const history = useHistory();
 
   useEffect(() => {
     let isMounted = true;
@@ -18,9 +21,18 @@ function Cars() {
     return () => { isMounted = false }
   }, [])
 
+  const handleClick = () => { 
+    history.push('/add')
+  }
+
   return (
     <div>
-      <button type='button'>Adicionar Carro</button>
+      <button
+        type='button'
+        onClick={handleClick}
+      >
+        Adicionar Carro
+      </button>
       {allCarsFetched && allCarsFetched.map((car) => (
         <CarsCard
           key={car.id}

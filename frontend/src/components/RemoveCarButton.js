@@ -4,6 +4,7 @@ import deleteFetch from '../utils/deleteFetch'
 function RemoveCarButton({ id }) {
   const handleClick = async () => {
     await deleteFetch(id);
+    window.location.reload(true);
   };
 
   return (
