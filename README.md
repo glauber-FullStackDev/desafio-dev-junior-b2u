@@ -64,7 +64,7 @@ npm install
 # executar o projeto
 npm run start:dev
 
-# Para testar as rotas, bastar entrar em http://localhost:3333/api após rodas o projeto. 
+# Para testar as rotas, bastar entrar em http://localhost:3333/api após rodar o projeto. 
 # Aqui você encontrará a documentação em Swagger.
 ```
 
