@@ -9,7 +9,7 @@ Prerequisites:
 - `yarn` ou `npm` (para gerenciamento de dependências e execução de scripts)
 - `docker` e `docker-compose` (para executar o servidor, banco de dados localmente de forma isolada e reproduzível)
 
-#### Backend: 
+### Backend: 
 
 Em primeiro lugar, entrar no diretorio ou code base onde está a aplicação backend:
 ```sh
@@ -35,11 +35,12 @@ sudo docker compose up
 
 Sem o docker:
 ```
+npm i
 npm run start
 yarn start
 ```
 
-####Frontend
+### Frontend
 
 Entrando no diretorio específico:
 
