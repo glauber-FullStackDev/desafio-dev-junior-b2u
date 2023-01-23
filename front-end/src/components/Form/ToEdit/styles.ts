@@ -4,9 +4,9 @@ export const ContainerForm = styled.form`
   display: flex;
 
   width: 400px;
-  height: 400px;
+  height: 400%;
 
-  //padding: 5px;
+  margin: 40px auto;
 
   justify-content: space-around;
   align-items: center;
@@ -19,25 +19,10 @@ export const ContainerTitle = styled.div`
   display: flex;
   width: 100%;
   height: 40px;
-  //padding: 5px;
   flex-direction: column;
   align-items: center;
-  //gap: 10px;
   justify-content: center;
   margin-top: 0;
-  //border-radius: 22px;
- // background-color: red;
- // background-color: ${(props) => props.theme["gray-500"]};
-`;
-
-export const Success = styled.span`
-    margin: 5px;
-
-  color: ${(props) => props.theme["green-700"]};
-`;
-export const Error = styled.span`
-  margin: 5px;
-  color: ${(props) => props.theme["red-300"]};
 `;
 
 export const ContainerBox = styled.div`
@@ -50,13 +35,10 @@ export const ContainerBox = styled.div`
   align-items: center;
   justify-content: space-around;
   background-color: transparent;
-
-
 `;
 export const Title = styled.span`
-
-align-items: center;
-justify-content: left;
+  align-items: center;
+  justify-content: left;
 `;
 
 export const Input = styled.input`
@@ -65,7 +47,6 @@ export const Input = styled.input`
   height: 20px;
 
   background-color: ${(props) => props.theme["gray-900"]};
-
 
   border-radius: 4px;
   border: solid 1px #b5935299;
@@ -102,22 +83,30 @@ export const Input = styled.input`
   }
 `;
 
-
 export const ContainerButton = styled.div`
   display: flex;
   width: 75%;
-  //height: 30%;
-  padding: 5px;
-  flex-direction: row;
+  margin: 15px 0 0 2px;
   align-items: center;
   border-radius: 22px;
- // margin: 10px;
-  padding: 5px;
-  justify-content: space-around;
-  //background-color: ${(props) => props.theme["gray-800"]};
+
+  justify-content: center;
 
   button {
+    margin-bottom: 10px;
     border-radius: 12px;
     padding: 5px;
+    justify-content: center;
+    align-items: center;
   }
+`;
+
+export const Success = styled.span`
+  margin: 5px;
+
+  color: ${(props) => props.theme["green-700"]};
+`;
+export const Error = styled.span`
+  margin: 5px;
+  color: ${(props) => props.theme["red-300"]};
 `;

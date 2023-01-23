@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const ContainerCard = styled.div`
   display: flex;
 
-  width: 400px;
+  width: 290px;
 
   padding: 5px;
 
@@ -52,13 +52,14 @@ export const Title = styled.span`
 
   align-items: center;
   justify-content: left;
+  font-size: 12px;
 `;
 export const TitleYear = styled.div`
   display: flex;
-
+  font-size: 12px;
   align-items: center;
   justify-content: left;
-` ;
+`;
 export const ContainerDescription = styled.div`
   display: flex;
   width: 350px;
@@ -67,6 +68,7 @@ export const ContainerDescription = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  font-size: 12px;
 `;
 export const Description = styled.p`
   display: flex;
@@ -85,9 +87,14 @@ export const ContainerButton = styled.div`
   padding: 10px;
   justify-content: space-around;
   background-color: ${(props) => props.theme["gray-800"]};
-
   button {
     border-radius: 12px;
     padding: 5px;
+    font-size: 12px;
+    a {
+      color: ${(props) => props.theme["gray-900"]};
+
+      text-decoration: none;
+    }
   }
 `;

@@ -1,6 +1,6 @@
 import * as S from "./styles";
-import {  useState } from "react";
-import { api, update } from "../../../lib/axios";
+import { useState } from "react";
+import { update } from "../../../services/axios";
 
 interface Data {
   id_car?: string;
@@ -10,11 +10,16 @@ interface Data {
   description?: string;
   name?: string;
   email?: string;
-  phone?: number;
+  phone?: string;
   created_at?: Date;
   updated?: Date;
 }
-export const Update = () => {
+interface IdCardProps {
+  state: { idState: string };
+  setState: React.Dispatch<React.SetStateAction<{ idState: string }>>;
+}
+
+export const Update = ({ state, setState }: IdCardProps) => {
   const [dados, setDados] = useState<Data[]>([]);
   const [name_car, setName_car] = useState("");
   const [brand, setBrand] = useState("");
@@ -25,6 +30,7 @@ export const Update = () => {
   const [phone, setPhone] = useState("");
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState(false);
+  const idCarState = state.idState;
 
   const resetForm = () => {
     setName_car("");
@@ -35,43 +41,31 @@ export const Update = () => {
     setEmail("");
     setPhone("");
   };
-  const handleSubmit = async (e: any) => {
+  const handleSubmit = async (e: React.SyntheticEvent, idCarState: string) => {
     e.preventDefault();
     const data: Data = {
-      //: id_car,
       name_car: name_car,
       brand: brand,
       year_of_manufacture: parseInt(year_of_manufacture),
       description: description,
       name: name,
       email: email,
-      phone: parseInt(phone),
+      phone: phone,
     };
-    if (
-      (name_car &&
-        brand &&
-        year_of_manufacture &&
-        description &&
-        name &&
-        phone != "") ||
-      null
-    ) {
-   
-    const fetchData = async () => {
-      api.get("fetchAll")
-      .then(response => setDados(response.data))
-      console.log("idddddd")
-    }
-  
-    
-    setSuccess(true);
-    resetForm();
-    setTimeout(() => {
-       
-        setSuccess(false);
+
+    const res = await update(state.idState, data);
+    if (res === true) {
+      setTimeout(() => {
+        setSuccess(true);
       }, 200);
 
-      console.log(data);
+      resetForm();
+
+      setSuccess(true);
+
+      setTimeout(() => {
+        setSuccess(false);
+      }, 2000);
     } else {
       setError(true);
 
@@ -82,7 +76,7 @@ export const Update = () => {
   };
 
   return (
-    <S.ContainerForm action="">
+    <S.ContainerForm>
       <S.ContainerTitle>
         <S.Title>Atualizar informações Veículo </S.Title>
       </S.ContainerTitle>
@@ -95,12 +89,10 @@ export const Update = () => {
           onChange={(e) => {
             setName_car(e.target.value);
           }}
-          required
         />
         <S.Input
           type="text"
           placeholder="Marca"
-          required
           value={brand}
           onChange={(e) => {
             setBrand(e.target.value);
@@ -109,7 +101,6 @@ export const Update = () => {
         <S.Input
           type="number"
           placeholder="Ano de fabricação"
-          required
           value={year_of_manufacture}
           onChange={(e) => {
             setYear_of_manufacture(e.target.value);
@@ -118,7 +109,6 @@ export const Update = () => {
         <S.Input
           type="text"
           placeholder="Descrição"
-          required
           value={description}
           onChange={(e) => {
             setDescription(e.target.value);
@@ -127,7 +117,6 @@ export const Update = () => {
         <S.Input
           type="text"
           placeholder="Nome do dono"
-          required
           value={name}
           onChange={(e) => {
             setName(e.target.value);
@@ -136,16 +125,14 @@ export const Update = () => {
         <S.Input
           type="email"
           placeholder="E-mail"
-          required
           value={email}
           onChange={(e) => {
             setEmail(e.target.value);
           }}
         />
         <S.Input
-          type="number"
+          type="text"
           placeholder="Telefone"
-          required
           value={phone}
           onChange={(e) => {
             setPhone(e.target.value);
@@ -153,8 +140,13 @@ export const Update = () => {
         />
       </S.ContainerBox>
       <S.ContainerButton>
-        <button type="submit" onClick={handleSubmit}>
-          Cadastrar
+        <button
+          type="submit"
+          onClick={(event) => {
+            handleSubmit(event, idCarState);
+          }}
+        >
+          Confirmar
         </button>
       </S.ContainerButton>
       {success && <S.Success>Dados enviados com sucesso!</S.Success>}

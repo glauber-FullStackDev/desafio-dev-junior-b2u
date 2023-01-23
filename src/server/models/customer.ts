@@ -6,7 +6,7 @@ export interface Customer {
     description?: string,
     name?: string,
     email?: string,
-    phone?: number,
+    phone?: string,
     created_at?: Date,
     updated?: Date
 }

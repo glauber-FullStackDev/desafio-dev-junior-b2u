@@ -1,6 +1,6 @@
 import * as S from "./styles";
-import { useState, useRef } from "react";
-import { api, save, update } from "../../../lib/axios";
+import { useState } from "react";
+import { api, save } from "../../../services/axios";
 
 interface Data {
   id_car?: string;
@@ -10,13 +10,16 @@ interface Data {
   description?: string;
   name?: string;
   email?: string;
-  phone?: number;
+  phone?: string;
   created_at?: Date;
   updated?: Date;
 }
-export const Register = () => {
-  const myRef = useRef<HTMLDivElement>(null);
-  console.log("reffffff", myRef);
+interface IdCardProps {
+  state: { idState: string };
+  setState: React.Dispatch<React.SetStateAction<{ idState: string }>>;
+}
+
+export const Register = ({ state, setState }: IdCardProps) => {
   const [dados, setDados] = useState<Data[]>([]);
 
   const [name_car, setName_car] = useState("");
@@ -48,26 +51,19 @@ export const Register = () => {
       description: description,
       name: name,
       email: email,
-      phone: parseInt(phone),
+      phone: phone,
     };
 
- 
-
-
     if (
-      (name_car &&
-        brand &&
-        year_of_manufacture &&
-        description &&
-        name &&
-        phone != "") ||
-      null
+      name_car &&
+      brand &&
+      year_of_manufacture &&
+      description &&
+      name &&
+      phone != ""
     ) {
-      
-      
-        api.get("fetchAll")
-        .then(response => setDados(response.data))
-   /*    if(data.email == email && ) { */
+      api.get("fetchAll").then((response) => setDados(response.data));
+
       save(data);
 
       setSuccess(true);
@@ -77,8 +73,6 @@ export const Register = () => {
       setTimeout(() => {
         setSuccess(false);
       }, 2000);
-
-      console.log(data);
     } else {
       setError(true);
 
@@ -150,7 +144,7 @@ export const Register = () => {
           }}
         />
         <S.Input
-          type="number"
+          type="text"
           placeholder="Telefone"
           required
           value={phone}
@@ -161,7 +155,7 @@ export const Register = () => {
       </S.ContainerBox>
       <S.ContainerButton>
         <button type="submit" onClick={handleSubmit}>
-         Confirmar
+          Confirmar
         </button>
       </S.ContainerButton>
       {success && <S.Success>Dados enviados com sucesso!</S.Success>}

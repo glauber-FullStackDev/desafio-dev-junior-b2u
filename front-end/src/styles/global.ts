@@ -1,4 +1,3 @@
-
 import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
@@ -11,10 +10,10 @@ export const GlobalStyle = createGlobalStyle`
  }
 
  body {
-    background-color: ${(props) => props.theme['red-700']};
-    color: ${(props) => props.theme['gray-100']};
+    background-color: ${(props) => props.theme["red-700"]};
+    color: ${(props) => props.theme["gray-100"]};
     -webkit-fontsmoothing: antialiased;
     font-family: "Roboto", sans-serif;
  }
 
-`
+`;

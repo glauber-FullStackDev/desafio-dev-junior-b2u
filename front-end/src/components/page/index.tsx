@@ -1,13 +1,15 @@
 import { Card } from "../Card";
-import { Register } from "../Form/Register";
 import * as S from "./styles";
 
-export const Home = () => {
+interface IdCardProps {
+  state: { idState: string };
+  setState: React.Dispatch<React.SetStateAction<{ idState: string }>>;
+}
+
+export const Home = ({ state, setState }: IdCardProps) => {
   return (
     <S.Container>
-      <Card />
-      {/* <Form /> */}
-
+      <Card state={state} setState={setState} />
     </S.Container>
   );
 };

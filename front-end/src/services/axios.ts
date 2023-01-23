@@ -4,17 +4,6 @@ export const api = axios.create({
   baseURL: "http://localhost:3333/",
 });
 
-/* export async function getData() {
-  await api
-    .get("fetchAll")
-    .then((response) => {
-      console.log(response.data);
-    })
-    .catch((error) => {
-      console.log(error);
-    });
-}
- */
 export async function save(data: any) {
   try {
     const response = await api.post("createCar", data);
@@ -23,12 +12,20 @@ export async function save(data: any) {
     throw console.log(err);
   }
 }
-export async function update(data: any, id_car: string) {
+export async function update(id_car: string, data: any) {
   try {
     const response = await api.put(`changeCar/${id_car}`, data);
-    return response.data;
+    return true;
   } catch (err) {
     throw console.log(err);
   }
 }
 
+export async function deleteCar(id_car: string) {
+  try {
+    const response = await api.delete(`deleteCar/${id_car}`);
+    return true;
+  } catch (err) {
+    throw console.log(err);
+  }
+}

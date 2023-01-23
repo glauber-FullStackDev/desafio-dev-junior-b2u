@@ -5,8 +5,7 @@ export const ContainerForm = styled.form`
 
   width: 400px;
   height: 100%;
-  margin: 30px auto ;
- 
+  margin: 30px auto;
 
   justify-content: space-around;
   align-items: center;
@@ -23,7 +22,6 @@ export const ContainerTitle = styled.div`
   align-items: center;
   justify-content: center;
   margin-top: 0;
- 
 `;
 
 export const ContainerBox = styled.div`
@@ -36,13 +34,10 @@ export const ContainerBox = styled.div`
   align-items: center;
   justify-content: space-around;
   background-color: transparent;
-
-
 `;
 export const Title = styled.span`
-
-align-items: center;
-justify-content: left;
+  align-items: center;
+  justify-content: left;
 `;
 
 export const Input = styled.input`
@@ -51,7 +46,6 @@ export const Input = styled.input`
   height: 20px;
 
   background-color: ${(props) => props.theme["gray-900"]};
-
 
   border-radius: 4px;
   border: solid 1px #b5935299;
@@ -88,7 +82,6 @@ export const Input = styled.input`
   }
 `;
 
-
 export const ContainerButton = styled.div`
   display: flex;
   width: 75%;
@@ -108,7 +101,7 @@ export const ContainerButton = styled.div`
 `;
 
 export const Success = styled.span`
-    margin: 5px;
+  margin: 5px;
 
   color: ${(props) => props.theme["green-700"]};
 `;
