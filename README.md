@@ -22,3 +22,5 @@ Serão considerados diferenciais:
 - Conhecimento sólido em Expo ou React Native;
 - Boas práticas de escrita de código (código limpo, padrões de arquitetura, etc.);
 - Conhecimento em infraestruturas em nuvem;
+
+# CarAdHome
