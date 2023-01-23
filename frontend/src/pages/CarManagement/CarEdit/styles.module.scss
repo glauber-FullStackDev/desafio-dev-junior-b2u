@@ -1,0 +1,101 @@
+.editCar {
+  margin: 170px 140px;
+  color: var(--black);
+}
+
+.createCarTitle {
+
+}
+
+.form {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form input {
+  width: 600px;
+  height: 40px;
+  background: #f5f8fa;
+  border: 1px solid #d3e2e5;
+  border-radius: 4px;
+  outline: none;
+  color: #5c8599;
+  padding: 15px;
+}
+
+.form textarea {
+  min-height: 120px;
+  max-height: 240px;
+  width: 600px;
+  resize: vertical;
+  padding: 16px;
+  line-height: 28px;
+  background: #f5f8fa;
+  border: 1px solid #d3e2e5;
+  border-radius: 20px;
+  outline: none;
+  color: #5c8599;
+}
+
+.form button {
+  margin-top: 64px;
+  width: 300px;
+  height: 64px;
+  border: 0;
+  cursor: pointer;
+  background-image: linear-gradient(to right, var(--blue-400), var(--black));
+  border-radius: 20px;
+  color: #ffffff;
+  font-weight: 800;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.2s;
+  outline: none;
+}
+
+.form label {
+  margin: 10px 0px;
+}
+
+.form h2 {
+  margin: 20px 0px;
+}
+
+.progress {
+  margin: 70px 10px;
+}
+
+@media (max-width: 500px) {
+  .editCar {
+    margin: 100px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .editCar h2 {
+    align-self:auto;
+  }
+
+  .progress {
+    margin: 0px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .form input {
+    width: 300px;
+  }
+  
+  .form textarea {
+    width: 300px;
+  }
+  
+  .form button {
+    margin-top: 30px;
+    width: 300px;
+  }
+  
+}

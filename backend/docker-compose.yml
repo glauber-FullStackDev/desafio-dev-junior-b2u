@@ -1,0 +1,31 @@
+version: '3.1'
+services:
+  db:
+    image: postgres:14.6
+    env_file:
+      - .env
+    ports:
+      - 5432:5432
+    # create a volumes to persist data 
+    volumes:
+      - pg_data:/var/lib/postgres/data
+  app:
+    build: .
+    container_name: bitcointoyou_app
+    restart: always
+    command: npm run watch
+    volumes:
+      - ./src:/usr/src/bitcointoyou/src
+      - ./dist:/usr/src/bitcointoyou/dist
+    ports:
+      - 8086:8086
+      - 9222:9222
+    env_file:
+      - .env
+    depends_on:
+      - db
+volumes:
+  pg_data:
+
+
+
