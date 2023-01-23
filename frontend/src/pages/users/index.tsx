@@ -13,6 +13,7 @@ import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
+import deleteUserService from "../../services/users/delete-user";
 
 const Users = () => {
   const [users, setUsers] = useState<IUsers[]>([]);
@@ -23,6 +24,17 @@ const Users = () => {
       toast.error(response.error);
     }
     setUsers(response);
+  };
+
+  const deleteUser = async (id: string) => {
+    const response = await deleteUserService(id)
+
+    if (response.error) {
+      toast.error(response.error);
+      return;
+    }
+    toast.success(response.message);
+    getUsers()
   };
 
   useEffect(() => {
@@ -44,12 +56,14 @@ const Users = () => {
               </TableRow>
             </TableHead>
             <TableBody>
-              {users.map((user) => (
+              {users.map((user, index) => (
                 <RowsTable
+                  key={index}
                   id={user.id}
                   name={user.name}
                   email={user.email}
                   phone={user.email}
+                  deleteUser={deleteUser}
                 />
               ))}
             </TableBody>

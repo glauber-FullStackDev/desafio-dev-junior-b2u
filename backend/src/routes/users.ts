@@ -10,6 +10,6 @@ routeUsers
   .get("/users", allUsersController)
   .post("/users", createUserController)
   .put("/users/:id", updateUserController)
-  .delete("/users/:id", deleteUserController);
+  .delete("/users/:id", deleteUserController)
 
 export { routeUsers };

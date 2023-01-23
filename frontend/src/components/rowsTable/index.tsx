@@ -6,12 +6,15 @@ import EditIcon from "@mui/icons-material/Edit";
 
 import { IUsers } from "../../interface/IUsers";
 
-const RowsTable = ({ id, name, email, phone }: IUsers) => {
+const RowsTable = ({
+  id,
+  name,
+  email,
+  phone,
+  deleteUser,
+}: IUsers & { deleteUser: (id: string) => void }) => {
   return (
-    <TableRow
-      key={id}
-      sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
-    >
+    <TableRow sx={{ "&:last-child td, &:last-child th": { border: 0 } }}>
       <TableCell component="th" scope="row">
         {name}
       </TableCell>
@@ -21,7 +24,7 @@ const RowsTable = ({ id, name, email, phone }: IUsers) => {
         <IconButton>
           <EditIcon />
         </IconButton>
-        <IconButton>
+        <IconButton onClick={() => deleteUser(id)}>
           <DeleteIcon />
         </IconButton>
       </TableCell>

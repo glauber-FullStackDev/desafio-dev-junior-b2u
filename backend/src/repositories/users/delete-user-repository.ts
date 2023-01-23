@@ -7,6 +7,11 @@ const deleteUserRepository = async (id: string) => {
     where: {
       id: id,
     },
+    select: {
+      name: true,
+      email: true,
+      phone: true,
+    },
   });
 };
 
