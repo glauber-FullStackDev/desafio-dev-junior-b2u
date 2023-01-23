@@ -15,6 +15,7 @@ Sistema fullstack para cadastro de anúncios de veículos.
  * [Typescript](https://www.typescriptlang.org/)
  * [React](https://reactjs.org/)
  * [Prisma](https://prisma.io)
+ * [Caddy](https://caddyserver.com)
  * [Postgresql](https://postgresql.org)
  * [Docker](https://docker.com)
 
