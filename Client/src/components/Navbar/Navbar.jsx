@@ -27,11 +27,6 @@ const Navbar = ({}) => {
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/">
-                Sobre a aplicação
-              </a>
-            </li>
-            <li className="nav-item">
               <a className="nav-link" href="/create">
                 Adicionar novo veículo
               </a>

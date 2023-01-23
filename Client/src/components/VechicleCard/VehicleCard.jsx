@@ -41,6 +41,7 @@ const VehicleCard = ({ item, onRemove }) => {
         <div className={styles.carInfoDiv}>
           <p>{item.brand} {item.name} {item.manufacturingYear}</p>
           <p>{item.description}</p>
+          <p>Proprietário: {item.ownerName}</p>
         </div>
         <span>{item.price}</span>
         <div className={styles.ownerInfo}></div>
