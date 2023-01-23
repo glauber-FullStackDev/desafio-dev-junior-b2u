@@ -1,17 +1,16 @@
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
-import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
-import Paper from "@mui/material/Paper";
 
 import RowsTable from "../rowsTable";
+import { ContainerTable } from "./styles";
 
 const TableInfo = () => {
   return (
-    <TableContainer component={Paper}>
-      <Table sx={{ minWidth: 650 }} aria-label="simple table">
+    <ContainerTable>
+      <Table>
         <TableHead>
           <TableRow>
             <TableCell>Name</TableCell>
@@ -21,10 +20,10 @@ const TableInfo = () => {
           </TableRow>
         </TableHead>
         <TableBody>
-          <RowsTable/>
+          <RowsTable />
         </TableBody>
       </Table>
-    </TableContainer>
+    </ContainerTable>
   );
 };
 
