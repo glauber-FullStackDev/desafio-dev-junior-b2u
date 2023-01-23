@@ -15,7 +15,7 @@ Este projeto é uma aplicação de anúncio de venda de carros desenvolvida com 
 
 ## Instalação
 
-1. Faça o clone do repositório: ``git clone https://github.com/seu-usuario/car-rental-app.git``
+1. Faça o clone do repositório: ``git clone https://github.com/TsMuniz/desafio-dev-junior-b2u``
 2. Entre na pasta da projeto: `cd desafio-dev-junior-b2u`
 3. Entre na pasta da api do projeto: `cd api`
 4. Verifique se a versão do node instalada na sua máquina é compatível cao a versão: `18.12.1`
