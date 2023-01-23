@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import useCRUD from "../../hooks/useCrud";
-import BaseForm from "../BaseForm/BaseForm";
+import BaseForm from "../../components/BaseForm/BaseForm";
 import schema from "./schema";
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
@@ -13,6 +13,7 @@ const initialValues = {
   manufacturingYear: "",
   price: "",
   description: "",
+  url: "",
 };
 
 const EditForm = () => {

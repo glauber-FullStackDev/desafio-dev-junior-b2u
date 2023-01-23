@@ -10,16 +10,16 @@ const VehicleCard = ({ item, onRemove }) => {
 
   const handleDelete = () => {
     Swal.fire({
-      title: "Are you sure?",
-      text: "You won't be able to revert this!",
+      title: "Tem certeza?",
+      text: "Você não será capaz de reverter!",
       icon: "warning",
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
-      confirmButtonText: "Yes, delete it!",
+      confirmButtonText: "Sim, desejo deletar!",
     }).then((result) => {
       if (result.isConfirmed) {
-        Swal.fire("Deleted!", "Your file has been deleted.", "success");
+        Swal.fire("Deletado!", "Seu arquivo foi deletado com sucesso.", "sucesso");
         remove(item.id);
         onRemove(item.id);
       }

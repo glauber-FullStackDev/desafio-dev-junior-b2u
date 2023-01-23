@@ -1,6 +1,6 @@
 import { Routes, Route, BrowserRouter } from "react-router-dom";
-import CreateForm from "../components/CreateForm/CreateForm";
-import EditForm from "../components/EditForm/EditForm";
+import CreateForm from "../Pages/CreateForm/CreateForm";
+import EditForm from "../Pages/EditForm/EditForm";
 import Main from "../Pages/Main";
 
 const RoutesComp = ({ data }) => {

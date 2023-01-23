@@ -1,5 +1,5 @@
 import React from "react";
-import BaseForm from "../BaseForm/BaseForm";
+import BaseForm from "../../components/BaseForm/BaseForm";
 import schema from "./schema";
 import { useContext } from "react";
 import Context from "../../context/Context";
@@ -10,6 +10,7 @@ const initialValues = {
   manufacturingYear: "",
   price: "",
   description: "",
+  url: "",
   ownerName: "",
   email: "",
   phone: ""

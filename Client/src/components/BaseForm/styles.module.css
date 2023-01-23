@@ -45,6 +45,13 @@
   margin-top: 40px;
 }
 
+.baseForm button:hover {
+  background-color: black;
+  transition: ease-in-out 500ms;
+  color: white;
+  border: none;
+}
+
 @media only screen and (max-width: 900px) {
   .baseFormDiv {
     flex-direction: column;

@@ -20,7 +20,13 @@
   width: 10px;
   display: flex;
   justify-content: center;
-  margin: 0px 15px;
+  margin: 0px 5px;
+  border-radius: 5px;
+}
+
+.buttonsDiv button:hover {
+  border: .5px solid rgb(219, 219, 219);
+  filter: brightness(1.1);
 }
 
 .buttonsDiv img {
