@@ -2,19 +2,19 @@
 import Button from './Button'
 import { ItemContext } from '../contexts/ItemContext'
 import { useContext } from 'react'
-import { useEffect } from 'react';
 import api from '../services/api'
-import {useForm} from 'react-hook-form'
-const ModalEditUserItem = ({modal,setModal}) => {
-    
-  const {userId} = useContext(ItemContext);
+import { useForm } from 'react-hook-form'
+import { toast } from 'react-toastify'
+const ModalEditUserItem = ({ modal, setModal }) => {
+
+  const { userId } = useContext(ItemContext);
   const { register, handleSubmit } = useForm();
 
   const onSubmitFunction = (data) => {
     setModal(false);
-    api.patch('/users/' + userId,data)
-    .then(res=>res)
-    .catch(err=>console.log(err))
+    api.patch('/users/' + userId, data)
+      .then(res => toast.success('Usuário editado com sucesso'))
+      .catch(err => toast.error('Erro na edição do usuário'))
   }
 
 
@@ -31,31 +31,29 @@ const ModalEditUserItem = ({modal,setModal}) => {
                     onClick={() => setModal(false)}
                   >
                     <div className="flex justify-end">
-                    <h2 className="text-gray-two opacity-7 h-6 w-6 text-xl bg-gray-400 py-0 rounded-full">
-                      x
-                    </h2>
+                      <h2 className="text-gray-two opacity-7 h-6 w-6 text-xl bg-gray-400 py-0 rounded-full">
+                        x
+                      </h2>
                     </div>
                   </button>
                   <h2 className='text-center mt-4 font-semibold text-2xl text-gray-three'>
                     Editar Usuário
                   </h2>
                   <form className='flex flex-col gap-y-2' onSubmit={handleSubmit(onSubmitFunction)}>
-                      <label className='font-medium text-gray-three'>Nome</label>
-                      <input  {...register('name')} type='text' placeholder='Satoshi Nakamoto' className='bg-gray-eleven p-2 outline-none border rounded focus:border-primary-dark mb-2 text-gray-two'/>
+                    <label className='font-medium text-gray-three'>Nome</label>
+                    <input  {...register('name')} type='text' placeholder='Satoshi Nakamoto' className='bg-gray-eleven p-2 outline-none border rounded focus:border-primary-dark mb-2 text-gray-two' />
                     <label className='font-medium text-gray-three'>Email</label>
-                    <input {...register('email')} type='text' placeholder='satoshi@bitcoin.com' className='bg-gray-eleven p-2 outline-none border rounded focus:border-primary-dark mb-2  text-gray-two'/>
+                    <input {...register('email')} type='text' placeholder='satoshi@bitcoin.com' className='bg-gray-eleven p-2 outline-none border rounded focus:border-primary-dark mb-2  text-gray-two' />
                     <label className='font-medium text-gray-three'>Telefone</label>
-                    <input {...register('tel')} type='text' placeholder='(91) 31415-9227' className='bg-gray-eleven p-2 outline-none border rounded focus:border-primary-dark mb-2  text-gray-two'/>
+                    <input {...register('tel')} type='text' placeholder='(91) 31415-9227' className='bg-gray-eleven p-2 outline-none border rounded focus:border-primary-dark mb-2  text-gray-two' />
                     <div className='mt-4 justify-center items-center flex'>
-                    <button type='submit'>      
-                    <Button text={'Editar usuário'} />
-                    </button>
+                      <Button text={'Editar usuário'} type={'submit'} />
 
                     </div>
-                    
+
 
                   </form>
-                         
+
                 </div>
               </div>
             </div>

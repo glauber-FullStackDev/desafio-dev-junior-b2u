@@ -4,6 +4,7 @@ import {ItemContext} from '../contexts/ItemContext'
 import { useContext} from 'react'
 import api from '../services/api'
 import {useForm} from 'react-hook-form'
+import {toast} from 'react-toastify'
 
 const ModalEditCarItem = ({modal,setModal}) => {
   const {carId} = useContext(ItemContext);
@@ -12,8 +13,8 @@ const ModalEditCarItem = ({modal,setModal}) => {
   const onSubmitFunction = (data) => {
     setModal(false);
     api.patch('/cars/' + carId,data)
-    .then(res=>console.log(res))
-    .catch(err=>console.log(err))
+    .then(res=>toast.success('Carro editado com sucesso'))
+    .catch(err=>toast.error('Erro na edição do carro'))
   }
 
 
@@ -52,9 +53,8 @@ const ModalEditCarItem = ({modal,setModal}) => {
                     <label className='text-gray-three font-medium'>Descrição</label>
                     <textarea {...register('descricao')}  className='resize-none border focus:border-primary-dark outline-none rounded p-2 h-20'></textarea>
                     <div className='mt-4 justify-center items-center flex'>
-                      <button type='submit'>
-                      <Button text={'Editar carro'} />
-                      </button>
+                      <Button text={'Editar carro'} type={'submit'}/>
+
 
                     </div>
                     

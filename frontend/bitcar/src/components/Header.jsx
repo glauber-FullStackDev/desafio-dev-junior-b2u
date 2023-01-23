@@ -23,11 +23,11 @@ const Header = () => {
         <div className='hidden sm:flex space-x-20'>
           <Link to='/'>
           {location.pathname == '/' ? 
-        <h2 className='font-bold text-primary-dark cursor-pointer'>
+        <h2 className='font-bold text-primary-dark cursor-pointer hover:underline decoration-primary-dark underline-offset-4'>
             Carros
         </h2>
         :
-        <h2 className=' cursor-pointer'>
+        <h2 className=' cursor-pointer hover:underline decoration-gray-three underline-offset-4'>
             Carros
         </h2>
         }
@@ -35,10 +35,10 @@ const Header = () => {
         </Link>
         
         <Link to='/users'>
-        {location.pathname == '/users' ? <h2 className='cursor-pointer font-bold text-primary-dark'>
+        {location.pathname == '/users' ? <h2 className='cursor-pointer font-bold text-primary-dark hover:underline decoration-primary-dark underline-offset-4'>
             Usuários
         </h2> :
-        <h2 className='cursor-pointer '>
+        <h2 className='cursor-pointer hover:underline decoration-gray-three underline-offset-4 '>
         Usuários
     </h2>
         

@@ -3,6 +3,7 @@ import {ModalContext} from '../contexts/ModalContext'
 import ModalEditCarItem from "./ModalEditCarItem";
 import {ItemContext} from '../contexts/ItemContext'
 import api from "../services/api";
+import { toast } from 'react-toastify'
 
 
 
@@ -12,8 +13,8 @@ const ModalEditDeleteItem = ({modal,setModal}) => {
   const deleteCar = () => {
     setModal(false)
     api.delete('/cars/' + carId)
-    .then(res=>console.log(res))
-    .catch(err=>console.log(err))
+    .then(res=>toast.success('Carro deletado com sucesso'))
+    .catch(err=>toast.error('Problemas na deleção do carro'))
   }
 
 
@@ -42,7 +43,7 @@ const ModalEditDeleteItem = ({modal,setModal}) => {
                
                 <div className="flex items-center justify-end p-6 ">
                   <button
-                    className="text-[#A60606] bg-[#FF3535] font-bold px-6 py-2 text-sm mr-1 mb-1"
+                    className="text-[#A60606] bg-[#FF3535] rounded font-bold px-6 py-2 text-sm mr-1 mb-1"
                     type="button"
                     onClick={() => deleteCar()}
                   >
@@ -50,7 +51,7 @@ const ModalEditDeleteItem = ({modal,setModal}) => {
   
                   </button>
                   <button
-                    className="text-[#859000] bg-[#FFEC42] font-bold px-6 py-2 text-sm mr-1 mb-1"
+                    className="text-[#859000] bg-[#FFEC42] rounded font-bold px-6 py-2 text-sm mr-1 mb-1"
                     type="button"
                     onClick={() =>{ setModal(false);setModalEditCar(true)}}
                   >

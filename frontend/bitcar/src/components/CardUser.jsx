@@ -34,7 +34,7 @@ const CardUser = ({name,email,tel,cars,id}) => {
             <span className='text-gray-eight text-[10px]'>{cars.length}</span>
             </div>
   
-            <h2 className='text-[14px] text-gray-eight underline underline-offset-4 decoration-gray-eight cursor-pointer' onClick={()=>{setModalCars(true);setUserId(id)}}>Ver carros</h2>
+            <h2 className='text-[14px] hover:text-primary-light hover:decoration-primary-light text-gray-eight underline underline-offset-4 decoration-gray-eight cursor-pointer' onClick={()=>{setModalCars(true);setUserId(id)}}>Ver carros</h2>
             <ModalEditDeleteUserItem modal={modalEditDeleteUser} setModal={setModalEditDeleteUser}/>
         <ModalCarsItem modal={modalCars} setModal={setModalCars}/>
         </div>

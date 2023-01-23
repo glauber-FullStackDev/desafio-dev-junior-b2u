@@ -35,7 +35,7 @@ const CardCar = ({name,marca,ano_fabri,descricao,userId,user,id}) => {
         </div>
         <div className='flex items-center gap-x-4'>
             <FaUser color='#8f8f8f'/>
-            <h2 className='text-[14px] text-gray-eight underline underline-offset-4 decoration-gray-eight cursor-pointer' onClick={()=>{{setModalUser(true);setUserId(userId)}}}>{user.name}</h2>
+            <h2 className='text-[14px] text-gray-eight hover:text-primary-light hover:decoration-primary-light underline underline-offset-4 decoration-gray-eight cursor-pointer' onClick={()=>{{setModalUser(true);setUserId(userId)}}}>{user.name}</h2>
         </div>
         <ModalEditDeleteItem modal={modalEditDelete} setModal={setModalEditDelete}/>
         <ModalUserItem modal={modalUser} setModal={setModalUser}/>

@@ -3,7 +3,7 @@ import {ModalContext} from '../contexts/ModalContext'
 import ModalEditUserItem from "./ModalEditUserItem";
 import{ ItemContext }from '../contexts/ItemContext'
 import api from '../services/api'
-
+import {toast} from 'react-toastify'
 
 const ModalEditDeleteUserItem = ({modal,setModal}) => {
   const {modalEditUser,setModalEditUser} = useContext(ModalContext);
@@ -11,8 +11,8 @@ const ModalEditDeleteUserItem = ({modal,setModal}) => {
   const deleteUser = () => {
     setModal(false)
     api.delete('/users/' + userId)
-    .then(res=>console.log(res))
-    .catch(err=>console.log(err))
+    .then(res=>toast.success('Usuário deletado com sucesso'))
+    .catch(err=>toast.error('Erro na deleção do usuário'))
   }
 
 
@@ -40,7 +40,7 @@ const ModalEditDeleteUserItem = ({modal,setModal}) => {
                
                 <div className="flex items-center justify-end p-6 ">
                   <button
-                    className="text-[#A60606] bg-[#FF3535] font-bold px-6 py-2 text-sm mr-1 mb-1"
+                    className="text-[#A60606] rounded bg-[#FF3535] font-bold px-6 py-2 text-sm mr-1 mb-1"
                     type="button"
                     onClick={() => {setModal(false);deleteUser()}}
                   >
@@ -48,7 +48,7 @@ const ModalEditDeleteUserItem = ({modal,setModal}) => {
   
                   </button>
                   <button
-                    className="text-[#859000] bg-[#FFEC42] font-bold px-6 py-2 text-sm mr-1 mb-1"
+                    className="text-[#859000] rounded bg-[#FFEC42] font-bold px-6 py-2 text-sm mr-1 mb-1"
                     type="button"
                     onClick={() =>{ setModal(false);setModalEditUser(true)}}
                   >
