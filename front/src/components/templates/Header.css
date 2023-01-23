@@ -1,0 +1,11 @@
+header.header{
+  background-color: white;
+  padding: 0px 15px;
+  overflow: hidden;
+  white-space: nowrap; /* faz com o texto suma e não desça pra linha de baixo*/
+  box-shadow: var(--shadow);
+}
+
+header.header h1{
+  font-size: 1.8em;
+}

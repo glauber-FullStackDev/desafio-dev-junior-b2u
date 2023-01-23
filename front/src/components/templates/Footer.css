@@ -1,0 +1,7 @@
+footer.footer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  box-shadow: var(--shadow);
+}
