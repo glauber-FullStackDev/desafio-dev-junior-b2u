@@ -12,7 +12,7 @@ function EditCarForm() {
   const { params } = useRouteMatch();
   const history = useHistory();
 
-  const MINIMUM_YEAR = 1900;
+  const MINIMUM_YEAR = 2000;
 
   const handleInputsChange = ({ target: { name, value } }) => {
     const options = {
@@ -76,9 +76,8 @@ function EditCarForm() {
           <input
             type="number"
             name='anoFabricacao'
-            min="1900"
-            max="2099"
-            step="1"
+            min="2000"
+            max="2023"
             onChange={handleInputsChange}
           />
         </label>

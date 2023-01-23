@@ -28,7 +28,12 @@ function AddCarForm() {
         </label>
         <label htmlFor='anoFabricacao'>
           Ano de Fabricação:
-          <input type='text' name='anoFabricacao' />
+          <input
+            type="number"
+            name='anoFabricacao'
+            min="2000"
+            max="2023"
+          />
         </label>
         <label htmlFor='descricao'>
           Descrição:
