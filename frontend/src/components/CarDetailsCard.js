@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import noImage from '../image/no-image.png';
 import { useHistory } from 'react-router-dom';
+import EditCarForm from './EditCarForm';
 
 function CarDetailsCard({ nome, descricao, marca, anoFabricacao, dono }) {
+  const [showEditForm, setShowEditForm] = useState(false);
+
   const history = useHistory();
 
   return (
@@ -24,6 +27,17 @@ function CarDetailsCard({ nome, descricao, marca, anoFabricacao, dono }) {
       <p>{dono.nome}</p>
       <p>{dono.email}</p>
       <p>{dono.telefone}</p>
+      <button
+        type='button'
+        onClick={() => setShowEditForm(!showEditForm)}
+      >
+        Editar
+      </button>
+      {showEditForm && (
+        <EditCarForm
+          setShowEditForm={setShowEditForm}
+        />
+      )}
       <button
         type='button'
         onClick={() => history.push('/cars')}

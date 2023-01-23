@@ -1,13 +1,10 @@
-import React, { useState } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import noImage from '../image/no-image.png';
-import EditCarForm from './EditCarForm';
 import { Link } from 'react-router-dom';
 import RemoveCarButton from './RemoveCarButton';
 
 function CarsCard({ id, nome, anoFabricacao, marca, dono }) {
-  const [showEditForm, setShowEditForm] = useState(false);
-
   return (
     <div style={{
       position: 'relative',
@@ -33,17 +30,6 @@ function CarsCard({ id, nome, anoFabricacao, marca, dono }) {
       <RemoveCarButton
         id={id}
       />
-      <button
-        type='button'
-        onClick={() => setShowEditForm(!showEditForm)}
-      >
-        Editar
-      </button>
-      {showEditForm && (
-        <EditCarForm
-          setShowEditForm={setShowEditForm}
-        />
-      )}
     </div>
   )
 }

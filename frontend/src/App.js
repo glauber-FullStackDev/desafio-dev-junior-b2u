@@ -2,6 +2,7 @@ import './App.css';
 import Cars from './pages/Cars';
 import CarDetails from './pages/CarDetails';
 import { Switch, Route, Redirect } from 'react-router-dom';
+import EditSuccessMessage from './pages/EditSuccessMessage';
 
 function App() {
   return (
@@ -13,6 +14,9 @@ function App() {
         </Route>
         <Route path='/cars/:id'>
           <CarDetails />
+        </Route>
+        <Route exact path='/success'>
+          <EditSuccessMessage />
         </Route>
       </Switch>
     </section>
