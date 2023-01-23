@@ -23,6 +23,7 @@ import Modal from "@mui/material/Modal";
 
 import deleteUserService from "../../services/users/delete-user";
 import FormUsers from "../../components/formUsers";
+import TableComponent from "../../components/table";
 
 const Users = () => {
   const [users, setUsers] = useState<IUsers[]>([]);
@@ -72,28 +73,18 @@ const Users = () => {
 
       <Container>
         <ContainerTable>
-          <Table>
-            <TableHead>
-              <TableRow>
-                <TableCell>Name</TableCell>
-                <TableCell align="right">Email</TableCell>
-                <TableCell align="right">Phone</TableCell>
-                <TableCell align="right"></TableCell>
-              </TableRow>
-            </TableHead>
-            <TableBody>
-              {users.map((user, index) => (
-                <RowsTable
-                  key={index}
-                  id={user.id}
-                  name={user.name}
-                  email={user.email}
-                  phone={user.phone}
-                  deleteUser={deleteUser}
-                />
-              ))}
-            </TableBody>
-          </Table>
+          <TableComponent
+              tableHeader={
+                <TableRow>
+                  <TableCell>Name</TableCell>
+                  <TableCell align="right">Email</TableCell>
+                  <TableCell align="right">Phone</TableCell>
+                  <TableCell align="right"></TableCell>
+                </TableRow>
+              }
+              data={users}
+              deleteFn={deleteUser}
+          />
         </ContainerTable>
       </Container>
     </>
