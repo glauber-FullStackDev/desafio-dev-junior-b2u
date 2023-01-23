@@ -7,7 +7,7 @@ const donosRoute = require('./routes/donosRoute');
 const app = express();
 
 app.use(express.json());
-app.options('*', cors());
+app.use(cors());
 app.use('/carros', carrosRoute);
 app.use('/donos', donosRoute);
 app.use(errorHandler);
