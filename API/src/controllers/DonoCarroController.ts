@@ -59,7 +59,7 @@ module.exports = {
                 nome,
                 email,
                 telefone,
-                foto_perfil,
+                // foto_perfil,
                 ativo
 
             } = req.body

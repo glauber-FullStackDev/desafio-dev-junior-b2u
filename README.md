@@ -6,17 +6,17 @@ Seja bem-vindo! Este desafio foi projetado para avaliar a sua capacidade técnic
 # CarAdHouse
 
 ## Instruções para rodar o projeto
-- entre individualmente nas pastas API e Front pelo terminal e use o comando abaixo para instalar as dependências:
+- entre individualmente nas pastas "api" e "front" pelo terminal e use o comando abaixo para instalar as dependências:
 ```
 npm install
 ```
 
-- entre pelo terminal na pasta API e utilize o comando abaixo para criar um container docker para nosso banco de dados mysql:
+- entre pelo terminal na pasta "api" e utilize o comando abaixo para criar um container docker para nosso banco de dados mysql:
 ```
 docker compose up -d
 ```
 
-- ainda no mesmo terminal da pasta API utilize o comando abaixo para criar a base de dados "admin" dentro do nosso container mysql:
+- ainda no mesmo terminal da pasta "api" utilize o comando abaixo para criar a base de dados "admin" dentro do nosso container mysql:
 ```
 npx sequelize-cli db:create -- --url 'mysql://root:example@3306/admin'
 ```
@@ -44,7 +44,7 @@ cd Front
 npm run dev
 ```
 - Agora é só dar um ctrl + click na rota que aparecerá no terminal
-- A pasta "assets" serve como referência de imagem na hora que for cadastrar um anuncio de carro
+- A pasta "images" serve como referência de imagem na hora que for cadastrar um anuncio de carro
 
 # Tecnologias usadas
 ## Front-end
