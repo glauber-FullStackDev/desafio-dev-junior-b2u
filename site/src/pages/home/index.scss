@@ -1,0 +1,23 @@
+.page-home {
+    display: flex;
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+    }
+
+    .conteudo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        background-color: #F5F6FA;
+        flex-grow: 1;
+    }
+
+    .logo-estilizado {
+        width: 600px;
+        user-select: none;
+    }
+}
