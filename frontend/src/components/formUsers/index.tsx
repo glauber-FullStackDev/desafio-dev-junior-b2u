@@ -26,7 +26,7 @@ const initialState = {
 const FormUsers = ({ handleClose }: { handleClose: () => void }) => {
   const [user, setUser] = useState<IUsers>(initialState);
 
-  const createCar = async () => {
+  const createUser = async () => {
     const response = await createUserService(user);
 
     if (response.error) {
@@ -38,7 +38,7 @@ const FormUsers = ({ handleClose }: { handleClose: () => void }) => {
 
   return (
     <Container>
-      <ContainerForm onSubmit={createCar}>
+      <ContainerForm onSubmit={createUser}>
         <Wrapper>
           <ButtonClose onClick={handleClose}>Close</ButtonClose>
         </Wrapper>
