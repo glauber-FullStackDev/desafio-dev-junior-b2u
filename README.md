@@ -1,24 +1,59 @@
-![Bitcointoyou](https://bitcointoyou.com/_next/static/media/logoAzul.c6609791.png)
+# Desafio Dev Junior B2U
 
-# Desafio - Desenvolvedor Fullstack - Júnior
-Seja bem-vindo! Este desafio foi projetado para avaliar a sua capacidade técnica como candidato ao cargo proposto.
+[Pré requisitos](#pre-requisitos) |
+[Download e instalação](#download-e-instalação) |
+[Documentação](#documentação)
 
-## Instruções
-- Faça um fork deste repositório;
-- O conjunto mínimo de tecnologias a serem utilizadas são: alguma das tecnologias front-end e back-end informadas na proposta desse desafio;
-- Crie um passo a passo de como rodar a sua aplicação;
-- Após finalizar, submeta um pull request com um comentário informando o seu e-mail de contato e aguarde nossa avaliação.
 
-## Proposta
-Você deverá desenvolver um projeto utilizando React no front-end e Node.js no back-end com a finalidade de que seja possível listar, visualizar, criar, editar e excluir carros de uma aplicação de anuncios de venda de automóveis.
+## Pré requisitos
+Para rodar este projeto é necessário:
+ * Docker e docker-compose instalados.
+   * Para ajuda na instalação, vá até [Docker](https://docker.io).
+ * Node.js e npm instalados.
+   * Para ajuda na instalação, vá até [Nodejs](https://nodejs.io).
+ * Git instalado.
 
-**Observações:**
-> - Você pode persistir os dados em memoria;
-> - Cada carro precisa ter um identificador único, nome, marca, ano de fabricação e descrição;
-> - Além dos dados do carro, é necessário também salvar os dados do dono do carro(nome, email e telefone de contato).
-## Diferenciais
-Serão considerados diferenciais:
 
-- Conhecimento sólido em Expo ou React Native;
-- Boas práticas de escrita de código (código limpo, padrões de arquitetura, etc.);
-- Conhecimento em infraestruturas em nuvem;
+## Download e instalação
+
+Clone este repositório:
+
+```sh
+# clonando o repositório
+git clone https://github.com/passoz/desafio-dev-junior-b2u.git
+```
+
+Entre no diretório:
+
+```sh
+# entrando no repositório
+cd desafio-dev-junior-b2u
+```
+Faça uma cópia do arquivo de exemplo .env.example para .env e altere a variável BACKEND_HOST para o local de hospedagem da api:
+
+Altere de:
+```.env
+BACKEND_HOST=
+```
+Para:
+```.env
+BACKEND_HOST=<your-backend-hosting>
+```
+
+Inicie a aplicação:
+
+```sh
+# iniciando aplicação
+npm start
+```
+
+Para parar a aplicação execute:
+
+```sh
+# iniciando aplicação
+npm stop
+```
+
+## Documentação
+
+[Clique aqui e acesse a documentação](https://passoz.github.io/e-core-challenge-passoz/)
