@@ -22,7 +22,7 @@ function Cars() {
   }, [])
 
   const handleClick = () => { 
-    history.push('/add')
+    history.push('/add/owner')
   }
 
   return (
@@ -31,7 +31,7 @@ function Cars() {
         type='button'
         onClick={handleClick}
       >
-        Adicionar Carro
+        Quero cadastrar meu carro
       </button>
       {allCarsFetched && allCarsFetched.map((car) => (
         <CarsCard

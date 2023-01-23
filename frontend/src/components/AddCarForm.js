@@ -1,15 +1,22 @@
-import React from 'react';
+import React, { useContext } from 'react';
+// import { useHistory } from 'react-router-dom';
 import postFetch from '../utils/postFetch';
+import CarContext from '../context/CarContext';
 
 function AddCarForm() {
+  const { ownerInfos } = useContext(CarContext)
+
+  // const history = useHistory();
+
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const response = await postFetch()
-    return response;
+    await postFetch(ownerInfos, '/donos');
+    // history.push('/add/owner');
   }
 
   return (
     <div>
+      <h2>Cadastre seu carro:</h2>
       <form onSubmit={handleSubmit}>
         <label htmlFor='nome'>
           Nome do Carro:
@@ -29,7 +36,7 @@ function AddCarForm() {
         </label>
         <label htmlFor='imagem'>
           Imagem do Carro:
-          <input type='file' name='imagem' />
+          <input disabled={true} type='file' name='imagem' defaultValue={null} />
         </label>
         <button
           onClick={handleSubmit}

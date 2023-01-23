@@ -4,6 +4,7 @@ import CarDetails from './pages/CarDetails';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import EditSuccessMessage from './pages/EditSuccessMessage';
 import AddCar from './pages/AddCar';
+import AddOwner from './pages/AddOwner';
 
 function App() {
   return (
@@ -19,7 +20,10 @@ function App() {
         <Route exact path='/success'>
           <EditSuccessMessage />
         </Route>
-        <Route exact path='/add'>
+        <Route path='/add/owner'>
+          <AddOwner />
+        </Route>
+        <Route path='/add/car'>
           <AddCar />
         </Route>
       </Switch>

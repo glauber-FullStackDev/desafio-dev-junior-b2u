@@ -1,4 +1,4 @@
-const deleteFetch = async (data) => {
+const deleteFetch = async (data, rota) => {
   const url = 'http://localhost:3001';
   const requestOptions = {
     method: 'POST',
@@ -7,7 +7,7 @@ const deleteFetch = async (data) => {
     },
   };
   try {
-    const response = await fetch(`${url}/carros`, requestOptions);
+    const response = await fetch(`${url}${rota}`, requestOptions);
     return response;
   } catch (error) {
     return error.message;
