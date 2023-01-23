@@ -34,7 +34,7 @@ export function Registros() {
         getDonos(donosURL);
         getCarros(carrosURL);
 
-    }, [])
+    }, [carros, donos])
 
     return (
         <div className="container">

@@ -44,6 +44,7 @@ cd Front
 npm run dev
 ```
 - Agora é só dar um ctrl + click na rota que aparecerá no terminal
+- A pasta "assets" serve como referência de imagem na hora que for cadastrar um anuncio de carro
 
 # Tecnologias usadas
 ## Front-end

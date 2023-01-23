@@ -75,7 +75,7 @@ module.exports = {
             donoCarro.telefone = telefone ? telefone : donoCarro.telefone
             
             // CONFIFURAR EDIÇÃO DE IMAGEM PARA BASE64
-            donoCarro.foto_perfil = foto_perfil ? Buffer.from(foto_perfil, "base64") : donoCarro.foto_perfil
+            // donoCarro.foto_perfil = foto_perfil ? Buffer.from(foto_perfil, "base64") : donoCarro.foto_perfil
 
             donoCarro.ativo = ativo ? ativo : donoCarro.ativo         /* <- para que o valor seja editado, é necessário passar o false/true como string  */
 

@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react"
+import { useState } from "react"
 
 import '../styles/global-pages.css'
 import './styles.css'
@@ -12,8 +12,6 @@ export function DonoRegistro() {
 
     function submit(e) {
         e.preventDefault();
-
-        alert("funcionou")
 
         if(nome === '' || email === '' || telefone === '') {
             alert("Preencha os campos corretamente");
@@ -67,11 +65,7 @@ export function DonoRegistro() {
                             value={telefone}  
                         />
                     </label>
-                    <label>
-                        <p>foto de perfil (opcional):</p>
-                        <input type="file" />
-                    </label>
-
+    
                     <button type="submit">Registrar</button>
                 </form>
             </div>
