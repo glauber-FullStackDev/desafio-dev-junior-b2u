@@ -27,4 +27,5 @@ Seja bem-vindo! Este desafio foi projetado para avaliar a sua capacidade técnic
 
 ## Contato
 Nome: Thiago Rodrigues Araujo
+
 E-mail: businessthiagorodrigues@gmail.com
