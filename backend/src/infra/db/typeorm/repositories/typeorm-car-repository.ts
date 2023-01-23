@@ -7,9 +7,11 @@ import { Mapper } from '../mappers/car-mapper'
 import { CarModel } from '../../../../domain/models/car'
 import { UpdateCarByIdRepository } from '../../../../data/protocols/car/update-car-by-id-repository'
 import { DeleteCarByIdRepository } from '../../../../data/protocols/car/delete-by-id-repository'
-import { UpdateCarRawData } from '../../../../domain/use-cases/car/update-car-by-id'
+import { LoadCarByIdRepository } from '../../../../data/protocols/car/load-car-by-id-repository'
+import { TypeOrmOwner } from '../entities/typeorm-owner'
+import { CarData, OwnerData } from 'domain/use-cases/car/update-car-by-id'
 
-export class TypeOrmCarRepository implements AddCarRepository, LoadCarsRepository, UpdateCarByIdRepository, DeleteCarByIdRepository {
+export class TypeOrmCarRepository implements AddCarRepository, LoadCarsRepository, UpdateCarByIdRepository, DeleteCarByIdRepository, LoadCarByIdRepository {
   async add (carData: AddCarParams): Promise<void> {
     const car = new TypeOrmCar()
 
@@ -36,12 +38,19 @@ export class TypeOrmCarRepository implements AddCarRepository, LoadCarsRepositor
     return domainCar
   }
 
-  async updateById (id: string, data: UpdateCarRawData): Promise<void> {
+  async updateById (id: string, car: CarData, owner: OwnerData, owner_id: string): Promise<void> {
     await AppDataSource.getInstance()
     .createQueryBuilder()
     .update(TypeOrmCar)
-    .set(data)
+    .set(car)
     .where('id = :id', { id })
+    .execute()
+
+    await AppDataSource.getInstance()
+    .createQueryBuilder()
+    .update(TypeOrmOwner)
+    .set(owner)
+    .where('id = :id', { id: owner_id })
     .execute()
   }
 
@@ -52,5 +61,18 @@ export class TypeOrmCarRepository implements AddCarRepository, LoadCarsRepositor
     .from(TypeOrmCar)
     .where('id = :id', { id })
     .execute()
+  }
+
+  async loadById (id: string): Promise<CarModel> {
+    const car = await AppDataSource.getInstance()
+    .getRepository(TypeOrmCar)
+    .createQueryBuilder('car')
+    .leftJoinAndSelect('car.owner', 'owner')
+    .where('car.id = :id', { id })
+    .getOne()
+
+    const domainCar = Mapper.toDomainEntity(car)
+
+    return domainCar
   }
 }

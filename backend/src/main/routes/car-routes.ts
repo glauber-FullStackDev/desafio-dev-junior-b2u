@@ -4,10 +4,12 @@ import { makeDeleteCarByIdController } from '../../main/factories/controllers/ca
 import { makeUpdateCarByIdController } from '../../main/factories/controllers/car/update-car-by-id/update-car-by-id-controller-factory'
 import { adaptRoute } from '../../main/adapters/express-route-adapter'
 import { makeLoadCarsController } from '../../main/factories/controllers/car/load-cars/load-cars-controller-factory'
+import { makeLoadCarByIdController } from '../../main/factories/controllers/car/load-car-by-id/load-car-by-id-controller-factory'
 
 export default (router: Router): void => {
   router.post('/car', adaptRoute(makeAddCarController()))
   router.delete('/car/:id', adaptRoute(makeDeleteCarByIdController()))
   router.patch('/car/:id', adaptRoute(makeUpdateCarByIdController()))
+  router.get('/car/:id', adaptRoute(makeLoadCarByIdController()))
   router.get('/cars', adaptRoute(makeLoadCarsController()))
 }

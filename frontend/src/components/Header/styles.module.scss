@@ -82,6 +82,10 @@
   outline: 0;
 }
 
+.menu .close {
+  display: none;
+}
+
 .menuhamb {
   display: none;
 }
@@ -101,8 +105,49 @@
   background-color: #ff3838;
 }
 
+.menu {
+  display: flex;
+  align-items: center;
+}
+
+.menu ul li {
+  list-style: none;
+  display: inline-block;
+}
+
+.menu ul li a {
+  text-decoration: none;
+  color: #3d393d;
+  padding: 0 15px;
+  font-family: 'Poppins';
+}
+
+.menu ul li a:hover{
+  color: var(--pink);
+}
+
+.managementCarButton button{
+  margin-right: 20px;
+  font-family: 'Poppins', sans-serif;
+  padding: 7px 25px;
+  border: 1px solid var(--blue-400);
+  border-radius: 5px;
+  background-color: var(--blue-400);
+  color: white;
+}
+
+.carListButton button{
+  display: none;
+}
+
+.managementCarButton button:hover{
+  background-color: var(--gray-50);
+  color: var(--blue-400);
+}
+
 
 @media (max-width: 650px) {
+
   .headerContainer {
     display: block;
     padding: 0rem 1rem;
@@ -178,6 +223,28 @@
 
   .headTitle {
     font-size: 1.56rem;
+  }
+
+  .managementCarButton button{
+    background-color: white;
+    font-family: 'Poppins', sans-serif;
+    color: var(--black);
+    border: none;
+  }
+
+  .anotherPages button {
+    background-color: white;
+    font-family: 'Poppins', sans-serif;
+    color: var(--black);
+    border: none;
+  }
+
+  .carListButton button {
+    display: block;
+    background-color: white;
+    font-family: 'Poppins', sans-serif;
+    color: var(--black);
+    border: none;
   }
 }
 

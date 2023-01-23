@@ -7,16 +7,25 @@ import { useState } from 'react'
 import { CircularProgress } from '@mui/material'
 import { GetServerSideProps } from 'next'
 import { Params } from 'next/dist/shared/lib/router/utils/route-matcher'
+import { Car } from '@/components/CarList'
 
 export type CarEditProps = {
   slug: string
+  car: Car
 }
 
-export default function CarEdit({slug} : CarEditProps){
-  const { register, handleSubmit, reset } = useForm()
+export default function CarEdit({slug, car} : CarEditProps){
+  const { register, handleSubmit, reset, setValue} = useForm()
   const [isLoaded, setIsLoaded] = useState(false)
+  const [name, setName] = useState(car.name)
+  const [brand, setBrand] = useState(car.brand)
+  const [description, setDescription] = useState(car.description)
+  const [manufactureYear, setManufactureYear] = useState(car.manufactureYear)
+  const [ownerName, setOwnerName] = useState(car.owner.owner_name)
+  const [email, setEmail] = useState(car.owner.email)
+  const [telephone, setTelephone] = useState(car.owner.telephone)
 
-  async function handleCreateCar(data:any) {
+  async function handleUpdateCar(data:any) {
     setIsLoaded(!isLoaded)
     try {
       const res = await api.patch(`car/${slug}`, data)
@@ -40,15 +49,17 @@ export default function CarEdit({slug} : CarEditProps){
       <Header/>
 
       <div className={styles.editCar}>
-        <form className={styles.form} onSubmit={handleSubmit(handleCreateCar)}>
+        <form className={styles.form} onSubmit={handleSubmit(handleUpdateCar)}>
             <h2>Editar Carro</h2>
             <label htmlFor="name">Nome</label>
             <input 
               {...register('name')}
               id="name" 
-              type="text" 
+              type="text"
               autoComplete="name" 
-              required 
+              required
+              value={name} 
+              onChange={e => setName(e.target.value)} 
               className={styles.inputName}
             />
             <label htmlFor="brand">Marca</label>
@@ -57,16 +68,20 @@ export default function CarEdit({slug} : CarEditProps){
               id="brand" 
               type="text" 
               autoComplete="email" 
-              required 
+              required
+              value={brand} 
+              onChange={e => setBrand(e.target.value)} 
               className={styles.inputBrand}
             />
             <label htmlFor="year">Ano</label>
             <input 
               {...register('manufactureYear')}
               id="manufactureYear" 
-              type="text" 
+              type="number" 
               autoComplete="year" 
-              required 
+              required
+              value={manufactureYear} 
+              onChange={e => setManufactureYear(Number(e.target.value))} 
               className={styles.inputYear}
             />
             <label htmlFor="decription">Descrição</label>
@@ -76,6 +91,8 @@ export default function CarEdit({slug} : CarEditProps){
               autoComplete="descripton"
               maxLength={300}
               required 
+              value={description}
+              onChange={e => setDescription(e.target.value)} 
               className={styles.inputDescription}
             />
 
@@ -87,7 +104,9 @@ export default function CarEdit({slug} : CarEditProps){
               id="owner_name" 
               type="text"
               autoComplete="ownername" 
-              required 
+              required
+              value={ownerName} 
+              onChange={e => setOwnerName(e.target.value)} 
               className={styles.inputOnwerName}
             />
 
@@ -97,7 +116,9 @@ export default function CarEdit({slug} : CarEditProps){
               id="email" 
               type="email" 
               autoComplete="email" 
-              required 
+              required
+              value={email}
+              onChange={e => setEmail(e.target.value)} 
               className={styles.email}
             />
 
@@ -107,11 +128,13 @@ export default function CarEdit({slug} : CarEditProps){
               id="telephone" 
               type="text" 
               autoComplete="telephone" 
-              required 
+              required
+              value={telephone} 
+              onChange={e => setTelephone(e.target.value)} 
               className={styles.inputTel}
             />
             {
-            !isLoaded ? <button type="submit">Cadastrar</button> : <div className={styles.progress}><CircularProgress color='primary'/></div>
+            !isLoaded ? <button type="submit">Editar</button> : <div className={styles.progress}><CircularProgress color='primary'/></div>
             }
         </form>
       </div>
@@ -122,8 +145,14 @@ export default function CarEdit({slug} : CarEditProps){
 export const getServerSideProps: GetServerSideProps = async ({params}: Params) => {
   const { slug } = params
 
+  const carData = await api.get(`car/${slug}`)
+  const car = carData.data 
+
+  // We'll pre-render only these paths at build time.
+  // { fallback: false } means other routes should 404.
   return {
     props: {
+      car,
       slug
     }
   }

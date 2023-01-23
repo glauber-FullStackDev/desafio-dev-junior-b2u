@@ -5,6 +5,7 @@ import B4ULogo from '../../../public/logo.png'
 import Menu from '../../../public/menu-hamb.png'
 import Bit from '../../../public/logoMin.png'
 import { useState } from 'react'
+import Close from '../../../public/close.png'
 
 export default function Header(){
 
@@ -17,7 +18,7 @@ export default function Header(){
 
   return (
       <div className={styles.headerContainer}>
-        <Link href='/Landing' className={styles.landing}>
+        <div className={styles.landing}>
           <div className={styles.menuhamb} onClick={() => {menuToggle()}}>
             <Image src={Menu} alt="menu" />
           </div>
@@ -29,21 +30,38 @@ export default function Header(){
           <div className={styles.bit}>
             <Image src={Bit} alt="bit" />
           </div>
-        </Link>
-
-        <div className={styles.anotherPages}>
-          <Link href='/CreateCar'>
-            <button>Cadastrar carro</button>
-          </Link>
-
-          <Link href='/CarManagement'>
-            <button>Gerenciar carros</button>
-          </Link>
         </div>
+
+        <nav className={styles.menu}>
+          <ul className={openMenu ? styles.toggle :""}>
+            <li className={styles.close} onClick={menuToggle} >
+              <Image src={Close} alt="" width={25} height={25}/>
+            </li>
+
+            <li className={styles.anotherPages}>
+              <Link href='/CreateCar'>
+                <button>Cadastrar carro</button>
+              </Link>
+            </li>
+            <li>
+              <Link href='/CarManagement' className={styles.managementCarButton}>
+                <button>Gerenciar carros</button>
+              </Link>
+            </li>
+
+            <li>
+              <Link href='/' className={styles.carListButton}>
+                <button>Listagem de carros</button>
+              </Link>
+            </li>
+          </ul>
+        </nav>
 
         <div className={styles.logout}>
           <button> Logout </button>
         </div>
+
+
       </div>
     )
   

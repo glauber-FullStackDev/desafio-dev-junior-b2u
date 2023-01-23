@@ -1,5 +1,5 @@
-import { UpdateCarRawData } from '../../../domain/use-cases/car/update-car-by-id'
+import { CarData, OwnerData } from '../../../domain/use-cases/car/update-car-by-id'
 
 export interface UpdateCarByIdRepository {
-  updateById: (id: string, raw: UpdateCarRawData) => Promise<void>
+  updateById: (id: string, car: CarData, owner: OwnerData, owner_id: string) => Promise<void>
 }

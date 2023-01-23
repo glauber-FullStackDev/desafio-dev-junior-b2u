@@ -1,26 +1,36 @@
-import { useState } from 'react'
-import { SignIn } from '../components/SignIn'
-import { SignUp } from '../components/SignUp'
+import CarList, { CarListProps } from '@/components/CarList'
+import { GetServerSideProps } from 'next'
+import { api } from '../../services/api'
+import Header from '../components/Header'
 import styles from './styles.module.scss'
-import Image from 'next/image'
-import SharEnergyLogo from '../../public/logo.png'
 
-export default function Home() {
-  const [isSignUpAction, setIsSignUpAction] = useState(false)
+export default function Landing({ cars }: CarListProps) {
 
   return (
-    <div className={styles.homeContainer}>
-      <div className={styles.loginBlock}>
-        <div className={styles.useTitle}>
-          <Image alt='logo' src={SharEnergyLogo}/>
-        </div>
-        {isSignUpAction ? 
-          <SignUp/>
-        :
-          <SignIn signupact={setIsSignUpAction}/>
-        }
-      
+    <div className={styles.landingContainer}>
+      <Header/>
+      <div className={styles.carList}>
+        <h2 className={styles.listTitle}>
+          Listagem de Carros
+        </h2>
+
+        {cars ? <CarList cars={cars}/> : <h2>Não há carros cadastrados ainda.</h2>}
+        
       </div>
     </div>
   )
 }
+
+export const getServerSideProps: GetServerSideProps = async () => {
+  const carsData = await api.get('cars')
+  
+
+  const cars = carsData.data
+
+  return {
+    props: {
+      cars
+    }
+  }
+}
+
