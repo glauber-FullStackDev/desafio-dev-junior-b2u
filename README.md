@@ -44,6 +44,7 @@ cd desafio-dev-junior-b2u
 ```
 Faça uma cópia do arquivo de exemplo .env.example para .env e altere a variável BACKEND_HOST para o local de hospedagem da api.
 
+### Backend
 Altere de:
 ```
 BACKEND_HOST=
@@ -52,12 +53,35 @@ Para:
 ```
 BACKEND_HOST=<your-backend-hosting>
 ```
+Exemplo:
+```
+BACKEND_HOST=api.example.com
+```
 Se estiver utilizando localmente, utilize o endereço IP do seu computador:
 ```
 BACKEND_HOST=<your-machine-ip>
 ```
-Se você possuir um endereço IP fixo válido e um domínio próprio, aponte o DNS para a o local da instalação e automaticamente será validado um certificado SSL para 
+Ou como "localhost":
+```
+BACKEND_HOST=localhost
+```
+### Frontend
+Altere de:
+```
+FRONTEND_HOST=
+```
+Para:
+```
+FRONTEND_HOST=<your-frontend-hosting>
+```
+Exemplo:
+```
+FRONTEND_HOST=www.example.com
+```
 
+Se você possuir um endereço IP fixo válido e um domínio próprio, aponte o DNS para a o local da instalação e automaticamente será validado um certificado SSL para a URL do frontend.
+
+### Banco de dados
 E também de:
 ```
 POSTGRES_PASSWORD=
