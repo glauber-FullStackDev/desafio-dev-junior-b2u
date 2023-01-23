@@ -2,11 +2,17 @@ import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 
 import Header from "../../components/header";
-import TableInfo from "../../components/table";
 import getAllUsers from "../../services/users/get-all-users";
 import { IUsers } from "../../interface/IUsers";
 
-import { Container } from "./styles";
+import { Container, ContainerTable } from "./styles";
+import RowsTable from "../../components/rowsTable";
+
+import Table from "@mui/material/Table";
+import TableBody from "@mui/material/TableBody";
+import TableCell from "@mui/material/TableCell";
+import TableHead from "@mui/material/TableHead";
+import TableRow from "@mui/material/TableRow";
 
 const Users = () => {
   const [users, setUsers] = useState<IUsers[]>([]);
@@ -27,7 +33,28 @@ const Users = () => {
     <>
       <Header />
       <Container>
-        <TableInfo users={users}/>
+        <ContainerTable>
+          <Table>
+            <TableHead>
+              <TableRow>
+                <TableCell>Name</TableCell>
+                <TableCell align="right">Email</TableCell>
+                <TableCell align="right">Phone</TableCell>
+                <TableCell align="right"></TableCell>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              {users.map((user) => (
+                <RowsTable
+                  id={user.id}
+                  name={user.name}
+                  email={user.email}
+                  phone={user.email}
+                />
+              ))}
+            </TableBody>
+          </Table>
+        </ContainerTable>
       </Container>
     </>
   );
