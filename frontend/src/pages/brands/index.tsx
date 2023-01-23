@@ -8,8 +8,26 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 
 import { Container, ContainerTable } from "./styles";
+import { useEffect, useState } from "react";
+import { IBrands } from "../../interface/IBrands";
+import getAllBrands from "../../services/brands/get-all-brands";
+import { toast } from "react-toastify";
 
 const Brands = () => {
+  const [brands, setBrands] = useState<IBrands[]>([]);
+
+  const getBrands = async () => {
+    const response = await getAllBrands();
+    if (response.erro) {
+      toast.error(response.error);
+    }
+    setBrands(response);
+  };
+
+  useEffect(() => {
+    getBrands();
+  }, []);
+
   return (
     <>
       <Header />
