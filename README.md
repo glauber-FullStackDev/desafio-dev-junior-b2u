@@ -42,7 +42,7 @@ Entre no diretório:
 # entrando no repositório
 cd desafio-dev-junior-b2u
 ```
-Faça uma cópia do arquivo de exemplo .env.example para .env e altere a variável BACKEND_HOST para o local de hospedagem da api:
+Faça uma cópia do arquivo de exemplo .env.example para .env e altere a variável BACKEND_HOST para o local de hospedagem da api.
 
 Altere de:
 ```
@@ -52,6 +52,11 @@ Para:
 ```
 BACKEND_HOST=<your-backend-hosting>
 ```
+Se estiver utilizando localmente, utilize o endereço IP do seu computador:
+```
+BACKEND_HOST=<your-machine-ip>
+```
+Se você possuir um endereço IP fixo válido e um domínio próprio, aponte o DNS para a o local da instalação e automaticamente será validado um certificado SSL para 
 
 E também de:
 ```

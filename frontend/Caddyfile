@@ -1,13 +1,15 @@
+
 * {
   root * /srv
   file_server
   try_files {path} /index.html
   encode gzip zstd
 }
-
-passoz.local {
+frontend {
   root * /srv
   file_server
   try_files {path} /index.html
   encode gzip zstd
 }
+
+
