@@ -18,5 +18,6 @@ import { RegisterUserService } from './services/registerUser/registerUser.servic
       inject: [PrismaService],
     },
   ],
+  exports: [UserRepository],
 })
 export class UserModule {}
