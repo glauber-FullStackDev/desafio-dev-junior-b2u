@@ -5,8 +5,8 @@ const prisma = new PrismaClient();
 const allCarsRepository = async () => {
   return await prisma.cars.findMany({
     include: {
-      brands: true,
       users: true,
+      brands: true,
     },
   });
 };

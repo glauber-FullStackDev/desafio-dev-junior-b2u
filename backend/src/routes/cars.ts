@@ -8,7 +8,7 @@ import updateCarController from "../controllers/cars/update-car-controller";
 const routeCar = Router();
 
 routeCar
-  .get("/cars", allCarsController)
+  .get('/cars', allCarsController)
   .post("/cars", createCarController)
   .put("/cars/:id", updateCarController)
   .delete("/cars/:id", deleteCarController);

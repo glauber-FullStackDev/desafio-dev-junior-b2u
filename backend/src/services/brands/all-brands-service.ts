@@ -2,10 +2,10 @@ import allBrandsRepositories from "../../repositories/brands/all-brands-reposito
 
 const allBrandsServices = async () => {
   try {
-    const carData = await allBrandsRepositories();
+    const brandData = await allBrandsRepositories();
     return {
       statusCode: 201,
-      body: carData,
+      body: brandData,
     };
   } catch (error) {
     return { statusCode: 400, body: "Error Fetching brands" };

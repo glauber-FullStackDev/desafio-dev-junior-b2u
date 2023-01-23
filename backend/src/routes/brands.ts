@@ -6,9 +6,10 @@ import updateBrandController from "../controllers/brands/update-brand-controller
 
 const routeBrands = Router();
 
-routeBrands.get("/brands", allBrandsController);
-routeBrands.post("/brands", createBrandController);
-routeBrands.put("/brands/:id", updateBrandController);
-routeBrands.delete("/brands/:id", deleteBrandController);
+routeBrands
+  .get("/brands", allBrandsController)
+  .post("/brands", createBrandController)
+  .put("/brands/:id", updateBrandController)
+  .delete("/brands/:id", deleteBrandController);
 
 export { routeBrands };

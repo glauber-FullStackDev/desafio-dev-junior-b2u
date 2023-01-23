@@ -1,10 +1,10 @@
 import allCarsRepository from "../../repositories/cars/all-cars-repository";
 
-const allCarsService = async () => {
+const allCarsServices = async () => {
   try {
     const carData = await allCarsRepository();
     return {
-      statusCode: 201,
+      statusCode: 200,
       body: carData,
     };
   } catch (error) {
@@ -12,4 +12,4 @@ const allCarsService = async () => {
   }
 };
 
-export default allCarsService;
+export default allCarsServices;

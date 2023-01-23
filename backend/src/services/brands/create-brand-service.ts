@@ -1,6 +1,6 @@
 import createBrandRepository from "../../repositories/brands/create-brand-repository";
 
-const createBrandService = async (params: any) => {
+const createBrandService = async (params: Request) => {
   try {
     await createBrandRepository(params);
     return {
