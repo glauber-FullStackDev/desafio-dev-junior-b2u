@@ -33,4 +33,4 @@ Serão considerados diferenciais:
 - Rode o comando npm run dev para startar o servidor na porta 9901.
 
 ## NOTA:
-- Para que a aplicação funcione corretamente, visto que a API não está em nenhum servidor, deve-se rodar as duas aplicações juntas para obter os dados e fazer as devidas operações localmente.
+- Para que a aplicação funcione corretamente, visto que a API não está em nenhum servidor, deve-se rodar as duas backend e frontend juntos para obter os dados e fazer as devidas operações localmente.
