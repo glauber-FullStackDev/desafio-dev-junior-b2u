@@ -4,6 +4,7 @@ import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 export class SwaggerConfig {
   static setup(app: INestApplication) {
     const config = new DocumentBuilder()
+      .addBearerAuth()
       .setTitle('Car sale ads')
       .setDescription('The car sale ads API description')
       .setVersion('1.0')
