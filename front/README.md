@@ -2,10 +2,10 @@
 
 ### :rocket: Instalando e configurando projeto
 
-- Faça o clone do projeto
-
 ```bash
-$ cd projeto
+$ git clone https://github.com/1uri-silva/desafio-dev-junior-b2u.git
+
+$ cd desafio-dev-junior-b2u/front
 
 $ npm i
 
