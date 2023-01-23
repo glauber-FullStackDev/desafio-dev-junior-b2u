@@ -4,6 +4,7 @@
 [Tecnologias utilizadas](#tecnologias-utilizadas) |
 [Pré requisitos](#pre-requisitos) |
 [Download e instalação](#download-e-instalação) |
+[Melhorias](#melhorias) |
 [Documentação](#documentação)
 
 ## O projeto
@@ -111,6 +112,20 @@ Para parar a aplicação execute:
 # iniciando aplicação
 npm stop
 ```
+
+A aplicação estará disponível para acesso HTTP na porta 80 (Redirecionado para a porta 443 SSL) e o backend estará respondendo na porta 3000.
+
+## Melhorias
+Pontos de melhorias para as próximas versôes:
+  * API Gateway para o Backend e autenticação/integração com Keycloak.
+  * Balanceamento de carga para o Frontend e autenticação/integração com Keycloak.
+  * Aplicar técnicas de cache local e remoto com Redis.
+  * CI/CD através do Github Actions para geração dos artefatos e deploy.
+  * Deploy dos artefatos para o Docker Registry.
+  * Manifestos para Kubernetes e Helm charts.
+  * Monitoramento de perfermance e tráfego (Observabilidade).
+  * Cobertura de testes unitários e de integração.
+  
 
 ## Documentação
 
