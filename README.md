@@ -16,6 +16,7 @@ Você deverá desenvolver um projeto utilizando React no front-end e Node.js no 
 > - Você pode persistir os dados em memoria;
 > - Cada carro precisa ter um identificador único, nome, marca, ano de fabricação e descrição;
 > - Além dos dados do carro, é necessário também salvar os dados do dono do carro(nome, email e telefone de contato).
+
 ## Diferenciais
 Serão considerados diferenciais:
 
