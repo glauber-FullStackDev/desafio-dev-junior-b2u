@@ -4,11 +4,11 @@
 
 # Sobre o projeto
 
-Projeto utilizando React no front-end e Nest.js no back-end com a finalidade de que seja possível listar, visualizar, criar, editar e excluir carros de uma aplicação de anuncios de venda de automóveis.
+Projeto utilizando React no front-end e Nest.js no back-end com a finalidade de que seja possível listar, visualizar, criar, editar e excluir carros de uma aplicação de anúncios de venda de automóveis.
 
 Requisitos:
 
-- Você pode persistir os dados em memoria;
+- Você pode persistir os dados em memória;
 - Cada carro precisa ter um identificador único, nome, marca, ano de fabricação e descrição;
 - Além dos dados do carro, é necessário também salvar os dados do dono do carro(nome, email e telefone de contato).
 
