@@ -40,8 +40,6 @@ const VehicleCard = ({ item, onRemove }) => {
       <div className={styles.carInfoContainer}>
         <div className={styles.carInfoDiv}>
           <p>{item.brand} {item.name} {item.manufacturingYear}</p>
-          <p></p>
-          <p></p>
           <p>{item.description}</p>
         </div>
         <span>{item.price}</span>

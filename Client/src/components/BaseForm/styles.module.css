@@ -1,9 +1,11 @@
 .baseForm {
-  border: 1px solid black;
+  border: none;
   height: 100%;
   width: 700px;
   display: flex;
   margin: 50px auto;
+  border-radius: 5px;
+  box-shadow: 2px 0px 15px 2px rgba(0, 0, 0, 0.2);
 }
 
 .baseForm p {
@@ -26,7 +28,8 @@
   justify-content: space-between;
 }
 
-.createTrue, .baseFormCreate {
+.createTrue,
+.baseFormCreate {
   width: 45%;
 }
 
@@ -40,4 +43,19 @@
 
 .baseForm button {
   margin-top: 40px;
+}
+
+@media only screen and (max-width: 900px) {
+  .baseFormDiv {
+    flex-direction: column;
+  }
+
+  .createTrue,
+  .baseFormCreate {
+    width: 100%;
+  }
+
+  .baseForm {
+    width: 70vw;
+  }
 }

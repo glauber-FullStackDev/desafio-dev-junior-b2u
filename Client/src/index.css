@@ -3,6 +3,12 @@
   padding: 0;
 }
 
+#root {
+  width: 100vw;
+  height: 100vh;
+}
+
+
 a {
   font-weight: 500;
   color: #646cff;
@@ -16,10 +22,13 @@ body {
   margin: 0;
   display: flex;
   place-items: center;
+  height: 100%;
 }
 
 .App {
-  width: 100vw;
+  width: 100%;
+  background-color: rgb(245, 245, 245);
+  height: 100%;
 }
 
 h1 {
@@ -44,6 +53,31 @@ button:hover {
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
+}
+
+input {
+  font-size: .9rem;
+  height: 30px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
+}
+
+input:focus {
+  border: 1px solid rgb(108, 177, 255);
+}
+
+input::placeholder {
+  font-size: .8rem;
+}
+
+label {
+  margin-bottom: 5px;
+}
+
+.error {
+  color: red;
 }
 
 @media (prefers-color-scheme: light) {

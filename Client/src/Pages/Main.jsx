@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
-import Context from "../../context/Context";
-import Filter from "../Filter/Filter";
-import VehicleList from "../VechicleCard/VehicleList";
+import Context from "./../context/Context";
+import Filter from "../components/Filter/Filter";
+import VehicleList from "../components/VechicleCard/VehicleList";
 
 const Main = () => {
   const { findAll } = useContext(Context);
@@ -40,10 +40,8 @@ const Main = () => {
     });
   };
 
-  console.log(filtered.list);
-  console.log(filtered.query);
   return (
-    <div>
+    <div style={{height: "100%"}}>
       <Filter handleFilter={handleFilter} />
       <VehicleList
         data={data}

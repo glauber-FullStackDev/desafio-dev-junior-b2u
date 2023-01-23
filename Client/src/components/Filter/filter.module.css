@@ -14,3 +14,15 @@
 .filterDiv input {
   width: 50%;
 }
+
+
+@media only screen and (max-width: 1250px) {
+  .filterDiv {
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+
+  .filterDiv label {
+    margin: 0px;
+  }
+}

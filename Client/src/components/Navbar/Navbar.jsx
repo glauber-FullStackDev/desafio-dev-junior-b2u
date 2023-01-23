@@ -20,7 +20,7 @@ const Navbar = ({ onFilterChange }) => {
           <span className="navbar-toggler-icon"></span>
         </button>
 
-        <div className="collapse navbar-collapse w-100 d-flex" id="conteudoNavbarSuportado">
+        <div className="collapse navbar-collapse collapse w-100 d-flex" id="conteudoNavbarSuportado">
           <ul className="navbar-nav w-100 d-flex justify-content-between">
             <li className="nav-item active">
               <a className="nav-link" href="/">
