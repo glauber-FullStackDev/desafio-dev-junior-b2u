@@ -2,6 +2,7 @@ import CarProvider from "./context/CarContext";
 import { Route, Routes } from "react-router-dom";
 import AddCar from "./pages/AddCar";
 import Home from "./pages/Home";
+import EditCar from "./pages/EditCar";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/add" element={<AddCar />} />
+          <Route path="/edit/:id" element={<EditCar />} />
         </Routes>
       </div>
     </CarProvider>

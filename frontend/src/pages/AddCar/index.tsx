@@ -22,6 +22,7 @@ const AddCar: React.FC = () => {
     }),
   });
   const formik = useFormik({
+    //@ts-ignore
     initialValues: {
       name: "",
       brand: "",
@@ -50,6 +51,9 @@ const AddCar: React.FC = () => {
         type="text"
         name="name"
       />
+      {(formik.errors.name && formik.touched.name) && (
+        <p className="text-red-500">{formik.errors.name}</p>
+      )}
       <Input
         label="Marca"
         onChange={formik.handleChange}
@@ -57,6 +61,9 @@ const AddCar: React.FC = () => {
         type="text"
         name="brand"
       />
+      {(formik.errors.brand && formik.touched.brand) && (
+        <p className="text-red-500">{formik.errors.brand}</p>
+      )}
       <Input
         label="Ano"
         onChange={formik.handleChange}
@@ -64,6 +71,9 @@ const AddCar: React.FC = () => {
         type="number"
         name="year"
       />
+      {(formik.errors.year && formik.touched.year) && (
+        <p className="text-red-500">{formik.errors.year}</p>
+      )}
       <Input
         label="Dono"
         onChange={formik.handleChange}
@@ -71,6 +81,9 @@ const AddCar: React.FC = () => {
         type="text"
         name="owner.name"
       />
+      {(formik.errors.owner?.name && formik.touched.owner?.name) && (
+        <p className="text-red-500">{formik.errors.owner?.name}</p>
+      )}
       <Input
         label="Email"
         onChange={formik.handleChange}
@@ -78,6 +91,9 @@ const AddCar: React.FC = () => {
         type="text"
         name="owner.email"
       />
+      {(formik.errors.owner?.email && formik.touched.owner?.email) && (
+        <p className="text-red-500">{formik.errors.owner?.email}</p>
+      )}
       <Input
         label="Telefone"
         onChange={formik.handleChange}
@@ -85,6 +101,9 @@ const AddCar: React.FC = () => {
         type="text"
         name="owner.tel"
       />
+      {(formik.errors.owner?.tel && formik.touched.owner?.tel) && (
+        <p className="text-red-500">{formik.errors.owner?.tel}</p>
+      )}
       <div className="flex justify-between gap-4 pt-4">
         <Button onClick={() => navigate("/")}>Voltar</Button>
         {formik.isSubmitting ? (

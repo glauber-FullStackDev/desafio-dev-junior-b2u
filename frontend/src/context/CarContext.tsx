@@ -10,6 +10,7 @@ export const CarContext = createContext<ICarContext | null>(null);
 
 const CarProvider: React.FC<ICarProvider> = ({ children }) => {
   const [cars, setCars] = useState<ICar[]>([]);
+  const [car, setCar] = useState<ICar>({} as ICar);
 
   const getCars = async () => {
     try {
@@ -23,7 +24,7 @@ const CarProvider: React.FC<ICarProvider> = ({ children }) => {
   const getCar = async (id: any) => {
     try {
       const response = await Api.get(`/${id}`);
-      return response.data;
+      setCar(() => response.data);
     } catch (error: any) {
       console.log(error);
     }
@@ -40,20 +41,22 @@ const CarProvider: React.FC<ICarProvider> = ({ children }) => {
   const removeCar = async (id: any) => {
     try {
       await Api.delete(`/${id}`);
+      window.location.reload();
     } catch (error: any) {
       console.log(error);
     }
   };
 
-  const updateCar = async (car: ICar, id: any) => {
+  const updateCar = async (id: any, car: ICar) => {
     try {
-      await Api.put(`/${id}`, car);
+      await Api.put(`/update/${id}`, car);
     } catch (error: any) {
       console.log(error);
     }
   };
 
   const value: ICarContext = {
+    car,
     cars,
     getCars,
     getCar,

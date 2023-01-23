@@ -1,16 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
 import { BsTrash } from "react-icons/bs";
 import { AiOutlineEdit } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
+import { CarContext } from "../../context/CarContext";
+import { ICarContext } from "../../context/types.car";
 
 interface ICard {
-  name: string;
-  brand: string;
-  year: number;
-  ownerName: string;
-  ownerEmail: string;
-  ownerTel: string;
-  carId: number;
+  name: string | undefined;
+  brand: string | undefined;
+  year: number | undefined;
+  ownerName: string | undefined;
+  ownerEmail: string | undefined;
+  ownerTel: string | undefined;
+  carId: string | undefined;
 }
 
 const Card: React.FC<ICard> = ({
@@ -23,6 +25,7 @@ const Card: React.FC<ICard> = ({
   carId,
 }) => {
   const navigate = useNavigate();
+  const { removeCar } = useContext(CarContext) as ICarContext;
 
   return (
     <div className="bg-gray-300 p-5 flex items-center justify-between mt-6">
@@ -54,7 +57,7 @@ const Card: React.FC<ICard> = ({
           <AiOutlineEdit size={20} />
         </button>
         <button>
-          <BsTrash size={20} />
+          <BsTrash onClick={() => removeCar(carId)}size={20} />
         </button>
       </div>
     </div>

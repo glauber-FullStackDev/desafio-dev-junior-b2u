@@ -10,10 +10,11 @@ export interface ICar {
 }
 
 export interface ICarContext {
+  car: ICar;
   cars: ICar[];
   getCars: () => void;
   getCar: (id: any) => void;
   addCar: (car: ICar) => void;
   removeCar: (id: any) => void;
-  updateCar: (id:any, car: ICar) => void;
+  updateCar: (id: any, car: ICar) => void;
 }

@@ -27,7 +27,8 @@ const Home: React.FC = () => {
               ownerName={car.owner.name}
               ownerEmail={car.owner.email}
               ownerTel={car.owner.tel}
-              carId={index}
+              // @ts-ignore
+              carId={car._id}
             />
           ))
         ) : (
