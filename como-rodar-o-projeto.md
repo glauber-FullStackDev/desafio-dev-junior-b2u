@@ -11,6 +11,7 @@ git clone https://github.com/diegocruz-s/desafio-dev-junior-b2u
 DATABASE_URL="file:./dev.db"
 TOKEN_SECRET="texto que você quiser"
 ```
+### Obs: os próximos comandos devem ser executados em algum terminal
 ### Entre no diretório **server**
 ```bash
 cd server
@@ -25,12 +26,12 @@ npm install
 ```bash
 npx prisma db seed
 ```
-### Rode o backend
+### Execute o seguinte para rodar o backend e deixe ele rodando(não feche o terminal)
 ```bash
 npm run dev
 ```
 # Frontend
-### Entre no diretório web
+### Em outro terminal entre no diretório web
 ```bash
 cd web
 ```
@@ -40,7 +41,7 @@ npm i
     ou
 npm install
 ```
-### Rode o frontend
+###  Execute o seguinte para rodar o frontend e deixe ele rodando(não feche o terminal)
 ```bash
 npm run dev
 ```
