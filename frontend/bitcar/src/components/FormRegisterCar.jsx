@@ -32,6 +32,9 @@ const FormRegisterCar = () => {
     const userId = users.filter(user => {
      return user.name == data.user
     })[0].id
+
+
+    console.log(userId);
     const dataSent = {
       name:data.name,
       marca:data.marca,
@@ -73,8 +76,10 @@ const FormRegisterCar = () => {
                             {user.name}
                       </option>)
                         }
+                    
 
                     </select>
+                    <p className='text-sm text-[#8F1F1F]'>{errors.user ? 'É necessário um dono, crie um usuário abaixo' : ''}</p>
                     <div className='mt-4 justify-center sm:justify-start items-center flex'>
                     <Button text={'Criar carro'} type={'submit'}/>
                     
