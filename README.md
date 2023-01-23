@@ -3,22 +3,59 @@
 # Desafio - Desenvolvedor Fullstack - Júnior
 Seja bem-vindo! Este desafio foi projetado para avaliar a sua capacidade técnica como candidato ao cargo proposto.
 
-## Instruções
-- Faça um fork deste repositório;
-- O conjunto mínimo de tecnologias a serem utilizadas são: alguma das tecnologias front-end e back-end informadas na proposta desse desafio;
-- Crie um passo a passo de como rodar a sua aplicação;
-- Após finalizar, submeta um pull request com um comentário informando o seu e-mail de contato e aguarde nossa avaliação.
+# CarAdHouse
 
-## Proposta
-Você deverá desenvolver um projeto utilizando React no front-end e Node.js no back-end com a finalidade de que seja possível listar, visualizar, criar, editar e excluir carros de uma aplicação de anuncios de venda de automóveis.
+## Instruções para rodar o projeto
+- entre individualmente nas pastas "api" e "front" pelo terminal e use o comando abaixo para instalar as dependências:
+```
+npm install
+```
 
-**Observações:**
-> - Você pode persistir os dados em memoria;
-> - Cada carro precisa ter um identificador único, nome, marca, ano de fabricação e descrição;
-> - Além dos dados do carro, é necessário também salvar os dados do dono do carro(nome, email e telefone de contato).
-## Diferenciais
-Serão considerados diferenciais:
+- entre pelo terminal na pasta "api" e utilize o comando abaixo para criar um container docker para nosso banco de dados mysql:
+```
+docker compose up -d
+```
 
-- Conhecimento sólido em Expo ou React Native;
-- Boas práticas de escrita de código (código limpo, padrões de arquitetura, etc.);
-- Conhecimento em infraestruturas em nuvem;
+- ainda no mesmo terminal da pasta "api" utilize o comando abaixo para criar a base de dados "admin" dentro do nosso container mysql:
+```
+npx sequelize-cli db:create -- --url 'mysql://root:example@3306/admin'
+```
+
+- agora criaremos as tabelas do nosso banco de dados rodando as migrations com o seguinte comando:
+```
+npx sequelize db:migrate
+```
+
+- caso seja necessário reverter as migrations, utilize o comando abaixo
+```
+npx sequelize db:migrate:undo:all
+```
+
+- agora é só colocar o servidor do backend para rodar, use o comando abaixo
+```
+npm run dev
+```
+
+- com o nosso servidor em execução, abra outro terminal, entre na pasta do front-end da aplicação e utilize o comando abaixo
+```
+cd front
+```
+```
+npm run dev
+```
+- Agora é só dar um ctrl + click na rota que aparecerá no terminal
+- A pasta "images" serve como referência de imagem na hora que for cadastrar um anuncio de carro
+
+# Tecnologias usadas
+## Front-end
+- JavaScript
+- ReactJs
+
+## Back-end
+- TypeScript
+- Node
+- Sequelize
+
+## Banco de Dados
+- MySql
+- Docker

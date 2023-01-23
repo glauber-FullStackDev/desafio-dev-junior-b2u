@@ -1,0 +1,46 @@
+.anuncio-card {
+    width: 30%;
+    padding: 1rem;
+    margin-bottom: 2.5rem;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+    background: #111;
+    color: #fff;
+}
+
+.anuncio-card img {
+    max-width: 100%;
+    margin-bottom: 1rem;
+}
+
+.anuncio-card h2 {
+    margin-bottom: 1rem;
+    
+}
+
+.anuncio-card p {
+    margin-bottom: 1rem;
+}
+
+.anuncio-card svg {
+    color: #c19d1a;
+}
+
+.anuncio-card a {
+    /* cores */
+    background: #c19d1a;
+    color: #000;
+
+    /* tamanho/formato */
+    border: 2px solid #af9127;
+    border-radius: 4px;
+    padding: 1rem .5rem;
+
+    /* posicionamentos */
+    align-items: center;
+    text-align: center;
+    font-weight: bold;
+}

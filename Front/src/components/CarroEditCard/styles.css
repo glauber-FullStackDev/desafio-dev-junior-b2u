@@ -1,0 +1,61 @@
+div.edit-card-container {
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+
+    padding: 1em;
+}
+
+.edit-card-container form {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+}
+
+.edit-card-container input[type=text] {
+    width: 100%;
+    margin-bottom: 1em;
+    background-color: black;
+    border: 1px solid black;
+    padding: .5em;
+}
+
+.edit-card-container h1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.edit-card-container h1 input {
+    padding: .5em;
+}
+
+.edit-card-container textarea {
+    width: 100%;
+    background-color: black;
+    color: white;
+    border: 1px solid white;
+    padding: .5em;
+    margin-bottom: .5em;
+}
+
+.edit-card-container select {
+    width: 100%;
+    background-color: black;
+    color: white;
+    border: 1px solid white;
+    padding: .5em;
+}
+
+
+.edit-card-container .file-p {
+    margin-top: 1em;
+}
+
+.edit-card-container button {
+    margin-top: 1em;
+}
+
+.edit-card-container .btn-excluir {
+    background-color: rgb(202, 9, 9);
+}
