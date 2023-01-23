@@ -1,0 +1,24 @@
+:root {
+  --main-bg-color: #151F2D;
+  --secondary-bg-color: #4E5A6C;
+  --main-border-color: #FFF4F4;
+  
+  --main-acceppt-bg-color: #008BA9;
+  --main-exclude-bg-color: #D62C2C;
+  
+  --main-txt-color: #FFFFFF;
+  --secondary-txt-color: #000000;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto';
+  font-style: normal;
+}
+
+body {
+  color: var(--main-txt-color);
+  background: var(--main-bg-color);
+}

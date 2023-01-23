@@ -1,0 +1,53 @@
+.container-SignOn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-top: 5rem;
+}
+
+
+@keyframes slidein {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.form-SignOn {
+  width: 40rem;
+  height: 25rem;
+  border-radius: 1.3rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+
+  background: var(--secondary-bg-color);
+}
+
+.button {
+  width: 30rem;
+  height: 4rem;
+
+  margin-left: 3rem;
+  border: none;
+  border-radius: 1rem;
+
+  background-color: var(--main-acceppt-bg-color);
+
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--main-txt-color);
+}
+
+button:hover {
+  opacity: 0.6;
+  transition: 0.3s;
+  cursor: pointer;
+}
