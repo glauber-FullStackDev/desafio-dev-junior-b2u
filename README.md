@@ -32,20 +32,20 @@ cd desafio-dev-junior-b2u
 Faça uma cópia do arquivo de exemplo .env.example para .env e altere a variável BACKEND_HOST para o local de hospedagem da api:
 
 Altere de:
-```.env
+```
 BACKEND_HOST=
 ```
 Para:
-```.env
+```
 BACKEND_HOST=<your-backend-hosting>
 
 E também de:
-```.env
+```
 POSTGRES_PASSWORD=
 POSTGRES_USER=
 ```
 Para:
-```.env
+```
 POSTGRES_PASSWORD=<your-password>
 POSTGRES_USER=<your-username>
 ```
