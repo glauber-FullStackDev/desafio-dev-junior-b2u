@@ -11,7 +11,7 @@ export const Container = styled.section`
 `;
 
 export const ContainerTable = styled(TableContainer)`
-  max-width: 100%;
+  max-width: 1000px;
   background: #ffffff;
   border-radius: 3px;
 `;
