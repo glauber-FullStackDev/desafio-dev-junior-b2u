@@ -19,9 +19,10 @@ const postCar = async (req, res, _next) => {
 }
 
 const editCar = async (req, res, _next) => {
-  const updateCar = await carsService.editCar(req.body);
-  if (updateCar === OK) return res.status(OK).json({ message: 'Carro alterado com sucesso!' })
-  throw new Error('Não foi possível editar o carro.')
+  const { id } = req.params;
+  const updateCar = await carsService.editCar(req.body, id);
+  if (updateCar === NOT_FOUND) return res.status(NOT_FOUND).json({ message: 'Carro não encontrado!' }) 
+  return res.status(OK).json({ message: 'Carro alterado com sucesso!' })
 }
 
 const getCarById = async (req, res, _next) => {
@@ -32,8 +33,6 @@ const getCarById = async (req, res, _next) => {
 }
 
 const deleteCar = async (req, res, _next) => {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   const { id } = req.params;
   const deletedCar = await carsService.deleteCar(id);
   if (deletedCar === OK) return res.status(OK).json({ message: 'Carro deletado com sucesso!' });

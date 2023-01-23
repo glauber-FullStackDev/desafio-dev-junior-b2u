@@ -22,8 +22,10 @@ const postCar = async (data) => {
   return statusCode.CREATED;
 };
 
-const editCar = async (data) => {
-  await carros.update(data, { where: { id: data.id } })
+const editCar = async (data, id) => {
+  const validation = await carros.findByPk(id);
+  if (!validation) return statusCode.NOT_FOUND;
+  await carros.update(data, { where: { id } });
   return statusCode.OK;
 }
 
