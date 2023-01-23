@@ -1,4 +1,5 @@
 # Passo a passo de como rodar o projeto localmente
+### Obs: os comandos devem ser executados em algum terminal
 ### Clone o repositório com o comando
 ```bash
 git clone https://github.com/diegocruz-s/desafio-dev-junior-b2u
@@ -11,7 +12,6 @@ git clone https://github.com/diegocruz-s/desafio-dev-junior-b2u
 DATABASE_URL="file:./dev.db"
 TOKEN_SECRET="texto que você quiser"
 ```
-### Obs: os próximos comandos devem ser executados em algum terminal
 ### Entre no diretório **server**
 ```bash
 cd server
