@@ -4,13 +4,24 @@
 [Download e instalação](#download-e-instalação) |
 [Documentação](#documentação)
 
+## O projeto
+Sistema fullstack para cadastro de anúncios de veículos.
+
+## Tecnologias utilizadas
+ * [NodeJS](https://nodejs.org)
+ * [Typescript](https://www.typescriptlang.org/)
+ * [React](https://reactjs.org/)
+ * [Prisma](https://prisma.io)
+ * [Postgresql](https://postgresql.org)
+ * [Docker](https://docker.com)
+
 
 ## Pré requisitos
 Para rodar este projeto é necessário:
  * Docker e docker-compose instalados.
    * Para ajuda na instalação, vá até [Docker](https://docker.io).
  * Node.js e npm instalados.
-   * Para ajuda na instalação, vá até [Nodejs](https://nodejs.io).
+   * Para ajuda na instalação, vá até [Nodejs](https://nodejs.org).
  * Git instalado.
 
 
