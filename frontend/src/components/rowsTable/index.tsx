@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { IUsers } from "../../interface/IUsers";
+import IUsers from "../../interface/IUsers";
 
 import TableRow from "@mui/material/TableRow";
 import TableCell from "@mui/material/TableCell";
@@ -37,16 +37,17 @@ const RowsTable = ({
       <TableCell align="right">
         <IconButton onClick={handleOpen}>
           <EditIcon />
-          <Modal
-            open={open}
-            aria-labelledby="modal-modal-title"
-            aria-describedby="modal-modal-description"
-          >
-            <Box sx={style}>
-              <FormUsers handleClose={handleClose} />
-            </Box>
-          </Modal>
         </IconButton>
+
+        <Modal
+          open={open}
+          aria-labelledby="modal-modal-title"
+          aria-describedby="modal-modal-description"
+        >
+          <Box sx={style}>
+            <FormUsers handleClose={handleClose} />
+          </Box>
+        </Modal>
 
         <IconButton onClick={() => deleteUser(id)}>
           <DeleteIcon />

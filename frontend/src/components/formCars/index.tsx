@@ -9,6 +9,11 @@ import MenuItem from "@mui/material/MenuItem";
 
 import getAllBrands from "../../services/brands/get-all-brands";
 import getAllUsers from "../../services/users/get-all-users";
+import createCarService from "../../services/cars/create-car";
+import updateCarService from "../../services/cars/update-car";
+import { TOnlyCar } from "../../interface/ICars";
+import IUsers from "../../interface/IUsers";
+import { IBrands } from "../../interface/IBrands";
 
 import {
   ButtonClose,
@@ -18,11 +23,6 @@ import {
   WrapperClose,
   SelectField,
 } from "./styles";
-import createCarService from "../../services/cars/create-car";
-import updateCarService from "../../services/cars/update-car";
-import { TOnlyCar } from "../../interface/ICars";
-import { IUsers } from "../../interface/IUsers";
-import { IBrands } from "../../interface/IBrands";
 
 const initialState = {
   id: "",

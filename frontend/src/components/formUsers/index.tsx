@@ -1,8 +1,13 @@
 import { useState } from "react";
+import { toast } from "react-toastify";
 
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import TextField from "@mui/material/TextField";
+
+import IUsers from "../../interface/IUsers";
+import createUserService from "../../services/users/create-user";
+import updateUserService from "../../services/users/update-uset";
 
 import {
   ButtonClose,
@@ -12,10 +17,6 @@ import {
   WrapperClose,
 } from "./styles";
 
-import { IUsers } from "../../interface/IUsers";
-import createUserService from "../../services/users/create-user";
-import { toast } from "react-toastify";
-
 const initialState = {
   id: "",
   name: "",
@@ -23,8 +24,14 @@ const initialState = {
   phone: "",
 };
 
-const FormUsers = ({ handleClose }: { handleClose: () => void }) => {
-  const [user, setUser] = useState<IUsers>(initialState);
+const FormUsers = ({
+  users,
+  handleClose,
+}: {
+  users?: IUsers;
+  handleClose: () => void;
+}) => {
+  const [user, setUser] = useState(users || initialState);
 
   const createUser = async () => {
     const response = await createUserService(user);
@@ -36,9 +43,29 @@ const FormUsers = ({ handleClose }: { handleClose: () => void }) => {
     toast.success(response.message);
   };
 
+  const updateUser = async () => {
+    if (user.id !== "") {
+      const response = await updateUserService(user.id, user);
+
+      if (response) {
+        toast.error(response.error);
+        return;
+      }
+      toast.success(response.message);
+    }
+  };
+
+  const handleSaveSubmit = () => {
+    if (user.id !== "") {
+      updateUser();
+      return;
+    }
+    createUser();
+  };
+
   return (
     <Container>
-      <ContainerForm onSubmit={createUser}>
+      <ContainerForm onSubmit={handleSaveSubmit}>
         <Wrapper>
           <ButtonClose onClick={handleClose}>Close</ButtonClose>
         </Wrapper>

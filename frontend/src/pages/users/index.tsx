@@ -3,7 +3,7 @@ import { toast } from "react-toastify";
 
 import Header from "../../components/header";
 import getAllUsers from "../../services/users/get-all-users";
-import { IUsers } from "../../interface/IUsers";
+import IUsers from "../../interface/IUsers";
 
 import {
   BoxModal,

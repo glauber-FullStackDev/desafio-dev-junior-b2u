@@ -1,4 +1,4 @@
-import { IUsers } from "../../interface/IUsers";
+import IUsers from "../../interface/IUsers";
 import api from "../api";
 
 const updateUserService = async (id: string, users: IUsers) => {
