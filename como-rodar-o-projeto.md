@@ -26,7 +26,7 @@ npm install
 ```bash
 npx prisma db seed
 ```
-### Execute o seguinte para rodar o backend e deixe ele rodando(não feche o terminal)
+### Execute o seguinte comando para rodar o backend e deixe ele rodando(não feche o terminal)
 ```bash
 npm run dev
 ```
@@ -41,7 +41,7 @@ npm i
     ou
 npm install
 ```
-###  Execute o seguinte para rodar o frontend e deixe ele rodando(não feche o terminal)
+###  Execute o seguinte comando para rodar o frontend e deixe ele rodando(não feche o terminal)
 ```bash
 npm run dev
 ```
