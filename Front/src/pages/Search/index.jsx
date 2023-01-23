@@ -25,7 +25,7 @@ export function Search() {
         <div className="container">
             <h2 className="title">Resultados para <span className="query-text">{query}</span> </h2>
             <div className="anuncio-container">
-                {anuncios.length === 0 && <p>Carregando...</p>}
+                {anuncios.length === 0 && <p>Nenhum anúncio encontrado :(</p>}
                 {anuncios.length > 0 && anuncios.map(item => <AnuncioCard key={item.id} anuncio={item} />)}
             </div>
         </div>
