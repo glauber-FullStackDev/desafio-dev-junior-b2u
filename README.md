@@ -38,6 +38,7 @@ BACKEND_HOST=
 Para:
 ```
 BACKEND_HOST=<your-backend-hosting>
+```
 
 E também de:
 ```
