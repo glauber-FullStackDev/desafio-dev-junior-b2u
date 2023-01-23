@@ -38,7 +38,7 @@ npm run dev
 
 - com o nosso servidor em execução, abra outro terminal, entre na pasta do front-end da aplicação e utilize o comando abaixo
 ```
-cd Front
+cd front
 ```
 ```
 npm run dev
