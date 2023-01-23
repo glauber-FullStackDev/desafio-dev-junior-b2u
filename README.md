@@ -44,3 +44,17 @@ cd Front
 npm run dev
 ```
 - Agora é só dar um ctrl + click na rota que aparecerá no terminal
+
+# Tecnologias usadas
+## Front-end
+- JavaScript
+- ReactJs
+
+## Back-end
+- TypeScript
+- Node
+- Sequelize
+
+## Banco de Dados
+- MySql
+- Docker
