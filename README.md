@@ -38,6 +38,16 @@ BACKEND_HOST=
 Para:
 ```.env
 BACKEND_HOST=<your-backend-hosting>
+
+E também de:
+```.env
+POSTGRES_PASSWORD=
+POSTGRES_USER=
+```
+Para:
+```.env
+POSTGRES_PASSWORD=<your-password>
+POSTGRES_USER=<your-username>
 ```
 
 Inicie a aplicação:
@@ -56,4 +66,4 @@ npm stop
 
 ## Documentação
 
-[Clique aqui e acesse a documentação](https://passoz.github.io/e-core-challenge-passoz/)
+[Clique aqui e acesse a documentação](https://passoz.github.io/desafio-dev-junior-b2u/)
