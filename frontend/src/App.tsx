@@ -1,13 +1,13 @@
-import Home from "./pages/home"
-import GlobalStyle from "./styles/global-styles"
+import { AppRoutes } from "./routes/app.routes";
+import GlobalStyle from "./styles/global-styles";
 
 const App = () => {
   return (
     <>
-      <Home/>
-      <GlobalStyle/>
+      <AppRoutes />
+      <GlobalStyle />
     </>
-  )
-}
+  );
+};
 
-export default App
+export default App;

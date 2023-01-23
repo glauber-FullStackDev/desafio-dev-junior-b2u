@@ -1,6 +1,7 @@
 import styled from "styled-components";
+import { Link } from 'react-router-dom'
 
-export const MenuLink = styled.a`
+export const MenuLink = styled(Link)`
     padding: 1rem 2rem;
     cursor: pointer;
     text-align: center;

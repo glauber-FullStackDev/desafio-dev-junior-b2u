@@ -13,9 +13,9 @@ const Header = () => {
         <span />
       </Hamburger>
       <Menu isOpen={isOpen}>
-        <MenuLink href="/cars">Cars</MenuLink>
-        <MenuLink href="/users">Users</MenuLink>
-        <MenuLink href="/ramdom-dog">Brands</MenuLink>
+        <MenuLink to='/'>Cars</MenuLink>
+        <MenuLink to="/users">Users</MenuLink>
+        <MenuLink to="/brands">Brands</MenuLink>
         <ButtonLogout>Logout</ButtonLogout>
       </Menu>
     </Nav>
