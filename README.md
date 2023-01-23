@@ -22,7 +22,7 @@
   -> Sobe o container da aplicação
 - Abrir outra guia do terminal e usar o comando: docker exec -it prisma-postgres-api npx prisma migrate dev
   -> Esse último passo serve para fazermos as migrações desejadas para nosso postgres estamos usando o prisma-postgres-api 
-  uma imagem do ORM prisma.
+  uma imagem do ORM prisma. Digite um nome qualquer para a migração que irá abrir na caixa de diálogo.
 - Após isso a aplicação estará rodando em http://localhost:5173
   -> Basta acessar a web no site acima e testar
   
