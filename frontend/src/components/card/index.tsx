@@ -3,7 +3,7 @@ import { useState } from "react";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import Button from "@mui/material/Button";
-import Form from "../../components/form";
+import FormCars from "../formCars";
 import Modal from "@mui/material/Modal";
 import { Box } from "@mui/material";
 
@@ -51,7 +51,7 @@ const CardCar = ({
         </Button>
         <Modal open={open} onClose={handleClose}>
           <Box sx={style}>
-            <Form
+            <FormCars
               handleClose={handleClose}
               car={{ id, model, year, description, brandId, userId }}
             />

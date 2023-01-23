@@ -62,7 +62,7 @@ const Users = () => {
                   id={user.id}
                   name={user.name}
                   email={user.email}
-                  phone={user.email}
+                  phone={user.phone}
                   deleteUser={deleteUser}
                 />
               ))}

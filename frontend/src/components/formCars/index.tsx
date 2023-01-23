@@ -33,7 +33,7 @@ const initialState = {
   userId: "",
 };
 
-const Form = ({
+const FormCars = ({
   handleClose,
   car,
 }: {
@@ -189,4 +189,4 @@ const Form = ({
   );
 };
 
-export default Form;
+export default FormCars;

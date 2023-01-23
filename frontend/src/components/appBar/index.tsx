@@ -4,7 +4,7 @@ import { Buttom, Container } from "./styles";
 
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
-import Form from "../form";
+import FormCars from "../formCars";
 
 const style = {
   position: "absolute" as "absolute",
@@ -27,7 +27,7 @@ const AppBar = () => {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
-          <Form handleClose={handleClose}/>
+          <FormCars handleClose={handleClose} />
         </Box>
       </Modal>
     </Container>
