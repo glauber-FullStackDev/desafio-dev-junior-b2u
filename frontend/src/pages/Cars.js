@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import CarsCard from '../components/CarsCard';
+import getFetch from '../utils/getFetch';
 
 function Cars() {
   const [showError, setShowError] = useState('');
@@ -8,7 +9,7 @@ function Cars() {
   useEffect(() => {
     let isMounted = true;
     const getAllCars = async () => {
-      const response = await fetch('http://localhost:3001/carros');
+      const response = await getFetch();
       const data = await response.json();
       if (data.message) return setShowError(data.message);
       if (isMounted) return setAllCarsFetched(data);
@@ -19,6 +20,7 @@ function Cars() {
 
   return (
     <div>
+      <button type='button'>Adicionar Carro</button>
       {allCarsFetched && allCarsFetched.map((car) => (
         <CarsCard
           key={car.id}

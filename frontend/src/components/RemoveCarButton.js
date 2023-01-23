@@ -2,7 +2,6 @@ import React from 'react'
 import deleteFetch from '../utils/deleteFetch'
 
 function RemoveCarButton({ id }) {
-  // not working...
   const handleClick = async () => {
     await deleteFetch(id);
   };

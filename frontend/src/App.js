@@ -3,6 +3,7 @@ import Cars from './pages/Cars';
 import CarDetails from './pages/CarDetails';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import EditSuccessMessage from './pages/EditSuccessMessage';
+import AddCar from './pages/AddCar';
 
 function App() {
   return (
@@ -17,6 +18,9 @@ function App() {
         </Route>
         <Route exact path='/success'>
           <EditSuccessMessage />
+        </Route>
+        <Route exact path='/add'>
+          <AddCar />
         </Route>
       </Switch>
     </section>
