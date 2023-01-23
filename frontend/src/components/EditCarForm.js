@@ -9,12 +9,6 @@ function EditCarForm({ setShowEditForm }) {
         height: '100%',
       }}
     >
-      <button 
-        type='button'
-        onClick={ () => setShowEditForm(false) }
-      >
-        X
-      </button>
       <form>
         <label htmlFor='nome'>
           Nome do carro:

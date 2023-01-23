@@ -1,6 +1,7 @@
 import React from 'react'
 
 function RemoveCarButton({ id }) {
+  // not working...
   const handleClick = async () => {
     const requestOptions = {
       method: 'DELETE',
@@ -24,10 +25,6 @@ function RemoveCarButton({ id }) {
       <button
         type='button'
         name='remove'
-        style={{
-          display: 'flex',
-          marginLeft: 'auto',
-        }}
         onClick={handleClick}
       >
         Remove

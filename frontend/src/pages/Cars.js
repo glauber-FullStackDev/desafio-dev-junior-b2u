@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import CarsCard from '../components/CarsCard';
-import Loading from '../components/Loading';
 
 function Cars() {
   const [showError, setShowError] = useState('');
@@ -20,7 +19,7 @@ function Cars() {
 
   return (
     <div>
-      {allCarsFetched ? allCarsFetched.map((car) => (
+      {allCarsFetched && allCarsFetched.map((car) => (
         <CarsCard
           key={car.id}
           id={car.id}
@@ -29,7 +28,7 @@ function Cars() {
           anoFabricacao={car.anoFabricacao}
           dono={car.dono}
         />
-      )) : <Loading />}
+      ))}
       <span>{showError && showError}</span>
     </div>
   )

@@ -14,25 +14,31 @@ function CarsCard({ id, nome, anoFabricacao, marca, dono }) {
       width: '70%',
       margin: 'auto',
     }}>
-        <Link
-          style={{ display: 'flex' }}
-          to={`/cars/${id}`}
-        >
-          <img
-            src={noImage}
-            alt={`${nome}`}
-            style={{ width: '100px' }}
-          />
-          <div>
-            <p>{nome}</p>
-            <p>{anoFabricacao}</p>
-            <p>{marca}</p>
-            <p>{dono.name}</p>
-          </div>
-        </Link>
-        <RemoveCarButton
-          id={id}
+      <Link
+        style={{ display: 'flex' }}
+        to={`/cars/${id}`}
+      >
+        <img
+          src={noImage}
+          alt={`${nome}`}
+          style={{ width: '100px' }}
         />
+        <div>
+          <p>{nome}</p>
+          <p>{anoFabricacao}</p>
+          <p>{marca}</p>
+        </div>
+        <p>{dono.nome}</p>
+      </Link>
+      <RemoveCarButton
+        id={id}
+      />
+      <button
+        type='button'
+        onClick={() => setShowEditForm(!showEditForm)}
+      >
+        Editar
+      </button>
       {showEditForm && (
         <EditCarForm
           setShowEditForm={setShowEditForm}
