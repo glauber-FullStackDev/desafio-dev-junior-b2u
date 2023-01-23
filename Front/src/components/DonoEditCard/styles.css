@@ -1,0 +1,33 @@
+div.edit-card-container {
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: column;
+
+    padding: 1em;
+}
+
+div.edit-card-container form {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+}
+
+div.edit-card-container h1 {
+    margin-bottom: 1em;
+}
+
+div.edit-card-container input[type=text] {
+    width: 100%;
+    color: white;
+    border: 1px solid white;
+    margin-bottom: 1em;
+}
+
+.edit-card-container button {
+    margin-top: 1em;
+}
+
+.edit-card-container .btn-excluir {
+    background-color: rgb(202, 9, 9);
+}

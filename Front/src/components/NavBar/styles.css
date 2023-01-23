@@ -1,0 +1,56 @@
+#navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 1rem 2rem;             /* (cima/abaixo) - (direita/esquerda) */
+    background: #121212;
+}
+
+#navbar h2 a {
+    display: flex;                  /* alinhando perfeitamente o icone e o link */
+    align-items: center;
+    gap: 0.5rem;                    /* essa propriedade serve para setar tipo uma margem de dentro de um bloco com vários blocos dentro, pense em uma div cheia de divs, ele seta a margem ou 'gap' de todos eles */
+}
+
+#navbar form {
+    display: flex;
+    gap: .5rem;
+}
+
+#navbar input {
+    padding: .2rem .8rem;
+    border-radius: 4px;
+    border: none;
+}
+
+#navbar button {
+    background: #c19d1a;
+    color: #000;
+
+    border: 2px solid #f7d354;
+    border-radius: 4px;
+
+    padding: .3rem;
+    font-size: 1.3rem;
+
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    transition: .4s;
+}
+
+#navbar button:hover {
+    filter: brightness(.5);
+}
+
+#navbar ul {
+    display: flex;
+    list-style: none;
+    padding: .5em;
+}
+
+#navbar li {
+    margin-right: 1em;
+}

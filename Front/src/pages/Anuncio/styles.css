@@ -1,0 +1,68 @@
+.anuncio-page {
+    color: #fff;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    max-width: 1700px;
+    margin: 2rem auto;
+}
+
+.anuncio-page svg {
+    font-size: 1.5rem;
+    color: #c19d1a;
+}
+
+.anuncio-page .anuncio-card {
+    margin: auto;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.anuncio-page .anuncio-card img,
+.anuncio-page .anuncio-card h2,
+.anuncio-page .anuncio-card p {
+    margin-bottom: 1rem;
+}
+
+.anuncio-page .anuncio-card h2 {
+    font-size: 2rem;
+}
+
+.anuncio-page .anuncio-card p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .4rem;
+}
+
+.tagline {
+    text-align: center;
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+}
+
+.info-container {
+    margin: auto;
+    max-width: 800px;
+}
+
+.info {
+    margin-bottom: 1.5rem;
+}
+
+.info h3 {
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: .4rem;
+}
+
+.info-description {
+    padding-bottom: 10rem;
+}
+
+.info-description p {
+    line-height: 1.4rem;
+}
