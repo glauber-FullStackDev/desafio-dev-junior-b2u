@@ -20,7 +20,7 @@
 - docker-compose up 
 (Acaso dê erro com o postgres será necessário desativar o postgres, para isso use: 'sudo service postgresql stop', depois de testar a aplicação basta apenas rodar 'sudo service postgresql start')
   -> Sobe o container da aplicação
-- Abrir outra guia do terminal e usar o comando: docker exec -it prisma-postgres-api npx migrate dev
+- Abrir outra guia do terminal e usar o comando: docker exec -it prisma-postgres-api npx prisma migrate dev
   -> Esse último passo serve para fazermos as migrações desejadas para nosso postgres estamos usando o prisma-postgres-api 
   uma imagem do ORM prisma.
 - Após isso a aplicação estará rodando em http://localhost:5173
