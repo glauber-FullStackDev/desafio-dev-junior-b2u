@@ -52,7 +52,7 @@ Pré-requisitos: npm / yarn
 ```bash
 
 # clonar repositório
-Se já tiver feito o clone como citado acima, pule para o próximo passo. Se ainda não fez o clone faça o comando abaixo:
+# Se já tiver feito o clone como citado acima, pule para o próximo passo. Se ainda não fez o clone faça o comando abaixo:
 git clone https://github.com/limaricardo/desafio-dev-junior-b2u.git
 
 # Entrando na pasta raiz do projeto
