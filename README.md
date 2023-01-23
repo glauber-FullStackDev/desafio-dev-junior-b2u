@@ -57,9 +57,9 @@ Exemplo:
 ```
 BACKEND_HOST=api.example.com
 ```
-Se estiver utilizando localmente, utilize o endereço IP do seu computador:
+Se estiver utilizando localmente, utilize o endereço IP do seu computador como no exemplo:
 ```
-BACKEND_HOST=<your-machine-ip>
+BACKEND_HOST=192.168.1.200
 ```
 Ou como "localhost":
 ```
@@ -91,6 +91,11 @@ Para:
 ```
 POSTGRES_PASSWORD=<your-password>
 POSTGRES_USER=<your-username>
+```
+Exemplo:
+```
+POSTGRES_PASSWORD="minhasenha"
+POSTGRES_USER="meuusuario"
 ```
 
 Inicie a aplicação:
