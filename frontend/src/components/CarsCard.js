@@ -1,19 +1,43 @@
-import React from 'react'
+import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import noImage from '../image/no-image.png';
+import EditCarForm from './EditCarForm';
+import { Link } from 'react-router-dom';
+import RemoveCarButton from './RemoveCarButton';
 
-function CarsCard({ nome, anoFabricacao, marca, dono }) {
+function CarsCard({ id, nome, anoFabricacao, marca, dono }) {
+  const [showEditForm, setShowEditForm] = useState(false);
+
   return (
-    <div>
-      <img
-        src={noImage}
-        alt={`${nome}`} 
-        style={{ width: '100px' }}
-      />
-      <p>{nome}</p>
-      <p>{anoFabricacao}</p>
-      <p>{marca}</p>
-      <p>{dono.name}</p>
+    <div style={{
+      position: 'relative',
+      width: '70%',
+      margin: 'auto',
+    }}>
+        <Link
+          style={{ display: 'flex' }}
+          to={`/cars/${id}`}
+        >
+          <img
+            src={noImage}
+            alt={`${nome}`}
+            style={{ width: '100px' }}
+          />
+          <div>
+            <p>{nome}</p>
+            <p>{anoFabricacao}</p>
+            <p>{marca}</p>
+            <p>{dono.name}</p>
+          </div>
+        </Link>
+        <RemoveCarButton
+          id={id}
+        />
+      {showEditForm && (
+        <EditCarForm
+          setShowEditForm={setShowEditForm}
+        />
+      )}
     </div>
   )
 }

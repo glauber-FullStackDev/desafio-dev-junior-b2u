@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom';
 import CarsCard from '../components/CarsCard';
 import Loading from '../components/Loading';
 
@@ -20,22 +19,19 @@ function Cars() {
   }, [])
 
   return (
-    <>
+    <div>
       {allCarsFetched ? allCarsFetched.map((car) => (
-        <Link
-          to={`/cars/${car.id}`}
+        <CarsCard
           key={car.id}
-        >
-          <CarsCard
-            nome={car.nome}
-            marca={car.marca}
-            anoFabricacao={car.anoFabricacao}
-            dono={car.dono}
-          />
-        </Link>
+          id={car.id}
+          nome={car.nome}
+          marca={car.marca}
+          anoFabricacao={car.anoFabricacao}
+          dono={car.dono}
+        />
       )) : <Loading />}
       <span>{showError && showError}</span>
-    </>
+    </div>
   )
 }
 

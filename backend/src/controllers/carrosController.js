@@ -32,6 +32,8 @@ const getCarById = async (req, res, _next) => {
 }
 
 const deleteCar = async (req, res, _next) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   const { id } = req.params;
   const deletedCar = await carsService.deleteCar(id);
   if (deletedCar === OK) return res.status(OK).json({ message: 'Carro deletado com sucesso!' });
