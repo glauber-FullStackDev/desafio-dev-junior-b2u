@@ -1,0 +1,129 @@
+.cardContainer {
+  display: flex;
+  border: 1px solid rgb(222, 222, 222);
+  box-shadow: 1px 0px 10px 0px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  width: 45vw;
+  margin: auto;
+}
+
+.buttonsDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 3px 0px;
+  margin: 0 0 0 auto;
+  justify-self: flex-end;
+}
+
+.buttonsDiv button {
+  width: 10px;
+  display: flex;
+  justify-content: center;
+  margin: 0px 5px;
+  border-radius: 5px;
+}
+
+.buttonsDiv button:hover {
+  border: .5px solid rgb(219, 219, 219);
+  filter: brightness(1.1);
+}
+
+.buttonsDiv img {
+  width: 20px;
+}
+
+.imgContainer {
+  height: 100%;
+}
+
+.imgContainer img {
+  float: left;
+  width: 200px;
+  height: 150px;
+  object-fit: cover;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.editButton {
+  background-color: rgb(220, 220, 220);
+}
+
+.deleteButton {
+  background-color: rgb(255, 204, 176);
+}
+
+.carInfoContainer {
+  display: flex;
+  margin-left: 20px;
+  width: 100%;
+}
+
+.carInfoContainer .carInfoDiv {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.carInfoContainer span {
+  margin: 10px 0 0 auto;
+  align-self: flex-start;
+}
+
+.vehicleListDiv {
+  padding-bottom: 50px;
+}
+
+@media only screen and (max-width: 1250px) {
+  .cardContainer {
+    flex-direction: column;
+    width: 30vw;
+    align-items: center;
+  }
+
+  .imgContainer {
+    width: 100%;
+  }
+  .imgContainer img {
+    width: 100%;
+  }
+
+  .carInfoContainer {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 0;
+  }
+
+  .carInfoContainer span {
+    margin: 0;
+    align-self: center;
+  }
+
+  .buttonsDiv {
+    margin: 0;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .buttonsDiv {
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .buttonsDiv .editButton,
+  .buttonsDiv .deleteButton {
+    width: 5px;
+    margin-bottom: 3px;
+  }
+
+  .buttonsDiv img {
+    width: 15px;
+  }
+}

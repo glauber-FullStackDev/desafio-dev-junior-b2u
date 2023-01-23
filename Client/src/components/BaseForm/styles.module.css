@@ -1,0 +1,68 @@
+.baseForm {
+  border: none;
+  height: 100%;
+  width: 700px;
+  display: flex;
+  margin: 50px auto;
+  border-radius: 5px;
+  box-shadow: 2px 0px 15px 2px rgba(0, 0, 0, 0.2);
+}
+
+.baseForm p {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.baseForm form {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: left;
+  padding: 20px;
+}
+
+.baseFormDiv {
+  display: flex;
+  justify-content: space-between;
+}
+
+.createTrue,
+.baseFormCreate {
+  width: 45%;
+}
+
+.createFalse {
+  width: 100%;
+}
+
+.baseForm form input {
+  text-indent: 10px;
+}
+
+.baseForm button {
+  margin-top: 40px;
+}
+
+.baseForm button:hover {
+  background-color: black;
+  transition: ease-in-out 500ms;
+  color: white;
+  border: none;
+}
+
+@media only screen and (max-width: 900px) {
+  .baseFormDiv {
+    flex-direction: column;
+  }
+
+  .createTrue,
+  .baseFormCreate {
+    width: 100%;
+  }
+
+  .baseForm {
+    width: 70vw;
+  }
+}

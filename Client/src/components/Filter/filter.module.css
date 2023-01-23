@@ -1,0 +1,29 @@
+.filterDiv {
+  width: 40vw;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  margin: 20px auto;
+}
+
+.filterDiv label {
+  width: fit-content;
+  margin: 0 20px;
+}
+
+.filterDiv input {
+  width: 50%;
+  text-indent: 10px;
+}
+
+
+@media only screen and (max-width: 1250px) {
+  .filterDiv {
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+
+  .filterDiv label {
+    margin: 0px;
+  }
+}

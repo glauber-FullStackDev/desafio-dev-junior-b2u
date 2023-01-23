@@ -1,0 +1,17 @@
+.myInputDiv {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.inputDiv {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.inputDiv > input {
+  width: 90%;
+}
