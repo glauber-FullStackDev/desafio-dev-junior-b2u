@@ -12,12 +12,8 @@ import {
   ContainerModal,
   ContainerTable,
 } from "./styles";
-import RowsTable from "../../components/rowsTable";
 
-import Table from "@mui/material/Table";
-import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
-import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Modal from "@mui/material/Modal";
 
@@ -74,16 +70,16 @@ const Users = () => {
       <Container>
         <ContainerTable>
           <TableComponent
-              tableHeader={
-                <TableRow>
-                  <TableCell>Name</TableCell>
-                  <TableCell align="right">Email</TableCell>
-                  <TableCell align="right">Phone</TableCell>
-                  <TableCell align="right"></TableCell>
-                </TableRow>
-              }
-              data={users}
-              deleteFn={deleteUser}
+            tableHeader={
+              <TableRow>
+                <TableCell>Name</TableCell>
+                <TableCell align="right">Email</TableCell>
+                <TableCell align="right">Phone</TableCell>
+                <TableCell align="right"></TableCell>
+              </TableRow>
+            }
+            data={users}
+            deleteFn={deleteUser}
           />
         </ContainerTable>
       </Container>
