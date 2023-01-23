@@ -14,6 +14,7 @@ import TableCell from "@mui/material/TableCell";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import deleteUserService from "../../services/users/delete-user";
+import AppBar from "../../components/appBar";
 
 const Users = () => {
   const [users, setUsers] = useState<IUsers[]>([]);
@@ -44,6 +45,7 @@ const Users = () => {
   return (
     <>
       <Header />
+      <AppBar children="+ Add new user"/>
       <Container>
         <ContainerTable>
           <Table>

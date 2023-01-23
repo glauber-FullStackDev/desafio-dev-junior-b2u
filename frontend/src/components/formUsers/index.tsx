@@ -13,6 +13,8 @@ import {
 } from "./styles";
 
 import { IUsers } from "../../interface/IUsers";
+import createUserService from "../../services/users/create-user";
+import { toast } from "react-toastify";
 
 const initialState = {
   id: "",
@@ -24,14 +26,19 @@ const initialState = {
 const FormUsers = ({ handleClose }: { handleClose: () => void }) => {
   const [user, setUser] = useState<IUsers>(initialState);
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    console.log(user);
+  const createCar = async () => {
+    const response = await createUserService(user);
+
+    if (response.error) {
+      toast.error(response.error);
+      return;
+    }
+    toast.success(response.message);
   };
 
   return (
     <Container>
-      <ContainerForm onSubmit={handleSubmit}>
+      <ContainerForm onSubmit={createCar}>
         <Wrapper>
           <ButtonClose onClick={handleClose}>Close</ButtonClose>
         </Wrapper>

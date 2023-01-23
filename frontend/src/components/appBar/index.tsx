@@ -1,4 +1,4 @@
-import { useState } from "react";
+import {  useState } from "react";
 
 import { Buttom, Container } from "./styles";
 
@@ -13,14 +13,14 @@ const style = {
   transform: "translate(-50%, -50%)",
 };
 
-const AppBar = () => {
+const AppBar = ({children} : {children: string}) => {
   const [open, setOpen] = useState<boolean>(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
   return (
     <Container>
-      <Buttom onClick={handleOpen}>+ Add Your Car</Buttom>
+      <Buttom onClick={handleOpen}>{children}</Buttom>
       <Modal
         open={open}
         aria-labelledby="modal-modal-title"

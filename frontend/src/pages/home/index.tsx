@@ -6,7 +6,7 @@ const Home = () => {
   return (
     <>
       <Header />
-      <AppBar />
+      <AppBar children="+ Add a new car"/>
       <CardList />
     </>
   );
