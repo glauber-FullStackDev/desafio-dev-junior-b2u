@@ -42,9 +42,10 @@ Antes de começar, você vai precisar ter instalado em sua máquina as seguintes
 [Git](https://git-scm.com), [Node.js](https://nodejs.org/en/).
 Além disto é bom ter um editor para trabalhar com o código como [VSCode](https://code.visualstudio.com/)
 
-#### 2 - Navegue até a pasta raíz do projeto (frontend) e, com o terminal aberto nela, execute o seguinte comando para rodar o projeto...
+#### 2 - Navegue até a pasta raíz do projeto (frontend) e, com o terminal aberto nela, execute os seguintes comandos para rodar o projeto...
 
-`$ npm start`
+`$ npm install (para instalar as dependências)`
+`$ npm start (para rodar o projeto)`
 
 #### 3 - Ao acessar você verá, logo no início da página, o formulário para cadastrar um anúncio...
 
