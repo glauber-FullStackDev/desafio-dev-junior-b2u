@@ -12,6 +12,13 @@ export const Container = styled.section`
   }
 `;
 
+export const Form = styled.form`
+  width: 50%;
+  padding: 3em;
+  background-color: #ffffff;
+  border-radius: 10px;
+`;
+
 export const Wrapper = styled.div`
   display: flex;
   justify-content: flex-end;
@@ -31,13 +38,6 @@ export const ButtonClose = styled.button`
   &:hover {
     color: #c7a85f;
   }
-`;
-
-export const ContainerForm = styled.form`
-  width: 50%;
-  padding: 3em;
-  background-color: #ffffff;
-  border-radius: 10px;
 `;
 
 export const WrapperClose = styled(Wrapper)`

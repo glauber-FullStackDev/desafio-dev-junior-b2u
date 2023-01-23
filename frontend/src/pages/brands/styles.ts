@@ -1,12 +1,6 @@
 import styled from "styled-components";
-import Box from "@mui/material/Box";
 import TableContainer from "@mui/material/TableContainer";
-
-export const ContainerTable = styled(TableContainer)`
-  max-width: 100%;
-  background: #ffffff;
-  border-radius: 3px;
-`;
+import Box from "@mui/material/Box";
 
 export const Container = styled.section`
   display: flex;
@@ -14,6 +8,12 @@ export const Container = styled.section`
   justify-content: center;
 
   margin: 2em;
+`;
+export const ContainerTable = styled(TableContainer)`
+  text-align: center;
+  max-width: 500px;
+  background: #ffffff;
+  border-radius: 3px;
 `;
 
 export const ContainerModal = styled.div`

@@ -6,7 +6,7 @@ import TextField from "@mui/material/TextField";
 import {
   ButtonClose,
   Container,
-  ContainerForm,
+  Form,
   Wrapper,
   WrapperClose,
 } from "./styles";
@@ -20,7 +20,7 @@ const FormBrands = ({ handleClose }: { handleClose: () => void }) => {
   const [brand, setBrand] = useState(initialState);
   return (
     <Container>
-      <ContainerForm>
+      <Form>
         <Wrapper onClick={handleClose}>
           <ButtonClose>Close</ButtonClose>
         </Wrapper>
@@ -45,7 +45,7 @@ const FormBrands = ({ handleClose }: { handleClose: () => void }) => {
         <WrapperClose>
           <ButtonClose type="submit">Register</ButtonClose>
         </WrapperClose>
-      </ContainerForm>
+      </Form>
     </Container>
   );
 };

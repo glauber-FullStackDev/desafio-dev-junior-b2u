@@ -62,15 +62,11 @@ const Brands = () => {
           <Table>
             <TableHead>
               <TableRow>
-                <TableCell>Name</TableCell>
-                <TableCell align="right">Email</TableCell>
-                <TableCell align="right">Phone</TableCell>
+                <TableCell>Brand</TableCell>
                 <TableCell align="right"></TableCell>
               </TableRow>
             </TableHead>
-            <TableBody>
-              
-            </TableBody>
+            <TableBody></TableBody>
           </Table>
         </ContainerTable>
       </Container>

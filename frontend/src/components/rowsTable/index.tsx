@@ -35,10 +35,10 @@ const RowsTable = ({
       <TableCell align="right">{email}</TableCell>
       <TableCell align="right">{phone}</TableCell>
       <TableCell align="right">
+
         <IconButton onClick={handleOpen}>
           <EditIcon />
         </IconButton>
-
         <Modal
           open={open}
           aria-labelledby="modal-modal-title"
@@ -48,10 +48,10 @@ const RowsTable = ({
             <FormUsers handleClose={handleClose} />
           </Box>
         </Modal>
-
         <IconButton onClick={() => deleteUser(id)}>
           <DeleteIcon />
         </IconButton>
+
       </TableCell>
     </TableRow>
   );
