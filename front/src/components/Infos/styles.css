@@ -1,0 +1,12 @@
+.container-info {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin-top: 1rem;
+  
+}
+
+.container-card {
+  height: 36rem;
+  overflow-y: auto;
+  margin-left: 2rem;
+}

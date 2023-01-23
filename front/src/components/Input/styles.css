@@ -1,0 +1,16 @@
+.input {
+  width: 30rem;
+  height: 4rem;
+
+  margin-left: 3rem;
+  border: none;
+  border-radius: 1rem;
+
+  background-color: var(--main-border-color);
+
+  font-size: 1.4rem;
+  color: var(--secondary-txt-color);
+
+  border-radius: 1rem;
+  padding: 1rem;
+}

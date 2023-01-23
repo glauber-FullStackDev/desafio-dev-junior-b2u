@@ -1,0 +1,38 @@
+.content-card {
+  display: flex;
+  flex-direction: column;
+
+  width: 20rem;
+  height: 10rem;
+  padding: 2rem;
+  border-radius: .7rem;
+margin: 1rem;
+
+  align-items: center;
+  justify-content: space-around;
+
+  background-color: var(--secondary-bg-color);
+}
+
+.content:hover {
+  cursor: pointer;
+  opacity: 0.6;
+  transition: 0.3s;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 2rem;
+
+  text-align: center;
+
+  color: var(--main-txt-color);
+}
+
+.details {
+  font-size: 1.3rem;
+
+  text-align: center;
+
+  color: var(--main-txt-color);
+}

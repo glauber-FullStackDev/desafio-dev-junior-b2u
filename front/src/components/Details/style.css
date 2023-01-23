@@ -1,0 +1,104 @@
+@keyframes skeleton-loading {
+  0% {
+    background-color: hsl(202, 4%, 51%);
+  }
+  100% {
+    background-color: hsl(200, 20%, 95%);
+  }
+}
+
+.details-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 35rem;
+  height: 35rem;
+  padding: 2rem;
+  border-radius: .7rem;
+
+  background-color: var(--secondary-bg-color); 
+}
+
+.title {
+  font-weight: bold;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  
+  text-align: center;
+  color: var(--main-txt-color);
+}
+
+.details {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  
+  text-align: center;
+  color: var(--main-txt-color);
+}
+
+.description {
+  font-size: 1.3rem;
+  margin-bottom: 1.2rem;
+  
+  text-align: center;
+  text-justify: initial;
+  color: var(--main-txt-color);
+}
+
+.container-buttons {
+  position: absolute;
+  bottom: 3rem;
+  width: 30rem;
+  height: 5rem;
+}
+
+.edit {
+  width: 9rem;
+  height: 3rem;
+  border-radius: .4rem;
+  margin: 1rem 3rem;
+
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  
+  border: none;
+  color: var(--main-txt-color);
+  background-color: var(--main-acceppt-bg-color);
+}
+
+.edit:hover {
+  cursor: pointer;
+  opacity: 0.6;
+  transition: 0.3s;
+}
+
+.delete {
+  width: 9rem;
+  height: 3rem;
+  border-radius: .4rem;
+  
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  
+  border: none;
+  color: var(--main-txt-color);
+  background-color: var(--main-exclude-bg-color);
+}
+
+.delete:hover {
+  cursor: pointer;
+  opacity: 0.6;
+  transition: 0.3s;
+}
+
+.skeleton {
+  width: 100%;
+  height: 3rem;
+  margin: 1rem;
+  border-radius: 1rem;
+  animation: skeleton-loading 1s linear infinite alternate;
+}
+
