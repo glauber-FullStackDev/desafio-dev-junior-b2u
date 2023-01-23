@@ -1,5 +1,7 @@
 # Desafio Dev Junior B2U
 
+[O projeto](#o-projeto) |
+[Tecnologias utilizadas](#tecnologias-utilizadas) |
 [Pré requisitos](#pre-requisitos) |
 [Download e instalação](#download-e-instalação) |
 [Documentação](#documentação)
