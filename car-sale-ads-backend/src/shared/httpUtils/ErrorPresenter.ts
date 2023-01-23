@@ -9,9 +9,16 @@ export class BadRequestHttpErrorPresenter {
     example: ['Invalid request body ptoperties'],
   })
   message: string[];
+}
 
-  @ApiProperty({ example: 'Bad request' })
-  error: string;
+export class UnauthorizedHttpErrorPresenter {
+  @ApiProperty({ example: 401 })
+  statusCode: number;
+
+  @ApiProperty({
+    example: 'Unauthorized',
+  })
+  message: string;
 }
 
 export class ConflictHttpErrorPresenter {
@@ -19,13 +26,9 @@ export class ConflictHttpErrorPresenter {
   statusCode: number;
 
   @ApiProperty({
-    isArray: true,
-    example: ['entity already exists'],
+    example: 'entity already exists',
   })
-  message: string[];
-
-  @ApiProperty({ example: 'Conflict' })
-  error: string;
+  message: string;
 }
 
 export class ServerErrorHttpErrorPresenter {
@@ -36,7 +39,4 @@ export class ServerErrorHttpErrorPresenter {
     example: 'internal server error',
   })
   message: string;
-
-  @ApiProperty({ example: 'Internal server error' })
-  error: string;
 }
