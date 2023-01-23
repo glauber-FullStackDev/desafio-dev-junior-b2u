@@ -8,17 +8,11 @@ const LoginPage = () => {
   const [token, setToken] = useState<string | null>("");
   const [authenticated, setAuthenticated] = useState(false);
 
-  useEffect(() => {
-    console.log(token);
-    if (isAuthenticated()) {
-      const item = sessionStorage.getItem("session-token");
-      if(item){
-        window.location.replace("/customer/list");
-        return;
-
-      }
-    }
-  }, [authenticated]);
+  // useEffect(() => {
+  //   if (isAuthenticated()) {
+  //     window.location.replace("/customer/list");
+  //   }
+  // }, [authenticated]);
 
   function handleEmail(e: React.ChangeEvent<HTMLInputElement>) {
     setEmail(e.target.value);
@@ -28,22 +22,19 @@ const LoginPage = () => {
     setPassword(e.target.value);
   }
 
-  function handleClick(e: React.MouseEvent) {
-   
+  function handleLogin(e: React.MouseEvent) {
     e.preventDefault();
     login(email, password);
-    if(window.sessionStorage.getItem("session-token"))
-      setToken(window.sessionStorage.getItem("session-token"));
-    setAuthenticated(true);
-    if (isAuthenticated()) {
-      const item = sessionStorage.getItem("session-token");
-      if(item ){
-        window.location.replace("/customer");
-        return;
-
-      }
-    }
-    // && getRole(item) === "CUSTOMER"
+    // setAuthenticated(true);
+    
+    // if (window.sessionStorage.getItem("session-token")) {
+      // setToken(window.sessionStorage.getItem("session-token"));
+    // }
+    // if(isAuthenticated()){
+      window.location.replace("/customer/list");
+    // }
+    // isAuthenticated();
+    // window.location.replace("/customer/list");
   }
 
   return (
@@ -82,7 +73,7 @@ const LoginPage = () => {
             <button
               type="submit"
               className="button-primary"
-              onClick={handleClick}
+              onClick={handleLogin}
             >
               Ok
             </button>
@@ -96,6 +87,9 @@ const LoginPage = () => {
         </p>
         <p>
           Esqueceu a senha? <Link to={"/forgot"}>Recuperar a senha</Link>
+        </p>
+        <p>
+          <Link to={"/"}>Voltar para a pagina inicial</Link>
         </p>
       </section>
     </div>

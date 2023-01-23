@@ -2,10 +2,10 @@
   display: flex;
   flex-wrap: wrap;
 
+
   padding: 3%;
 
   align-items: center;
-  align-content: center;
   justify-content: space-between;
 
   a {
@@ -45,8 +45,9 @@
   justify-content: space-evenly;
 }
 
-.card-owner {
+.card-info {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
+  width: 50%;
 }

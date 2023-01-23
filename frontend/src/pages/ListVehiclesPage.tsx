@@ -1,9 +1,9 @@
 import jwt_decode from "jwt-decode"
-import getData from "../common/pageData"
+import {getData} from "../common/pageData"
 import { useEffect, useState } from "react";
 import Vehicle from "../common/vehicle";
-import OwnerCard from "../components/OwnerCard";
-import Logout from "../components/Logout";
+import TitleBar from "../components/TitleBar";
+import Card from "../components/Card";
 
 const ListVehiclesPage = () => {
 
@@ -15,8 +15,6 @@ const ListVehiclesPage = () => {
   useEffect(() => {
     const fetchData = async () => {
       const data = await (await getData(1, 1, userId)).json();
-      console.log(data.data.Vehicles);
-      
       setVehicles(data.data.Vehicles);
     };
     fetchData();
@@ -25,7 +23,8 @@ const ListVehiclesPage = () => {
   let vehiclesList;
 
   vehiclesList = vehicles.map((vehicle: Vehicle, index) => (
-    <OwnerCard
+    <Card
+      id={vehicle.id}
       name={vehicle.name}
       brand={vehicle.brand}
       price={vehicle.price}
@@ -36,15 +35,13 @@ const ListVehiclesPage = () => {
     />
   ))
 
-
   const result = getData(1,1);
   
   return (
     <div className='container'>
       <div className='content-page'>
-        <h1>Seus anúncios</h1>
+        <TitleBar title="Seus anúncios" location="customer-list"/>
         {vehiclesList}
-      <Logout/>
       </div>
     </div>
   )

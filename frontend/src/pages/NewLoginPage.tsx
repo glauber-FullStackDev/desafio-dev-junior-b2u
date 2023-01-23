@@ -10,7 +10,6 @@ const LoginPage = () => {
   const [authenticated, setAuthenticated] = useState(false);
 
   useEffect(() => {
-    console.log(token);
     if (isAuthenticated()) {
       const item = sessionStorage.getItem("session-token");
       if(item){
@@ -44,7 +43,6 @@ const LoginPage = () => {
 
       }
     }
-    // && getRole(item) === "CUSTOMER"
   }
 
   return (

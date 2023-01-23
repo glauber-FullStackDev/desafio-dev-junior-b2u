@@ -7,7 +7,7 @@ function GuardedRoute( props: any ) {
     if (isAuthenticated()) {
       return props.children;
     }
-    return <Navigate to="/login" />;
+    return <Navigate to="/" />;
 }
 
 export default GuardedRoute

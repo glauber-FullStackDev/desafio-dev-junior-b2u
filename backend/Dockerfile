@@ -4,5 +4,6 @@ COPY . .
 RUN npm install
 RUN npm run build
 ENV NODE_ENV production
+RUN npx prisma generate
 EXPOSE 3000
-CMD [ "node", "./dist/index.js" ]
+CMD npx prisma db push && node ./dist/index.js

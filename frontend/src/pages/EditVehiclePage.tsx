@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import Config from "../../config";
+import { getVehicleData } from "../common/pageData";
+import Vehicle, { editVehicle } from "../common/vehicle";
+import TitleBar from "../components/TitleBar";
 
 const AddVehiclePage = () => {
-  const [id, setId] = useState("");
   const [name, setName] = useState("");
   const [brand, setBrand] = useState("");
   const [description, setDescription] = useState("");
@@ -13,8 +15,28 @@ const AddVehiclePage = () => {
   const [disabledAddVehicle, setDisabledAddVehicle] = useState(true);
   const [disabledButton, setDisabledButton] = useState("button-secondary");
 
-  function handleAddVehicle(e: React.SyntheticEvent) {
+
+  const { id } = useParams();
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await (await getVehicleData(1, 1, id)).json();
+      if (data) {
+        const vehicle: Vehicle = {...data.data};
+        setName(vehicle.name!);
+        setBrand(vehicle.brand!);
+        setYear(vehicle.year!);
+        setPrice(vehicle.price!);
+        setDescription(vehicle.description!);
+      }
+    };
+    fetchData();
+  }, []);
+
+  function handleEditVehicle(e: React.SyntheticEvent) {
     e.preventDefault();
+    editVehicle(id!, name, brand, price, year, description);
+    window.location.replace("/customer/list");
   }
 
   function handleName(e: React.ChangeEvent<HTMLInputElement>) {
@@ -50,11 +72,12 @@ const AddVehiclePage = () => {
   }, [name, brand, description, year, price]);
 
   return (
+    
     <div id="add-page" className="page">
       <section className="content-page">
-        <h1>Adicione um anúncio</h1>
-        <p>Insira os dados do seu veículo abaixo.</p>
-        <form action="/vehicle" method="put" className="">
+      <TitleBar title="Editar anúncio" location="edit" />
+        <p>Atualize os dados do seu veículo abaixo.</p>
+        <form action="" method="post" className="">
           <div className="form-group">
             <label htmlFor="name" className="form-label">
               Veículo
@@ -63,6 +86,7 @@ const AddVehiclePage = () => {
               type="text"
               name="name"
               id="name"
+              value={name}
               className="form-input"
               onChange={handleName}
             />
@@ -75,6 +99,7 @@ const AddVehiclePage = () => {
               type="text"
               name="brand"
               id="brand"
+              value={brand}
               className="form-input"
               onChange={handleBrand}
             />
@@ -87,6 +112,7 @@ const AddVehiclePage = () => {
               type="number"
               name="year"
               id="year"
+              value={year}
               className="form-input"
               onChange={handleYear}
             />
@@ -99,6 +125,7 @@ const AddVehiclePage = () => {
               type="number"
               name="price"
               id="price"
+              value={price}
               className="form-input"
               onChange={handlePrice}
             />
@@ -111,6 +138,7 @@ const AddVehiclePage = () => {
               type="text"
               name="description"
               id="description"
+              value={description}
               className="form-input"
               onChange={handleDescription}
             />
@@ -120,19 +148,16 @@ const AddVehiclePage = () => {
               type="submit"
               className={disabledButton}
               disabled={disabledAddVehicle}
-              onClick={handleAddVehicle}
+              onClick={handleEditVehicle}
             >
               Ok
             </button>
-            <button type="reset" className="button-secondary">
+            {/* <button type="reset" className="button-secondary">
               Limpar
-            </button>
+            </button> */}
           </div>
         </form>
 
-        <p>
-          <Link to={"/customer/list"}>Voltar para seus anúncios</Link>
-        </p>
       </section>
     </div>
   );

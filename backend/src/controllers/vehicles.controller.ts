@@ -8,7 +8,6 @@ export class VehiclesController {
     this.create = this.create.bind(this);
     this.findAll = this.findAll.bind(this);
     this.findOne = this.findOne.bind(this);
-    this.findOneByPlate = this.findOneByPlate.bind(this);
     this.update = this.update.bind(this);
     this.remove = this.remove.bind(this);
   }
@@ -23,12 +22,6 @@ export class VehiclesController {
 
   async findOne(req: Request<CreateVehicleDto>, res: Response) {
     return res.json(await this.vehicleRepository.findOne(req.params));
-  }
-
-  async findOneByPlate(req: Request<CreateVehicleDto>, res: Response) {
-    return res.json(
-      await this.vehicleRepository.findOneByPlate(req.params)
-    );
   }
 
   async update(req: Request<UpdateVehicleDto>, res: Response) {

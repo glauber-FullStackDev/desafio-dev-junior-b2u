@@ -18,7 +18,7 @@ export class CryptoService {
     });
   }
 
-  async verify(password: string, hash: string): Promise<boolean> {
+  async verify(password: string = "", hash: string = ""): Promise<boolean> {
     return new Promise<boolean>((resolve, reject) => {
       const [salt, key] = hash.split(':');
       crypto.scrypt(password, salt, 64, (err, derivedKey) => {

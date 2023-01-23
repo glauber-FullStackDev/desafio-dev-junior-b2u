@@ -306,3 +306,14 @@ h1 {
 .card-list {
     display: flex;
 }
+
+.menu-items {
+    display: flex;
+    justify-content: space-between;
+    a {
+        text-decoration: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}

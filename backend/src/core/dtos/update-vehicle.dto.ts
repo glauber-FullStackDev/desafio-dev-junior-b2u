@@ -5,7 +5,7 @@ export interface UpdateVehicleDto extends Partial<CreateVehicleDto> {
   id?: string | undefined;
   createdAt?: string | Date | undefined;
   updatedAt?: string | Date | undefined;
-  plate?: string | undefined;
+  price?: number | undefined;
   name?: string | undefined;
   brand?: string | undefined;
   year?: number | undefined;

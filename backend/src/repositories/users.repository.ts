@@ -27,7 +27,8 @@ export class UsersRepository {
         )),
       };
     } catch (error) {
-   
+      console.log(error);
+      
       return {
         status: Status.Error,
         message: "Error creating user"

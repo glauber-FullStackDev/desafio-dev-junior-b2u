@@ -12,18 +12,7 @@ const userRepository: UsersRepository = new UsersRepository(prismaClient);
 const authService: AuthService = new AuthService(userRepository, cryptoService);
 const usersController: UsersController = new UsersController(userRepository, authService);
 
-/**
- * @openapi
- * /login:
- *   post:
- *     description: Login endpoint.
- *     produces:
- *       - application/json
- *     responses:
- *       200:
- *         description: Some thing.
- * 
- */
+
 userRouter.post("/login", usersController.login);
 userRouter.post("/logout", usersController.logout);
 userRouter.post("/signup", hashPasswordMiddleware.hashPassword, usersController.signup);

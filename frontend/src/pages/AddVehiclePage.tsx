@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import {  Link } from "react-router-dom";
 import Config from "../../config";
+import { addVehicle } from "../common/vehicle";
 
 const AddVehiclePage = () => {
-  const [id, setId] = useState("");
   const [name, setName] = useState("");
   const [brand, setBrand] = useState("");
   const [description, setDescription] = useState("");
@@ -15,6 +15,8 @@ const AddVehiclePage = () => {
 
   function handleAddVehicle(e: React.SyntheticEvent) {
     e.preventDefault();
+    addVehicle(name, brand, price, year, description);
+    window.location.replace("/customer/list");
   }
 
   function handleName(e: React.ChangeEvent<HTMLInputElement>) {
@@ -50,11 +52,12 @@ const AddVehiclePage = () => {
   }, [name, brand, description, year, price]);
 
   return (
+
     <div id="add-page" className="page">
       <section className="content-page">
         <h1>Adicione um anúncio</h1>
         <p>Insira os dados do seu veículo abaixo.</p>
-        <form action="/vehicle" method="post" className="">
+        <form action="" method="post" className="">
           <div className="form-group">
             <label htmlFor="name" className="form-label">
               Veículo

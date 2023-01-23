@@ -11,7 +11,6 @@ export class VehiclesRepository {
     this.create = this.create.bind(this);
     this.findAll = this.findAll.bind(this);
     this.findOne = this.findOne.bind(this);
-    this.findOneByPlate = this.findOneByPlate.bind(this);
     this.update = this.update.bind(this);
     this.remove = this.remove.bind(this);
   }
@@ -20,6 +19,8 @@ export class VehiclesRepository {
     createVehicleDto: CreateVehicleDto
   ): Promise<DataResponse<Vehicle | string>> {
     try {
+      console.log(createVehicleDto);
+      
       return {
         status: Status.Ok,
         message: "Vehicle created",
@@ -28,7 +29,8 @@ export class VehiclesRepository {
         ),
       };
     } catch (error) {
-
+      console.log(error);
+      
       return {
         status: Status.Error,
         message: "Error creating vehicle",
@@ -75,29 +77,20 @@ export class VehiclesRepository {
         message: "Vehicle found",
         data: await <Promise<Vehicle>>(
           this.prismaClient.vehicle.findUniqueOrThrow({
-            where: { id: readVehicleDto.id },
+            where: { 
+              id: readVehicleDto.id 
+            },
+            include: {
+              User: {
+                select: {
+                  email: true, 
+                  fullname: true,
+                  phone: true
+                }
+              }
+            }
           })
         ),
-      };
-    } catch (error) {
-      return {
-        status: Status.Error,
-        message: "Cannot retrieve vehicle",
-        // data: "",
-      };
-    }
-  }
-
-  async findOneByPlate(
-    readVehicleDto: ReadVehicleDto
-  ): Promise<DataResponse<Vehicle | string>> {
-    try {
-      return {
-        status: Status.Ok,
-        message: "Vehicle found",
-        data: await <Promise<Vehicle>>this.prismaClient.vehicle.findUniqueOrThrow({
-          where: { plate: readVehicleDto.plate },
-        }),
       };
     } catch (error) {
       return {

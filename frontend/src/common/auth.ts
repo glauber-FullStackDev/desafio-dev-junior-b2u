@@ -13,31 +13,33 @@ async function login(email: string, password: string) {
   try {
     const response = await fetch(request);
     const result = await response.json();
-    if(result["token"])
+    if(result["token"]){
       window.sessionStorage.setItem("session-token", result["token"])
       window.sessionStorage.setItem("user-data", JSON.stringify(result["data"]))
-    console.log(result);
+    }
+    return result;
   } catch (error) {
   }
 }
 
-async function signup(email: string, password: string, name: string){
+async function signup(email: string, password: string, fullname: string, phone: string){
   const request = new Request(`${Config.backend}/signup`, {
     method: 'POST',
     mode: 'cors',
     headers: {
       'Content-type': 'application/json',
     },
-    body: JSON.stringify({ email, password, name })
+    body: JSON.stringify({ email, password, fullname, phone })
   });
 
   try {
     const response = await fetch(request);
     const result = await response.json();
-    if(result["token"])
+    if(result["token"]){
       window.sessionStorage.setItem("session-token", result["token"])
       window.sessionStorage.setItem("user-data", JSON.stringify(result["data"]))
-    console.log(result);
+    }
+      
   } catch (error) {
   }
 }
@@ -54,13 +56,4 @@ function isAuthenticated(): boolean {
   return false;
 }
 
-// function getRole(token: string): string | undefined {
-//   if(!null){
-//     const payload = parseJwt(token);
-//     if(payload["role"])
-//       return payload["role"];
-//   }
-
-// }
-
-export { login, logout, isAuthenticated };
+export { login, logout, isAuthenticated, signup };

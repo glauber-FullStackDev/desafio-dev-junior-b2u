@@ -20,8 +20,9 @@ export class AuthService {
   private secret: string;
 
   async login(email: string, password: string): Promise<DataResponse<any>> {
-    const user: DataResponse<User> = await this.userRepository.findOneByEmail(email);
-    if (user) {
+
+    try {
+      const user: DataResponse<User> = await this.userRepository.findOneByEmail(email);
       const valid = await this.cryptoService.verify(password, user.data!.password);
       const token = sign({
         id: user.data?.id,
@@ -33,21 +34,53 @@ export class AuthService {
       {
         expiresIn: 36000
       })
-      if (valid) {
-        const response: DataResponse<User> = {
-          status: Status.Ok,
-          message: "User logged in",
-          token,
-          data: user.data!
-        }
-        return response;
-      }
-    }
-    const error: DataResponse<string> = {
-      message: "Invalid email or password",
-      status: Status.Error
-    }
 
-    return error;
-  }
+      const response: DataResponse<User> = {
+        status: Status.Ok,
+        message: "User logged in",
+        token,
+        data: user.data!
+      }
+      return response;
+    } catch (error) {
+      console.log(error);
+      const errorResponse: DataResponse<string> = {
+        message: "Invalid email or password",
+        status: Status.Error
+      }
+      return errorResponse;
+    }
+    
+
+  //   const user: DataResponse<User> = await this.userRepository.findOneByEmail(email);
+  //   if (user) {
+  //     const valid = await this.cryptoService.verify(password, user.data!.password);
+  //     const token = sign({
+  //       id: user.data?.id,
+  //       email: user.data?.email,
+  //       fullname: user.data?.fullname,
+  //       role: "CUSTOMER"
+  //     },
+  //     this.secret,
+  //     {
+  //       expiresIn: 36000
+  //     })
+  //     if (valid) {
+  //       const response: DataResponse<User> = {
+  //         status: Status.Ok,
+  //         message: "User logged in",
+  //         token,
+  //         data: user.data!
+  //       }
+  //       return response;
+  //     }
+  //   }
+  //   const error: DataResponse<string> = {
+  //     message: "Invalid email or password",
+  //     status: Status.Error
+  //   }
+
+  //   return error;
+  // }
+}
 }

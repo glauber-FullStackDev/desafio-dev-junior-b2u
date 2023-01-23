@@ -20,4 +20,14 @@ async function getData(page?: unknown, rows?: unknown, id?: unknown): Promise<un
 
 }
 
-export default getData
+async function getVehicleData(page?: number, rows?: number, id?: string): Promise<Response> {
+  
+  const request = new Request(`${Config.backend}/vehicles/${id}`, {
+    method: 'GET',
+    mode: 'cors',
+  });
+  return await fetch(request);
+
+}
+
+export {getData, getVehicleData}

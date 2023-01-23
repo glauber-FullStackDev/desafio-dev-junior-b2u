@@ -6,14 +6,9 @@ interface Vehicle {
   brand: string
   year: number
   description: string
+  price: number
   user?: User
 }
 
-// class Vehicle extends BaseEntity implements Partial<VehicleInterface> {
-//   name: string | undefined
-//   brand: string | undefined
-//   year: number | undefined
-//   description: string | undefined
-// }
 
 export { Vehicle };

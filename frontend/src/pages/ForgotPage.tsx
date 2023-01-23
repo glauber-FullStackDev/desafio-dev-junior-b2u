@@ -1,11 +1,10 @@
-import React from 'react'
 import { Link } from 'react-router-dom'
 
 const ForgotPage = () => {
 
   function handleSubmit(e: React.SyntheticEvent){
     e.preventDefault();
-    window.location.replace("forgot-response");
+    window.location.replace("/forgot-response");
   }
 
   return (

@@ -35,16 +35,7 @@ export class UsersController {
     }
     
     return res.json({error: "error"});
-    
-    // if (req.body.email) {
-    //   const user = await <Promise<DataResponse<Partial<User>>>>this.userRepository.findOneByEmail(req.body.email);
-    //   if(user.status === Status.Ok){
-    //     delete user.data.password
-    //     return res.json({token: "123456", ...user})
-    //   }
 
-    // }
-    // return res.json({});
   }
 
   async logout(req: Request<CreateUserDto>, res: Response) {
