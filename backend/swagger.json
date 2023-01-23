@@ -1,0 +1,355 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+        "title": "Cars API - BitcoinToYou",
+        "description": "Documentação para a API de CRUD (criar, listar, visualizar, editar e excluir) de carros",
+        "version": "1.0.0",
+        "contact": {
+            "email": "rodrigolanziotti@yahoo.com.br"
+        }
+    },
+    "servers": [
+        {
+            "url": "http://localhost:3000",
+            "description": "Servidor local"
+        }
+    ],
+    "basePath": "/",
+    "paths": {
+        "/carros": {
+            "post": {
+                "tags": [
+                    "Carros"
+                ],
+                "summary": "Casdastro de um carro",
+                "description": "Essa rota é responsável por cadastrar um novo carro no sistema.",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Carro"
+                            },
+                            "example": {
+                                "nome": "Pálio",
+                                "marca": "Fiat",
+                                "ano_fabricacao": 2004,
+                                "descricao": "Bom carro",
+                                "nome_dono": "Carlos Alberto",
+                                "email_dono": "ca@email.com",
+                                "telefone_dono": "(32)98771-4025"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Created",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/Carro"
+                                },
+                                "example": {
+                                    "nome": "Pálio",
+                                    "marca": "Fiat",
+                                    "ano_fabricacao": 2004,
+                                    "descricao": "Bom carro",
+                                    "dono": {
+                                        "nome": "Carlos Alberto",
+                                        "email": "ca@email.com",
+                                        "telefone": "(32)98771-4025"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "application/json": {
+                                "example": {
+                                    "mensagem": "O campo NOME é obrigatório."
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "get": {
+                "tags": [
+                    "Carros"
+                ],
+                "summary": "Listar Carros",
+                "description": "Essa rota é responsável por listar todos os carros cadastrados no sistema.",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array"
+                                },
+                                "example": [
+                                    {
+                                        "id": 4,
+                                        "nome": "Gol Power",
+                                        "marca": "Volkswagen",
+                                        "ano_fabricacao": 2006,
+                                        "descricao": "",
+                                        "dono": {
+                                            "nome": "José Jorge",
+                                            "email": "pardal@email.com",
+                                            "telefone": "(31)99551-2808"
+                                        }
+                                    },
+                                    {
+                                        "id": 7,
+                                        "nome": "Fusca",
+                                        "marca": "Volkswagen",
+                                        "ano_fabricacao": 1969,
+                                        "descricao": "Raridade",
+                                        "dono": {
+                                            "nome": "Rodrigo Lanziotti",
+                                            "email": "rodrigo@email.com",
+                                            "telefone": "(32)99849-8002"
+                                        }
+                                    },
+                                    {
+                                        "id": 9,
+                                        "nome": "Corsa",
+                                        "marca": "Chevrolet",
+                                        "ano_fabricacao": 1998,
+                                        "descricao": "Horrivel",
+                                        "dono": {
+                                            "nome": "Pedro Castro",
+                                            "email": "pedro@email.com",
+                                            "telefone": "(32)98875-6231"
+                                        }
+                                    },
+                                    {
+                                        "id": 11,
+                                        "nome": "Pálio",
+                                        "marca": "Fiat",
+                                        "ano_fabricacao": 2004,
+                                        "descricao": "Bom carro",
+                                        "dono": {
+                                            "nome": "Carlos Alberto",
+                                            "email": "ca@email.com",
+                                            "telefone": "(32)98771-4025"
+                                        }
+                                    },
+                                    {
+                                        "id": 12,
+                                        "nome": "Camaro",
+                                        "marca": "Chevrolet",
+                                        "ano_fabricacao": 2010,
+                                        "descricao": "Potente",
+                                        "dono": {
+                                            "nome": "Júnior Amorim",
+                                            "email": "junior@email.com",
+                                            "telefone": "(32)99745-6220"
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/carros/{id}": {
+            "get": {
+                "tags": [
+                    "Carros"
+                ],
+                "summary": "Visualizar um Carro",
+                "description": "Essa rota é responsável por detalhar os dados de um carro específico pelo seu ID.",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID do carro",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/Carro"
+                                },
+                                "example": {
+                                    "nome": "Gol Power",
+                                    "marca": "Volkswagen",
+                                    "ano_fabricacao": 2006,
+                                    "descricao": "",
+                                    "dono": {
+                                        "nome": "José Jorge",
+                                        "email": "pardal@email.com",
+                                        "telefone": "(31)99551-2808"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "application/json": {
+                                "example": {
+                                    "mensagem": "O carro não existe."
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Carros"
+                ],
+                "summary": "Editar um Carro",
+                "description": "Essa rota é responsável por atualizar os dados um carro pelo ID.",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID do carro",
+                        "required": true
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Carro"
+                            },
+                            "example": {
+                                "nome": "Corsa",
+                                "marca": "Chevrolet",
+                                "ano_fabricacao": 1998,
+                                "descricao": "Horrivel",
+                                "nome_dono": "Pedro Castro",
+                                "email_dono": "pedro@email.com",
+                                "telefone_dono": "(32)98875-6231"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "example": {
+                                    "mensagem": "Carro atualizado com sucesso!"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "application/json": {
+                                "example": {
+                                    "mensagem": "O campo NOME é obrigatório."
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description":"Not Found",
+                        "content": {
+                            "application/json": {
+                                "example": {
+                                    "mensagem": "O carro não existe."
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Carros"
+                ],
+                "summary": "Excluir um Carro",
+                "description": "Essa rota é responsável por deletar um carro do sistema pelo ID.",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID do carro",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "example": {
+                                    "mensagem": "Carro deletado com sucesso!"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description":"Bad Request",
+                        "content": {
+                            "application/json": {
+                                "example": {
+                                    "mensagem": "O carro não foi deletado."
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description":"Not Found",
+                        "content": {
+                            "application/json": {
+                                "example": {
+                                    "mensagem": "O carro não existe."
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Carro": {
+                "type": "object",
+                "properties": {
+                    "nome": {
+                        "type": "string"
+                    },
+                    "marca": {
+                        "type": "string"
+                    },
+                    "ano_fabricacao": {
+                        "type": "integer"
+                    },
+                    "descricao": {
+                        "type": "string"
+                    },
+                    "nome_dono": {
+                        "type": "string"
+                    },
+                    "email_dono": {
+                        "type": "string"
+                    },
+                    "telefone_dono": {
+                        "type": "string"
+                    }
+                }
+            }
+        }
+    }
+}
