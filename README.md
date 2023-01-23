@@ -22,3 +22,15 @@ Serão considerados diferenciais:
 - Conhecimento sólido em Expo ou React Native;
 - Boas práticas de escrita de código (código limpo, padrões de arquitetura, etc.);
 - Conhecimento em infraestruturas em nuvem;
+
+
+# Passo a passo - Como inicializar a aplicação Frontend
+- Primeiramente, rode o comando npm install para instalar as dependências;
+- Após isso, rode npm run dev para inicializar o app.
+
+# Passo a passo - Como inicializar a aplicação Backend
+- Rode o comando npm install;
+- Rode o comando npm run dev para startar o servidor na porta 9901.
+
+## NOTA:
+- Para que a aplicação funcione corretamente, visto que a API não está em nenhum servidor, deve-se rodar as duas backend e frontend juntos para obter os dados e fazer as devidas operações localmente.
