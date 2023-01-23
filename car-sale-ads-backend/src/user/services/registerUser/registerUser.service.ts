@@ -1,4 +1,5 @@
 import { Inject, Injectable } from '@nestjs/common';
+import { hash } from 'bcrypt';
 import { AlreadyExistsEntityError } from 'src/shared/errors/domainErrors/AlredyExistsEntityError';
 import { User } from 'src/user/domain/User';
 import { UserRepository } from 'src/user/domain/repository/UserRepository';
@@ -16,7 +17,13 @@ export class RegisterUserService {
       throw new AlreadyExistsEntityError('user aleready exists');
     }
 
-    const user = User.new(input.name, input.email, input.phoneNumber);
+    const hashPassword = await hash(input.password, 8);
+    const user = User.new(
+      input.name,
+      input.email,
+      hashPassword,
+      input.phoneNumber,
+    );
     await this.userRepository.save(user);
     return user;
   }
@@ -25,6 +32,7 @@ export class RegisterUserService {
 type RegisterUserInput = {
   name: string;
   email: string;
+  password: string;
   phoneNumber: string;
 };
 
