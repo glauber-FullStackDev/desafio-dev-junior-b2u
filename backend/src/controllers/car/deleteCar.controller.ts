@@ -10,7 +10,7 @@ export const deleteCarController = async (req:Request,res:Response):Promise<any>
 
     try {
         await deleteCarService(id);
-        return res.status(200).json({});
+        return res.status(204).json({});
         
     } catch (err) {
         if(err instanceof Error){
