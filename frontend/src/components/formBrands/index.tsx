@@ -16,16 +16,16 @@ const initialState = {
   name: "",
 };
 
-const FormBrands = () => {
+const FormBrands = ({ handleClose }: { handleClose: () => void }) => {
   const [brand, setBrand] = useState(initialState);
   return (
     <Container>
       <ContainerForm>
-        <Wrapper>
+        <Wrapper onClick={handleClose}>
           <ButtonClose>Close</ButtonClose>
         </Wrapper>
 
-        <Typography variant="h6">User information</Typography>
+        <Typography variant="h6">Brand information</Typography>
 
         <Grid container spacing={3}>
           <Grid item xs={12}>
@@ -45,7 +45,6 @@ const FormBrands = () => {
         <WrapperClose>
           <ButtonClose type="submit">Register</ButtonClose>
         </WrapperClose>
-        
       </ContainerForm>
     </Container>
   );
