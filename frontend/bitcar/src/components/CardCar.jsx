@@ -10,7 +10,7 @@ const CardCar = ({name,marca,ano_fabri,descricao,userId,user,id}) => {
     const {modalEditDelete,setModalEditDelete,modalUser,setModalUser} = useContext(ModalContext);
     const {setCarId,setUserId} = useContext(ItemContext)
   return (
-    <div className='bg-gray-three w-80 p-4 flex flex-col gap-y-4 text-white border rounded'>
+    <div className='bg-gray-three h-fit w-80 p-4 flex flex-col gap-y-4 text-white border rounded'>
         <div className='flex justify-between'>
             <div>
 

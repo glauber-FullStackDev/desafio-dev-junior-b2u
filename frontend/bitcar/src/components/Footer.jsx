@@ -38,8 +38,14 @@ const Footer = () => {
         </h2>
 
         <div className='flex gap-x-8 justify-center mb-8'>
+            <a href='https://www.linkedin.com/in/adrieldev/'>
             <FaLinkedin className='w-8 h-8'/>
+            </a>   
+            <a href='https://github.com/adrielldev'>
             <FaGithub className='w-8 h-8'/>
+            </a> 
+            
+            
         </div>
 
         </div>

@@ -25,7 +25,7 @@ const Dashboard = ({dashboardTitle,dashboardOrder}) => {
         <DashboardTitle text={dashboardTitle} />
         <DashboardOrder opcoes={dashboardOrder}/>
         <div>
-        <div className='bg-gray-twelve overflow-y-scroll justify-center h-fit w-full mt-16 flex flex-wrap gap-4 p-4'>
+        <div className='bg-gray-twelve justify-center sm:grid sm:grid-cols-2 lg:grid-cols-3 md:pl-24 h-[500px] overflow-y-scroll w-full mt-16 flex flex-wrap gap-4 p-4'>
         {dashboardTitle == 'Usuários' ? 
           users.map(user => (
             <CardUser key={user.id}

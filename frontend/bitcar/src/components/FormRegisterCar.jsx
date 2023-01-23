@@ -39,7 +39,6 @@ const FormRegisterCar = () => {
       descricao:data.descricao,
       donoId:userId
     }
-    console.log(dataSent);
 
     api.post('/cars',dataSent)
     .then(res=>{
