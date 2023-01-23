@@ -5,7 +5,13 @@ import Header from "../../components/header";
 import getAllUsers from "../../services/users/get-all-users";
 import { IUsers } from "../../interface/IUsers";
 
-import { Container, ContainerTable } from "./styles";
+import {
+  BoxModal,
+  Buttom,
+  Container,
+  ContainerModal,
+  ContainerTable,
+} from "./styles";
 import RowsTable from "../../components/rowsTable";
 
 import Table from "@mui/material/Table";
@@ -13,11 +19,16 @@ import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
+import Modal from "@mui/material/Modal";
+
 import deleteUserService from "../../services/users/delete-user";
-import AppBar from "../../components/appBar";
+import FormUsers from "../../components/formUsers";
 
 const Users = () => {
   const [users, setUsers] = useState<IUsers[]>([]);
+  const [open, setOpen] = useState<boolean>(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
 
   const getUsers = async () => {
     const response = await getAllUsers();
@@ -28,14 +39,14 @@ const Users = () => {
   };
 
   const deleteUser = async (id: string) => {
-    const response = await deleteUserService(id)
+    const response = await deleteUserService(id);
 
     if (response.error) {
       toast.error(response.error);
       return;
     }
     toast.success(response.message);
-    getUsers()
+    getUsers();
   };
 
   useEffect(() => {
@@ -45,7 +56,20 @@ const Users = () => {
   return (
     <>
       <Header />
-      <AppBar children="+ Add new user"/>
+
+      <ContainerModal>
+        <Buttom onClick={handleOpen}>+ Add new user</Buttom>
+        <Modal
+          open={open}
+          aria-labelledby="modal-modal-title"
+          aria-describedby="modal-modal-description"
+        >
+          <BoxModal>
+            <FormUsers handleClose={handleClose} />
+          </BoxModal>
+        </Modal>
+      </ContainerModal>
+
       <Container>
         <ContainerTable>
           <Table>
