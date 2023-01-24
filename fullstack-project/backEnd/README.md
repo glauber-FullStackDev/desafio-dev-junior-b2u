@@ -56,6 +56,25 @@ E por ultimo rode a aplicação com o comando a seguir(a porta default é a loca
   yarn dev
 ```
  
+ ## Exemplo de cadastros para testes somente no backEnd
+ ```
+ Registro de pessoas
+  {
+	"name": "anthoni felipi",
+	"password": "bitCoinToYou@",
+	"email": "anthonifelipi@gmail.com",
+	"phone": "99978772"
+}
+Registro de veiculos
+ {
+	"name": "civic",
+	"brand": "honda",
+	"year": "22",
+	"description": "Carro unico dono, em perfeito estado"
+}
+  
+```
+ 
  ## Tecnologias Utilizadas 
  
   -  [x] NodeJS 16
