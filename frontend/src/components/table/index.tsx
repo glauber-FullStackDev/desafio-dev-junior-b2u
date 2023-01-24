@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import { ContainerTable } from "./styles";
+import { BoxModal, ContainerTable } from "./styles";
 
 import Table from "@mui/material/Table";
 import TableHead from "@mui/material/TableHead";
@@ -9,18 +9,10 @@ import TableCell from "@mui/material/TableCell";
 import IconButton from "@mui/material/IconButton";
 import EditIcon from "@mui/icons-material/Edit";
 import Modal from "@mui/material/Modal";
-import Box from "@mui/material/Box";
 import FormUsers from "../formUsers";
 import DeleteIcon from "@mui/icons-material/Delete";
 import TableRow from "@mui/material/TableRow";
 import FormBrands from "../formBrands";
-
-const style = {
-  position: "absolute" as "absolute",
-  top: "50%",
-  left: "50%",
-  transform: "translate(-50%, -50%)",
-};
 
 const TableComponent = ({
   tableHeader,
@@ -58,13 +50,13 @@ const TableComponent = ({
                     aria-labelledby="modal-modal-title"
                     aria-describedby="modal-modal-description"
                   >
-                    <Box sx={style}>
+                    <BoxModal>
                       {item?.name ? (
                         <FormUsers users={item} handleClose={handleClose} />
                       ) : (
                         <FormBrands brands={item} handleClose={handleClose} />
                       )}
-                    </Box>
+                    </BoxModal>
                   </Modal>
                   <IconButton onClick={() => deleteFn(item?.id)}>
                     <DeleteIcon />

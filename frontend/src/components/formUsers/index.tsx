@@ -27,9 +27,11 @@ const initialState = {
 const FormUsers = ({
   users,
   handleClose,
+  getUsers,
 }: {
   users?: IUsers;
   handleClose: () => void;
+  getUsers: () => void;
 }) => {
   const [user, setUser] = useState(users || initialState);
 
@@ -60,6 +62,7 @@ const FormUsers = ({
       updateUser();
       return;
     }
+    getUsers();
     createUser();
   };
 

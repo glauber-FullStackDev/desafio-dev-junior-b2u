@@ -2,15 +2,16 @@ import { useEffect, useState } from "react";
 
 import Header from "../../components/header";
 import FormBrands from "../../components/formBrands";
-
 import { toast } from "react-toastify";
-import Table from "@mui/material/Table";
 import TableCell from "@mui/material/TableCell";
 import TableRow from "@mui/material/TableRow";
 import Modal from "@mui/material/Modal";
+import TableComponent from "../../components/table";
+
+import deleteBrandService from "../../services/brands/delete-brands";
+import getAllBrands from "../../services/brands/get-all-brands";
 
 import { IBrands } from "../../interface/IBrands";
-import getAllBrands from "../../services/brands/get-all-brands";
 
 import {
   Container,
@@ -19,8 +20,6 @@ import {
   Buttom,
   BoxModal,
 } from "./styles";
-import TableComponent from "../../components/table";
-import deleteBrandService from "../../services/brands/delete-brands";
 
 const Brands = () => {
   const [brands, setBrands] = useState<IBrands[]>([]);
@@ -62,7 +61,7 @@ const Brands = () => {
           aria-describedby="modal-modal-description"
         >
           <BoxModal>
-            <FormBrands handleClose={handleClose} />
+            <FormBrands handleClose={handleClose} getBrands={getBrands}/>
           </BoxModal>
         </Modal>
       </ContainerModal>

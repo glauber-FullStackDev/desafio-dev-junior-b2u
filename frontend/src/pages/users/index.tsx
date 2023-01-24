@@ -2,7 +2,15 @@ import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 
 import Header from "../../components/header";
+import TableCell from "@mui/material/TableCell";
+import TableRow from "@mui/material/TableRow";
+import Modal from "@mui/material/Modal";
+import FormUsers from "../../components/formUsers";
+import TableComponent from "../../components/table";
+
 import getAllUsers from "../../services/users/get-all-users";
+import deleteUserService from "../../services/users/delete-user";
+
 import IUsers from "../../interface/IUsers";
 
 import {
@@ -12,14 +20,6 @@ import {
   ContainerModal,
   ContainerTable,
 } from "./styles";
-
-import TableCell from "@mui/material/TableCell";
-import TableRow from "@mui/material/TableRow";
-import Modal from "@mui/material/Modal";
-
-import deleteUserService from "../../services/users/delete-user";
-import FormUsers from "../../components/formUsers";
-import TableComponent from "../../components/table";
 
 const Users = () => {
   const [users, setUsers] = useState<IUsers[]>([]);
@@ -62,7 +62,7 @@ const Users = () => {
           aria-describedby="modal-modal-description"
         >
           <BoxModal>
-            <FormUsers handleClose={handleClose} />
+            <FormUsers handleClose={handleClose} getUsers={getUsers}/>
           </BoxModal>
         </Modal>
       </ContainerModal>
