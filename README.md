@@ -2,7 +2,7 @@
 # Email
 igo.vieira@live.com
 
-pesso desculpas pelo atraso, estou um pouco doente.
+peço desculpas pelo atraso, estou um pouco doente.
 
 ## Descrição
 Este projeto é uma aplicação web construída usando o framework Nest.js para o lado do servidor e o postgreSQL como banco de dados, e Prisma como ORM para gerenciamento do banco. Ele também utiliza o .env para gerenciar configurações sensíveis, e o Swagger para documentação e teste das rotas da API.
