@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "composite": true,
+    "module": "ESNext",
+    "jsx": "react",
+    "moduleResolution": "Node",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop":true,
+    "noImplicitAny": false
+  },
+  "include": ["vite.config.ts"],
+  "typeRoots": [
+    "../node_modules/@types",
+    "./src/@types"
+  ],
+  "exclude": ["node_modules",  "jest.config.js"]
+}

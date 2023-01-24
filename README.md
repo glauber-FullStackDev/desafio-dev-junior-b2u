@@ -4,21 +4,18 @@
 Seja bem-vindo! Este desafio foi projetado para avaliar a sua capacidade técnica como candidato ao cargo proposto.
 
 ## Instruções
-- Faça um fork deste repositório;
-- O conjunto mínimo de tecnologias a serem utilizadas são: alguma das tecnologias front-end e back-end informadas na proposta desse desafio;
-- Crie um passo a passo de como rodar a sua aplicação;
-- Após finalizar, submeta um pull request com um comentário informando o seu e-mail de contato e aguarde nossa avaliação.
+- Baixar o projeto e rodar o comando  yarn  na pasta raiz  
+-  Digite o comando yarn dev para rodar o projeto.
+- para verificar a documentação http://localhost:3333/api-docs/
+- É preciso cadastrar um veículo para editá-lo ou excluí-lo.
+- Para rodar os teste yarn test
 
-## Proposta
-Você deverá desenvolver um projeto utilizando React no front-end e Node.js no back-end com a finalidade de que seja possível listar, visualizar, criar, editar e excluir carros de uma aplicação de anuncios de venda de automóveis.
+- Para usar a funcionalidade da metamask é preciso baixar a extensão no seu navegador nesse site https://metamask.io/download.html
+- Configurar sua carteira para a moeda BNB da Binance   e receber umas moedas de teste nesse site vc 
+faz tudo isso https://academy.binance.com/en/articles/connecting-metamask-to-binance-smart-chain
 
-**Observações:**
-> - Você pode persistir os dados em memoria;
-> - Cada carro precisa ter um identificador único, nome, marca, ano de fabricação e descrição;
-> - Além dos dados do carro, é necessário também salvar os dados do dono do carro(nome, email e telefone de contato).
-## Diferenciais
-Serão considerados diferenciais:
+- Site para verificar as transferências https://testnet.bscscan.com/address/0x31E442BA4d4a299013D05dD298e22d1FA928352A
 
-- Conhecimento sólido em Expo ou React Native;
-- Boas práticas de escrita de código (código limpo, padrões de arquitetura, etc.);
-- Conhecimento em infraestruturas em nuvem;
+
+## Contato 
+- https://www.linkedin.com/in/josiel-souza/
