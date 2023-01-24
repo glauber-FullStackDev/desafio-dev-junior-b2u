@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useHistory, useRouteMatch } from 'react-router-dom';
 import putFetch from '../utils/putFetch';
+import '../style/EditCar.style.css';
 
 function EditCarForm() {
   const [nameInput, setNameInput] = useState('');
@@ -47,16 +48,13 @@ function EditCarForm() {
   }
 
   return (
-    <div
-      style={{
-        width: '100%',
-        height: '100%',
-      }}
-    >
+    <div className='edit-car'>
+      <h2>Editar carro:</h2>
       {/* submit pressing enter */}
       <form onSubmit={handleSubmit}>
         <label htmlFor='nome'>
           Nome do carro:
+          <br />
           <input
             type='text'
             name='nome'
@@ -65,6 +63,7 @@ function EditCarForm() {
         </label>
         <label htmlFor='marca'>
           Marca do carro:
+          <br />
           <input
             type='text'
             name='marca'
@@ -73,6 +72,7 @@ function EditCarForm() {
         </label>
         <label htmlFor='anoFabricacao'>
           Ano de fabricação:
+          <br />
           <input
             type="number"
             name='anoFabricacao'
@@ -83,6 +83,7 @@ function EditCarForm() {
         </label>
         <label htmlFor='descricao'>
           Descrição:
+          <br />
           <textarea
             name='descricao'
             onChange={handleInputsChange}
@@ -93,7 +94,7 @@ function EditCarForm() {
           onClick={handleSubmit}
           disabled={isButtonDisabled}
         >
-          Submit
+          Editar
         </button>
       </form>
     </div>

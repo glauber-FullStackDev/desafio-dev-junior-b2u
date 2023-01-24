@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import postFetch from '../utils/postFetch';
 import CarContext from '../context/CarContext';
 import { useHistory } from 'react-router-dom';
+import '../style/AddCarForm.style.css';
 
 function AddCarForm() {
   const { ownerId } = useContext(CarContext);
@@ -74,19 +75,19 @@ function AddCarForm() {
   }
 
   return (
-    <div>
+    <div className='add-car-form'>
       <h2>Cadastre seu carro:</h2>
       <form onSubmit={handleSubmit}>
         <label htmlFor='nome'>
-          Nome do Carro:
+          <p>Nome do Carro:</p>
           <input type='text' name='nome' onChange={handleInputs} />
         </label>
         <label htmlFor='marca'>
-          Marca do Carro:
+          <p>Marca do Carro:</p>
           <input type='text' name='marca' onChange={handleInputs} />
         </label>
         <label htmlFor='anoFabricacao'>
-          Ano de Fabricação:
+          <p>Ano de Fabricação:</p>
           <input
             type="number"
             name='anoFabricacao'
@@ -96,12 +97,8 @@ function AddCarForm() {
           />
         </label>
         <label htmlFor='descricao'>
-          Descrição:
+          <p>Descrição:</p>
           <input type='text' name='descricao' onChange={handleInputs} />
-        </label>
-        <label htmlFor='imagem'>
-          Imagem do Carro:
-          <input disabled={true} type='file' name='imagem' defaultValue={null} />
         </label>
         <button
           onClick={handleSubmit}

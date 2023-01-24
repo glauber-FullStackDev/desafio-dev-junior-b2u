@@ -1,0 +1,15 @@
+.edit-car {
+  height: 100%;
+}
+
+.edit-car form {
+  min-height: 29%;
+}
+
+.edit-car h2 {
+  padding-top: 25px;
+}
+
+.edit-car button {
+  border-radius: 10px;
+}

@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import CarContext from '../context/CarContext';
 import postFetch from '../utils/postFetch';
+import '../style/OwnerForm.style.css';
 
 function AddOwnerForm() {
   const { setOwnerId } = useContext(CarContext)
@@ -63,11 +64,11 @@ function AddOwnerForm() {
   }
 
   return (
-    <div>
+    <div className='owner-form'>
       <h2>Informações de contato:</h2>
       <form>
         <label htmlFor='nome'>
-          Nome:
+          <p>Nome:</p>
           <input
             type='text'
             name='nome'
@@ -75,7 +76,7 @@ function AddOwnerForm() {
           />
         </label>
         <label htmlFor='email'>
-          Email:
+          <p>Email:</p>
           <input
             type='email'
             name='email'
@@ -83,7 +84,7 @@ function AddOwnerForm() {
           />
         </label>
         <label htmlFor='telefone'>
-          Telefone:
+          <p>Telefone:</p>
           <input
             type='text'
             name='telefone'

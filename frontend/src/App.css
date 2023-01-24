@@ -1,6 +1,7 @@
 .App {
   text-align: center;
-  height: 100vh;
+  min-height: 100vh;
+  overflow: hidden;
   background-color: rgb(235, 235, 235);
 }
 
@@ -8,6 +9,23 @@ button {
   cursor: pointer;
   border-radius: 5px;
   padding: 5px;
+}
+
+form {
+  padding-top: 15px;
+  border: solid black 1px;
+  box-shadow: 1px 1px 5px  black;
+  border-radius: 10px;
+  min-height: 40%;
+  max-width: 22%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 20px auto;
+}
+
+form label {
+  font-size: 15px;
 }
 
 h2 {
