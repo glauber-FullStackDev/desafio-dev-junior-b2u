@@ -1,17 +1,76 @@
-import React, { useContext } from 'react';
-// import { useHistory } from 'react-router-dom';
+import React, { useContext, useEffect, useState } from 'react';
 import postFetch from '../utils/postFetch';
 import CarContext from '../context/CarContext';
+import { useHistory } from 'react-router-dom';
 
 function AddCarForm() {
-  const { ownerInfos } = useContext(CarContext)
+  const { ownerId } = useContext(CarContext);
 
-  // const history = useHistory();
+  const [carName, setCarName] = useState('');
+  const [carBrand, setCarBrand] = useState('');
+  const [carDescription, setCarDescription] = useState('');
+  const [yearOfFabrication, setYearOfFabrication] = useState(0);
+  const [isButtonDisabled, setIsButtonDisabled] = useState(true);
+
+  const history = useHistory();
+
+  const handleInputs = ({ target: { name, value } }) => {
+    const options = {
+      nome: () => setCarName(value),
+      marca: () => setCarBrand(value),
+      descricao: () => setCarDescription(value),
+      anoFabricacao: () => setYearOfFabrication(value)
+    }
+    options[name]();
+  }
+
+  useEffect(() => {
+    const nameValidator = () => {
+      const MINIMUM_NAME_LENGTH = 6;
+      const isNameValid = carName.length > MINIMUM_NAME_LENGTH;
+      return isNameValid;
+    }
+    const brandValidator = () => {
+      const MINIMUM_BRAND_LENGTH = 1;
+      const isBrandValid = carBrand.length >= MINIMUM_BRAND_LENGTH;
+      return isBrandValid;
+    }
+    const descriptionValidator = () => {
+      const MINIMUM_DESCRIPTION_LENGTH = 20;
+      const isDescriptionValid = carDescription.length >= MINIMUM_DESCRIPTION_LENGTH;
+      return isDescriptionValid;
+    }
+    const yearValidator = () => {
+      const MINIMUM_YEAR = 2000;
+      const MAXIMUM_YEAR = 2023;
+      const isYearValid = yearOfFabrication >= MINIMUM_YEAR && yearOfFabrication <= MAXIMUM_YEAR;
+      return isYearValid;
+    }
+    const buttonControl = () => {
+      const isNameValid = nameValidator();
+      const isBrandValid = brandValidator();
+      const isDescriptionValid = descriptionValidator();
+      const isYearValid = yearValidator();
+      if (isNameValid && isBrandValid && isDescriptionValid && isYearValid) {
+        return setIsButtonDisabled(false);
+      }
+      return setIsButtonDisabled(true);
+    }
+    buttonControl();
+  });
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    await postFetch(ownerInfos, '/donos');
-    // history.push('/add/owner');
+    const carInfos = {
+      nome: carName,
+      marca: carBrand,
+      donoId: ownerId,
+      descricao: carDescription,
+      anoFabricacao: yearOfFabrication,
+    }
+    await postFetch(carInfos, '/carros')
+    history.push('/cars')
+    
   }
 
   return (
@@ -20,11 +79,11 @@ function AddCarForm() {
       <form onSubmit={handleSubmit}>
         <label htmlFor='nome'>
           Nome do Carro:
-          <input type='text' name='nome' />
+          <input type='text' name='nome' onChange={handleInputs} />
         </label>
         <label htmlFor='marca'>
           Marca do Carro:
-          <input type='text' name='marca' />
+          <input type='text' name='marca' onChange={handleInputs} />
         </label>
         <label htmlFor='anoFabricacao'>
           Ano de Fabricação:
@@ -33,11 +92,12 @@ function AddCarForm() {
             name='anoFabricacao'
             min="2000"
             max="2023"
+            onChange={handleInputs}
           />
         </label>
         <label htmlFor='descricao'>
           Descrição:
-          <input type='text' name='descricao' />
+          <input type='text' name='descricao' onChange={handleInputs} />
         </label>
         <label htmlFor='imagem'>
           Imagem do Carro:
@@ -47,6 +107,7 @@ function AddCarForm() {
           onClick={handleSubmit}
           type='submit'
           name='submit-form'
+          disabled={isButtonDisabled}
         >
           Submit
         </button>

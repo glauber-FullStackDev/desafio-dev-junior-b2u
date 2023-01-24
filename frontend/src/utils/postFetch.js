@@ -5,10 +5,11 @@ const deleteFetch = async (data, rota) => {
     headers: {
       'Content-Type': 'application/json',
     },
+    body: JSON.stringify(data),
   };
   try {
     const response = await fetch(`${url}${rota}`, requestOptions);
-    return response;
+    return response.json();
   } catch (error) {
     return error.message;
   }

@@ -1,9 +1,10 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import CarContext from '../context/CarContext';
+import postFetch from '../utils/postFetch';
 
 function AddOwnerForm() {
-  const { setOwnerInfos } = useContext(CarContext)
+  const { setOwnerId } = useContext(CarContext)
 
   const [ownerName, setOwnerName] = useState('');
   const [ownerEmail, setOwnerEmail] = useState('');
@@ -12,15 +13,16 @@ function AddOwnerForm() {
 
   const history = useHistory();
 
-  const handleClick = (event) => {
+  const handleClick = async (event) => {
     event.preventDefault();
     const ownerInfos = {
       nome: ownerName,
       email: ownerEmail,
       telefone: ownerTelephone,
     }
-    setOwnerInfos(ownerInfos)
-    history.push('/add/car')
+    const owner = await postFetch(ownerInfos, '/donos');
+    setOwnerId(owner.id);
+    history.push('/add/car');
   }
 
   useEffect(() => {

@@ -2,14 +2,11 @@ import React, { useState } from 'react'
 import CarContext from './CarContext'
 
 function CarProvider({ children }) {
-  const [ownerInfos, setOwnerInfos] = useState();
-  const [carInfos, setCarInfos] = useState();
+  const [ownerId, setOwnerId] = useState();
 
   const globalState = {
-    ownerInfos,
-    setOwnerInfos,
-    carInfos,
-    setCarInfos,
+    ownerId,
+    setOwnerId,
   }
 
   return (
