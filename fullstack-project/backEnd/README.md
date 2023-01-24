@@ -44,6 +44,10 @@ Adicione as variáveis de ambiente citadas a seguir no seu .env
 ```bash
   CREATE DATABASE <NOMEDOBANCO>;
 ```
+instalar as dependencias da aplicação
+```bash
+  yarn install
+```
 
 Gerar/Rodar suas migrations:
 
