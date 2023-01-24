@@ -1,0 +1,35 @@
+version: "3.9"
+
+services:
+    database:
+        image: postgres:alpine
+        container_name: car-sale-ads-database
+        restart: always
+        environment:
+            - POSTGRES_USER=car-sale-ads
+            - POSTGRES_PASSWORD=car-sale-ads
+            - POSTGRES_DB=car-sale-ads
+        ports:
+            - 5432:5432
+        volumes:
+            - postgres:/data/postgres
+    api:
+        build: ./car-sale-ads-backend
+        restart: always
+        environment:
+            - PORT=3000
+            - DATABASE_URL=postgresql://car-sale-ads:car-sale-ads@database:5432/car-sale-ads
+            - JWT_EXPIRES=1h
+            - JWT_SECRET=secret
+        ports:
+            - 3000:3000
+        expose:
+            - 3000
+
+        links:
+            - database
+        depends_on:
+            - database
+volumes:
+    postgres:
+        driver: local

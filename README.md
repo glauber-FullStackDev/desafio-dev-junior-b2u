@@ -1,24 +1,67 @@
-![Bitcointoyou](https://bitcointoyou.com/_next/static/media/logoAzul.c6609791.png)
+# Car sale ads
 
-# Desafio - Desenvolvedor Fullstack - Júnior
-Seja bem-vindo! Este desafio foi projetado para avaliar a sua capacidade técnica como candidato ao cargo proposto.
+Desafio - Desenvolvedor Fullstack - Júnior
 
-## Instruções
-- Faça um fork deste repositório;
-- O conjunto mínimo de tecnologias a serem utilizadas são: alguma das tecnologias front-end e back-end informadas na proposta desse desafio;
-- Crie um passo a passo de como rodar a sua aplicação;
-- Após finalizar, submeta um pull request com um comentário informando o seu e-mail de contato e aguarde nossa avaliação.
+## Descrição
 
-## Proposta
-Você deverá desenvolver um projeto utilizando React no front-end e Node.js no back-end com a finalidade de que seja possível listar, visualizar, criar, editar e excluir carros de uma aplicação de anuncios de venda de automóveis.
+Api de uma aplicação de anuncios de carro com as funcionalidade de registrar um usuráio,  
+o usuário registrado e logado poderá criar um novo anuncio de carro.
 
-**Observações:**
-> - Você pode persistir os dados em memoria;
-> - Cada carro precisa ter um identificador único, nome, marca, ano de fabricação e descrição;
-> - Além dos dados do carro, é necessário também salvar os dados do dono do carro(nome, email e telefone de contato).
-## Diferenciais
-Serão considerados diferenciais:
+## Técnologias utilizadas
 
-- Conhecimento sólido em Expo ou React Native;
-- Boas práticas de escrita de código (código limpo, padrões de arquitetura, etc.);
-- Conhecimento em infraestruturas em nuvem;
+> Nodejs  
+> Typescript  
+> Nestjs  
+> Prisma  
+> Postgre  
+> Docker
+
+## Dependêcias necessárias para executar o projeto
+
+para executar localmente
+
+> [Nodejs](https://nodejs.org/en/)
+
+para executar no Docker
+
+> [Docker](https://docs.docker.com/get-docker/)
+
+## Instalação e execução
+
+#### Clone o repositório
+
+```bash
+$ git clone https://github.com/JirlanSouza/desafio-dev-junior-b2u.git
+$ cd desafio-dev-junior-b2u
+```
+
+### Executar o projeto localmente
+
+```bash
+# instale as dependências
+$ npm install
+
+# executar em modo de desenvolvimento
+$ npm run start:dev
+
+# executar em modo de produção
+$ npm run build
+$ npm run start
+```
+
+### Executar o projeto com o Docker
+
+```bash
+$ docker compose up -d
+```
+
+Com a aplicação já em execução a documentação Swagger pode ser acessada em http://localhost:3000/doc
+
+### Observação
+
+Devido ao tempo que tive disponívél para implementar o teste conseguí implementar apenas o backend da aplicação.
+
+## Autor
+
+[Jirlan Souza](inkedin.com/in/jirlansouza)  
+jirlansouza08@gmail.com
