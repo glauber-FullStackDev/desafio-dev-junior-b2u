@@ -8,7 +8,7 @@ Imagem tela de cadastro
 <p align="center">
  <img width="100%" src="https://i.postimg.cc/y8mf3FbF/image.png" alt="Imagem da tela de cadastro" />
 </p>
-Faça busca de cidades com retorno de informações especificas.
+Faça seu cadastro e registre seus veiculos!
 
 
   
