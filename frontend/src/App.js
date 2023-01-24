@@ -5,6 +5,7 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 import EditSuccessMessage from './pages/EditSuccessMessage';
 import AddCar from './pages/AddCar';
 import AddOwner from './pages/AddOwner';
+import EditCarForm from './components/EditCarForm';
 
 function App() {
   return (
@@ -14,8 +15,11 @@ function App() {
         <Route exact path='/cars'>
           <Cars />
         </Route>
-        <Route path='/cars/:id'>
+        <Route exact path='/cars/:id'>
           <CarDetails />
+        </Route>
+        <Route path='/cars/:id/edit'>
+          <EditCarForm />
         </Route>
         <Route exact path='/success'>
           <EditSuccessMessage />

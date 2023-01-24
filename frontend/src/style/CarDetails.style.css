@@ -1,0 +1,44 @@
+.car-details {
+  display: flex;
+  border: solid black 1px;
+  border-radius: 10px;
+  box-shadow: 1px 1px 5px  black;
+  width: 70vw;
+  margin: auto;
+  padding: 20px 0;
+}
+
+.owner-infos {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.car-details div {
+  margin: 0 auto;
+}
+
+.car-details button {
+  height: fit-content;
+}
+
+.car-details .edit-button {
+  margin-left: auto;
+}
+
+.car-infos {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 16em;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: auto;
+}
+
+.car-presentation {
+
+}

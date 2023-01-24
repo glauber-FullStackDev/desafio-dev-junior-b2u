@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useRouteMatch } from 'react-router-dom';
 import CarDetailsCard from '../components/CarDetailsCard';
+import '../style/CarDetails.style.css';
 
 function CarDetails() {
   const [carInfos, setCarInfos] = useState();
-  const [showMissingCarError, setShowMissingCarError] = useState();
 
   const { params: { id } } = useRouteMatch();
 
@@ -12,17 +12,13 @@ function CarDetails() {
     const getCarById = async () => {
       const response = await fetch(`http://localhost:3001/carros/${id}`);
       const car = await response.json();
-      if (car.message) {
-        return setShowMissingCarError(car.message)
-      };
       return setCarInfos(car);
     };
     getCarById()
   }, [id])
 
   return (
-    <div>
-      {showMissingCarError && <p>{showMissingCarError}</p>}
+    <>
       {carInfos && (
         <CarDetailsCard
           nome={carInfos.nome}
@@ -32,7 +28,7 @@ function CarDetails() {
           dono={carInfos.dono}
         />
       )}
-    </div>
+    </>
   )
 }
 

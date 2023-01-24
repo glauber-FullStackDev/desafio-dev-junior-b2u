@@ -1,49 +1,41 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import noImage from '../image/no-image.png';
-import { useHistory } from 'react-router-dom';
-import EditCarForm from './EditCarForm';
+import { useHistory, useRouteMatch } from 'react-router-dom';
 
 function CarDetailsCard({ nome, descricao, marca, anoFabricacao, dono }) {
-  const [showEditForm, setShowEditForm] = useState(false);
-
   const history = useHistory();
+  const { params } = useRouteMatch()
 
   return (
-    <div
-      style={{
-        width: '70vw',
-        margin: 'auto',
-      }}
-    >
-      <h2>{`${marca} ${nome}`}</h2>
-      <img
-        src={noImage}
-        alt={nome}
-        style={{ width: '20em ' }}
-      />
-      <p>{descricao}</p>
-      <p>{anoFabricacao}</p>
-      <p>{dono.nome}</p>
-      <p>{dono.email}</p>
-      <p>{dono.telefone}</p>
-      <button
-        type='button'
-        onClick={() => setShowEditForm(!showEditForm)}
-      >
-        Editar
-      </button>
-      {showEditForm && (
-        <EditCarForm
-          setShowEditForm={setShowEditForm}
+    <div className='car-details'>
+      <div className='car-presentation'>
+        <h2>{`${marca} ${nome}`}</h2>
+        <img
+          src={noImage}
+          alt={nome}
+          style={{ width: '20em ' }}
         />
-      )}
-      <button
-        type='button'
-        onClick={() => history.push('/cars')}
-      >
-        Voltar
-      </button>
+      </div>
+      <div className='car-infos'>
+        <p>{`Descrição: ${descricao}`}</p>
+        <p>{`Ano: ${anoFabricacao}`}</p>
+      </div>
+      <div className='buttons'>
+        <button
+          type='button'
+          onClick={() => history.push(`/cars/${params.id}/edit`)}
+          className='edit-button'
+        >
+          Editar
+        </button>
+        <button
+          type='button'
+          onClick={() => history.push('/cars')}
+        >
+          Voltar
+        </button>
+      </div>
     </div>
   )
 }

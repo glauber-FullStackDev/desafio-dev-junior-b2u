@@ -5,11 +5,7 @@
 }
 
 button {
-  all: unset;
   cursor: pointer;
-  color: white;
-  background-color: black;
-  border: solid black 2px;
   border-radius: 5px;
   padding: 5px;
 }
