@@ -1,24 +1,77 @@
-![Bitcointoyou](https://bitcointoyou.com/_next/static/media/logoAzul.c6609791.png)
+<h1>Web Cars</h1>
 
-# Desafio - Desenvolvedor Fullstack - Júnior
-Seja bem-vindo! Este desafio foi projetado para avaliar a sua capacidade técnica como candidato ao cargo proposto.
+<h2>⚡ Tech Stack</h2>
+<br/>
 
-## Instruções
-- Faça um fork deste repositório;
-- O conjunto mínimo de tecnologias a serem utilizadas são: alguma das tecnologias front-end e back-end informadas na proposta desse desafio;
-- Crie um passo a passo de como rodar a sua aplicação;
-- Após finalizar, submeta um pull request com um comentário informando o seu e-mail de contato e aguarde nossa avaliação.
+<h3> Backend </h3>
 
-## Proposta
-Você deverá desenvolver um projeto utilizando React no front-end e Node.js no back-end com a finalidade de que seja possível listar, visualizar, criar, editar e excluir carros de uma aplicação de anuncios de venda de automóveis.
+- [NodeJS](https://nodejs.org/en/)
+- [Typescript](https://www.typescriptlang.org/)
+- [Express](https://expressjs.com/pt-br/)
+- [Prisma](https://www.prisma.io/)
 
-**Observações:**
-> - Você pode persistir os dados em memoria;
-> - Cada carro precisa ter um identificador único, nome, marca, ano de fabricação e descrição;
-> - Além dos dados do carro, é necessário também salvar os dados do dono do carro(nome, email e telefone de contato).
-## Diferenciais
-Serão considerados diferenciais:
+<h3> Banco de dados </h3>
 
-- Conhecimento sólido em Expo ou React Native;
-- Boas práticas de escrita de código (código limpo, padrões de arquitetura, etc.);
-- Conhecimento em infraestruturas em nuvem;
+- [MongoDB Atlas](https://www.mongodb.com/atlas)
+
+<h3> Frontend </h3>
+
+- [React.js](https://pt-br.reactjs.org/)
+- [Typescript](https://www.typescriptlang.org/)
+- [Styled Components](https://styled-components.com/)
+- [Material UI](https://mui.com/pt/)
+- [React Toastify](https://fkhadra.github.io/react-toastify/introduction)
+
+<br/>
+<h2>Instalando / Começando</h2>
+
+Para executar o projeto, será necessário ter instalado em sua maquina os seguintes programas:
+
+- [Node.js](https://nodejs.org/en/)<br/>
+- [Npm](https://www.npmjs.com/)
+- [Git](https://git-scm.com/)
+
+<h2>Construção</h2>
+
+Clone o repositório do git com o seguinte comando:
+
+    git clone https://github.com/MathFerreira01/desafio-dev-junior-b2u.git
+
+<h3> Iniciando o Backend </h3>
+<br/>
+
+Após clonar a aplicação, será necessário abrir dois terminais, no primeiro terminal digite os seguintes comandos.
+
+    //Para entrar na pasta backend:
+
+    cd backend
+
+    //Para baixar as dependências da aplicação backend:
+
+    npm install
+
+    //Talvez seja necessário atualizar o banco de dados com o prisma, para isso rode o seguinte comando:
+
+    npx prisma generate
+
+    //Para iniciar a aplicação backend, digite o comando:
+
+    npm run dev
+
+<br/>
+<h3> Iniciando o Frontend </h3>
+
+
+No segundo terminal, digite o seguinte comando para entrar na pasta frontend.
+
+    //Para entrar na pasta backend:
+
+    cd frontend
+
+    //Para baixar as dependências da aplicação frontend:
+
+    npm install
+
+    //Para iniciar a aplicação frontend, digite o comando:
+
+    npm run dev
