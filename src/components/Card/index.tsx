@@ -1,6 +1,7 @@
 import { ICarro } from "../../interfaces/ICarro";
 import BotaoEditar from "../BotaoEditar";
 import BotaoExcluir from "../BotaoExcluir";
+import BotaoInfo from "../BotaoInfo";
 import { Cartao, Caixa, CarIcon, MarcaIcon, NotaIcon, AnoIcon } from "./styles";
 
 type Props = {
@@ -32,16 +33,17 @@ const Card = ({ lista, item, setEstado }: Props) => {
                 <p>{ item.descricao }</p>
             </Caixa>
             <Caixa>
-                <BotaoEditar/>
-                <p>Editar anúncio</p>
+                <BotaoEditar idCarro={item._id}/>
             </Caixa>
             <Caixa>
                 <BotaoExcluir
-                    lista={lista}
-                    item={item}
-                    setEstado={setEstado}           
+                 lista={lista}
+                 item={item}
+                 setEstado={setEstado}           
                 />
-                <p>Excluir anúncio</p>
+            </Caixa>
+            <Caixa>
+                <BotaoInfo idCarro={item._id}/>
             </Caixa>
             
         </Cartao>

@@ -1,9 +1,10 @@
+import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
-//import imagem from '../../img/compra.jpg';
 
 export const Container = styled.div`
     display: flex;
     align-items: center;
+    justify-content: space-between;
     height: 80%;
 
     padding: 12px 40px;
@@ -23,14 +24,19 @@ export const Caixa = styled.div`
 
 `;
 
-export const ButtonAction = styled.button`
+export const ButtonAction = styled(NavLink)`
     margin-top: 8px;
+    padding-top: 16px;
+
     background-color: #434343;
-    font-size: 16px;
-    color: #ffffff;
-    padding: 8px;
+    
     height: 60px;
     width: 300px;
+
+    color: #ffffff;
+    font-size: 16px;
+    text-decoration: none;
+    text-align: center;
 
     &:hover {
         background-color: #003D76; 
@@ -51,15 +57,16 @@ export const CaixaTexto = styled.div`
 `;
 
 export const CaixaImg = styled.div`
-    height: 40%;
-    width: 40%;
+    height: 60%;
+    width: 50%;
+
+    > img {
+        width: 100%;
+        height: 100%;
+    }
 
 `;
 
-export const Imagem = styled.div`
 
-    /*background-image: url(});*/
-
-`;
 
 

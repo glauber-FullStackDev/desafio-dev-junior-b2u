@@ -1,9 +1,10 @@
-import styled from "styled-components";
+import styled  from 'styled-components';
 
 
 
 export const Container = styled.div`
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 100vh;
@@ -12,8 +13,9 @@ export const Container = styled.div`
 `;
 
 
-export const Formulario = styled.form`
-    >h2 {
+
+export const Registro = styled.div`
+     >h2 {
         color: #003d76;
     }
     margin-top: 24px;
@@ -21,7 +23,7 @@ export const Formulario = styled.form`
     padding: 16px 24px;
 
     height: 70%;
-    width: 40%;
+    width: 70%;
 
     border: 1px solid #434343;
     border-radius: 1em;
@@ -32,12 +34,26 @@ export const Formulario = styled.form`
 
     background-color: #303030;
     opacity: .7;
-    
+
+   
 `;
 
 
 
+export const Info = styled.ul`
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
 
 
+    > li {
+        margin-top: 8px;
+        list-style: none;
+        color: #fff;
+        font-size: 1.2em;
+    }
 
 
+`;

@@ -15,7 +15,7 @@ export const Cartao = styled.div`
     align-items: flex-start;
     flex-direction: column;
 
-    height: 180px;
+    height: 200px;
     width: 270px;
 
     background-color: #414141;
@@ -65,4 +65,5 @@ export const MarcaIcon = styled(VehicleCarProfileLtr)`
     width: 16px;
     height: 16px;
 `;
+
 

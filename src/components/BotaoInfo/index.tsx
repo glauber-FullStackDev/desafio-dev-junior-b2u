@@ -7,8 +7,8 @@ interface Props {
 
 const BotaoInfo = ({ idCarro }: Props) => {
     return(
-        <LinkInfo to={`/carros/editar/${idCarro}`}>
-            <InfoIcon/> Editar
+        <LinkInfo to={`/carros/${idCarro}`}>
+            <InfoIcon/> Mais Informações
         </LinkInfo>
     )
 }

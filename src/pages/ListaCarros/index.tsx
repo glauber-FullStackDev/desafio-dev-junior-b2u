@@ -24,10 +24,10 @@ const ListaCarros = () => {
     
     return(
         <Container>
-            {carros.map((carro, index) => {
+            {carros.map(carro => {
                 return(
                     <Card
-                     key={index}
+                     key={carro._id}
                      lista={carros}
                      item={carro}
                      setEstado={setCarros}          

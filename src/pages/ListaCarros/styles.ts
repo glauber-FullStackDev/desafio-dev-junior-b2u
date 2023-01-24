@@ -1,9 +1,14 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
+    margin-left: 64px;
+
+    padding-top: 24px;
+
     height: 100vh;
-    padding: 20px 20px;
+
     display: grid;
+
     grid-template-columns: 1fr 1fr 1fr;
-    justify-content: center;
+    
 `;

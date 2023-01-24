@@ -1,9 +1,11 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import BotaoCadastro from "../../components/BotaoCadastro";
 import Campo from "../../components/Campo";
 import Titulo from "../../components/Titulo";
 import { Container, Formulario } from "./styles";
 import http from '../../http';
+import { useParams } from "react-router-dom";
+import { ICarro } from "../../interfaces/ICarro";
 
 const CadastroCarro = () => {
 
@@ -16,21 +18,63 @@ const CadastroCarro = () => {
     const [email, setEmail] = useState('');
     const [telefone, setTelefone] = useState('');
 
+    
+
+    const parametro = useParams();
+
+    useEffect(() => {
+
+        if(parametro.id) {            
+            http
+                .get<ICarro>(`carros/${parametro.id}`)
+                .then(res => {
+                    setNome(res.data.nome);
+                    setMarca(res.data.marca);
+                    setAno(res.data.ano.toString());
+                    setDescricao(res.data.descricao);
+                    setProprietarioNome(res.data.proprietario.nome);
+                    setEmail(res.data.proprietario.email);
+                    setTelefone(res.data.proprietario.telefone);
+                })
+                .catch(error => console.log(error.message))     
+        }
+    }, [parametro]);
+
+
+
     const aoSubmeter = (evento: React.FormEvent<HTMLFormElement>) => {
         evento.preventDefault();
-        http.post('carros', {
-            nome,
-            marca,
-            ano,
-            descricao,
-            proprietario: {
-                nome: proprietarioNome,
-                email,
-                telefone
-            }
-        }).then(() => {
-            alert('Anuncio cadastrado');
-        })
+
+
+        if(parametro.id) {
+            http.put(`carros/atualiza/${parametro.id}`, {
+                nome,
+                marca,
+                ano,
+                descricao,
+                proprietario: {
+                    nome: proprietarioNome,
+                    email,
+                    telefone
+                }
+            }).then(() => alert('Anuncio Atualizado'))
+
+        }else {
+            http.post('carros', {
+                nome,
+                marca,
+                ano,
+                descricao,
+                proprietario: {
+                    nome: proprietarioNome,
+                    email,
+                    telefone
+                }
+            }).then(() => alert('Anuncio cadastrado'))
+
+        }
+
+
         
         setNome('');
         setMarca('');

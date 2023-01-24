@@ -1,6 +1,6 @@
 import http from "../../http";
 import { ICarro } from "../../interfaces/ICarro";
-import { DeleteIcon } from "./styles";
+import { DeleteIcon, BtnExcluir } from "./styles";
 
 type Props = {
     lista: ICarro[];
@@ -8,13 +8,12 @@ type Props = {
     setEstado: React.Dispatch<React.SetStateAction<ICarro[]>>
 }
 
-
 const BotaoExcluir = ({  lista, item, setEstado }: Props) => {
 
     function excluir(itemASerExcluido: ICarro) {
-        http.delete(`carros/delete/${(itemASerExcluido.id)}.`)
+        http.delete(`carros/delete/${itemASerExcluido._id}`)
             .then(() => {
-                const listaAtual = lista.filter(itemDaLista => itemDaLista.id !== itemASerExcluido.id);
+                const listaAtual = lista.filter(itemDaLista => itemDaLista._id !== itemASerExcluido._id);
                 setEstado(listaAtual);
                 alert('Anuncio Excluido');
             }).catch(error => {
@@ -24,11 +23,11 @@ const BotaoExcluir = ({  lista, item, setEstado }: Props) => {
 
 
     return(
-        <button
+        <BtnExcluir
             onClick={() => excluir(item)}
         >
-            <DeleteIcon/>
-        </button>
+            <DeleteIcon/> Excluir
+        </BtnExcluir>
     );
 }
 

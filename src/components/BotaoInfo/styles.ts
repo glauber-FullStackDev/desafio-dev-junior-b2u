@@ -1,7 +1,6 @@
-import styled from 'styled-components';
-
-import { Update } from '@styled-icons/material/Update';
+import { Eye } from '@styled-icons/entypo/Eye';
 import { Link } from 'react-router-dom';
+import styled from 'styled-components';
 
 export const LinkInfo = styled(Link) `
     cursor: pointer;
@@ -13,9 +12,9 @@ export const LinkInfo = styled(Link) `
 
 `;
 
-export const InfoIcon =  styled(Update)`
+export const InfoIcon =  styled(Eye)`
 
-    color: green;
+    color: blue;
     width: 16px;
     height: 16px;
 

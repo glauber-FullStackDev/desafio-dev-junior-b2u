@@ -32,12 +32,13 @@ export const CarIcon = styled(Car)`
 `;
 
 export const Navbar = styled.nav`
+
     display: flex;
     align-items: center;
-    width: 23%;
+    width: 30%;
+
     > li {
         text-align: center;
-        margin-right: 8px;
         list-style: none;
         font-size: 16px;
         color: #003D76;
