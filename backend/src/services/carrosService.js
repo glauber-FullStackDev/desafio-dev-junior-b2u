@@ -7,7 +7,7 @@ const getCars = async () => {
       model: donos,
       required: true,
       attributes: {
-        exclude: ['id', 'email', 'telefone'],
+        exclude: ['id'],
       }
     }],
     attributes: {
