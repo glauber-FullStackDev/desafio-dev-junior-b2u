@@ -7,6 +7,7 @@ import { ButtonClose, Container, Form, Wrapper, WrapperClose } from "./styles";
 import createBrandService from "../../services/brands/create-brands";
 import { toast } from "react-toastify";
 import { IBrands } from "../../interface/IBrands";
+import updateBrandService from "../../services/brands/update-brands";
 
 const initialState = {
   id: "",
@@ -32,9 +33,29 @@ const FormBrands = ({
     toast.success(response.message);
   };
 
+  const updateBrand = async () => {
+    if (brand.id !== "") {
+      const response = await updateBrandService(brand.id, brand);
+
+      if (response) {
+        toast.error(response.error);
+        return;
+      }
+      toast.success(response.message);
+    }
+  };
+
+  const handleSaveSubmit = () => {
+    if (brand.id !== "") {
+      updateBrand();
+      return;
+    }
+    createBrand();
+  };
+
   return (
     <Container>
-      <Form onSubmit={createBrand}>
+      <Form onSubmit={handleSaveSubmit}>
         <Wrapper onClick={handleClose}>
           <ButtonClose>Close</ButtonClose>
         </Wrapper>

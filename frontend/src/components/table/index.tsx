@@ -40,9 +40,9 @@ const TableComponent = ({
       <Table>
         <TableHead>{tableHeader}</TableHead>
         <TableBody>
-          {data.map((item, index) => (
+          {data.map((item) => (
             <>
-              <TableRow key={index}>
+              <TableRow key={item}>
                 <TableCell component="th" scope="row">
                   {item?.name || item?.brand}
                 </TableCell>
@@ -62,7 +62,7 @@ const TableComponent = ({
                       {item?.name ? (
                         <FormUsers users={item} handleClose={handleClose} />
                       ) : (
-                        <FormBrands handleClose={handleClose} />
+                        <FormBrands brands={item} handleClose={handleClose} />
                       )}
                     </Box>
                   </Modal>
