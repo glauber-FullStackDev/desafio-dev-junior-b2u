@@ -7,6 +7,7 @@
     "backend": "ts-node-dev --inspect --transpile-only --ignore-watch node-modules --respawn src/index.ts",
     "frontend": "cd front-end  && yarn dev ",
     "dev": "concurrently \"yarn run backend\" \"yarn run frontend\" ",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false yarn --prefix fron-tend && yarn build --prefix fron-tend",
     "test": "jest"
   },
   "repository": {

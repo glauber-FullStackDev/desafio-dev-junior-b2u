@@ -1,4 +1,5 @@
 import "ethers";
-import {Metamask} from "./src/components/Metamask/index.jsx"
+//import { Metamask } from "./components/Metamask/index.jsx";
 
- declare module  "Metamask"  ;
+
+ declare module  "Metamask";

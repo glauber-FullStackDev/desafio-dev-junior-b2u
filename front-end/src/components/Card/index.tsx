@@ -36,6 +36,9 @@ export const Card = ({ state, setState }: IdCardProps) => {
 
     setState({ idState: containerCardId });
   };
+  const handleCripto = () =>{
+    window.location.href = "../Metamask/index.jsx";
+  }
 
   const handleDelete = async (e: any) => {
     const eventTarget = e.currentTarget;
@@ -93,8 +96,8 @@ export const Card = ({ state, setState }: IdCardProps) => {
               </S.ContainerDescription>
 
               <S.ContainerButton>
-                <button type="button">
-                  <Link to={"/cripto"}>Pagar com cripto moeda</Link>
+                <button type="button" >
+                 {/* <a href="../Metamask/index.jsx">Pagar com cripto moeda</a>  */}
                 </button>
                 <button type="button" onClick={handleDelete}>
                   Excluir
