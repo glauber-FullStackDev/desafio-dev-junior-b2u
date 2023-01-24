@@ -79,7 +79,6 @@ export const ContainerButton = styled.div`
   display: flex;
   width: 100%;
   height: 30%;
-  padding: 5px;
   flex-direction: row;
   align-items: center;
   border-radius: 22px;

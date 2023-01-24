@@ -7,6 +7,7 @@ import { Home } from "./components/page";
 import { Register } from "./components/Form/Register";
 import { useState } from "react";
 import { Update } from "./components/Form/ToEdit";
+import  {Metamask}  from "./components/Metamask";
 
 export function App() {
   const [state, setState] = useState({ idState: "" });
@@ -25,6 +26,10 @@ export function App() {
         <Route
           path="/atualizar"
           element={<Update state={state} setState={setState} />}
+        />
+          <Route
+          path="/cripto"
+          element={<Metamask  />}
         />
       </Routes>
     </ThemeProvider>

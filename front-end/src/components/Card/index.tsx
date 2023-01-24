@@ -94,7 +94,7 @@ export const Card = ({ state, setState }: IdCardProps) => {
 
               <S.ContainerButton>
                 <button type="button">
-                  <Link to={"/cadastrar"}>Pagar com cripto moeda</Link>
+                  <Link to={"/cripto"}>Pagar com cripto moeda</Link>
                 </button>
                 <button type="button" onClick={handleDelete}>
                   Excluir
