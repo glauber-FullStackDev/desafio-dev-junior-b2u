@@ -97,7 +97,7 @@ export const Card = ({ state, setState }: IdCardProps) => {
 
               <S.ContainerButton>
                 <button type="button" >
-                 {/* <a href="../Metamask/index.jsx">Pagar com cripto moeda</a>  */}
+                <Link to={"/cripto"}>Pagar com cripto moeda</Link>
                 </button>
                 <button type="button" onClick={handleDelete}>
                   Excluir
