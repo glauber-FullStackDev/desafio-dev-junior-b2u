@@ -19,6 +19,12 @@ API de gerenciamentos de veiculos de um e-commercee
 ```bash
   git clone git@github.com:anthonifelipi/desafio-dev-junior-b2u.git
 ```
+```bash
+  cd desafio-dev-junior-b2u.git
+```
+```bash
+  cd backend
+```
 Adicione as variáveis de ambiente citadas a seguir no seu .env
 
 `DATABASE_URL="postgresql://your_postgres_user:your_postgres_password@localhost:5432/your_postgres_db?schema=public"`
