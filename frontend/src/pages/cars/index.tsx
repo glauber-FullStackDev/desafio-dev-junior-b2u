@@ -7,7 +7,7 @@ import FormCars from "../../components/formCars";
 
 import { ContainerModal, Buttom, BoxModal } from "./styles";
 
-const Home = () => {
+const Cars = () => {
   const [open, setOpen] = useState<boolean>(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -31,4 +31,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Cars;

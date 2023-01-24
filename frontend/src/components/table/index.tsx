@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { BoxModal, ContainerTable } from "./styles";
 
@@ -14,6 +14,11 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import TableRow from "@mui/material/TableRow";
 import FormBrands from "../formBrands";
 
+interface ITypes {
+  id: string;
+  visible: boolean;
+}
+
 const TableComponent = ({
   tableHeader,
   data,
@@ -23,9 +28,38 @@ const TableComponent = ({
   data: any[];
   deleteFn: (id: string) => void;
 }) => {
-  const [open, setOpen] = useState<boolean>(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
+  const [open, setOpen] = useState([]);
+
+  const handleOpen = (id: string) =>
+    setOpen((prevState) => {
+      return prevState.map((item: ITypes) => {
+        if (item.id === id) {
+          item.visible = true;
+        }
+        return item;
+      });
+    });
+
+  const handleClose = (id: string) =>
+    setOpen((prevState) => {
+      return prevState.map((item: ITypes) => {
+        if (item.id === id) {
+          item.visible = false;
+        }
+        return item;
+      });
+    });
+
+  useEffect(() => {
+    if (data) {
+      const tempArray: ITypes[] = [];
+      data.map((item) => {
+        tempArray.push({ id: item?.id, visible: false });
+      });
+
+      setOpen(tempArray);
+    }
+  }, [data]);
 
   return (
     <ContainerTable>
@@ -42,11 +76,15 @@ const TableComponent = ({
                 <TableCell align="right">{item?.email}</TableCell>
                 <TableCell align="right">{item?.phone}</TableCell>
                 <TableCell align="right">
-                  <IconButton onClick={handleOpen}>
+                  <IconButton onClick={() => handleOpen(item?.id)}>
                     <EditIcon />
                   </IconButton>
                   <Modal
-                    open={open}
+                    open={
+                      open
+                        .filter((ite2: ITypes) => item.id === ite2.id)
+                        .map((item3: ITypes) => item3.visible)[0]
+                    }
                     aria-labelledby="modal-modal-title"
                     aria-describedby="modal-modal-description"
                   >

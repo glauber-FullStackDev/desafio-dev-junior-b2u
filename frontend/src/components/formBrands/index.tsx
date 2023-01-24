@@ -19,12 +19,11 @@ const FormBrands = ({
   getBrands,
   brands,
 }: {
-  handleClose: () => void;
+  handleClose: (id: string) => void;
   brands?: IBrands;
   getBrands: () => void;
 }) => {
   const [brand, setBrand] = useState(brands || initialState);
-  console.log(brands);
   const createBrand = async () => {
     const response = await createBrandService(brand);
 
@@ -59,7 +58,7 @@ const FormBrands = ({
   return (
     <Container>
       <Form onSubmit={handleSaveSubmit}>
-        <Wrapper onClick={handleClose}>
+        <Wrapper onClick={() => handleClose(brand.id)}>
           <ButtonClose>Close</ButtonClose>
         </Wrapper>
 

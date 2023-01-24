@@ -30,7 +30,7 @@ const FormUsers = ({
   getUsers,
 }: {
   users?: IUsers;
-  handleClose: () => void;
+  handleClose: (id: string) => void;
   getUsers: () => void;
 }) => {
   const [user, setUser] = useState(users || initialState);
@@ -70,7 +70,7 @@ const FormUsers = ({
     <Container>
       <ContainerForm onSubmit={handleSaveSubmit}>
         <Wrapper>
-          <ButtonClose onClick={handleClose}>Close</ButtonClose>
+          <ButtonClose onClick={() => handleClose(user.id)}>Close</ButtonClose>
         </Wrapper>
 
         <Typography variant="h6">User information</Typography>
