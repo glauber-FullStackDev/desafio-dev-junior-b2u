@@ -1,6 +1,6 @@
 import api from "../api";
 
-export const deleteCarService = async (id: string) => {
+export const deleteBrandService = async (id: string) => {
   return await api
     .delete(`/brands/${id}`)
     .then((response) => response.data)
@@ -9,4 +9,4 @@ export const deleteCarService = async (id: string) => {
     });
 };
 
-export default deleteCarService;
+export default deleteBrandService;

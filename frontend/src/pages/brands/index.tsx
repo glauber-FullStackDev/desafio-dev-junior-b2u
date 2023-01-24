@@ -20,6 +20,7 @@ import {
   BoxModal,
 } from "./styles";
 import TableComponent from "../../components/table";
+import deleteBrandService from "../../services/brands/delete-brands";
 
 const Brands = () => {
   const [brands, setBrands] = useState<IBrands[]>([]);
@@ -33,6 +34,17 @@ const Brands = () => {
       toast.error(response.error);
     }
     setBrands(response);
+  };
+
+  const deleteBrand = async (id: string) => {
+    const response = await deleteBrandService(id);
+
+    if (response.error) {
+      toast.error(response.error);
+      return;
+    }
+    toast.success(response.message);
+    getBrands();
   };
 
   useEffect(() => {
@@ -67,6 +79,7 @@ const Brands = () => {
               </TableRow>
             }
             data={brands}
+            deleteFn={deleteBrand}
           />
         </ContainerTable>
       </Container>
