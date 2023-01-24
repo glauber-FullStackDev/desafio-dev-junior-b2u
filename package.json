@@ -8,6 +8,8 @@
     "frontend": "cd front-end  && yarn dev ",
     "dev": "concurrently \"yarn run backend\" \"yarn run frontend\" ",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false yarn --prefix fron-tend && yarn build --prefix fron-tend",
+    "postinstall": "npm run build",
+    "serve-heroku": "vite --host 0.0.0.0 --port $PORT preview",
     "test": "jest"
   },
   "repository": {
