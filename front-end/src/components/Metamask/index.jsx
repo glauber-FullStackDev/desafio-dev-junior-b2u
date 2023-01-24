@@ -100,14 +100,12 @@ export const Metamask = () => {
 
         <S.ContainerButton>
           <button
-            variant="primary"
             value="Conectar"
             onClick={(evt) => loadData()}
           >
             Conectar
           </button>
           <button
-            variant="primary"
             value="transfer"
             onClick={(evt2) => transfer()}
           >
