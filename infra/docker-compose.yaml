@@ -1,0 +1,70 @@
+version: "3.3"
+
+services:
+
+  backend:
+    build: ../backend
+    image: passoz/challenge-b2u-backend:v1
+    restart: always
+    environment:
+      - DATABASE_URL=${DATABASE_URL}
+      - BACKEND_PORT=${BACKEND_PORT}
+      - ENV=${ENV}
+    depends_on:
+      - postgres
+    # ports:
+    #   - ${BACKEND_PORT}:${BACKEND_PORT}
+
+  gateway:
+    build: ../backend
+    image: passoz/challenge-b2u-gateway:v1
+    restart: always
+    environment:
+      - DATABASE_URL=${DATABASE_URL}
+      - BACKEND_PORT=${BACKEND_PORT}
+      - ENV=${ENV}
+    ports:
+      - ${BACKEND_PORT}:${BACKEND_PORT}
+
+  frontend:
+    build: 
+      context: ../frontend
+      args: 
+        - BACKEND_URL=${BACKEND_URL}
+        - SECRET=${SECRET}
+    image: passoz/challenge-b2u-frontend:v1
+    restart: always
+    environment:
+      - ENV="production"
+    ports:
+      - 80:80
+      - 443:443
+    depends_on:
+      - postgres
+    volumes:
+      - caddy-data-vol:/data
+      - caddy-config-vol:/config
+
+
+  postgres:
+    image: postgres
+    restart: always
+    environment:
+      - POSTGRES_USER=$POSTGRES_USER
+      - POSTGRES_PASSWORD=$POSTGRES_PASSWORD
+      - POSTGRES_DB=$POSTGRES_DB
+    volumes:
+      - pg-vol:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+
+volumes:
+  pg-vol:
+  caddy-data-vol:
+  caddy-config-vol:

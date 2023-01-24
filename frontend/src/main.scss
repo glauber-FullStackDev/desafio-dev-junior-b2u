@@ -1,0 +1,319 @@
+$font-size-feature: 1rem;
+
+@mixin background {
+    background: rgb(236, 81, 63);
+    background: linear-gradient(135deg, rgba(236, 81, 63, 1) 0%, rgba(41, 192, 252, 1) 100%);
+}
+
+@mixin zero {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+@mixin button($width) {
+    width: $width;
+    height: 2.5rem;
+    border-radius: 7px;
+    font-weight: 600;
+    font-size: $font-size-feature;
+    cursor: pointer;
+    @include zero;
+}
+
+@mixin input {
+    width: 60%;
+    height: 2.5rem;
+    border-radius: 7px;
+    border: 1px solid #777;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+@mixin button-width($width) {
+    width: 10rem;
+}
+
+@mixin common-page($width, $height) {
+    width: $width;
+    height: $height;
+    background-color: white;
+    padding: 25px;
+
+    * {
+        margin: 8px;
+    }
+
+    h1 {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    h2{
+        text-align: center;
+    }
+
+    p {
+        text-align: center;
+        margin-bottom: 15px;
+    }
+
+    border-radius: 7px;
+
+    -webkit-box-shadow: 5px 5px 23px 0px rgba(0, 0, 0, 0.6);
+    box-shadow: 5px 5px 23px 0px rgba(0, 0, 0, 0.6);
+}
+
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #222;
+    @include zero;
+    @include background();
+}
+
+label {
+    font-size: $font-size-feature;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+.page {
+    display: flex;
+    align-items: stretch;
+    align-content: center;
+    justify-content: center;
+    min-height: 100vh;
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.container {
+    width: 90%;
+    // height: 80%;
+    display: flex;
+    justify-content: center;
+}
+
+.login-container {
+    // width: 40%;
+    display: block;
+    background-color: white;
+    display: block;
+    text-align: center;
+}
+
+.button-primary {
+    @include button(12rem);
+    background-color: #D95C52;
+    color: white;
+}
+
+.button-secondary {
+    @include button(12rem);
+    background-color: #999;
+    color: white;
+}
+
+.form-input {
+    @include input()
+}
+
+.form-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.login-page {
+    @include common-page(40%, 450px);
+}
+
+.signup-page {
+    @include common-page(60%, 550px);
+}
+
+.forgot-page{
+    @include common-page(40%, 300px );
+}
+
+.register-page{
+    @include common-page(70%, 90% );
+}
+
+.align{
+    display: flex;
+    justify-content: center;
+}
+
+.content-page {
+    @include common-page(90%, 90%);
+    .quotes-table{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        ul {
+            margin: 0px;
+            padding: 0px;
+            display: flex;
+            flex-direction: column;
+            width: 90%;
+            li {
+                display: flex;
+                justify-content: space-evenly;
+            }
+        }
+    }
+}
+
+.employee-page{
+    @include common-page(90%, 90%);
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.customer-bar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+    h2{
+        max-width: 30%;
+    }
+
+    div {
+        display: flex;
+
+        h3 {
+            max-width: 40%;
+            text-align: right;
+        }
+    }
+}
+
+.chart {
+    display: flex;
+    justify-content: space-around;
+    width: 90%;
+}
+
+.navigator{
+    a{
+        text-decoration: none;
+    }
+}
+
+#input-file{
+    display: none;
+}
+
+#label-file{
+    @include button(12rem);
+    background-color: #D95C52;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.end{
+    justify-content: end;
+}
+
+.password-message{
+    justify-content: end;
+    height: 30px;
+    .warning-message{
+        font-size: 0.8rem;
+        color: rgb(236, 81, 63);
+        text-align: right;
+    }
+}
+
+
+
+@media only screen and (max-width: 900px) {
+    .login-page{
+        @include common-page(70%, 65%);
+    }
+
+    .signup-page{
+        @include common-page(70%, 65%);
+    }
+
+    .forgot-page{
+        @include common-page(70%, 50%);
+    }
+    .buttons{
+        flex-wrap: wrap;
+        width: 90%;
+    }
+
+    .button-primary{
+        width: 40%;
+    }
+
+    .button-secondary{
+        width: 40%;
+    }
+
+    .page{
+        padding-top: 3%;
+        padding-bottom: 5%;
+        height: 100%;
+    }
+    label{
+        font-size: 0.9rem;
+    }
+    input{
+        width: 90%;
+        height: 0.9rem;
+    }
+    p{
+        font-size: 0.9rem;
+    }
+    .form-group{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .register-page{
+        display: flex;
+        padding-top: 5%;
+        justify-content: center;
+        width: 90%;
+    }
+    #register{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 90%;
+    }
+    .form-input{
+        width: 90%;
+    }
+  }
+
+.card-list {
+    display: flex;
+}
+
+.menu-items {
+    display: flex;
+    justify-content: space-between;
+    a {
+        text-decoration: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
