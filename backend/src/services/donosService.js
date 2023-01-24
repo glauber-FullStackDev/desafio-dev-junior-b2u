@@ -7,8 +7,8 @@ const getOwners = async () => {
 };
 
 const postOwners = async (body) => {
-  await donos.create(body);
-  return statusCode.CREATED;
+  const owner = await donos.create(body);
+  return { status: statusCode.CREATED, id: owner.id };
 }
 
 module.exports = { getOwners, postOwners }

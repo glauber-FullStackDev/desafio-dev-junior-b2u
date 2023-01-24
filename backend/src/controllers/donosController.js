@@ -10,8 +10,8 @@ const getOwners = async (_req, res, _next) => {
 };
 
 const postOwners = async (req, res, _next) => {
-  const dono = await donosService.postOwners(req.body);
-  if (dono === CREATED) return res.status(CREATED).json({ message: 'Dono cadastrado com sucesso!'});
+  const response = await donosService.postOwners(req.body);
+  if (response.status === CREATED) return res.status(CREATED).json({ id: response.id });
   throw new Error('Ocorreu um erro inesperado');
 }
 
