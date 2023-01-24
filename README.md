@@ -118,6 +118,7 @@ A aplicação estará disponível para acesso HTTP na porta 80 (Redirecionado pa
 
 ## Melhorias
 Pontos de melhorias para as próximas versôes:
+  * Padronização de mensagens de tratamento de erros.
   * API Gateway para o Backend e autenticação/integração com Keycloak.
   * Balanceamento de carga para o Frontend e autenticação/integração com Keycloak.
   * Aplicar técnicas de cache local e remoto com Redis.
@@ -126,6 +127,7 @@ Pontos de melhorias para as próximas versôes:
   * Manifestos para Kubernetes e Helm charts.
   * Monitoramento de perfermance e tráfego (Observabilidade).
   * Cobertura de testes unitários e de integração.
+  * Documentação.
   
 
 ## Documentação

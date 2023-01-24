@@ -1,0 +1,12 @@
+
+*:3000 {
+	reverse_proxy * backend:3000
+	encode zstd gzip
+}
+
+api.example.com:3000 {
+	reverse_proxy * backend:3000
+	encode zstd gzip
+}
+
+

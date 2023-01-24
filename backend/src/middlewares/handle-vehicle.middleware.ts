@@ -1,9 +1,9 @@
 import { Request, Response, NextFunction } from "express"
 import { decode } from "jsonwebtoken";
 import { CreateVehicleDto } from "../core/dtos/create-vehicle.dto";
+import { verifyToken } from "./jwt-token.middleware";
 
 export async function handleCreateVehicle(req: Request<CreateVehicleDto>, res: Response, next: NextFunction) {
-
 
     const token = req.headers.authorization?.replace("Bearer ", "");
     const json = <string>decode(token!);

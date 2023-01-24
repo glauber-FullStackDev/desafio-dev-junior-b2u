@@ -96,7 +96,6 @@ export class VehiclesRepository {
       return {
         status: Status.Error,
         message: "Cannot retrieve vehicle",
-        // data: "",
       };
     }
   }

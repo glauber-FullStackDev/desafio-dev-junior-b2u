@@ -12,6 +12,17 @@ services:
       - ENV=${ENV}
     depends_on:
       - postgres
+    # ports:
+    #   - ${BACKEND_PORT}:${BACKEND_PORT}
+
+  gateway:
+    build: ../backend
+    image: passoz/challenge-b2u-gateway:v1
+    restart: always
+    environment:
+      - DATABASE_URL=${DATABASE_URL}
+      - BACKEND_PORT=${BACKEND_PORT}
+      - ENV=${ENV}
     ports:
       - ${BACKEND_PORT}:${BACKEND_PORT}
 

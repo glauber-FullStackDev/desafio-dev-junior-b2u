@@ -20,7 +20,7 @@ app.use("/", usersRouter);
 app.use("/vehicles", vehiclesRouter);
 
 app.get("/", (req: Request, res: Response) => {
-  res.json({api: "Vehicles API", env: process.env});
+  res.json({api: "Vehicles API"});
 });
 
 app.use((req: Request, res: Response, next: NextFunction) => res.status(404).json({status: "Error", message: "Page not found"}))

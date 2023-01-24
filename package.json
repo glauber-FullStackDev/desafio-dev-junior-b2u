@@ -12,8 +12,8 @@
     "up": "docker-compose -f infra/docker-compose.yaml --env-file .env up",
     "dev:start": "npm run prepare:dev && docker-compose -f infra/docker-compose.dev.yaml --env-file .env up -d",
     "dev:stop": "npm run prepare:dev && docker-compose -f infra/docker-compose.dev.yaml --env-file .env down && npm run remove:env",
-    "prepare:prod": "cp .env backend/ && cp .env frontend/ && sh ./infra/scripts/env.sh",
-    "prepare:dev": "cp .env.development backend/.env && cp .env.development frontend/.env && sh ./infra/scripts/env.sh",
-    "remove:env": "rm -f backend/.env && rm -f frontend/.env"
+    "prepare:prod": "cp .env backend/ && cp .env frontend/ && cp .env gateway/ && sh ./infra/scripts/env.sh",
+    "prepare:dev": "cp .env.development backend/.env && cp .env.development frontend/.env && cp .env.development gateway/.env && sh ./infra/scripts/env.sh",
+    "remove:env": "rm -f backend/.env && rm -f frontend/.env && rm -f gateway/.env"
   }
 }

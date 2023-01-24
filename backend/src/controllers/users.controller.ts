@@ -29,7 +29,6 @@ export class UsersController {
     if(req.body.email && req.body.password){
       const result: DataResponse<User> | undefined = await this.authService.login(req.body.email, req.body.password);
       if(result){
-        // console.log(result);
         return res.json(result);
       }
     }
@@ -57,7 +56,7 @@ export class UsersController {
   async findOne(req: Request<ReadUserDto>, res: Response) {
     if (req.params.id)
       return res.json(
-        <ReadUserDto>await this.userRepository.findOne(req.params.id)
+        await this.userRepository.findOne(req.params.id)
       );
   }
 

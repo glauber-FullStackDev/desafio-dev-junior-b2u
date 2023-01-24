@@ -17,13 +17,25 @@ export class UsersRepository {
 
   async create(
     createUserDto: CreateUserDto
-  ): Promise<DataResponse<User>> {
+  ): Promise<DataResponse<Partial<User>>> {
     try {
       return {
         status: Status.Ok,
         message: "User created",
-        data: await (<Promise<User>>(
-          this.prismaClient.user.create({ data: createUserDto })
+        data: await (<Promise<Partial<User>>>(
+          this.prismaClient.user.create(
+            { 
+              data: createUserDto,
+              select: {
+                id: true,
+                createdAt: true,
+                updatedAt: true,
+                fullname: true,
+                email: true,
+                phone: true
+              }
+            }
+          )
         )),
       };
     } catch (error) {
@@ -44,10 +56,11 @@ export class UsersRepository {
         data: await (<Promise<User[]>>this.prismaClient.user.findMany()),
       };
     } catch (error) {
+      console.log(error);
+      
       return {
         status: Status.Error,
         message: "Cannot retrieve users",
-        data: "",
       };
     }
   }

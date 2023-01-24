@@ -2,7 +2,7 @@ import express, { Router, Request, Response, NextFunction } from "express";
 import { VehiclesController } from "../controllers/vehicles.controller";
 import { VehiclesRepository } from "../repositories/vehicles.repository";
 import prismaClient from "../services/prisma.service";
-import { JwtTokenMiddleware } from "../middlewares/jwt-token.middleware";
+import { verifyToken } from "../middlewares/jwt-token.middleware";
 import { handleCreateVehicle } from "../middlewares/handle-vehicle.middleware";
 
 const vehiclesRouter: Router = express.Router();
@@ -19,7 +19,8 @@ vehiclesRouter.get(
   vehiclesController.findOne
 );
 vehiclesRouter.post("/", handleCreateVehicle, vehiclesController.create);
-vehiclesRouter.put("/", vehiclesController.update);
-vehiclesRouter.delete("/", vehiclesController.remove);
+vehiclesRouter.put("/", verifyToken, vehiclesController.update);
+vehiclesRouter.delete("/", verifyToken, vehiclesController.remove);
+
 
 export default vehiclesRouter;
