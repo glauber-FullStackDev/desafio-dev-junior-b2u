@@ -13,6 +13,7 @@ import Box from "@mui/material/Box";
 import FormUsers from "../formUsers";
 import DeleteIcon from "@mui/icons-material/Delete";
 import TableRow from "@mui/material/TableRow";
+import FormBrands from "../formBrands";
 
 const style = {
   position: "absolute" as "absolute",
@@ -58,7 +59,11 @@ const TableComponent = ({
                     aria-describedby="modal-modal-description"
                   >
                     <Box sx={style}>
-                      <FormUsers users={item} handleClose={handleClose} />
+                      {item?.name ? (
+                        <FormUsers users={item} handleClose={handleClose} />
+                      ) : (
+                        <FormBrands handleClose={handleClose} />
+                      )}
                     </Box>
                   </Modal>
                   <IconButton onClick={() => deleteFn(item?.id)}>

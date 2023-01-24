@@ -1,14 +1,11 @@
 import { useEffect, useState } from "react";
 
 import Header from "../../components/header";
-import RowsTable from "../../components/rowsTable";
 import FormBrands from "../../components/formBrands";
 
 import { toast } from "react-toastify";
 import Table from "@mui/material/Table";
-import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
-import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Modal from "@mui/material/Modal";
 
@@ -22,6 +19,7 @@ import {
   Buttom,
   BoxModal,
 } from "./styles";
+import TableComponent from "../../components/table";
 
 const Brands = () => {
   const [brands, setBrands] = useState<IBrands[]>([]);
@@ -59,15 +57,17 @@ const Brands = () => {
 
       <Container>
         <ContainerTable>
-          <Table>
-            <TableHead>
+          <TableComponent
+            tableHeader={
               <TableRow>
-                <TableCell>Brand</TableCell>
-                <TableCell align="right"></TableCell>
+                <TableCell>Brands</TableCell>
+                <TableCell></TableCell>
+                <TableCell></TableCell>
+                <TableCell></TableCell>
               </TableRow>
-            </TableHead>
-            <TableBody></TableBody>
-          </Table>
+            }
+            data={brands}
+          />
         </ContainerTable>
       </Container>
     </>
