@@ -1,24 +1,19 @@
-![Bitcointoyou](https://bitcointoyou.com/_next/static/media/logoAzul.c6609791.png)
 
-# Desafio - Desenvolvedor Fullstack - Júnior
-Seja bem-vindo! Este desafio foi projetado para avaliar a sua capacidade técnica como candidato ao cargo proposto.
+# Email
+igo.vieira@live.com
 
-## Instruções
-- Faça um fork deste repositório;
-- O conjunto mínimo de tecnologias a serem utilizadas são: alguma das tecnologias front-end e back-end informadas na proposta desse desafio;
-- Crie um passo a passo de como rodar a sua aplicação;
-- Após finalizar, submeta um pull request com um comentário informando o seu e-mail de contato e aguarde nossa avaliação.
+peço desculpas pelo atraso, estou um pouco doente.
 
-## Proposta
-Você deverá desenvolver um projeto utilizando React no front-end e Node.js no back-end com a finalidade de que seja possível listar, visualizar, criar, editar e excluir carros de uma aplicação de anuncios de venda de automóveis.
+## Descrição
+Este projeto é uma aplicação web construída usando o framework Nest.js para o lado do servidor e o postgreSQL como banco de dados, e Prisma como ORM para gerenciamento do banco. Ele também utiliza o .env para gerenciar configurações sensíveis, e o Swagger para documentação e teste das rotas da API.
 
-**Observações:**
-> - Você pode persistir os dados em memoria;
-> - Cada carro precisa ter um identificador único, nome, marca, ano de fabricação e descrição;
-> - Além dos dados do carro, é necessário também salvar os dados do dono do carro(nome, email e telefone de contato).
-## Diferenciais
-Serão considerados diferenciais:
+## Instalação
+Clone este repositório. Instale as dependências usando o comando npm install. Configure o arquivo .env com as suas configurações de banco de dados. Inicie o servidor de desenvolvimento usando o comando npm run start:dev.
 
-- Conhecimento sólido em Expo ou React Native;
-- Boas práticas de escrita de código (código limpo, padrões de arquitetura, etc.);
-- Conhecimento em infraestruturas em nuvem;
+Este comando iniciará o servidor de desenvolvimento e abrirá o projeto em http://localhost:7777 no navegador.
+
+## Utilizando o Prisma
+Para gerar os arquivos de migração do banco de dados, execute o comando npx prisma migrate dev init
+
+## Link para o Swagger
+http://localhost:7777/api
