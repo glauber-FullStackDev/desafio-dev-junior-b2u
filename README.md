@@ -4,7 +4,8 @@
 Seja bem-vindo! Este desafio foi projetado para avaliar a sua capacidade técnica como candidato ao cargo proposto.
 
 ## Instruções
-- Baixar o projeto e rodar o comando  yarn  na pasta raiz 
+- Baixar o projeto e rodar o comando  yarn  na pasta raiz  
+-  Digite o comando yarn dev para rodar o projeto.
 - para verificar a documentação http://localhost:3333/api-docs/
 - É preciso cadastrar um veículo para editá-lo ou excluí-lo.
 - Para rodar os teste yarn test
