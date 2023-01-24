@@ -3,24 +3,38 @@ import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import TextField from "@mui/material/TextField";
 
-import {
-  ButtonClose,
-  Container,
-  Form,
-  Wrapper,
-  WrapperClose,
-} from "./styles";
+import { ButtonClose, Container, Form, Wrapper, WrapperClose } from "./styles";
+import createBrandService from "../../services/brands/create-brands";
+import { toast } from "react-toastify";
+import { IBrands } from "../../interface/IBrands";
 
 const initialState = {
   id: "",
-  name: "",
+  brand: "",
 };
 
-const FormBrands = ({ handleClose }: { handleClose: () => void }) => {
-  const [brand, setBrand] = useState(initialState);
+const FormBrands = ({
+  handleClose,
+  brands,
+}: {
+  handleClose: () => void;
+  brands?: IBrands;
+}) => {
+  const [brand, setBrand] = useState(brands || initialState);
+
+  const createBrand = async () => {
+    const response = await createBrandService(brand);
+
+    if (response.error) {
+      toast.error(response.error);
+      return;
+    }
+    toast.success(response.message);
+  };
+
   return (
     <Container>
-      <Form>
+      <Form onSubmit={createBrand}>
         <Wrapper onClick={handleClose}>
           <ButtonClose>Close</ButtonClose>
         </Wrapper>
@@ -34,9 +48,9 @@ const FormBrands = ({ handleClose }: { handleClose: () => void }) => {
               label="Name"
               fullWidth
               variant="standard"
-              value={brand.name}
+              value={brand.brand}
               onChange={(event) =>
-                setBrand({ ...brand, name: event.target.value })
+                setBrand({ ...brand, brand: event.target.value })
               }
             />
           </Grid>
