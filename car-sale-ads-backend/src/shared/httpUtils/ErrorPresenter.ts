@@ -6,7 +6,7 @@ export class BadRequestHttpErrorPresenter {
 
   @ApiProperty({
     isArray: true,
-    example: ['Invalid request body ptoperties'],
+    example: ['Invalid request body properties'],
   })
   message: string[];
 }
