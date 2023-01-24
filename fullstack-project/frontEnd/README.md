@@ -37,7 +37,7 @@ Neste Projeto usei as seguintes tecnologias:
 
 ## 💻 O projeto
 
-Este projeto foi desenvolvido para um teste tecnico FullStack para a BitCoinToYou com o intuito de criação de uma API com um CRUD de veiculos e no front azer uso de todas as funcionalidades.
+Este projeto foi desenvolvido para um teste tecnico FullStack para a BitCoinToYou com o intuito de criação de uma API com um CRUD de veiculos e no front fazer uso de todas as funcionalidades.
 
 ### Para rodar o projeto em sua máquina
 
