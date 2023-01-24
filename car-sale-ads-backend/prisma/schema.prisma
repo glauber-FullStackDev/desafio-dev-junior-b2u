@@ -17,4 +17,26 @@ model User {
   password  String
   phone     String
   createdAt DateTime
+  CarrAdd   CarAd[]
+}
+
+model CarAd {
+  id                 String  @id
+  ownerId            String
+  owner              User    @relation(fields: [ownerId], references: [id])
+  brand              String
+  model              String
+  manufactureYear    Int
+  modelYear          Int
+  fuel               String
+  km                 Int
+  price              Decimal
+  eletricWindow      Boolean
+  hidraulicSteenring Boolean
+  eletricicSteenring Boolean
+  automaticGearBox   Boolean
+  airConditioning    Boolean
+  airbag             Boolean
+  alarm              Boolean
+  eletricLock        Boolean
 }
