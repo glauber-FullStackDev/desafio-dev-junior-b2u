@@ -18,7 +18,11 @@ function CarsCard({ id, nome, anoFabricacao, marca, dono }) {
           <p>{`${marca} ${nome}`}</p>
           <p>{anoFabricacao}</p>
         </div>
-        <p>{dono.nome}</p>
+        <div className='owner-infos'>
+          <p>{dono.nome}</p>
+          <p>{dono.telefone}</p>
+          <p>{dono.email}</p>
+        </div>
       </Link>
       <RemoveCarButton
         id={id}

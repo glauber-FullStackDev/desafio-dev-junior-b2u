@@ -18,6 +18,15 @@
   width: 15%;
 }
 
+.owner-infos {
+  height: 50%;
+  margin: auto 20px auto auto;
+}
+
+.owner-infos p {
+  font-size: 15px;
+}
+
 .cars-card a {
   color: black;
   text-decoration: none;
