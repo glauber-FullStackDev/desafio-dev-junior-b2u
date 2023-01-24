@@ -6,24 +6,17 @@ import RemoveCarButton from './RemoveCarButton';
 
 function CarsCard({ id, nome, anoFabricacao, marca, dono }) {
   return (
-    <div style={{
-      position: 'relative',
-      width: '70%',
-      margin: 'auto',
-    }}>
+    <div className="cars-card">
       <Link
-        style={{ display: 'flex' }}
         to={`/cars/${id}`}
       >
         <img
           src={noImage}
           alt={`${nome}`}
-          style={{ width: '100px' }}
         />
-        <div>
-          <p>{nome}</p>
+        <div className="car-infos">
+          <p>{`${marca} ${nome}`}</p>
           <p>{anoFabricacao}</p>
-          <p>{marca}</p>
         </div>
         <p>{dono.nome}</p>
       </Link>

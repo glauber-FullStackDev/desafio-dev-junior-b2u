@@ -1,5 +1,6 @@
 import React from 'react'
 import deleteFetch from '../utils/deleteFetch'
+import removeIcon from '../image/remove.png';
 
 function RemoveCarButton({ id }) {
   const handleClick = async () => {
@@ -14,7 +15,7 @@ function RemoveCarButton({ id }) {
         name='remove'
         onClick={handleClick}
       >
-        Remove
+        <img src={removeIcon} alt='remove icon' />
       </button>
     </>
   )

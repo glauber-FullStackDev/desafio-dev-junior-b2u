@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useHistory } from 'react-router-dom';
 import CarsCard from '../components/CarsCard';
 import getFetch from '../utils/getFetch';
+import '../style/Cars.style.css';
 
 function Cars() {
   const [showError, setShowError] = useState('');
@@ -26,7 +27,7 @@ function Cars() {
   }
 
   return (
-    <div>
+    <div className='cars'>
       <button
         type='button'
         onClick={handleClick}
