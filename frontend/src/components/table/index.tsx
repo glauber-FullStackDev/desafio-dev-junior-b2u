@@ -40,9 +40,9 @@ const TableComponent = ({
       <Table>
         <TableHead>{tableHeader}</TableHead>
         <TableBody>
-          {data.map((item) => (
+          {data.map((item, index) => (
             <>
-              <TableRow key={item}>
+              <TableRow key={index}>
                 <TableCell component="th" scope="row">
                   {item?.name || item?.brand}
                 </TableCell>
