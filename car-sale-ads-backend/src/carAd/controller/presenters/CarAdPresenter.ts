@@ -1,5 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { CarAdd } from 'src/caradd/domain/CarAdd';
+import { CarAd } from 'src/carAd/domain/CarAd';
 import { currencyFormatter } from 'src/shared/formatters/currencyFormmater';
 
 class CarItemsPresenter {
@@ -28,7 +28,7 @@ class CarItemsPresenter {
   eletricLock: boolean;
 }
 
-export class CarAddPresenter {
+export class CarAdPresenter {
   @ApiProperty({ example: '123e4567-e89b-12d3-a456-426614174000' })
   id: string;
 
@@ -59,15 +59,16 @@ export class CarAddPresenter {
   @ApiProperty({ type: CarItemsPresenter })
   items: CarItemsPresenter;
 
-  constructor(carAdd: CarAdd) {
-    this.ownerId = carAdd.ownerId;
-    this.brand = carAdd.brand;
-    this.model = carAdd.model;
-    this.manufactureYear = carAdd.manufactureYear;
-    this.modelYear = carAdd.modelYear;
-    this.fuel = carAdd.fuel;
-    this.km = carAdd.km;
-    this.price = currencyFormatter(carAdd.price);
-    this.items = carAdd.items;
+  constructor(CarAd: CarAd) {
+    this.id = CarAd.id;
+    this.ownerId = CarAd.ownerId;
+    this.brand = CarAd.brand;
+    this.model = CarAd.model;
+    this.manufactureYear = CarAd.manufactureYear;
+    this.modelYear = CarAd.modelYear;
+    this.fuel = CarAd.fuel;
+    this.km = CarAd.km;
+    this.price = currencyFormatter(CarAd.price);
+    this.items = CarAd.items;
   }
 }

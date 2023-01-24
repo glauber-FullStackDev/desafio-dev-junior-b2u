@@ -1,18 +1,18 @@
 import { Inject, Injectable } from '@nestjs/common';
-import { CarAdd } from '../domain/CarAdd';
-import { CarItems } from '../domain/carItems';
-import { CarAddRepository } from '../domain/repository/CarAddRepository';
+import { CarAd } from '../domain/CarAd';
+import { CarItems } from '../domain/CarItems';
+import { CarAdRepository } from '../domain/repository/CarAdRepository';
 
 @Injectable()
-export class CreateCarAddService {
+export class CreateCarAdService {
   constructor(
-    @Inject(CarAddRepository)
-    private readonly carAddRepository: CarAddRepository,
+    @Inject(CarAdRepository)
+    private readonly carAdRepository: CarAdRepository,
   ) {}
 
-  async execute(input: CreateCarAddInput): Promise<CarAdd> {
+  async execute(input: CreateCarAdInput): Promise<CarAd> {
     const carItems = CarItems.from(input.items);
-    const carAdd = CarAdd.new(
+    const carAd = CarAd.new(
       input.ownerId,
       input.brand,
       input.model,
@@ -24,12 +24,12 @@ export class CreateCarAddService {
       carItems,
     );
 
-    await this.carAddRepository.save(carAdd);
-    return carAdd;
+    await this.carAdRepository.save(carAd);
+    return carAd;
   }
 }
 
-type CreateCarAddInput = {
+type CreateCarAdInput = {
   ownerId: string;
   brand: string;
   model: string;

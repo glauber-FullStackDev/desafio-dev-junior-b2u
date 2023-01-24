@@ -35,7 +35,7 @@ class CarItemsDto {
   eletricLock: boolean;
 }
 
-export class CreateCarAddDto {
+export class CreateCarAdDto {
   @ApiProperty({ example: 'Chevrollet' })
   @IsString()
   brand: string;

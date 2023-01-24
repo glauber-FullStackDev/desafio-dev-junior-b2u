@@ -1,7 +1,7 @@
 import { randomUUID } from 'crypto';
-import { CarItems } from './carItems';
+import { CarItems } from './CarItems';
 
-export class CarAdd {
+export class CarAd {
   private constructor(
     readonly id: string,
     readonly ownerId: string,
@@ -27,7 +27,7 @@ export class CarAdd {
     items: CarItems,
   ) {
     const id = randomUUID();
-    return new CarAdd(
+    return new CarAd(
       id,
       ownerId,
       brand,
@@ -53,7 +53,7 @@ export class CarAdd {
     price: number,
     items: CarItems,
   ) {
-    return new CarAdd(
+    return new CarAd(
       id,
       ownerId,
       brand,

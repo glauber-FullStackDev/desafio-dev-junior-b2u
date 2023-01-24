@@ -1,9 +1,10 @@
 import { Module } from '@nestjs/common';
 import { AuthModule } from 'src/auth/auth.module';
-import { CarAddModule } from 'src/caradd/carAdd.module';
+import { CarAdModule } from 'src/carAd/carAdd.module';
+
 import { UserModule } from 'src/user/user.module';
 
 @Module({
-  imports: [UserModule, AuthModule, CarAddModule],
+  imports: [UserModule, AuthModule, CarAdModule],
 })
 export class AppModule {}
