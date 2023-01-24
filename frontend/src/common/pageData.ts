@@ -9,12 +9,18 @@ async function getData(page?: unknown, rows?: unknown, id?: unknown): Promise<un
     const request = new Request(`${Config.backend}/users/${id}`, {
       method: 'GET',
       mode: 'cors',
+      headers: {
+        'Authorization': 'Bearer '+ sessionStorage.getItem("session-token")
+      }
     });
     return await fetch(request);
   }
   const request = new Request(`${Config.backend}/vehicles`, {
     method: 'GET',
     mode: 'cors',
+    headers: {
+      'Authorization': 'Bearer '+ sessionStorage.getItem("session-token")
+    }
   });
   return await fetch(request);
 
@@ -25,6 +31,9 @@ async function getVehicleData(page?: number, rows?: number, id?: string): Promis
   const request = new Request(`${Config.backend}/vehicles/${id}`, {
     method: 'GET',
     mode: 'cors',
+    headers: {
+      'Authorization': 'Bearer '+ sessionStorage.getItem("session-token")
+    }
   });
   return await fetch(request);
 

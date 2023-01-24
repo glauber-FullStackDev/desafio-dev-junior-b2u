@@ -23,21 +23,26 @@ const IndexPage = () => {
   let vehiclesList: any[] = vehicles;
 
   if(vehicles && vehicles.length > 0){
-    vehiclesList = vehicles.map((vehicle: Vehicle, index) => (
-      <Card
-        id={vehicle.id}
-        name={vehicle.name}
-        brand={vehicle.brand}
-        price={vehicle.price}
-        year={vehicle.year}
-        description={vehicle.description}
-        owner={vehicle.User!.fullname}
-        phone={vehicle.User!.phone}
-        email={vehicle.User!.email}
-        cardId={index.toString()}
-        key={index}
-      />
-    ))
+    vehiclesList = vehicles.map((vehicle: Vehicle, index) => {
+      const user: User = {...vehicle.User}
+
+      return (
+        <Card
+          id={vehicle.id}
+          name={vehicle.name}
+          brand={vehicle.brand}
+          price={vehicle.price}
+          year={vehicle.year}
+          description={vehicle.description}
+          owner={user.fullname}
+          phone={user.phone}
+          email={user.email}
+          cardId={index.toString()}
+          key={index}
+          view="view"
+        />
+      )
+    })
   }
 
   let titleBar;
@@ -45,7 +50,7 @@ const IndexPage = () => {
   if(!isAuthenticated()){
     titleBar = <TitleBar location="index-list" title="Veículos" subtitle="Anúncios" />
   } else {
-    titleBar = <TitleBar location="customer-list" title="Veículos" subtitle="Anúncios" />
+    titleBar = <TitleBar location="index-logged" title="Veículos" subtitle="Anúncios" />
   }
 
   return (

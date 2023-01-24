@@ -1,3 +1,4 @@
+import { string } from "prop-types";
 import Config from "../../config";
 import User from "./user";
 
@@ -12,6 +13,7 @@ interface Vehicle {
   phone?: string;
   email?: string;
   cardId?: string;
+  view?: string;
   User?: User;
 }
 

@@ -32,6 +32,7 @@ const ListVehiclesPage = () => {
       description={vehicle.description}
       cardId={index.toString()}
       key={index}
+      view="vehicle"
     />
   ))
 

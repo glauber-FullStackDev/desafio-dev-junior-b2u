@@ -75,7 +75,7 @@ const AddVehiclePage = () => {
     
     <div id="add-page" className="page">
       <section className="content-page">
-      <TitleBar title="Editar anúncio" location="edit" />
+      <TitleBar title="Editar anúncio" location="customer-edit" />
         <p>Atualize os dados do seu veículo abaixo.</p>
         <form action="" method="post" className="">
           <div className="form-group">

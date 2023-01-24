@@ -6,7 +6,7 @@ import "./Card.scss";
 const Card = (props: Vehicle) => {
   const price = currencyFormat(props.price!);
   return (
-      <a className="card" href={"/vehicle/" + props.id}>
+      <a className="card" href={"/" + props.view + "/" + props.id}>
         <img
           src={"https://loremflickr.com/320/240/cars?random=" + Math.floor(Math.random() * (1 - 1000 + 1) + 1)}
           alt="Car image"

@@ -36,10 +36,21 @@ const TitleBar = (props: Props) => {
         <Link to={"/signup"} className="button-primary">Registrar-se</Link>
       </menu>
     );
+  } else if(props.location === "index-logged"){
+    bar = (
+      <menu className="menu-items">
+        <h1>{props.title}</h1>
+        <Link to={"/customer/list"} className="button-primary">Meus anúncios</Link>
+        <Link to={"/"} className="button-primary" onClick={handleLogout}>Sair</Link>
+      </menu>
+    )
   } else if(props.location === "customer-list"){
     bar = (
       <menu className="menu-items">
         <h1>{props.title}</h1>
+        {/* <Link to={"/"} className="button-primary">Início</Link>
+        <Link to={"/customer/add"} className="button-primary">Criar anúncio</Link>
+        <Link to={"/"} className="button-primary" onClick={handleLogout}>Sair</Link> */}
         <Link to={"/"} className="button-primary">Início</Link>
         <Link to={"/customer/add"} className="button-primary">Criar anúncio</Link>
         <Link to={"/"} className="button-primary" onClick={handleLogout}>Sair</Link>

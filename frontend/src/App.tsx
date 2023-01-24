@@ -6,6 +6,7 @@ import LoginPage from "./pages/LoginPage";
 import NewLoginPage from "./pages/NewLoginPage";
 import SignupPage from "./pages/SignupPage";
 import GuardedRoute from "./guards/GuardedRoute";
+import ViewDetailPage from "./pages/ViewDetailPage";
 
 const ForgotPage = React.lazy(() => import("./pages/ForgotPage"));
 const ForgotResponsePage = React.lazy(
@@ -27,6 +28,7 @@ const App = () => {
             <Route path="/new-login" element={<NewLoginPage />} />
             <Route path="/signup" element={<SignupPage />} />
             <Route path="/forgot" element={<ForgotPage />} />
+            <Route path="/view/:id" element={<ViewDetailPage />} />
             <Route path="/forgot-response" element={<ForgotResponsePage />} />
             <Route path="/vehicle/:id" element={<VehicleDetailPage />} />
 

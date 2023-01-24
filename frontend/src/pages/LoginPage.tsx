@@ -30,9 +30,9 @@ const LoginPage = () => {
     // if (window.sessionStorage.getItem("session-token")) {
       // setToken(window.sessionStorage.getItem("session-token"));
     // }
-    // if(isAuthenticated()){
+    if(isAuthenticated()){
       window.location.replace("/customer/list");
-    // }
+    }
     // isAuthenticated();
     // window.location.replace("/customer/list");
   }
