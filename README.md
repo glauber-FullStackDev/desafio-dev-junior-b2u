@@ -44,7 +44,7 @@ Entre no diretório:
 # entrando no repositório
 cd desafio-dev-junior-b2u
 ```
-Faça uma cópia do arquivo de exemplo .env.example para .env e altere a variável BACKEND_HOST para o local de hospedagem da api.
+Faça uma cópia do arquivo de exemplo .env.example para .env e altere as variáveis abaixo para personalização. O arquivo .env.example já vem pré-configurado para o funcionamento básico do sistema.
 
 ### Backend
 Altere de:
