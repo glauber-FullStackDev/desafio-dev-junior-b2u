@@ -1,0 +1,50 @@
+.form-area{
+    height: 577px;
+    width: 446px;
+    border-radius: 6px;
+    background-color: #fcfcfcaa;
+    box-shadow: 0px 4px 10px 0px #00000026;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-left: 450px;
+    margin-top: 20px;
+    }
+    
+    .inputs{
+    display: flex;
+    flex-direction: column;
+    }
+    
+    .form-area button{
+    height: 56px;
+    width: 112px;
+    border-radius: 30px;
+    padding: 20px 16px 20px 16px;
+    background: #B7005C;
+    color:white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 32px;
+    cursor: pointer;
+    }
+    
+    .form-area input{
+    height: 44px;
+    width: 382px;
+    left: 769px;
+    top: 507px;
+    border-radius: 6px;
+    border: 1.5px solid #858585;
+    padding: 0px 12px;
+    outline: none;
+    }
+    
+    .form-area label{
+    height: 19px;
+    width: 366px;
+    font-size: 16px;
+    color:#383842;
+    }

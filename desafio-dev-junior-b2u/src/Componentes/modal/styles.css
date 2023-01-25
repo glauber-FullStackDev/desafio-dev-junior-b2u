@@ -1,0 +1,72 @@
+.modal-add{
+width: 476px;
+justify-content: center;
+align-items: center;
+display: flex;
+height: 563px;
+
+}
+
+.backdrop{
+background-color: rgba(16,15,15,0.56);
+position: fixed;
+left: 0;
+top: 0;
+width: 100vw;
+min-height: 100vh;
+display: flex;
+align-items: center;
+justify-content: center;
+flex-direction: column;
+}
+.modal{
+ display: flex;
+ flex-direction: column;
+ background-color:white;
+ padding: 56px;
+}
+
+.btn-buttons{
+display:flex;
+
+flex-direction: column;
+margin-top: 40px;
+margin-left: 140px;
+}
+
+.form-edit{
+display: flex;
+flex-direction: column;
+}
+.color-green{
+height: 48px;
+width: 132px;
+border-radius: 24px;
+padding: 14px 16px 14px 16px;
+background-color: rgba(16,81,54);
+color: white;
+cursor: pointer;
+}
+
+.color-redd{
+height: 48px;
+width: 132px;
+border-radius: 24px;
+padding: 14px 16px 14px 16px;
+background-color: rgba(175,23,23);
+color:white;
+margin-top: 20px;
+cursor: pointer;
+}
+.form-edit input{
+height: 44px;
+width: 354px;
+left: 0px;
+top: 23px;
+border-radius: 6px;
+background: #FFFEFE;
+border: 1.5px solid #858585;
+outline: none;
+margin: 8px;
+padding: 0px 12px;
+}

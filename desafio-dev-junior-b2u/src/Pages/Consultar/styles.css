@@ -1,0 +1,17 @@
+.consulta-area{
+height: 720px;
+width: 100%px;
+background: #1D1D1D;
+display: flex;
+justify-content: center;
+flex-direction:column;
+}
+
+.consulta-area h1{
+color: #D6006E;
+font-size: 60px;
+line-height: 87px;
+display: flex;
+justify-content: center;
+align-items: center;
+}
