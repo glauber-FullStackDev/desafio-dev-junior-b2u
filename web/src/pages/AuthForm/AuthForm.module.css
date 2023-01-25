@@ -1,0 +1,65 @@
+.formAuth{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    gap: 2em;
+}
+.componentsForm{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    gap: .5em;
+  }
+  .elementForm input {
+    border: none;
+    width: 100%;
+    background-color: transparent;
+    border: 1px solid #fff;
+    border-radius: .5em;
+    padding: .8em;
+  }
+  .elementForm input::placeholder {
+    color: rgb(209, 209, 209);
+  }
+  .btnSubmit{
+    padding: .5em;
+    width: 60%;
+    margin: auto;
+    border-radius: .5em;
+    background-color: #fff;
+    color: #000;
+    border: 1px solid rgb(124, 124, 124);
+    cursor: pointer;
+    transition: .2s;
+    font-size: 1.1em;
+  }
+  .btnSubmit:hover{
+    background-color: transparent;
+    color: #fff;
+    border-color: #fff;
+  }
+  
+  
+  @media (max-width: 500px) {
+    .componentsForm{
+        width: 98%;
+    }
+    .btnSubmit {
+        width: 70%;
+    }
+    .pageForm p{
+        font-size: .9em;
+    }
+  }
+.pageForm .changeFormSpan{
+    font-weight: bold;
+    cursor: pointer;
+    color: rgb(175, 175, 175);
+    transition: .1s;
+  }
+.pageForm .changeFormSpan:hover{
+    color: #fff;
+    text-decoration: underline;
+}

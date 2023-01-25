@@ -1,0 +1,75 @@
+.formCreateUpdate{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2em;
+    margin-bottom: 3em;
+    gap: 2em;
+}
+.componentsForm{
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: .5em;
+}
+.elementForm input {
+  border: none;
+  width: 100%;
+  background-color: transparent;
+  border: 1px solid #fff;
+  border-radius: .5em;
+  padding: .5em;
+}
+.elementForm input::placeholder {
+  color: rgb(209, 209, 209);
+}
+.btnSubmit{
+  padding: .5em;
+  width: 60%;
+  margin: auto;
+  border-radius: .5em;
+  background-color: #fff;
+  color: #000;
+  border: 1px solid rgb(124, 124, 124);
+  cursor: pointer;
+  transition: .2s;
+  font-size: 1.1em;
+}
+.btnSubmit:hover{
+  background-color: transparent;
+  color: #fff;
+  border-color: #fff;
+}
+.imageCar {
+  min-height: 30vh;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  text-align: center;
+}
+.imageCar img {
+  max-width: 100%;
+  max-height: 100%;
+}
+.closePreview{
+  width: 2em;
+  height: 2em;
+  border-radius: .5em;
+  border: 1px solid #f00;
+  background-color: transparent;
+  transition: .3s;
+  cursor: pointer;
+  font-size: 1.1em;
+}
+.closePreview:hover {
+  background-color: #f00;
+  color: #000;
+}
+
+@media (max-width: 800px) {
+    .btnSubmit {
+      width: 100%;
+    }
+}

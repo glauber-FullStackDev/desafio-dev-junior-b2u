@@ -1,0 +1,14 @@
+.errorPageNotFound {
+    text-align: center;
+    margin-top: 4em;
+}
+.errorPageNotFound h2 {
+    color: rgb(252, 71, 71);
+    margin-bottom: 2em;
+}
+.errorPageNotFound a{
+    text-decoration: none;
+}
+.errorPageNotFound a:hover {
+    text-decoration: underline;
+}

@@ -1,0 +1,38 @@
+.home {
+    text-align: center;
+}
+.home h2 {
+    margin-bottom: 1em;
+    margin-top: 1em;
+}
+.allCars {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+}
+.pagination {
+    margin-top: 2.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2em;
+    gap: .5em;
+}
+.pagination button {
+    width: 1.5em;
+    height: 1.5em;
+    border-radius: .5em;
+    border: 1px solid #fff;
+    background-color: transparent;
+    font-size: 1.8em;
+    cursor: pointer;
+    transition: .2s;
+}
+.pagination button:hover {
+    background-color: #fff;
+    color: #000;
+}
+.pagination p {
+    font-weight: bold;
+} 
