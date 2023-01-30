@@ -1,24 +1,29 @@
-![Bitcointoyou](https://bitcointoyou.com/_next/static/media/logoAzul.c6609791.png)
+# Bem vindo ao Projeto Bit Motors
 
-# Desafio - Desenvolvedor Fullstack - Júnior
-Seja bem-vindo! Este desafio foi projetado para avaliar a sua capacidade técnica como candidato ao cargo proposto.
+Este projeto é uma aplicação de anúncio de venda de carros desenvolvida com o objetivo de cumprir um desafio técnico da [Bitcointoyou](https://bitcointoyou.com/_next/static/media/logoAzul.c6609791.png). 
 
-## Instruções
-- Faça um fork deste repositório;
-- O conjunto mínimo de tecnologias a serem utilizadas são: alguma das tecnologias front-end e back-end informadas na proposta desse desafio;
-- Crie um passo a passo de como rodar a sua aplicação;
-- Após finalizar, submeta um pull request com um comentário informando o seu e-mail de contato e aguarde nossa avaliação.
+## Funcionalidades
+- Cadastro de usuários fácil e seguro.
+- Cadastro de Veículos para venda descomplicado.
+- Gerenciamento de Veículos simples, permitindo aos usuários editar, excluir e vizualizar todos os seus carros.
 
-## Proposta
-Você deverá desenvolver um projeto utilizando React no front-end e Node.js no back-end com a finalidade de que seja possível listar, visualizar, criar, editar e excluir carros de uma aplicação de anuncios de venda de automóveis.
+## Tecnologias Utilizadas
+- React.js para o desenvolvimento do front-end
+- Material UI e tailwind para estilização
+- Node.js e Express.js para o back-end
+- MongoDB para o armazenamento de dados
 
-**Observações:**
-> - Você pode persistir os dados em memoria;
-> - Cada carro precisa ter um identificador único, nome, marca, ano de fabricação e descrição;
-> - Além dos dados do carro, é necessário também salvar os dados do dono do carro(nome, email e telefone de contato).
-## Diferenciais
-Serão considerados diferenciais:
+## Instalação
 
-- Conhecimento sólido em Expo ou React Native;
-- Boas práticas de escrita de código (código limpo, padrões de arquitetura, etc.);
-- Conhecimento em infraestruturas em nuvem;
+1. Faça o clone do repositório: ``git clone https://github.com/TsMuniz/desafio-dev-junior-b2u``
+2. Entre na pasta da projeto: `cd desafio-dev-junior-b2u`
+3. Entre na pasta da api do projeto: `cd api`
+4. Verifique se a versão do node instalada na sua máquina é compatível cao a versão: `18.12.1`
+3. Instale as dependências: `npm install`
+4. Inicie o servidor: `npm run dev`
+3. Volte um diretório: `cd ..`
+3. Entre na pasta do frontend do projeto: `cd web`
+3. Instale as dependências: `npm install`
+4. Inicie o servidor: `npm start`
+5. Acesse a aplicação em `http://localhost:3000`
+
