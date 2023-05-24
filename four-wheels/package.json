@@ -6,6 +6,7 @@
   "scripts": {
     "start": "vite",
     "dev": "start vite && start npm run mock",
+    "develop": "start vite && start npm run mock && start",
     "mock": "json-server --watch db.json --port 1337  --routes routes.json",
     "build": "tsc && vite build",
     "preview": "vite preview"
